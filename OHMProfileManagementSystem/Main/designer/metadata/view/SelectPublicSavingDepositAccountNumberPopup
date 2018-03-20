@@ -1,0 +1,448 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectPublicSavingDepositAccountNumberPopup",
+        "height": 500,
+        "itemId": "SelectPublicSavingDepositAccountNumberPopup",
+        "title": "Select Saving Account Number",
+        "width": 900
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string",
+        "autoScroll": "boolean",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "SelectSavingDepositAccountNumberPopup1",
+    "designerId": "b9435744-d110-4c78-947f-5c817bc513c1",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "frame": true,
+                "itemId": "frmSelectVdcPopup"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string",
+                "itemId": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyForm2",
+            "designerId": "4528f9dc-6570-4a2f-a4c1-fc9ba3cc0430",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "4d14f457-a0f5-4de0-b662-6cfee35b30bf",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Search ACC No.",
+                                "itemId": "txtSearchSavingAccountNumber"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField55",
+                            "designerId": "61a5b84b-c3f8-4443-b30a-d2c12e69259d"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnSearchSavingAccountNumber",
+                                "layout|colspan": 2,
+                                "margin": "0 0 0 5",
+                                "text": "Search"
+                            },
+                            "configAlternates": {
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "text": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "38726919-d766-48ed-8f9b-7d35f383a49a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSearchSavingAccountNumberClick",
+                                        "implHandler": [
+                                            "var productcode=Ext.ComponentQuery.query('#ddlSavingProduct')[0].getValue();",
+                                            "",
+                                            "var savingAccountNumber=Ext.ComponentQuery.query('#txtSearchSavingAccountNumber')[0].getValue();",
+                                            "",
+                                            "var waitSave = watiMsg(\"Searching..Please wait ...\");",
+                                            "    Ext.Ajax.request({",
+                                            "    url: '../Handlers/Finance/Transaction/PublicSavingTransaction/PublicSavingDepositAccountHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'GetPubSavingDepoAcc',",
+                                            "        OfficeCode:getOfficeCode(),",
+                                            "        ProductCode:productcode,",
+                                            "        SavingAccountNo:savingAccountNumber,",
+                                            "",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "",
+                                            "",
+                                            "        var obj = Ext.decode(response.responseText);",
+                                            "",
+                                            "",
+                                            "",
+                                            "        if(obj.success === \"true\")",
+                                            "        {",
+                                            "            waitSave.hide();",
+                                            "            var store=Ext.getStore('SavingAccountNumberSearchStore');",
+                                            "            store.removeAll();",
+                                            "            store.add(obj.root);",
+                                            "",
+                                            "",
+                                            "        }",
+                                            "        else",
+                                            "        {",
+                                            "            waitSave.hide();",
+                                            "            msg(\"FAILURE\",obj.message);",
+                                            "        }",
+                                            "    },",
+                                            "        failure: function(response){",
+                                            "                        waitSave.hide();",
+                                            "            alert('failed',response);",
+                                            "",
+                                            "        }",
+                                            "});",
+                                            "",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSearchSavingAccountNumberClick",
+                                    "designerId": "9a779fba-c996-41f9-b27c-24ae5301cbd6"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchSavingAccountNo",
+                        "store": "SavingAccountNumberSearchStore",
+                        "title": ""
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "width": "auto",
+                        "itemId": "string",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "48410a5d-a2dc-4b00-ad33-fe1d655b9101",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "a18c0d1d-983a-4153-b0fe-e22f75746b4c"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel4",
+                            "designerId": "8aada910-6f36-4031-9eb5-f060a11948a4",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "   if(btn === 'yes'){",
+                                            "       console.log('record',record);",
+                                            "",
+                                            "       Ext.ComponentQuery.query('#txtSavingAccountNo')[0].setValue(record.data.SavingAccountNo);",
+                                            "       Ext.ComponentQuery.query('#txtMemberName')[0].setValue(record.data.ClientDesc);",
+                                            "       Ext.ComponentQuery.query('#hdnAccountNo')[0].setValue(record.data.AccountNo);",
+                                            "       Ext.ComponentQuery.query('#txtFixedCollectionAmount')[0].setValue(record.data.FixedCollectAmount);",
+                                            "       //Ext.ComponentQuery.query('#ddlCenter')[0].setValue(record.data.CenterCode);",
+                                            "      // Ext.ComponentQuery.query('#hdnAccountNumber')[0].setValue(record.data.AccountNo);",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "      // return true;",
+                                            "   }",
+                                            "   else",
+                                            "   {",
+                                            "",
+                                            "   }",
+                                            "    var v=Ext.ComponentQuery.query('#SelectPublicSavingDepositAccountNumberPopup')[0];",
+                                            "",
+                                            "    v.close();",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "46cfcbdc-269a-4c87-b983-10343e1e855d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SavingAccountNo",
+                                "text": "Saving Account No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn129",
+                            "designerId": "94445ae4-78f5-4fb4-9151-8a697d780b48"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ClientDesc",
+                                "text": "Member Name"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn131",
+                            "designerId": "204c1d4c-5bdb-4777-8331-490da2c7946f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "FixedCollectAmount",
+                                "text": "Fixed Collect Amount",
+                                "width": 120
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn136",
+                            "designerId": "761da3db-55c1-48d3-a082-50198ba4b512"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Address",
+                                "text": "Address"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn132",
+                            "designerId": "5abcf0f6-5c5c-4644-90a0-dd266e8e46f6"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CenterCode",
+                                "text": "Center Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn137",
+                            "designerId": "ce4e9cfc-9661-43b5-8bdc-3cf6b1cbae02"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CenterName",
+                                "text": "Center Name"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn138",
+                            "designerId": "5aa61adb-193e-445f-bd67-73e3ec8d52f0"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ProductCode",
+                                "text": "Product Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn141",
+                            "designerId": "13ad67e4-ec27-46c2-87c1-29c11a8c7040"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ProductName",
+                                "text": "Product Name"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn133",
+                            "designerId": "d77f7c20-8d9b-4143-98d7-c4548ee5b657"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmSelectVdcPopupAfterRender",
+                        "implHandler": [
+                            "var store=Ext.getStore('SavingAccountNumberSearchStore');",
+                            "store.removeAll();"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmSelectVdcPopupAfterRender",
+                    "designerId": "5d6ae7d0-bfba-4849-a02f-86467c12c4d4"
+                }
+            ]
+        }
+    ]
+}

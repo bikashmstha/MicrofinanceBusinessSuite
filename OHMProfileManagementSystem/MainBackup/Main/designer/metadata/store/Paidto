@@ -1,0 +1,55 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    {code:'1',\r",
+            "     name:'CN'\r",
+            "    },\r",
+            "    {\r",
+            "        code:'2',\r",
+            "        name:'TP'\r",
+            "    }\r",
+            "]"
+        ],
+        "designer|userClassName": "Paidto",
+        "model": "Paidto",
+        "storeId": "MyJsonStore60"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "62777c3e-0c61-492f-a0ed-0b0c7429ec87",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy72",
+            "designerId": "b21d8a54-32a0-422c-87f3-8faf8eb0c719",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader56",
+                    "designerId": "c90630a9-938d-411a-96f3-4e3e51cfccaa"
+                }
+            ]
+        }
+    ]
+}

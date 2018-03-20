@@ -1,0 +1,1054 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MenuEntry",
+        "frame": true,
+        "height": 586,
+        "title": "Menu Entry",
+        "width": 725
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyPanel11",
+    "designerId": "5c24fed3-296a-4a9d-a6c7-afd6a8492830",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar13",
+            "designerId": "eed17fcf-83fc-4f6f-a8a8-a14f9ef8e0cf",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "ModuleDesc",
+                        "emptyText": "- - - Select Module - - -",
+                        "fieldLabel": "Module",
+                        "forceSelection": true,
+                        "itemId": "ddlModule",
+                        "layout|flex": null,
+                        "maxWidth": 300,
+                        "queryMode": "local",
+                        "store": "ModuleStore",
+                        "valueField": "ModuleId",
+                        "width": 300
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "store": "store",
+                        "displayField": "datafield",
+                        "valueField": "datafield",
+                        "emptyText": "string",
+                        "forceSelection": "boolean",
+                        "maxWidth": "number",
+                        "queryMode": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyComboBox9",
+                    "designerId": "37d920b2-f590-46c3-a788-dbf00c417850",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDdlModuleChange",
+                                "implHandler": [
+                                    " var tabstore=Ext.getStore('TabStore');",
+                                    "        tabstore.removeAll();",
+                                    "        Ext.Ajax.request({",
+                                    "            url: '../Handlers/GeneralMasterParameters/Menu/TabHandler.ashx',",
+                                    "            params: {",
+                                    "                method:'SearchTab'",
+                                    "            },",
+                                    "            success: function(response){",
+                                    "",
+                                    "            var data=Ext.decode(response.responseText);",
+                                    "",
+                                    "            tabstore.removeAll();",
+                                    "            tabstore.add(data.root);",
+                                    "",
+                                    "",
+                                    "        }",
+                                    "        });"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDdlModuleChange",
+                            "designerId": "2e3b4b8d-52cd-4770-bcd2-7bf1a9ed7725"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "TabDesc",
+                        "emptyText": "- - - Select Tab - - -",
+                        "fieldLabel": "Tab",
+                        "forceSelection": true,
+                        "itemId": "ddlTab",
+                        "layout|flex": null,
+                        "queryMode": "local",
+                        "store": "TabStore",
+                        "valueField": "TabId"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "store": "store",
+                        "displayField": "datafield",
+                        "valueField": "datafield",
+                        "emptyText": "string",
+                        "forceSelection": "boolean",
+                        "queryMode": "string"
+                    },
+                    "name": "MyComboBox10",
+                    "designerId": "2c979638-f7e5-4bd3-97e6-d2f1707cb1ef",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDdlTabChange",
+                                "implHandler": [
+                                    "var module=Ext.ComponentQuery.query('#ddlModule')[0];",
+                                    "",
+                                    "if (module.getValue()===''||module.getValue()===null)",
+                                    "{",
+                                    "    msg('WARNING','Please, Select Module.');",
+                                    "    return;",
+                                    "}",
+                                    "var reportstore=Ext.getStore('ReportShortStore');",
+                                    "        reportstore.removeAll();",
+                                    "        Ext.Ajax.request({",
+                                    "            url: '../Handlers/GeneralMasterParameters/Menu/ReportHandler.ashx',",
+                                    "            params: {",
+                                    "                method:'GetReportShort',",
+                                    "                moduleId:module.getValue(),",
+                                    "                tabId:field.getValue()",
+                                    "            },",
+                                    "            success: function(response){",
+                                    "",
+                                    "            var data=Ext.decode(response.responseText);",
+                                    "            reportstore.removeAll();",
+                                    "            reportstore.add(data.root);",
+                                    "",
+                                    "",
+                                    "        }",
+                                    "        });"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDdlTabChange",
+                            "designerId": "ee7c724b-f335-4ba0-b1dc-83c493b9a4a7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "ReportDesc",
+                        "emptyText": "- - - Select Report - - -",
+                        "fieldLabel": "Report",
+                        "forceSelection": true,
+                        "itemId": "ddlReport",
+                        "layout|flex": null,
+                        "queryMode": "local",
+                        "store": "ReportShortStore",
+                        "valueField": "ReportId"
+                    },
+                    "configAlternates": {
+                        "displayField": "datafield",
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox29",
+                    "designerId": "beb48e62-638e-4706-babc-313f318e2193"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "layout|margins": "0 0 0 20",
+                        "padding": 5,
+                        "text": "Search"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "layout|margins": "string",
+                        "padding": "auto"
+                    },
+                    "name": "MyButton22",
+                    "designerId": "26d4ba5e-a2b0-48a1-9e41-90ff674b15c4",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "var store=Ext.getStore('MenuEntryStore');",
+                                    "store.removeAll();",
+                                    " var moduleId=Ext.ComponentQuery.query('#ddlModule')[0].getValue();",
+                                    " var tabId=Ext.ComponentQuery.query('#ddlTab')[0].getValue();",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/Menu/MenuEntryHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetMenuLists',",
+                                    "        moduleid:moduleId,",
+                                    "        tabid:tabId",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "    console.log('data',data);",
+                                    "    store.removeAll();",
+                                    "    store.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClick",
+                            "designerId": "d38d26b1-ad3b-44e5-8b28-0cc401f9a75d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "grdMenu",
+                "store": "MenuEntryStore",
+                "title": "Menu List"
+            },
+            "configAlternates": {
+                "store": "store",
+                "title": "string",
+                "itemId": "string"
+            },
+            "name": "MyGridPanel11",
+            "designerId": "6c898052-9b60-4f1e-aeef-bf77fb1bfeaa",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView10",
+                    "designerId": "5a759156-4f80-42db-b558-34b137836840"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "FormID",
+                        "text": "Form ID"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn84",
+                    "designerId": "acd18fd4-cefa-47f2-bd24-1cbe482ed617",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "txtFormId"
+                            },
+                            "configAlternates": {
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField138",
+                            "designerId": "ebe17dfd-99ba-45c7-9cf8-ed3db4110e0e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "WebFormName",
+                        "text": "Web Form Name",
+                        "width": 246
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn86",
+                    "designerId": "1c29a6e4-f517-4770-a837-39c2daf2ad85",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "txtWebFormName"
+                            },
+                            "configAlternates": {
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField139",
+                            "designerId": "71d2cff9-3839-42aa-8da6-9005d8fef928"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "DisplayName",
+                        "text": "Display Name",
+                        "width": 167
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn87",
+                    "designerId": "5610c2a2-3ee4-4d4a-ab77-5823e244f550",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "txtDisplayName"
+                            },
+                            "configAlternates": {
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField140",
+                            "designerId": "75ef9eab-7a0e-4ae8-8b13-fb04431a5cee"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ModuleDesc",
+                        "hidden": true,
+                        "text": "ModuleDesc"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "hidden": "boolean"
+                    },
+                    "name": "MyColumn91",
+                    "designerId": "a1a50673-6223-4fab-8d64-d60ca403b623",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyComboBox11",
+                            "designerId": "051275e2-a8b6-442b-9bc3-df3553e91bc8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "TabDesc",
+                        "hidden": true,
+                        "text": "TabDesc"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "hidden": "boolean"
+                    },
+                    "name": "MyColumn89",
+                    "designerId": "76b9c56b-6bc3-4b4a-b876-2e5904c6a7f9",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyComboBox12",
+                            "designerId": "d6196b44-aa60-4885-be24-fd5e0a35674a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "RepoTypeDesc",
+                        "hidden": true,
+                        "text": "Report Type Description",
+                        "width": 177
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "hidden": "boolean",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn93",
+                    "designerId": "b55d2e55-ecfb-4b0f-a806-84fd5130a7ec",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyComboBox13",
+                            "designerId": "ba6333dc-146a-4fd2-a077-0338044e6990"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "DisplaySeq",
+                        "text": "Display Sequence"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn94",
+                    "designerId": "ce9cade3-3a33-4803-b1d2-43e1b1ec9ba7",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "txtDisplaySequence"
+                            },
+                            "configAlternates": {
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField144",
+                            "designerId": "2870cb9c-d823-45e1-904c-cc51a336ab20"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "Action",
+                        "text": "Action"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn117",
+                    "designerId": "4c03e466-f636-433b-82c7-0b5d56e7eb21",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "txtAction"
+                            },
+                            "configAlternates": {
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField144",
+                            "designerId": "16771785-f18b-439f-bb8c-f4eb61d950d1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "name": "MyRowSelectionModel7",
+                    "designerId": "32b53467-649c-4d50-9f88-3eb506a59912"
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "name": "MyRowEditingPlugin13",
+                    "designerId": "a6a58150-0397-4ae5-b9e1-15e746c24ba4",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowEditingCanceledit",
+                                "name": "canceledit",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onRowEditingCanceledit",
+                            "designerId": "281bae4f-bb19-4264-aa0f-588cb0c40a00"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowEditingValidateedit",
+                                "implHandler": [
+                                    "var errMsg='';",
+                                    "    //var rowID=Ext.ComponentQuery.query('#txtCasteCode')[0];",
+                                    "    var formID=Ext.ComponentQuery.query('#txtFormId')[0];",
+                                    "    //var formName=Ext.ComponentQuery.query('#txtWebFormName')[0];",
+                                    "",
+                                    "    var webFormName=Ext.ComponentQuery.query('#txtWebFormName')[0];",
+                                    "    var displayName=Ext.ComponentQuery.query('#txtDisplayName')[0];",
+                                    "    var tabID=Ext.ComponentQuery.query('#ddlTab')[0];",
+                                    "    var moduleID=Ext.ComponentQuery.query('#ddlModule')[0];",
+                                    "    var reportType=Ext.ComponentQuery.query('#ddlReport')[0];",
+                                    "    var displaySeq=Ext.ComponentQuery.query('#txtDisplaySequence')[0];",
+                                    "",
+                                    "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                    "",
+                                    "if(moduleID.getValue()===null ||moduleID.getValue()===\"\")",
+                                    "{",
+                                    "    errMsg+=\"Please,Select Module.<br />\";",
+                                    "}",
+                                    "if(tabID.getValue()===null ||tabID.getValue()===\"\")",
+                                    "{",
+                                    "    errMsg+=\"Please,Select Tab.<br />\";",
+                                    "}",
+                                    "if(formID.getValue()===null ||formID.getValue()===\"\")",
+                                    "{",
+                                    "    errMsg+=\"Please, Enter Form ID.<br />\";",
+                                    "}",
+                                    "if(webFormName.getValue()===null ||webFormName.getValue()===\"\")",
+                                    "{",
+                                    "    errMsg+=\"Please,Enter Web Form Name.<br />\";",
+                                    "}",
+                                    "if(displayName.getValue()===null ||displayName.getValue()===\"\")",
+                                    "{",
+                                    "    errMsg+=\"Please,Enter Display Name.<br />\";",
+                                    "}",
+                                    "if(displaySeq.getValue()===null ||displaySeq.getValue()===\"\")",
+                                    "{",
+                                    "    errMsg+=\"Please,Enter Display Name.<br />\";",
+                                    "}",
+                                    "",
+                                    "if(errMsg!=='')",
+                                    "{",
+                                    "    msg(\"WARNING\",errMsg);",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "",
+                                    "var menuEntry={",
+                                    "    //RowID:rowID.getValue(),",
+                                    "    FormID:formID.getValue(),",
+                                    "    FormName:webFormName.getValue(),",
+                                    "    WebFormName:webFormName.getValue(),",
+                                    "    DisplayName:displayName.getValue(),",
+                                    "    TabID:tabID.getValue(),",
+                                    "    //TabDesc:tabDesc.getValue(),",
+                                    "    ModuleID:moduleID.getValue(),",
+                                    "    //ModuleDesc:moduleDesc.getValue(),",
+                                    "    ReportType:reportType.getValue(),",
+                                    "    //RepoTypeDesc:repoTypeDesc.getValue(),",
+                                    "    DisplaySeq:displaySeq.getValue(),",
+                                    "    Action:action.getValue()",
+                                    "};",
+                                    "",
+                                    "var wMsg='';",
+                                    "if(action.getValue()==='I')",
+                                    "{",
+                                    "    wMsg='Inserting....';",
+                                    "}",
+                                    "else",
+                                    "{",
+                                    "    wMsg='Updating....';",
+                                    "}",
+                                    "var waitSave = watiMsg(wMsg);",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/Menu/MenuEntryHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'SaveMenuEntry',",
+                                    "        menuEntry:JSON.stringify(menuEntry)",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "        waitSave.hide();",
+                                    "        var out=Ext.decode(response.responseText);",
+                                    "        console.log(out);",
+                                    "",
+                                    "        if(out.success===\"true\")",
+                                    "        {",
+                                    "            var message=out.root;",
+                                    "            if(message.OutResultCode===\"SUCCESS\")",
+                                    "            {",
+                                    "                msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                    "                    var grd = Ext.ComponentQuery.query('#grdMenu')[0];",
+                                    "",
+                                    "                    var record = grd.getSelectionModel().getSelection()[0];",
+                                    "                    record.set('Action','U');",
+                                    "",
+                                    "                });",
+                                    "",
+                                    "",
+                                    "",
+                                    "            }",
+                                    "            else",
+                                    "            {",
+                                    "                msg(\"FAILURE\",message.OutResultMessage);",
+                                    "            }",
+                                    "        }",
+                                    "        else",
+                                    "        {",
+                                    "            msg(\"FAILURE\",out.message);",
+                                    "        }",
+                                    "    },",
+                                    "    failure: function ( result, request ) {",
+                                    "        waitSave.hide();",
+                                    "        var out=Ext.decode(response.responseText);",
+                                    "        msg(\"FAILURE\",out.message);",
+                                    "    }",
+                                    "",
+                                    "});",
+                                    ""
+                                ],
+                                "name": "validateedit",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onRowEditingValidateedit",
+                            "designerId": "f0ad50a3-9320-4328-a014-5cf9df783fde"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Action",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyActionColumn13",
+                    "designerId": "9ac99a46-44f1-46d8-907d-8d565617df00",
+                    "cn": [
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "../ITS/resources/images/icons/cancel.png"
+                            },
+                            "configAlternates": {
+                                "icon": "string"
+                            },
+                            "name": "MyActionColumnItem13",
+                            "designerId": "ea113c51-0496-4bf7-a167-d41c3468dd69",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var store = Ext.getStore('MenuEntryStore');",
+                                            "var grd =  Ext.ComponentQuery.query('#grdMenu')[0];",
+                                            "var row = store.getAt(rowIndex).data;",
+                                            "//console.log('row',row);",
+                                            "//console.log('desc',row.CasteDesc);",
+                                            "",
+                                            "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected Menu Entry ?', function(btn) {",
+                                            "    if(btn == 'yes'){",
+                                            "",
+                                            "        var menuEntry={",
+                                            "    //RowID:row.rowID,",
+                                            "    FormID:row.FormID,",
+                                            "    FormName:row.WebFormName,",
+                                            "    WebFormName:row.WebFormName,",
+                                            "    DisplayName:row.DisplayName,",
+                                            "    TabID:row.TabID,",
+                                            "    //TabDesc:row.tabDesc,",
+                                            "    ModuleID:row.ModuleID,",
+                                            "    //ModuleDesc:row.moduleDesc,",
+                                            "    ReportType:row.ReportType,",
+                                            "    //RepoTypeDesc:row.repoTypeDesc,",
+                                            "    DisplaySeq:row.DisplaySeq,",
+                                            "    Action:'D'",
+                                            "};",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "        var wMsg='Deleting....';",
+                                            "",
+                                            "        var waitSave = watiMsg(wMsg);",
+                                            "",
+                                            "        Ext.Ajax.request({",
+                                            "            url: '../Handlers/GeneralMasterParameters/Menu/MenuEntryHandler.ashx',",
+                                            "            params: {",
+                                            "                method:'SaveMenuEntry',",
+                                            "                menuEntry:JSON.stringify(menuEntry)",
+                                            "            },",
+                                            "            success: function(response){",
+                                            "                waitSave.hide();",
+                                            "                var out=Ext.decode(response.responseText);",
+                                            "                console.log(out);",
+                                            "",
+                                            "                if(out.success===\"true\")",
+                                            "                {",
+                                            "                    var message=out.root;",
+                                            "                    if(message.OutResultCode===\"SUCCESS\")",
+                                            "                    {",
+                                            "                        msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                            "                            grd.bindStore(store);",
+                                            "                            store.removeAt(rowIndex);",
+                                            "                        });",
+                                            "",
+                                            "",
+                                            "",
+                                            "                    }",
+                                            "                    else",
+                                            "                    {",
+                                            "                        msg(\"FAILURE\",message.OutResultMessage);",
+                                            "                    }",
+                                            "                }",
+                                            "                else",
+                                            "                {",
+                                            "                    msg(\"FAILURE\",out.message);",
+                                            "                }",
+                                            "            },",
+                                            "            failure: function ( result, request ) {",
+                                            "                waitSave.hide();",
+                                            "                var out=Ext.decode(response.responseText);",
+                                            "                msg(\"FAILURE\",out.message);",
+                                            "            }",
+                                            "",
+                                            "        });",
+                                            "",
+                                            "",
+                                            "",
+                                            "        return true;",
+                                            "    }",
+                                            "});"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "handler",
+                                    "designerId": "9cc6e34d-e0f8-4123-80c1-979f0e912712"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar17",
+                    "designerId": "8d179326-d885-43a7-87db-1ff41922ee3b",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnAddMenu",
+                                "layout|flex": null,
+                                "text": "Add Menu"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton33",
+                            "designerId": "8d844dbf-3b8d-4ec6-8f68-80f5f4410bc1",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnAddMenuClick",
+                                        "implHandler": [
+                                            "var store =Ext.getStore('MenuEntryStore');",
+                                            "var rec={FormID:'',",
+                                            "         FormName:'',",
+                                            "         Action:'I'};",
+                                            "store.add(rec);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnAddMenuClick",
+                                    "designerId": "f449840b-4be8-4c47-a65a-2fcfc0a11daa"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "var menuEntryStore=Ext.getStore('MenuEntryStore');",
+                    "menuEntryStore.removeAll();",
+                    "var modulestore=Ext.getStore('ModuleStore');",
+                    "        modulestore.removeAll();",
+                    "",
+                    "        Ext.Ajax.request({",
+                    "            url: '../Handlers/GeneralMasterParameters/Menu/ModuleHandler.ashx',",
+                    "            params: {",
+                    "                method:'GetModuleShort'",
+                    "            },",
+                    "            success: function(response){",
+                    "",
+                    "            var data=Ext.decode(response.responseText);",
+                    "            console.log('data',data);",
+                    "            modulestore.removeAll();",
+                    "            modulestore.add(data.root);",
+                    "",
+                    "",
+                    "        }",
+                    "        });",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "87b5bea1-635c-4421-9a11-e5fdec11395c"
+        }
+    ]
+}

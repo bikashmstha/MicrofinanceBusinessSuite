@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OfficeMapGroupSearchStore",
+        "model": "OfficeSearch",
+        "storeId": "OfficeMapGroupSearchStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "OfficeSearchStore1",
+    "designerId": "ca97ea30-d74c-4fd7-9c94-f802e48427d2",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy3",
+            "designerId": "fd2e6017-e8f3-46fd-8cdf-284491df3cb8",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader3",
+                    "designerId": "66d15fdc-6c32-434e-b5bb-97452b4804bf"
+                }
+            ]
+        }
+    ]
+}

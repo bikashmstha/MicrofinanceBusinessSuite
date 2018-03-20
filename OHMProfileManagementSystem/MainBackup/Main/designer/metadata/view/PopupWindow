@@ -1,0 +1,693 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PopupWindow",
+        "height": 800,
+        "id": "PopupWindow",
+        "itemId": "PopupWindow",
+        "layout": "fit",
+        "title": "Preview Window",
+        "width": 800
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "designerId": "e0a7c484-b4d4-4e49-9e8e-19e7f44b6386",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "frame": true,
+                "itemId": "prevWinRegPanel",
+                "layout": "vbox",
+                "margin": 5,
+                "title": "You have requested PAN for "
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "frame": "boolean",
+                "itemId": "string",
+                "layout": "string",
+                "margin": "auto",
+                "title": "string"
+            },
+            "name": "MyPanel7",
+            "designerId": "37b445b8-9975-4511-9468-fed4da52f587",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyContainer32",
+                    "designerId": "15214295-c0a3-4aa0-b14c-18710334ea89",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "prevWinRegPanelbtnPPAN",
+                                "margin": 5,
+                                "text": "Preview Personal Information"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton21",
+                            "designerId": "48d259e7-582c-4fe2-ba12-cf4fb48de419",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPrevWinRegPanelbtnPPANClick",
+                                        "implHandler": [
+                                            "var PopupWindow=Ext.ComponentQuery.query('#PopupWindow')[0];\r",
+                                            "\r",
+                                            "var cont=Ext.ComponentQuery.query('#prevWinRegContainer')[0];\r",
+                                            "var vw;\r",
+                                            "var controller;\r",
+                                            "if(PopupWindow.extraParam.RegistrationFor)\r",
+                                            "{\r",
+                                            "    var submissionNo=PopupWindow.extraParam.submissionNo;\r",
+                                            "    \r",
+                                            "    \r",
+                                            "    cont.setTitle('PPAN Preview');\r",
+                                            "    controller = MyApp.app.getController('PersonRegistration');\r",
+                                            "    \r",
+                                            "    MyApp.app.controllers.add(controller); \r",
+                                            "    \r",
+                                            "    vw = Ext.create('MyApp.view.PersonRegistration',{  });\r",
+                                            "    vw.extraParam={subNo:submissionNo,busTyp:\"I\"}; \r",
+                                            "    \r",
+                                            "    controller.init();\r",
+                                            "    cont.removeAll();\r",
+                                            "    cont.add(vw);\r",
+                                            "}\r",
+                                            "else\r",
+                                            "{    \r",
+                                            "    \r",
+                                            "    var pan_no=PopupWindow.extraParam.pan_no;\r",
+                                            "    var request_no=PopupWindow.extraParam.request_no;\r",
+                                            "    var office_code=PopupWindow.extraParam.office_code;\r",
+                                            "    var regFor=PopupWindow.extraParam.RegistrationForAU;\r",
+                                            "    var businessTyp=PopupWindow.extraParam.businessTyp;\r",
+                                            "    var businessSubTyp=PopupWindow.extraParam.businessSubTyp;\r",
+                                            "    \r",
+                                            "    cont.setTitle('PPAN Preview');\r",
+                                            "    controller = MyApp.app.getController('PersonRegistrationAU');\r",
+                                            "    \r",
+                                            "    MyApp.app.controllers.add(controller); \t\t\t\t\t\r",
+                                            "    \r",
+                                            "    vw = Ext.create('MyApp.view.PersonRegistrationAU',{  });\r",
+                                            "    vw.extraParam={pan_no:pan_no,request_no:request_no,office_code:office_code,\r",
+                                            "                   regFor:regFor,busTyp:businessTyp,busSubTyp:businessSubTyp}; \r",
+                                            "    \r",
+                                            "    controller.init();\r",
+                                            "    cont.removeAll();\r",
+                                            "    cont.add(vw);\r",
+                                            "}\r",
+                                            "\r",
+                                            "Ext.ComponentQuery.query('#PPAN_Reg_Next')[0].hide();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onPrevWinRegPanelbtnPPANClick",
+                                    "designerId": "6b2dfb65-e7c3-4990-8781-3e55a0c05a5c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "prevWinRegPanelbtnITax",
+                                "margin": 5,
+                                "text": "Preview Income Tax "
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton22",
+                            "designerId": "74b915a2-0863-4aaa-a2b4-e9cc77efccbf",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPrevWinRegPanelbtnITaxClick",
+                                        "implHandler": [
+                                            "var PopupWindow=Ext.ComponentQuery.query('#PopupWindow')[0];\r",
+                                            "\r",
+                                            "var cont=Ext.ComponentQuery.query('#prevWinRegContainer')[0];\r",
+                                            "var vw;\r",
+                                            "var controller;\r",
+                                            "if(PopupWindow.extraParam.RegistrationFor)\r",
+                                            "{\r",
+                                            "    var submissionNo=PopupWindow.extraParam.submissionNo;\r",
+                                            "    \r",
+                                            "    \r",
+                                            "    cont.setTitle('ITAX Preview');\r",
+                                            "    controller = MyApp.app.getController('BusinessRegistration');\r",
+                                            "    \r",
+                                            "    MyApp.app.controllers.add(controller); \r",
+                                            "    \r",
+                                            "    vw = Ext.create('MyApp.view.BusinessRegistration',{  });\r",
+                                            "    vw.extraParam={subNo:submissionNo,busTyp:\"I\"}; \r",
+                                            "    \r",
+                                            "    controller.init();\r",
+                                            "    cont.removeAll();\r",
+                                            "    cont.add(vw);\r",
+                                            "}\r",
+                                            "else\r",
+                                            "{     \r",
+                                            "    \r",
+                                            "    var pan_no=PopupWindow.extraParam.pan_no;\r",
+                                            "    var request_no=PopupWindow.extraParam.request_no;\r",
+                                            "    var office_code=PopupWindow.extraParam.office_code;\r",
+                                            "    var regFor=PopupWindow.extraParam.RegistrationForAU;\r",
+                                            "    var businessTyp=PopupWindow.extraParam.businessTyp;\r",
+                                            "    var businessSubTyp=PopupWindow.extraParam.businessSubTyp;\r",
+                                            "    \r",
+                                            "    cont.setTitle('ITAX Preview');\r",
+                                            "    controller = MyApp.app.getController('BusinessRegistrationAU');\r",
+                                            "    \r",
+                                            "    MyApp.app.controllers.add(controller); \t\t\t\t\t\r",
+                                            "    \r",
+                                            "    vw = Ext.create('MyApp.view.BusinessRegistrationAU',{  });\r",
+                                            "    vw.extraParam={pan_no:pan_no,request_no:request_no,office_code:office_code,\r",
+                                            "                   regFor:regFor,busTyp:businessTyp,busSubTyp:businessSubTyp}; \r",
+                                            "    \r",
+                                            "    controller.init();\r",
+                                            "    cont.removeAll();\r",
+                                            "    cont.add(vw);\r",
+                                            "}\r",
+                                            "Ext.ComponentQuery.query('#Bus_Reg_Next')[0].hide();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onPrevWinRegPanelbtnITaxClick",
+                                    "designerId": "9370ebaa-09a6-4859-826a-9c56ba15645e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "prevWinRegPanelbtnVAT",
+                                "margin": 5,
+                                "text": "Preview VAT"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton23",
+                            "designerId": "f5432da1-ff6d-4395-a88a-0b0747489a07",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPrevWinRegPanelbtnVATClick",
+                                        "implHandler": [
+                                            "var PopupWindow=Ext.ComponentQuery.query('#PopupWindow')[0];\r",
+                                            "\r",
+                                            "var cont=Ext.ComponentQuery.query('#prevWinRegContainer')[0];\r",
+                                            "var vw;\r",
+                                            "var controller;\r",
+                                            "if(PopupWindow.extraParam.RegistrationFor)\r",
+                                            "{\r",
+                                            "    var submissionNo=PopupWindow.extraParam.submissionNo;\r",
+                                            "    \r",
+                                            "    \r",
+                                            "    cont.setTitle('VAT Preview');\r",
+                                            "    controller = MyApp.app.getController('VATRegistration');\r",
+                                            "    \r",
+                                            "    MyApp.app.controllers.add(controller); \r",
+                                            "    \r",
+                                            "    vw = Ext.create('MyApp.view.VATRegistration',{  });\r",
+                                            "    vw.extraParam={subNo:submissionNo,busTyp:\"I\"}; \r",
+                                            "    \r",
+                                            "    controller.init();\r",
+                                            "    cont.removeAll();\r",
+                                            "    cont.add(vw);\r",
+                                            "}\r",
+                                            "else\r",
+                                            "{     \r",
+                                            "    \r",
+                                            "    var pan_no=PopupWindow.extraParam.pan_no;\r",
+                                            "    var request_no=PopupWindow.extraParam.request_no;\r",
+                                            "    var office_code=PopupWindow.extraParam.office_code;\r",
+                                            "    var regFor=PopupWindow.extraParam.RegistrationForAU;\r",
+                                            "    var businessTyp=PopupWindow.extraParam.businessTyp;\r",
+                                            "    var businessSubTyp=PopupWindow.extraParam.businessSubTyp;\r",
+                                            "    \r",
+                                            "    cont.setTitle('VAT Preview');\r",
+                                            "    controller = MyApp.app.getController('VATRegistrationAU');\r",
+                                            "    \r",
+                                            "    MyApp.app.controllers.add(controller); \t\t\t\t\t\r",
+                                            "    \r",
+                                            "    vw = Ext.create('MyApp.view.VATRegistrationAU',{  });\r",
+                                            "    vw.extraParam={pan_no:pan_no,request_no:request_no,office_code:office_code,\r",
+                                            "                   regFor:regFor,busTyp:businessTyp,busSubTyp:businessSubTyp}; \r",
+                                            "    \r",
+                                            "    controller.init();\r",
+                                            "    cont.removeAll();\r",
+                                            "    cont.add(vw);\r",
+                                            "}\r",
+                                            "Ext.ComponentQuery.query('#VAT_Reg_Next')[0].hide();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onPrevWinRegPanelbtnVATClick",
+                                    "designerId": "9d4a9b19-64c1-4efb-9347-e1db43649ffe"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "prevWinRegPanelbtnExcise",
+                                "margin": 5,
+                                "text": "Preview Excise"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton24",
+                            "designerId": "19247450-dd29-4faa-8df6-279e11ca0a24",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPrevWinRegPanelbtnExciseClick",
+                                        "implHandler": [
+                                            "var PopupWindow=Ext.ComponentQuery.query('#PopupWindow')[0];\r",
+                                            "\r",
+                                            "var cont=Ext.ComponentQuery.query('#prevWinRegContainer')[0];\r",
+                                            "var vw;\r",
+                                            "var controller;\r",
+                                            "if(PopupWindow.extraParam.RegistrationFor)\r",
+                                            "{\r",
+                                            "    var submissionNo=PopupWindow.extraParam.submissionNo;\r",
+                                            "    \r",
+                                            "    \r",
+                                            "    cont.setTitle('Excise Preview');\r",
+                                            "    controller = MyApp.app.getController('ExciseRegistration');\r",
+                                            "    \r",
+                                            "    MyApp.app.controllers.add(controller); \r",
+                                            "    \r",
+                                            "    vw = Ext.create('MyApp.view.ExciseRegistration',{  });\r",
+                                            "    vw.extraParam={subNo:submissionNo,busTyp:\"I\"}; \r",
+                                            "    \r",
+                                            "    controller.init();\r",
+                                            "    cont.removeAll();\r",
+                                            "    cont.add(vw);\r",
+                                            "}\r",
+                                            "else\r",
+                                            "{     \r",
+                                            "    \r",
+                                            "    var pan_no=PopupWindow.extraParam.pan_no;\r",
+                                            "    var request_no=PopupWindow.extraParam.request_no;\r",
+                                            "    var office_code=PopupWindow.extraParam.office_code;\r",
+                                            "    var regFor=PopupWindow.extraParam.RegistrationForAU;\r",
+                                            "    var businessTyp=PopupWindow.extraParam.businessTyp;\r",
+                                            "    var businessSubTyp=PopupWindow.extraParam.businessSubTyp;\r",
+                                            "    \r",
+                                            "    cont.setTitle('Excise Preview');\r",
+                                            "    controller = MyApp.app.getController('ExciseRegistrationAU');\r",
+                                            "    \r",
+                                            "    MyApp.app.controllers.add(controller); \t\t\t\t\t\r",
+                                            "    \r",
+                                            "    vw = Ext.create('MyApp.view.ExciseRegistrationAU',{  });\r",
+                                            "    vw.extraParam={pan_no:pan_no,request_no:request_no,office_code:office_code,\r",
+                                            "                   regFor:regFor,busTyp:businessTyp,busSubTyp:businessSubTyp}; \r",
+                                            "    \r",
+                                            "    controller.init();\r",
+                                            "    cont.removeAll();\r",
+                                            "    cont.add(vw);\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onPrevWinRegPanelbtnExciseClick",
+                                    "designerId": "248c39a4-46de-4be6-9023-c30571423eeb"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": true,
+                        "height": 460,
+                        "itemId": "prevWinRegContainer",
+                        "layout|flex": 9,
+                        "title": "Preview",
+                        "width": 869
+                    },
+                    "configAlternates": {
+                        "autoScroll": "boolean",
+                        "height": "auto",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "title": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyPanel8",
+                    "designerId": "2dbb4486-e805-41b0-a2c3-936009bd1fcd"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPopupWindowAfterRender",
+                "implHandler": [
+                    "var PopupWindow=Ext.ComponentQuery.query('#PopupWindow')[0];\r",
+                    "\r",
+                    "var panel=Ext.ComponentQuery.query('#prevWinRegPanel')[0];\r",
+                    "var testVer = Ext.ComponentQuery.query('#testVer')[0];\r",
+                    "\r",
+                    "var regFor=\"\";\r",
+                    "var regForAU =\"\";\r",
+                    "\r",
+                    "if(panel !== undefined)\r",
+                    "{\r",
+                    "    var btnPPAN=Ext.ComponentQuery.query('#prevWinRegPanelbtnPPAN')[0];\r",
+                    "    var btnITax=Ext.ComponentQuery.query('#prevWinRegPanelbtnITax')[0];\r",
+                    "    var btnVAT=Ext.ComponentQuery.query('#prevWinRegPanelbtnVAT')[0];\r",
+                    "    var btnExcise=Ext.ComponentQuery.query('#prevWinRegPanelbtnExcise')[0];\r",
+                    "\r",
+                    "    btnPPAN.hide();\r",
+                    "    btnITax.hide();\r",
+                    "    btnVAT.hide();\r",
+                    "    btnExcise.hide();\r",
+                    "\r",
+                    "    if(PopupWindow.extraParam.RegistrationFor)\r",
+                    "    {  \r",
+                    "        regFor=PopupWindow.extraParam.RegistrationFor;\r",
+                    "\r",
+                    "        panel.show();\r",
+                    "        testVer.hide();\r",
+                    "\r",
+                    "\r",
+                    "        for(var c=0;c<regFor.length;c++)\r",
+                    "        {\r",
+                    "            if (regFor[c] == \"PPAN\" || regFor[c] == \"I\")\r",
+                    "            {\r",
+                    "                btnPPAN.show();\r",
+                    "            }\r",
+                    "            else if(regFor[c]==\"ITAX\")\r",
+                    "            {\r",
+                    "                btnITax.show();\r",
+                    "            }\r",
+                    "            else if(regFor[c]==\"VAT\")\r",
+                    "            {\r",
+                    "                btnVAT.show();\r",
+                    "            }\r",
+                    "            else if(regFor[c]==\"EXCS\")\r",
+                    "            {\r",
+                    "                btnExcise.show();\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "    else if(PopupWindow.extraParam.RegistrationForAU)\r",
+                    "    {  \r",
+                    "        var win = Ext.ComponentQuery.query('#prevWinRegPanel')[0];\r",
+                    "        win.setTitle('Authorized Update For');\r",
+                    "\r",
+                    "        var pan_no=PopupWindow.extraParam.pan_no;\r",
+                    "        var request_no=PopupWindow.extraParam.request_no;\r",
+                    "        var office_code=PopupWindow.extraParam.office_code;\r",
+                    "\r",
+                    "\r",
+                    "        Ext.Ajax.request({\r",
+                    "            url: '../Handlers/Registration/Taxpayer/TaxpayerInfoHandler.ashx?method=GetVatTaxpayerAU',\r",
+                    "            params:{pan_no:pan_no,request_no:request_no,office_code:office_code},\r",
+                    "            success: function ( result, request ) {\r",
+                    "                var data = Ext.decode(result.responseText); \r",
+                    "                if(data.root)\r",
+                    "                {                                   \r",
+                    "                    PopupWindow.extraParam.businessTyp=data.root.TaxpayerCategoryID;\r",
+                    "                    PopupWindow.extraParam.businessSubTyp=data.root.TaxpayerType; \r",
+                    "                }\r",
+                    "\r",
+                    "            },\r",
+                    "            failure: function ( result, request ) {\r",
+                    "\r",
+                    "                msg('ERROR','');\r",
+                    "            }\r",
+                    "\r",
+                    "        });\r",
+                    "        regFor=PopupWindow.extraParam.RegistrationForAU;\r",
+                    "        panel.show();\r",
+                    "        testVer.hide();\r",
+                    "\r",
+                    "\r",
+                    "        for(var c=0;c<regFor.length;c++)\r",
+                    "        {\r",
+                    "            if(regFor[c]==\"PPAN\")\r",
+                    "            {\r",
+                    "                btnPPAN.show();\r",
+                    "            }\r",
+                    "            else if(regFor[c]==\"ITAX\")\r",
+                    "            {\r",
+                    "                btnITax.show();\r",
+                    "            }\r",
+                    "            else if(regFor[c]==\"VAT\")\r",
+                    "            {\r",
+                    "                btnVAT.show();\r",
+                    "            }\r",
+                    "            else if(regFor[c]==\"EXCS\")\r",
+                    "            {\r",
+                    "                // btnExcise.show();\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "    else\r",
+                    "    {    \r",
+                    "        panel.hide();    \r",
+                    "    }\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "//---------------------------------------------------------------------------------------\r",
+                    "// NB: D03 Multiple form preview Case\r",
+                    "//---------------------------------------------------------------------------------------\r",
+                    "\r",
+                    "if(!regFor && !regForAU)    \r",
+                    "{\r",
+                    "    if(testVer !== undefined)\r",
+                    "    { \r",
+                    "        if(PopupWindow.extraParam.module)\r",
+                    "        {\r",
+                    "            //alert(\"D03 !!!\");\r",
+                    "            var moduleName = PopupWindow.extraParam.module;\r",
+                    "\r",
+                    "            if(moduleName === \"ManualSelfAssessmentMD03\")\r",
+                    "            {                \r",
+                    "                testVer.show();\r",
+                    "                //alert(\"working !!!\");\r",
+                    "\r",
+                    "\r",
+                    "                var controller = MyApp.app.getController(moduleName);\r",
+                    "                MyApp.app.controllers.add(controller); \r",
+                    "\r",
+                    "                //{params:params}\r",
+                    "\r",
+                    "                var vw = Ext.create('MyApp.view.'+ moduleName,{  });\r",
+                    "                vw.extraParam ={params:PopupWindow.extraParam?PopupWindow.extraParam:{}};\t\t\r",
+                    "\r",
+                    "\r",
+                    "                //var PopupWindow=Ext.ComponentQuery.query('#PopupWindow')[0];\r",
+                    "                //var submissionNo=PopupWindow.extraParam.submissionNo;\r",
+                    "                /* \r",
+                    "                var cont=Ext.ComponentQuery.query('#prevWinRegContainer')[0];\r",
+                    "                cont.setTitle('PPAN Preview');\r",
+                    "\r",
+                    "                var vw = Ext.create('MyApp.view.PersonRegistration',{  });\r",
+                    "                vw.extraParam={subNo:submissionNo,busTyp:\"I\"}; \r",
+                    "\r",
+                    "                controller.init();\r",
+                    "                cont.removeAll();\r",
+                    "                cont.add(vw);\r",
+                    "\r",
+                    "                */\r",
+                    "\r",
+                    "\r",
+                    "                controller.init();// launch init() method\r",
+                    "                testVer.removeAll();\r",
+                    "                testVer.add(vw);\r",
+                    "\r",
+                    "            }            \r",
+                    "        }\r",
+                    "        else\r",
+                    "        {       \r",
+                    "            testVer.hide();\r",
+                    "        }\r",
+                    "    }    \r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPopupWindowAfterRender",
+            "designerId": "34843333-fd4e-40b5-9e6f-05be9995f2a9"
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "frame": true,
+                "height": 650,
+                "itemId": "testVer",
+                "layout": "fit",
+                "maxHeight": null,
+                "maxWidth": null,
+                "minHeight": null,
+                "title": null,
+                "width": null
+            },
+            "configAlternates": {
+                "autoScroll": "boolean",
+                "frame": "boolean",
+                "height": "auto",
+                "itemId": "string",
+                "layout": "string",
+                "maxHeight": "number",
+                "maxWidth": "number",
+                "minHeight": "number",
+                "title": "string",
+                "width": "auto"
+            },
+            "name": "MyPanel9",
+            "designerId": "8e2d43a4-9e0b-4bdf-b20e-d03f940a7400"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MFSavingAccountNumberSearchStore",
+        "model": "SavingAccountNumberSearch",
+        "storeId": "MFSavingAccountNumberSearchStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore2",
+    "designerId": "c3622bfd-6a4e-47bd-9f26-39fd70cb5c6b",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy",
+            "designerId": "c4c1d389-e367-4096-8093-db08b7a3b74f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader",
+                    "designerId": "bca6a6a8-f527-4a17-a3f1-bd63c0c5fb02"
+                }
+            ]
+        }
+    ]
+}

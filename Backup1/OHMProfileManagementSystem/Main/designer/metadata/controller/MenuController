@@ -1,0 +1,280 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MenuController",
+        "stores": [
+            "LoginUser"
+        ],
+        "views": [
+            "MenuController"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "stores": "typedarray",
+        "views": "typedarray"
+    },
+    "designerId": "fd74d730-81d0-4064-9af8-ad5ea22ba4df",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#trMenus",
+                "designer|targetType": "Ext.tree.View",
+                "fn": "onTrMenusItemClick",
+                "implHandler": [
+                    "if(record.data.link==null || record.data.link==\"\")\r",
+                    "{\r",
+                    "    return;\r",
+                    "}\r",
+                    "var me = this;\r",
+                    "var user = me.getController('MyApp.controller.LoginSecurity');    \r",
+                    "var valid = user.validateSession(\"default\");\r",
+                    "\r",
+                    "if(valid) \r",
+                    "{    \r",
+                    "    // console.log(\"link: \"+record.data.link);\r",
+                    "    if(record.data.link!=\"NULL\" && record.data.link!=null && record.data.link!=\"\")\r",
+                    "    {\r",
+                    "\r",
+                    "        bCumb=\"\";\r",
+                    "        var breadCrumbText=  getPNode(record);\t\t\r",
+                    "        var breadCrumbTextArr=breadCrumbText.split('$');\t\t\r",
+                    "        breadCrumbTextArr.reverse();\r",
+                    "        var breadCrumbTextt=breadCrumbTextArr.join('>>');\r",
+                    "\r",
+                    "        var uiConfig = {menuLink:record.data.link,\r",
+                    "                pageTitle:breadCrumbTextt\r",
+                    "            };\r",
+                    "        // console.log(\"uiConfig\",uiConfig);\r",
+                    "        DynamicUI(uiConfig);\r",
+                    "\r",
+                    "    }\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "//-------------------------------------------------------------------------------\r",
+                    "//loadDynamicPanel(record.data.text+'@@'+record.data.link);\r",
+                    "\r",
+                    "/*\r",
+                    "var uiConfig = {menuLink:record.data.link,\r",
+                    "pageTitle:record.data.text\r",
+                    "};\r",
+                    "*/\r",
+                    "//console.log('test parent',record.data.parentNode);\r",
+                    "\r",
+                    "/*\r",
+                    "console.log('record',record);\r",
+                    "console.log('item',item);\r",
+                    "console.log('e',e);\r",
+                    "console.log('options',options);\r",
+                    "console.log('dataview',dataview);\r",
+                    "var breadcrumb = record.get('breadcrumb');\r",
+                    "\r",
+                    "alert('breadcrumb' + breadcrumb);\r",
+                    "*/\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "//DLC(ContOnDemandArray[record.data.id],record.data.text+'@@'+record.data.link);\r",
+                    "\r",
+                    "//DLC(record.data.link);"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onTrMenusItemClick",
+            "designerId": "86637b72-196e-42ad-9b75-b6500d73eebb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#trMenus",
+                "designer|targetType": "Ext.tree.View",
+                "fn": "onViewItemDblClick",
+                "implHandler": [
+                    "var me = this;\r",
+                    "\r",
+                    "console.log(\"appid: \"+record.data.appId);\r",
+                    "var moduleProvider=getAppProvider(record.data.appId);\r",
+                    "var currentProvider=getCurrentProvider();\r",
+                    "\r",
+                    "//console.log(\"moduleProvider: \"+moduleProvider);\r",
+                    "//console.log(\"currentProvider: \"+currentProvider.provider);\r",
+                    "//alert(\"check\");\r",
+                    "\r",
+                    "if(currentProvider.provider != moduleProvider && record.data.appId!=\"\" && record.data.appId != undefined){\r",
+                    "\r",
+                    "\r",
+                    "}else{\r",
+                    "    var me = this;\r",
+                    "    var user = me.getController('MyApp.controller.LoginSecurity');    \r",
+                    "    var valid = user.validateSession(\"default\");\r",
+                    "\r",
+                    "    if(valid) \r",
+                    "    {    \r",
+                    "        //console.log(\"link: \"+record.data.link);\r",
+                    "        if(record.data.link!=\"NULL\" && record.data.link!=null && record.data.link!=\"\")\r",
+                    "        {\r",
+                    "\r",
+                    "            bCumb=\"\";\r",
+                    "            var breadCrumbText=  getPNode(record);\t\t\r",
+                    "            var breadCrumbTextArr=breadCrumbText.split('$');\t\t\r",
+                    "            breadCrumbTextArr.reverse();\r",
+                    "            var breadCrumbTextt=breadCrumbTextArr.join('>>');\r",
+                    "\r",
+                    "            var uiConfig = {menuLink:record.data.link,\r",
+                    "                    pageTitle:breadCrumbTextt\r",
+                    "                };\r",
+                    "            // console.log(\"uiConfig\",uiConfig);\r",
+                    "            DynamicUI(uiConfig);\r",
+                    "        }\r",
+                    "    }\r",
+                    "\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "itemdblclick",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onViewItemDblClick",
+            "designerId": "ffb70bda-b363-4a10-87dc-8e73e55f3835"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#trMenus",
+                "designer|targetType": "Ext.tree.View",
+                "fn": "onViewBeforeItemDblClick",
+                "implHandler": [
+                    "var moduleProvider=getAppProvider(record.data.appId);\r",
+                    "var currentProvider=getCurrentProvider();\r",
+                    "if(currentProvider.provider != moduleProvider && record.data.appId!=\"\" && record.data.appId != undefined){\r",
+                    "    e.preventDefault();\r",
+                    "    Ext.Ajax.request({\r",
+                    "        url: '../Handlers/Security/SessionHandler.ashx?method=getToken',\r",
+                    "        success: function ( result, request ) {\r",
+                    "            result=Ext.JSON.decode(result.responseText);\r",
+                    "            if(result.success==\"true\"){\r",
+                    "                token=result.root;\r",
+                    "                var module=record.data.appId;\r",
+                    "                location.replace(getProviderUrl(moduleProvider)+token+\"&module=\"+record.data.appId);\r",
+                    "            }else{\r",
+                    "                showMessage(\"Error:\", result.message);\r",
+                    "            }\r",
+                    "        },\r",
+                    "        failure: function(form, action) {\r",
+                    "\r",
+                    "        }\r",
+                    "\r",
+                    "    });\r",
+                    "\r",
+                    "    return false;\r",
+                    "}"
+                ],
+                "name": "beforeitemdblclick",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onViewBeforeItemDblClick",
+            "designerId": "caa530d6-7704-468d-bc78-aa73cafa2ef1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "treepanel",
+                "designer|targetType": "Ext.tree.Panel",
+                "fn": "onTreepanelBeforeItemExpand",
+                "implHandler": [
+                    "var moduleProvider = getAppProvider(nodeinterface.data.appId);\r",
+                    "        var currentProvider = getCurrentProvider();\r",
+                    "        if (currentProvider.provider != moduleProvider && nodeinterface.data.appId != \"\" && nodeinterface.data.appId != undefined) {\r",
+                    "            \r",
+                    "            Ext.Ajax.request({\r",
+                    "                url: '../Handlers/Security/SessionHandler.ashx?method=getToken',\r",
+                    "                success: function (result, request) {\r",
+                    "                    result = Ext.JSON.decode(result.responseText);\r",
+                    "                    if (result.success == \"true\") {\r",
+                    "                        token = result.root;\r",
+                    "                        var module = nodeinterface.data.appId;\r",
+                    "                        location.replace(getProviderUrl(moduleProvider) + token + \"&module=\" + nodeinterface.data.appId);\r",
+                    "                    } else {\r",
+                    "                        showMessage(\"Error:\", result.message);\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                failure: function (form, action) {\r",
+                    "\r",
+                    "                }\r",
+                    "\r",
+                    "            });\r",
+                    "\r",
+                    "            return false;\r",
+                    "        }"
+                ],
+                "name": "beforeitemexpand",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onTreepanelBeforeItemExpand",
+            "designerId": "518ade2d-d985-48bb-98d5-82ab1a87b4a7"
+        }
+    ]
+}

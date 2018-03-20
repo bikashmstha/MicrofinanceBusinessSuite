@@ -1,0 +1,55 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RevenueAccountAnx10",
+        "model": "RevenueAccountAnx10",
+        "storeId": "MyJsonStore115"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "a0895887-5774-4110-8d6f-196a6415ea60",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "../Handlers/IncomeTax/D03/RevenueAccountHandler.ashx?method=GetRevenueAccountByAcctByType"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy56",
+            "designerId": "a47d00b6-a0fe-42fa-9b79-eb646785442c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyJsonReader42",
+                    "designerId": "23148407-bd6e-4744-95fa-47d0e7d2f515"
+                }
+            ]
+        }
+    ]
+}

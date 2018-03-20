@@ -1,0 +1,106 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "HolidayList",
+        "stores": [
+            "FiscalYearStore"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "stores": "typedarray"
+    },
+    "name": "GeneralDefinitions2",
+    "designerId": "f30b039f-a05f-4ec8-b04b-0920ea42b627",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#GetDate",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "TabConfig2",
+                "fn": "onGetDateAfterRender",
+                "implHandler": [
+                    "/*var strHolidayList=Ext.getStore('FiscalYearStore');",
+                    "strHolidayList.removeAll();",
+                    "Ext.Ajax.request",
+                    "({",
+                    "",
+                    "    url:'../Handlers/Maintenance/GeneralDefinitions/NarrationHandler.ashx?method=GetNarrations',",
+                    "    //params:{},",
+                    "",
+                    "    success:function(response){",
+                    "",
+                    "        //console.log(response.responseText);",
+                    "        var obj =Ext.decode(response.responseText);",
+                    "        var row = obj.root;",
+                    "        //console.log('row',row);",
+                    "        strHolidayList.add(row);",
+                    "",
+                    "    },",
+                    "    failure:function()",
+                    "    {",
+                    "        msg('FAILURE',Ext.decode(response));",
+                    "",
+                    "    }",
+                    "",
+                    "",
+                    "",
+                    "});",
+                    "",
+                    "var strHolidayList=Ext.getStore('StrFiscaYear');",
+                    "strHolidayList.removeAll();",
+                    "Ext.Ajax.request",
+                    "({",
+                    "",
+                    "    url:'../Handlers/GeneralMasterParameters/Holiday/HolidayListHandler.ashx?method=GetHolidayLists',",
+                    "    //params:{FISCAL_YEAR:'2074.075'},",
+                    "",
+                    "    success:function(response){",
+                    "        //console.log(response.responseText);",
+                    "        var obj =Ext.decode(response.responseText);",
+                    "        var row = obj.root;",
+                    "//console.log('row',row);",
+                    "        strHolidayList.add(row);",
+                    "",
+                    "    },",
+                    "    failure:function()",
+                    "    {",
+                    "        msg('FAILURE',Ext.decode(response));",
+                    "",
+                    "    }",
+                    "",
+                    "",
+                    "",
+                    "});*/"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onGetDateAfterRender",
+            "designerId": "2d68e659-59c2-4eb0-919f-dffeb01492bb"
+        }
+    ]
+}

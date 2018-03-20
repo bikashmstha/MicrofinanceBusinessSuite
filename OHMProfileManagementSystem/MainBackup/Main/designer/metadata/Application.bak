@@ -1,0 +1,70 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "TreePanelModel"
+        ],
+        "stores": [
+            "TreePanelDataStore"
+        ],
+        "views": [
+            "MyViewport"
+        ],
+        "autoCreateViewport": true,
+        "name": "MyApp",
+        "controllers": [
+            "LoginSecurity",
+            "MenuController"
+        ]
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "var me = this;\r",
+                    "var clear = false;\r",
+                    "var main = me.getController('MyApp.controller.Main');\r",
+                    "var user = me.getController('MyApp.controller.LoginSecurity');    \r",
+                    "var valid = user.validateSession(\"default\");\r",
+                    "\r",
+                    "var el = Ext.get('logOUt');\r",
+                    "var elLoginTitle = Ext.get('LoginTitle');\r",
+                    "\r",
+                    "\r",
+                    "if(valid)\r",
+                    "{    \r",
+                    "    el.child('span').dom.innerHTML = \"LogOut\";\r",
+                    "    main.showMainView();\r",
+                    "    main.LoadUserFromSession();\r",
+                    "}\r",
+                    "\r",
+                    "el.on('click', function(e,t,eOpts){\r",
+                    "\r",
+                    "    if(el.child('span').dom.innerHTML !== \"LogIn\")\r",
+                    "    {\r",
+                    "        el.child('span').dom.innerHTML = \"LogIn\";\r",
+                    "        elLoginTitle.dom.innerHTML = \"Welcome\";\r",
+                    "        clear = user.clearSession();\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "7a251e9f-4e7a-4973-beb5-6145b61f9ad5"
+        }
+    ]
+}

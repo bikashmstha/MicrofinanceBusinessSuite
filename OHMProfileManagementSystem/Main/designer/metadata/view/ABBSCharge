@@ -1,0 +1,1069 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ABBSCharge",
+        "frame": true,
+        "title": "ABBS Charge Type Setup"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string"
+    },
+    "name": "MyPanel11",
+    "designerId": "36396826-6fc1-4af6-8a85-ecca3eb6d770",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|columns": 4,
+                "frame": true,
+                "itemId": "frmABBSCharge",
+                "layout": "table"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|columns": "number",
+                "frame": "boolean",
+                "itemId": "string",
+                "layout": "string"
+            },
+            "name": "MyForm4",
+            "designerId": "c40897ae-6c23-420f-8943-4e4f187fa4a1",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "OfficeName",
+                        "emptyText": "--- Select Office ---",
+                        "fieldLabel": "Office",
+                        "itemId": "ddlOffice",
+                        "labelWidth": 50,
+                        "queryMode": "local",
+                        "store": "OfficeShortStore",
+                        "valueField": "OfficeCode",
+                        "width": 300
+                    },
+                    "configAlternates": {
+                        "displayField": "datafield",
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "labelWidth": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyComboBox5",
+                    "designerId": "52646cee-eac6-46be-b7e0-920f1886237c"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "OfficeName",
+                        "emptyText": "--- Select To Office ---",
+                        "fieldLabel": "To Office",
+                        "itemId": "ddlToOffice",
+                        "labelWidth": 70,
+                        "margin": "0 0 0 10",
+                        "queryMode": "local",
+                        "store": "OfficeShortStore",
+                        "valueField": "OfficeCode",
+                        "width": 300
+                    },
+                    "configAlternates": {
+                        "displayField": "datafield",
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "width": "auto"
+                    },
+                    "name": "MyComboBox6",
+                    "designerId": "cc6884f2-fe54-4028-a5d7-1c641c4e3153"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "RefDtlName",
+                        "emptyText": "--- Select ABBS Type ---",
+                        "fieldLabel": "ABBS Type",
+                        "itemId": "ddlABBSType",
+                        "labelWidth": 80,
+                        "margin": "0 0 0 10",
+                        "queryMode": "local",
+                        "store": "ReferenceShortStore",
+                        "valueField": "RefDtlCode"
+                    },
+                    "configAlternates": {
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "displayField": "datafield",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox8",
+                    "designerId": "7d163cf8-320c-45ce-b3b8-2b70b88924ca"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnABBSChargeType",
+                        "layout|colspan": 3,
+                        "padding": 5,
+                        "text": "Load"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "padding": "auto",
+                        "text": "string"
+                    },
+                    "name": "MyButton19",
+                    "designerId": "42a72ba1-2c52-45de-8b45-923095c55b33",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnABBSChargeTypeClick",
+                                "implHandler": [
+                                    "var office=Ext.ComponentQuery.query('#ddlOffice')[0];",
+                                    "var toOffice=Ext.ComponentQuery.query('#ddlToOffice')[0];",
+                                    "var abbsType=Ext.ComponentQuery.query('#ddlABBSType')[0];",
+                                    "",
+                                    "if (office.getValue()===null||office.getValue()===null)",
+                                    "    {",
+                                    "        msg('WARNING','Please, Select Office');",
+                                    "        return;",
+                                    "    }",
+                                    "if (toOffice.getValue()===null||toOffice.getValue()===null)",
+                                    "    {",
+                                    "        msg('WARNING','Please, Select To Office');",
+                                    "        return;",
+                                    "    }",
+                                    "if (abbsType.getValue()===null||abbsType.getValue()===null)",
+                                    "    {",
+                                    "        msg('WARNING','Please, Select ABBS Type');",
+                                    "        return;",
+                                    "    }",
+                                    "",
+                                    "",
+                                    "var store=Ext.getStore('ABBSTypeChargeStore');",
+                                    "store.removeAll();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/Finance/Maintenance/ABBSChargeHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetABBSCharge',",
+                                    "        office:office.getValue(),",
+                                    "        toOffice:toOffice.getValue(),",
+                                    "        abbsType:abbsType.getValue()",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "    store.removeAll();",
+                                    "    store.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnABBSChargeTypeClick",
+                            "designerId": "31e1b8bd-a334-4176-b104-9e7782c0761b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdABBSCharge",
+                        "layout|colspan": 4,
+                        "store": "ABBSTypeChargeStore",
+                        "title": "ABBS Type Charges"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "store": "store",
+                        "title": "string"
+                    },
+                    "name": "MyGridPanel9",
+                    "designerId": "26886874-590c-4d4e-8c2f-8fd0908b3ba3",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView8",
+                            "designerId": "b8a32b77-86a8-4067-a437-4fa8b7123dd5"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "TranOfficeCode",
+                                "hidden": true,
+                                "text": "Tran Office Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn70",
+                            "designerId": "093a1039-bbfa-4266-99ca-bfa4bfa00eac",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtTranOffice"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField126",
+                                    "designerId": "86cec0c5-6d2a-4243-819e-933d151a5af4"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ToOfficeCode",
+                                "hidden": true,
+                                "text": "To Office Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn71",
+                            "designerId": "59dd6916-d7bc-4bb2-83c6-3a8dde453fa2",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtToOffice"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField127",
+                                    "designerId": "60000649-fb0d-4a54-91f7-3927194a73b3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ABBSType",
+                                "hidden": true,
+                                "text": "ABBS Type"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn72",
+                            "designerId": "1716bd45-d712-4887-8e3e-53b7ec80bb59",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtABBSType"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField128",
+                                    "designerId": "4ba051a1-4a78-4382-a5ee-549f5230360f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ABBSTypeDesc",
+                                "hidden": true,
+                                "text": "ABBS Type Desc"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn73",
+                            "designerId": "10e6cfbf-0b9a-4aad-9b53-68bf409c5195",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtABBSTypeDesc"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField129",
+                                    "designerId": "5191cccd-c652-4bdb-8589-cc3e521ef169"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ABBSMinAmount",
+                                "text": "ABBS Min Amount",
+                                "width": 150
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn74",
+                            "designerId": "14201690-5ba7-4a93-b77b-dd9dfbd13705",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtABBSMinAmount"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField130",
+                                    "designerId": "742a5fe9-ecf9-43fb-8ae1-54e5920e6446"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ABBSMaxAmount",
+                                "text": "ABBS Max Amount",
+                                "width": 150
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn75",
+                            "designerId": "6858f3f5-d957-4930-a9bd-ef89d85ea7db",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtABBSMaxAmount"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField131",
+                                    "designerId": "84a6e9f2-603d-460c-af15-bc5bdc0a2076"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ABBSChargeAmount",
+                                "text": "ABBS Charge Amount",
+                                "width": 150
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn76",
+                            "designerId": "4e17fbb6-bd29-4ae7-aa2a-911e3c4b3355",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtABBSChargeAmount"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField132",
+                                    "designerId": "9c73da42-5c71-4955-be93-23626b4c9b12"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Active",
+                                "text": "Active"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn77",
+                            "designerId": "dd537314-d6cb-46a4-a725-f219005c9f32",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "chkActive"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyCheckbox12",
+                                    "designerId": "0e3376f7-9d35-4f4d-b15a-f16116b22487"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Action",
+                                "text": "Action"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn78",
+                            "designerId": "f8a09c2a-9dbc-43e6-aa63-53d61e7f3e43",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtAction"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField133",
+                                    "designerId": "09d4236e-68fa-4639-934f-f61738fa58b0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "delABBSTypeCharge"
+                            },
+                            "configAlternates": {
+                                "itemId": "string"
+                            },
+                            "name": "MyActionColumn11",
+                            "designerId": "bb5d5d92-ca1f-4f30-9704-f41fb4f93bdd",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem11",
+                                    "designerId": "8b89b4aa-01be-4eb3-b5c3-6ca685cf8888",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var store = Ext.getStore('ABBSTypeChargeStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#grdABBSCharge')[0];",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected ABBS Charge ?', function(btn) {",
+                                                    "    if(btn == 'yes'){",
+                                                    "",
+                                                    "",
+                                                    "        var aBBSCharge={TranOfficeCode:row.TranOfficeCode,",
+                                                    "         ToOfficeCode:row.ToOfficeCode,",
+                                                    "         ABBSType:row.ABBSType,",
+                                                    "         ABBSMinAmount:row.ABBSMinAmount,",
+                                                    "         ABBSMaxAmount:row.ABBSMaxAmount,",
+                                                    "         ABBSChargeAmount:row.ABBSChargeAmount,",
+                                                    "         Active:row.Active===true?'Y':'N',",
+                                                    "         Action:'D'};",
+                                                    "",
+                                                    "        var wMsg='Deleting....';",
+                                                    "",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "                    url: '../Handlers/Finance/Maintenance/ABBSChargeHandler.ashx',",
+                                                    "                    params: {",
+                                                    "                        method:'SaveABBSCharge',",
+                                                    "                        aBBSCharge:JSON.stringify(aBBSCharge)",
+                                                    "                    },",
+                                                    "                    success: function(response){",
+                                                    "                    waitSave.hide();",
+                                                    "                    var out=Ext.decode(response.responseText);",
+                                                    "                    console.log(out);",
+                                                    "",
+                                                    "                    if(out.success===\"true\")",
+                                                    "                        {",
+                                                    "                            var message=out.root;",
+                                                    "                            if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                                {",
+                                                    "                                    msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                                        grd.bindStore(store);",
+                                                    "                                        store.removeAt(rowIndex);",
+                                                    "                                    });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                                }",
+                                                    "                            else",
+                                                    "                                {",
+                                                    "                                  msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                                }",
+                                                    "                        }",
+                                                    "                        else",
+                                                    "                            {",
+                                                    "                                msg(\"FAILURE\",out.message);",
+                                                    "                            }",
+                                                    "                    },",
+                                                    "                    failure: function ( result, request ) {",
+                                                    "                        waitSave.hide();",
+                                                    "                        var out=Ext.decode(response.responseText);",
+                                                    "                        msg(\"FAILURE\",out.message);",
+                                                    "                    }",
+                                                    "",
+                                                    "                });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        return true;",
+                                                    "    }",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "74e5a68f-a8ae-4c29-a1fd-3563dbde6087"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel5",
+                            "designerId": "1b664ba7-e039-4051-8a74-c246bc75ea50"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "configAlternates": {
+                                "dock": "string"
+                            },
+                            "name": "MyToolbar11",
+                            "designerId": "69e3f76e-df4e-4ebe-8b1e-09102eed9392",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "btnAddABBSTypeCharge",
+                                        "layout|flex": null,
+                                        "text": "Add ABBS Charge Type",
+                                        "width": 100
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string",
+                                        "layout|flex": "number",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyButton20",
+                                    "designerId": "19afdcc6-f080-4349-90e3-31c98b62172d",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBtnAddABBSTypeChargeClick",
+                                                "implHandler": [
+                                                    "var office=Ext.ComponentQuery.query('#ddlOffice')[0];",
+                                                    "var toOffice=Ext.ComponentQuery.query('#ddlToOffice')[0];",
+                                                    "var abbsType=Ext.ComponentQuery.query('#ddlABBSType')[0];",
+                                                    "",
+                                                    "if (office.getValue()===null||office.getValue()===null)",
+                                                    "    {",
+                                                    "        msg('WARNING','Please, Select Office');",
+                                                    "        return;",
+                                                    "    }",
+                                                    "if (toOffice.getValue()===null||toOffice.getValue()===null)",
+                                                    "    {",
+                                                    "        msg('WARNING','Please, Select To Office');",
+                                                    "        return;",
+                                                    "    }",
+                                                    "if (abbsType.getValue()===null||abbsType.getValue()===null)",
+                                                    "    {",
+                                                    "        msg('WARNING','Please, Select ABBS Type');",
+                                                    "        return;",
+                                                    "    }",
+                                                    "var store =Ext.getStore('ABBSTypeChargeStore');",
+                                                    "var rec={TranOfficeCode:office.getValue(),",
+                                                    "         ToOfficeCode:toOffice.getValue(),",
+                                                    "         ABBSType:abbsType.getValue(),",
+                                                    "         ABBSTypeDesc:'',",
+                                                    "         ABBSMinAmount:'0',",
+                                                    "         ABBSMaxAmount:'0',",
+                                                    "         ABBSChargeAmount:'0',",
+                                                    "         Active:'',",
+                                                    "         Action:'I'};",
+                                                    "store.add(rec);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onBtnAddABBSTypeChargeClick",
+                                            "designerId": "d192a001-9836-47af-ab48-aaedd1836a2b"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin11",
+                            "designerId": "ed9c92ad-d05b-4c47-9ab6-1ead676046b9",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingValidateedit",
+                                        "implHandler": [
+                                            "var errMsg='';",
+                                            "var office=Ext.ComponentQuery.query('#txtTranOffice')[0];",
+                                            "var toOffice=Ext.ComponentQuery.query('#txtToOffice')[0];",
+                                            "var abbsType=Ext.ComponentQuery.query('#txtABBSType')[0];",
+                                            "var abbsTypeDesc=Ext.ComponentQuery.query('#txtABBSTypeDesc')[0];",
+                                            "var abbsMinAmount=Ext.ComponentQuery.query('#txtABBSMinAmount')[0];",
+                                            "var abbsMaxAmount=Ext.ComponentQuery.query('#txtABBSMaxAmount')[0];",
+                                            "var abbsChargeAmount=Ext.ComponentQuery.query('#txtABBSChargeAmount')[0];",
+                                            "var active=Ext.ComponentQuery.query('#chkActive')[0];",
+                                            "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                            "if(office.getValue()===null||office.getValue()==='')",
+                                            "    {",
+                                            "        errMsg+='Please, Select Office.';",
+                                            "    }",
+                                            "if(toOffice.getValue()===null||toOffice.getValue()==='')",
+                                            "    {",
+                                            "        errMsg+='Please, Select Office.';",
+                                            "    }",
+                                            "if(abbsType.getValue()===null||abbsType.getValue()==='')",
+                                            "    {",
+                                            "        errMsg+='Please, Select Office.';",
+                                            "    }",
+                                            "",
+                                            "if(abbsMinAmount.getValue()===null ||abbsMinAmount.getValue()===\"\")",
+                                            "    {",
+                                            "        errMsg+=\"Please, Enter Minimum Amount\";",
+                                            "    }",
+                                            "if(abbsMaxAmount.getValue()===null ||abbsMaxAmount.getValue()===\"\")",
+                                            "    {",
+                                            "        errMsg+=\"Please,Enter Maximum Amount\";",
+                                            "    }",
+                                            "if(abbsChargeAmount.getValue()===null ||abbsChargeAmount.getValue()===\"\")",
+                                            "    {",
+                                            "        errMsg+=\"Please,Enter Charge Amount\";",
+                                            "    }",
+                                            "",
+                                            "if(errMsg!=='')",
+                                            "    {",
+                                            "        msg(\"WARNING\",errMsg);",
+                                            "        return;",
+                                            "    }",
+                                            "",
+                                            "var aBBSCharge={TranOfficeCode:office.getValue(),",
+                                            "         ToOfficeCode:toOffice.getValue(),",
+                                            "         ABBSType:abbsType.getValue(),",
+                                            "         ABBSMinAmount:abbsMinAmount.getValue(),",
+                                            "         ABBSMaxAmount:abbsMaxAmount.getValue(),",
+                                            "         ABBSChargeAmount:abbsChargeAmount.getValue(),",
+                                            "         Active:active.getValue()===true?'Y':'N',",
+                                            "         Action:action.getValue()};",
+                                            "",
+                                            "",
+                                            "",
+                                            "var wMsg='';",
+                                            "if(action.getValue()==='I')",
+                                            "    {",
+                                            "        wMsg='Inserting....';",
+                                            "    }",
+                                            "else",
+                                            "    {",
+                                            "        wMsg='Updting....';",
+                                            "    }",
+                                            "var waitSave = watiMsg(wMsg);",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "            url: '../Handlers/Finance/Maintenance/ABBSChargeHandler.ashx',",
+                                            "            params: {",
+                                            "                method:'SaveABBSCharge',",
+                                            "                aBBSCharge:JSON.stringify(aBBSCharge)",
+                                            "            },",
+                                            "            success: function(response){",
+                                            "            waitSave.hide();",
+                                            "            var out=Ext.decode(response.responseText);",
+                                            "            console.log(out);",
+                                            "",
+                                            "            if(out.success===\"true\")",
+                                            "                {",
+                                            "                    var message=out.root;",
+                                            "                    if(message.OutResultCode===\"SUCCESS\")",
+                                            "                        {",
+                                            "                            msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                            "                                var grd = Ext.ComponentQuery.query('#grdABBSCharge')[0];",
+                                            "",
+                                            "                                var record = grd.getSelectionModel().getSelection()[0];",
+                                            "                                record.set('Action','U');",
+                                            "",
+                                            "                            });",
+                                            "",
+                                            "",
+                                            "",
+                                            "                        }",
+                                            "                    else",
+                                            "                        {",
+                                            "                          msg(\"FAILURE\",message.OutResultMessage);",
+                                            "                        }",
+                                            "                }",
+                                            "                else",
+                                            "                    {",
+                                            "                        msg(\"FAILURE\",out.message);",
+                                            "                    }",
+                                            "            },",
+                                            "            failure: function ( result, request ) {",
+                                            "                waitSave.hide();",
+                                            "                var out=Ext.decode(response.responseText);",
+                                            "                msg(\"FAILURE\",out.message);",
+                                            "            }",
+                                            "",
+                                            "        });",
+                                            ""
+                                        ],
+                                        "name": "validateedit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingValidateedit",
+                                    "designerId": "9a3df559-9815-4e09-b0ee-440f2192e17d"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingCanceledit",
+                                        "name": "canceledit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingCanceledit",
+                                    "designerId": "e8424bd3-8468-4dd9-8b51-6966e04ac0e1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmABBSChargeAfterRender",
+                        "implHandler": [
+                            "var store=Ext.getStore('OfficeShortStore');",
+                            "store.removeAll();",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/GeneralMasterParameters/Office/OfficeHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetOfficeShort'",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "    var data=Ext.decode(response.responseText);",
+                            "    store.removeAll();",
+                            "    store.add(data.root);",
+                            "",
+                            "",
+                            "}",
+                            "});",
+                            "",
+                            "var abbsTypeChargeStore=Ext.getStore('ABBSTypeChargeStore');",
+                            "abbsTypeChargeStore.removeAll();",
+                            "",
+                            "var abbsTypeStore=Ext.getStore('ReferenceShortStore');",
+                            "abbsTypeStore.removeAll();",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/GeneralMasterParameters/References/MsRefrenceCodeDetailsHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetReferenceDetailListShort',referenceCode:'ABBS_TYPE'",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "    var data=Ext.decode(response.responseText);",
+                            "    abbsTypeStore.removeAll();",
+                            "    abbsTypeStore.add(data.root);",
+                            "",
+                            "",
+                            "}",
+                            "});"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmABBSChargeAfterRender",
+                    "designerId": "28e87606-5e58-4840-a3aa-a61db214817e"
+                }
+            ]
+        }
+    ]
+}

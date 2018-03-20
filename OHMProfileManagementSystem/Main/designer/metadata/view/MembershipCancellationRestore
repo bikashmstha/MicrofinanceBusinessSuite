@@ -1,0 +1,744 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|columns": 2,
+        "designer|userClassName": "MembershipCancellationRestore",
+        "frame": true,
+        "itemId": "",
+        "layout": "table",
+        "title": "MembershipCancellation/Restore"
+    },
+    "configAlternates": {
+        "container|columns": "number",
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "layout": "string",
+        "title": "string",
+        "itemId": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "3b800dba-86de-4775-ba98-22871f35ae1a",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|columns": 2,
+                "frame": true,
+                "itemId": "MembershipCancellationRestore",
+                "layout": "table"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|columns": "number",
+                "frame": "boolean",
+                "itemId": "string",
+                "layout": "string"
+            },
+            "name": "MyForm16",
+            "designerId": "99291412-f414-48e6-9cdb-4233e84562b3",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Closed Date (B.S.)",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtClosedDateBS",
+                        "labelWidth": 140,
+                        "readOnly": true
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "readOnly": "boolean",
+                        "itemId": "string",
+                        "fieldStyle": "string"
+                    },
+                    "name": "MyTextField43",
+                    "designerId": "ac38130b-6cfa-48e5-bc57-29762bd01568",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtClosedDateBSBlur",
+                                "implHandler": [
+                                    "GetEngDate(Ext.ComponentQuery.query('#txtClosedDateBS')[0].getValue(),function(strdate){Ext.ComponentQuery.query('#txtClosedDateAD')[0].setValue(strdate);});"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtClosedDateBSBlur",
+                            "designerId": "91fcbdd4-a9fb-4466-8ffd-c7d27de5ed8d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "(A.D.)",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtClosedDateAD",
+                        "margin": "0 0 0 50",
+                        "readOnly": true
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "margin": "auto",
+                        "readOnly": "boolean",
+                        "itemId": "string",
+                        "fieldStyle": "string"
+                    },
+                    "name": "MyTextField44",
+                    "designerId": "45c76733-5336-49af-bbf1-1844f742e2e2"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "CenterName",
+                        "emptyText": "---Select---",
+                        "fieldLabel": "Center Name",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "forceSelection": true,
+                        "itemId": "ddlCenter",
+                        "labelWidth": 140,
+                        "layout|colspan": 2,
+                        "queryMode": "local",
+                        "size": 40,
+                        "store": "CenterCodeStore",
+                        "valueField": "CenterCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "displayField": "datafield",
+                        "emptyText": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "fieldStyle": "string",
+                        "size": "number"
+                    },
+                    "name": "MyComboBox31",
+                    "designerId": "7fde7217-564b-456e-a1d0-c95e36034b5c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Member Code",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "itemId": "txtMemberCode",
+                        "labelWidth": 140,
+                        "readOnly": true
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "itemId": "string",
+                        "fieldStyle": "string",
+                        "readOnly": "boolean"
+                    },
+                    "name": "MyTextField47",
+                    "designerId": "c3103bef-508d-4b6d-a788-6791058885b2",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtMemberCodeAfterRender",
+                                "implHandler": [
+                                    "component.getEl().on('dblclick', function(){",
+                                    "     var winPopup = Ext.create('MyApp.view.SearchMemberCancalationPopup',{",
+                                    "",
+                                    "        });",
+                                    "",
+                                    "        winPopup.extraParam={param:null};",
+                                    "        winPopup.show();",
+                                    "  });"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtMemberCodeAfterRender",
+                            "designerId": "78c050e8-1224-4691-bf78-033485676724"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtMemberName",
+                        "margin": "0 0 0 10",
+                        "readOnly": true,
+                        "size": 60
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "margin": "auto",
+                        "size": "number",
+                        "readOnly": "boolean",
+                        "itemId": "string",
+                        "fieldStyle": "string"
+                    },
+                    "name": "MyTextField48",
+                    "designerId": "994dcfce-fba5-419c-9d3a-a181a751031c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Group",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtGroupCode",
+                        "labelWidth": 140,
+                        "readOnly": true
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "readOnly": "boolean",
+                        "itemId": "string",
+                        "fieldStyle": "string"
+                    },
+                    "name": "MyTextField49",
+                    "designerId": "4b138f38-e587-4276-97a4-9b3068d2be1d"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtGroupName",
+                        "margin": "0 0 0 10",
+                        "readOnly": true,
+                        "size": 60
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "margin": "auto",
+                        "size": "number",
+                        "readOnly": "boolean",
+                        "itemId": "string",
+                        "fieldStyle": "string"
+                    },
+                    "name": "MyTextField50",
+                    "designerId": "3c656913-e83d-43b7-a750-eb71c8c8f5a3"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Membership Date(B.S.)",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtMemberShipDateBS",
+                        "labelWidth": 140,
+                        "readOnly": true
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "readOnly": "boolean",
+                        "itemId": "string",
+                        "fieldStyle": "string"
+                    },
+                    "name": "MyTextField51",
+                    "designerId": "44ebe08c-8ea9-47d0-bab4-7cdbaa41be21"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "(A.D.)",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtMemberShipDateAD",
+                        "margin": "0 0 0 50",
+                        "readOnly": true
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "margin": "auto",
+                        "readOnly": "boolean",
+                        "itemId": "string",
+                        "fieldStyle": "string"
+                    },
+                    "name": "MyTextField52",
+                    "designerId": "f1d808db-4de7-4071-adee-1b26b19feac7"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Nominee Name",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtNomineeName",
+                        "labelWidth": 140,
+                        "layout|colspan": 2,
+                        "readOnly": true,
+                        "width": 715
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "width": "auto",
+                        "readOnly": "boolean",
+                        "itemId": "string",
+                        "fieldStyle": "string"
+                    },
+                    "name": "MyTextField53",
+                    "designerId": "f7327389-f7dd-4a63-9d0d-02d2bbcf2d7c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Nominee Relation",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtNomineeRelation",
+                        "labelWidth": 140,
+                        "layout|colspan": 2,
+                        "readOnly": true,
+                        "width": 715
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "width": "auto",
+                        "readOnly": "boolean",
+                        "itemId": "string",
+                        "fieldStyle": "string"
+                    },
+                    "name": "MyTextField54",
+                    "designerId": "0775c2a4-3324-48ee-9cba-71bf2f31cc08"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "ReasonDesc",
+                        "emptyText": "---Select---",
+                        "fieldLabel": "Reason",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "forceSelection": true,
+                        "itemId": "ddlReason",
+                        "labelWidth": 140,
+                        "layout|colspan": 2,
+                        "queryMode": "local",
+                        "store": "DropOutReasonStore",
+                        "valueField": "ReasonCode",
+                        "width": 716
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "width": "auto",
+                        "displayField": "datafield",
+                        "emptyText": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "fieldStyle": "string"
+                    },
+                    "name": "MyComboBox33",
+                    "designerId": "d07ac0b7-98da-4530-87bc-995cc9bb250f"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "end",
+                        "height": 37,
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "layout": "string",
+                        "height": "auto"
+                    },
+                    "name": "MyContainer5",
+                    "designerId": "4be9531d-d668-45e8-be6d-a0a0fc54178e",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnCancelMember",
+                                "padding": 5,
+                                "text": "Cancel Member"
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "padding": "auto",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "12d3e32f-e6c0-4832-ad4c-462116903613",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnCancelMemberClick",
+                                        "implHandler": [
+                                            "var myfrm=Ext.ComponentQuery.query('#MembershipCancellationRestore')[0];",
+                                            "  var record=  myfrm.rec;",
+                                            "",
+                                            "",
+                                            "",
+                                            "var Obj= {",
+                                            "      GroupCode:record.data.GroupCode,",
+                                            "\t  ClientNo:record.data.ClientNo,",
+                                            "\t  MembershipClosedDate:'20-APR-2015',",
+                                            "\t  TransType:'C',",
+                                            "\t  Active:'N',",
+                                            "\t  ReasonForInactive:Ext.ComponentQuery.query('#ddlReason')[0].getValue(),",
+                                            "\t  TranOfficeCode:record.data.TranOfficeCode,",
+                                            "\t  };",
+                                            "var waitSave = watiMsg(\"Canceling .Please wait ...\");",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/Finance/Transaction/MemberTransaction/MemberCancellationRestoreHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'Save',",
+                                            "        membercancellationrestore:JSON.stringify(Obj)",
+                                            "    },",
+                                            "    success: function ( response, request ) {",
+                                            "                 waitSave.hide();",
+                                            "                    var out=Ext.decode(response.responseText);",
+                                            "                    console.log(out);",
+                                            "",
+                                            "                    if(out.success===\"true\")",
+                                            "                        {",
+                                            "                           msg(\"SUCCESS\",out.message,function(){",
+                                            "                               Ext.ComponentQuery.query('#txtClosedDateBS')[0].setValue(getMisDateBS());",
+                                            "                                Ext.ComponentQuery.query('#txtClosedDateAD')[0].setValue(getMisDateAD());",
+                                            "                           });",
+                                            "                      }",
+                                            "                        else",
+                                            "                            {",
+                                            "                                msg(\"FAILURE\",out.message);",
+                                            "                            }",
+                                            "                    },",
+                                            "                    failure: function ( result, request ) {",
+                                            "                        waitSave.hide();",
+                                            "                        var out=Ext.decode(response.responseText);",
+                                            "                        msg(\"FAILURE\",out.message);",
+                                            "                    }",
+                                            "",
+                                            "",
+                                            "",
+                                            "        });",
+                                            "",
+                                            "Ext.ComponentQuery.query(\"#MembershipCancellationRestore\")[0].getForm().reset();",
+                                            "Ext.ComponentQuery.query('#btnRestoreMember')[0].setVisible(true);",
+                                            "Ext.ComponentQuery.query('#txtClosedDateBS')[0].setValue(getMisDateBS());",
+                                            "Ext.ComponentQuery.query('#txtClosedDateAD')[0].setValue(getMisDateAD());",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnCancelMemberClick",
+                                    "designerId": "20612d32-fea0-4bb2-befc-1a6892871155"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "center",
+                        "height": 34,
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "layout": "string",
+                        "height": "auto"
+                    },
+                    "name": "MyContainer4",
+                    "designerId": "76d39776-3d2f-4561-87b8-e1ae37f62f68",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnRestoreMember",
+                                "padding": 5,
+                                "text": "Restore Member"
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "padding": "auto",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "13b8dca1-aece-4890-bfe9-438b4de70af7",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnRestoreMemberClick",
+                                        "implHandler": [
+                                            "var myfrm=Ext.ComponentQuery.query('#MembershipCancellationRestore')[0];",
+                                            "  var record=  myfrm.rec;",
+                                            "",
+                                            "",
+                                            "var Obj= {",
+                                            "      GroupCode:record.data.GroupCode,",
+                                            "\t  ClientNo:record.data.ClientNo,",
+                                            "\t  MembershipClosedDate:'20-APR-2015',",
+                                            "\t  TransType:'R',",
+                                            "\t  Active:'Y',",
+                                            "\t  ReasonForInactive:Ext.ComponentQuery.query('#ddlReason')[0].getValue(),",
+                                            "\t  TranOfficeCode:record.data.TranOfficeCode,",
+                                            "\t  };",
+                                            "var waitSave = watiMsg(\"Restoring.Please wait ...\");",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/Finance/Transaction/MemberTransaction/MemberCancellationRestoreHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'Save',",
+                                            "        membercancellationrestore:JSON.stringify(Obj)",
+                                            "    },",
+                                            "    success: function ( response, request ) {",
+                                            "                 waitSave.hide();",
+                                            "                    var out=Ext.decode(response.responseText);",
+                                            "                    console.log(out);",
+                                            "",
+                                            "                    if(out.success===\"true\")",
+                                            "                        {",
+                                            "                           msg(\"SUCCESS\",out.message,function(){",
+                                            "                               Ext.ComponentQuery.query('#txtClosedDateBS')[0].setValue(getMisDateBS());",
+                                            "                               Ext.ComponentQuery.query('#txtClosedDateAD')[0].setValue(getMisDateAD());",
+                                            "                           });",
+                                            "                      }",
+                                            "                        else",
+                                            "                            {",
+                                            "                                msg(\"FAILURE\",out.message);",
+                                            "                            }",
+                                            "                    },",
+                                            "                    failure: function ( result, request ) {",
+                                            "                        waitSave.hide();",
+                                            "                        var out=Ext.decode(response.responseText);",
+                                            "                        msg(\"FAILURE\",out.message);",
+                                            "                    }",
+                                            "",
+                                            "",
+                                            "",
+                                            "        });",
+                                            "Ext.ComponentQuery.query(\"#MembershipCancellationRestore\")[0].getForm().reset();",
+                                            "Ext.ComponentQuery.query('#btnCancelMember')[0].setVisible(true);",
+                                            "Ext.ComponentQuery.query('#txtClosedDateBS')[0].setValue(getMisDateBS());",
+                                            "Ext.ComponentQuery.query('#txtClosedDateAD')[0].setValue(getMisDateAD());",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnRestoreMemberClick",
+                                    "designerId": "647036db-cb29-4683-b0e7-ee56e545c4ca"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMembershipCancellationRestoreAfterRender",
+                        "implHandler": [
+                            "Ext.ComponentQuery.query('#txtClosedDateBS')[0].setValue(getMisDateBS());",
+                            "Ext.ComponentQuery.query('#txtClosedDateAD')[0].setValue(getMisDateAD());",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/Finance/Maintenance/CenterLovHandler.ashx',",
+                            "    params: {",
+                            "        method:'Search',",
+                            "        centerlov:JSON.stringify({InstituteCode:Ext.get('offCode').dom.innerHTML,CenterName:null})",
+                            "",
+                            "    },",
+                            "    success: function(response){",
+                            "        var storeCenter=Ext.getStore('CenterCodeStore');",
+                            "",
+                            "        var data=Ext.decode(response.responseText);",
+                            "        storeCenter.removeAll();",
+                            "        storeCenter.add(data.root);",
+                            "",
+                            "",
+                            "    }",
+                            "});",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/Finance/Transaction/MemberTransaction/DropOutReasonHandler.ashx',",
+                            "    params: {",
+                            "        method:'Search',",
+                            "        DropOutReasons:JSON.stringify({ReasonCode:null})",
+                            "",
+                            "    },",
+                            "    success: function(response){",
+                            "        var storeReason=Ext.getStore('DropOutReasonStore');",
+                            "",
+                            "        var data=Ext.decode(response.responseText);",
+                            "        storeReason.removeAll();",
+                            "        storeReason.add(data.root);",
+                            "",
+                            "",
+                            "    }",
+                            "});"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onMembershipCancellationRestoreAfterRender",
+                    "designerId": "46e65f78-1340-4205-832e-1f4e035eb545"
+                }
+            ]
+        }
+    ]
+}

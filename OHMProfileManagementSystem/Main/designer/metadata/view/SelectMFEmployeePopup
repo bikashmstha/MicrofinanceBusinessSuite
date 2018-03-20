@@ -1,0 +1,335 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectMFEmployeePopup",
+        "height": 500,
+        "itemId": "SelectMFEmployeePopup",
+        "modal": true,
+        "title": "Select Employee",
+        "width": 700
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string",
+        "autoScroll": "boolean",
+        "height": "auto",
+        "width": "auto",
+        "modal": "boolean"
+    },
+    "name": "SelectEmpPopup1",
+    "designerId": "be212ff6-081a-4605-bab5-c32ef81c10c2",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "itemId": "frmSelectMFEmployeePopup",
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string",
+                "itemId": "string"
+            },
+            "name": "MyForm2",
+            "designerId": "96760894-66cb-4777-9caa-f41f46ad4710",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "8bd2423f-c790-4405-be88-466b1b917ff9",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Search",
+                                "itemId": "txtSearchEmpId"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField55",
+                            "designerId": "05c3a723-0207-46df-94bf-85958c3aed24"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnSearchFieldAssistants",
+                                "layout|colspan": 2,
+                                "margin": "0 0 0 5",
+                                "text": "Search"
+                            },
+                            "configAlternates": {
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "text": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "f2d7598d-4253-494b-bb19-4cbba31068dd",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSearchFieldAssistantsClick",
+                                        "implHandler": [
+                                            "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                                            "Ext.Ajax.request({",
+                                            "    url:'../Handlers/Supervisor/EmployeeHandler.ashx',",
+                                            "    params:{method:'GetFieldAssistants', officeCode:getOfficeCode(),",
+                                            "            empName: Ext.ComponentQuery.query('#txtSearchEmpId')[0].getValue()",
+                                            "           },",
+                                            "    success: function ( result, request ) {",
+                                            "",
+                                            "        var obj = Ext.decode(result.responseText);",
+                                            "        if(obj.success === 'true'){",
+                                            "            //console.log(\"Resu\",obj.root);",
+                                            "            var store =Ext.getStore('EmployeeSearchShortStore');",
+                                            "            store.removeAll();",
+                                            "            store.add(obj.root);",
+                                            "",
+                                            "",
+                                            "        }else{msg('FAILURE','Could Not Load Data');}",
+                                            "        waitSave.hide();",
+                                            "    },",
+                                            "    failure: function(form, action) {",
+                                            "        msg(\"FAILURE\",\"Could Not Load Data\"); waitSave.hide();   }",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSearchFieldAssistantsClick",
+                                    "designerId": "cee4b977-c93c-4c83-969d-8399408a86e2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchFieldAssistants",
+                        "store": "EmployeeSearchShortStore",
+                        "title": ""
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "width": "auto",
+                        "itemId": "string",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "927e26fe-2835-48ee-9f94-7e6486e1b74c",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "dc24794e-1fb4-45ad-9ae8-adbf0c959ec7"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "EmpId",
+                                "text": "Employee Code",
+                                "width": 128
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn68",
+                            "designerId": "75175ce0-e54d-4797-be01-db4802aefcfc"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "EmpName",
+                                "text": "Employee Name",
+                                "width": 500
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn69",
+                            "designerId": "474f05f5-ec75-4c22-b31e-31417a01c103"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel10",
+                            "designerId": "cd9d3b89-c11e-4f17-8412-ccf714eefa5a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "   if(btn === 'yes'){",
+                                            "       //console.log('record',record);",
+                                            "",
+                                            "     Ext.ComponentQuery.query('#txtEmpId')[0].setValue(record.data.EmpId);",
+                                            "     Ext.ComponentQuery.query('#txtEmpDesc')[0].setValue(record.data.EmpName);",
+                                            "     Ext.ComponentQuery.query('#txtMemberCode')[0].ClientNo = record.data.ClientNo;",
+                                            "     //console.log(record.data.ClientNo);",
+                                            "     //console.log('clientno',Ext.ComponentQuery.query('#txtMemberCode')[0].ClientNo);",
+                                            "      // return true;",
+                                            "   }",
+                                            "   else",
+                                            "   {",
+                                            "",
+                                            "   }",
+                                            "    var v = Ext.ComponentQuery.query('#SelectMFEmployeePopup')[0];",
+                                            "",
+                                            "    v.close();",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "5c2c7d7d-4682-4159-a42b-cff0f33039e8"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmSelectEmpPopupAfterRender",
+                        "implHandler": [
+                            "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url:'../Handlers/Supervisor/EmployeeHandler.ashx',",
+                            "    params:{method:'GetFieldAssistants', officeCode:getOfficeCode(), empName: null",
+                            "           },",
+                            "    success: function ( result, request ) {",
+                            "",
+                            "        var obj = Ext.decode(result.responseText);",
+                            "        if(obj.success === 'true'){",
+                            "            //console.log(\"Resu\",obj.root);",
+                            "            var store =Ext.getStore('EmployeeSearchShortStore');",
+                            "            store.removeAll();",
+                            "            store.add(obj.root);",
+                            "            waitSave.hide();",
+                            "",
+                            "        }else{msg('FAILURE','Could Not Load Data');}",
+                            "    },",
+                            "    failure: function(form, action) {",
+                            "        msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                            "});",
+                            ""
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmSelectEmpPopupAfterRender",
+                    "designerId": "9add4167-8aeb-4fc3-b4f4-7f7b3501a1b8"
+                }
+            ]
+        }
+    ]
+}

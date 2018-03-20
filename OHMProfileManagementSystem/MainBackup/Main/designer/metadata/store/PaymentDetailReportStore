@@ -1,0 +1,55 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PaymentDetailReportStore",
+        "model": "PaymentDetailReport",
+        "storeId": "PaymentDetailReportStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "25465051-95bd-41e5-b36e-254b902ee8b6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "../Handlers/VAT/Reports/Audit_Trial/PaymentDetailReportHandler.ashx?method=GetPaymentDetailReports"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy64",
+            "designerId": "4c20361a-dac2-4dfc-a229-3f2d2ab8a3b7",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyJsonReader48",
+                    "designerId": "db5dcadc-101d-4339-95f5-ef502b8ebcbe"
+                }
+            ]
+        }
+    ]
+}

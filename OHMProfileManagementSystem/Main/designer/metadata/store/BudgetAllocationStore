@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "BudgetAllocationStore",
+        "model": "BudgetAllocation",
+        "storeId": "BudgetAllocationStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore2",
+    "designerId": "2811ec23-afe1-4155-8800-d086016bf70d",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy51",
+            "designerId": "15f8633a-f4e3-4b95-b456-25dda53c4a2f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader51",
+                    "designerId": "2028eb2d-6b53-458a-9d4f-797757d471c0"
+                }
+            ]
+        }
+    ]
+}

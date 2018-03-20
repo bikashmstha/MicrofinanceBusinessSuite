@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ABBSTypeChargeStore",
+        "model": "ABBSTypeCharge",
+        "storeId": "ABBSTypeChargeStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "bd65ef54-9751-40f5-86aa-45bff56ae7b7",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy14",
+            "designerId": "5bcc6b44-5bf3-4c1c-a5bd-c3574a2bdfea",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader14",
+                    "designerId": "46f41790-d84b-41d8-8436-dceabbfa7c28"
+                }
+            ]
+        }
+    ]
+}

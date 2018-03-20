@@ -1,0 +1,2280 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoanPurpose",
+        "frame": true,
+        "title": "Loan Purpose"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "title": "string",
+        "frame": "boolean"
+    },
+    "name": "AccountControl1",
+    "designerId": "bc416f88-3faf-454d-8b83-d2cc4ff1a25c",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "frame": true,
+                "itemId": "frmLoanPurpose"
+            },
+            "configAlternates": {
+                "activeTab": "auto",
+                "frame": "boolean",
+                "itemId": "string"
+            },
+            "name": "MyTabPanel",
+            "designerId": "f6e8563d-1e7e-465a-8fae-4dfacaec0ada",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "frame": true,
+                        "title": "Sector"
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "frame": "boolean"
+                    },
+                    "name": "MyPanel9",
+                    "designerId": "36fc1cbc-4bd3-4db5-902d-4e7b69549c5c",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig",
+                            "designerId": "e2cc44d9-5269-488a-9be3-eab911823b56",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTabClick",
+                                        "implHandler": [
+                                            "var store=Ext.getStore('LoanSectorStore');",
+                                            "store.removeAll();",
+                                            "",
+                                            "        Ext.Ajax.request({",
+                                            "            url: '../Handlers/Finance/Maintenance/LoanSectorHandler.ashx',",
+                                            "            params: {",
+                                            "                method:'GetLoanSector'",
+                                            "            },",
+                                            "            success: function(response){",
+                                            "",
+                                            "            var data=Ext.decode(response.responseText);",
+                                            "            store.removeAll();",
+                                            "            store.add(data.root);",
+                                            "",
+                                            "",
+                                            "        }",
+                                            "        });"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onTabClick",
+                                    "designerId": "7408d531-84c3-4bd9-a99f-c3767e5bb35f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "grdLoanSector",
+                                "store": "LoanSectorStore"
+                            },
+                            "configAlternates": {
+                                "title": "string",
+                                "itemId": "string",
+                                "store": "store"
+                            },
+                            "name": "MyGridPanel3",
+                            "designerId": "fb95d2aa-ceb7-404f-9b97-2f2553918934",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView3",
+                                    "designerId": "a3070bcd-31ff-47e0-832a-b39ffb7012b3"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "bottom"
+                                    },
+                                    "configAlternates": {
+                                        "dock": "string"
+                                    },
+                                    "name": "MyToolbar7",
+                                    "designerId": "1cac9f30-635f-4ea9-9c3c-07fc1465325a",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "btnAddSector",
+                                                "layout|flex": null,
+                                                "text": "Add Sector"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string",
+                                                "layout|flex": "number",
+                                                "text": "string"
+                                            },
+                                            "name": "MyButton13",
+                                            "designerId": "7a74d224-ac5f-407e-98b3-9390311cef12"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "LoanSectorCode",
+                                        "text": "LoanSectorCode"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn81",
+                                    "designerId": "e3877aa3-42d7-4731-bcde-6cb14ce1d7e1",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanSectorCode"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField138",
+                                            "designerId": "bda8aa7e-0db7-449c-8a3d-675b53eecd83"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "LoanSectorDesc",
+                                        "text": "LoanSectorDesc",
+                                        "width": 200
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn82",
+                                    "designerId": "bd92df25-cf7c-4917-a1a3-e58e16936c4d",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanSectorDesc"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField139",
+                                            "designerId": "fbc87fe6-f8e9-4840-9fc9-0fb0bda40a7c"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Action",
+                                        "text": "Action"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn83",
+                                    "designerId": "e01e71c9-6b04-4f60-9ff6-8a75b19aa032",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtAction"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField140",
+                                            "designerId": "544311f5-9557-470c-98d5-68708f656215"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Action",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumn13",
+                                    "designerId": "8c1d857a-187c-4df9-8d49-93c1053fa40c",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var store = Ext.getStore('LoanSectorStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#grdLoanSubSector')[0];",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the LoanSector ?', function(btn) {",
+                                                    "                                                    if(btn == 'yes'){",
+                                                    "                                                        var objloanSector={",
+                                                    "                                                            LoanSectorCode:row.LoanSectorCode,",
+                                                    "                                                            LoanSectorDesc:row.LoanSectorDesc,",
+                                                    "                                                             Action:'D'",
+                                                    "                                                        };",
+                                                    "",
+                                                    "                                                        var wMsg='Deleting....';",
+                                                    "                                                        var waitSave = watiMsg(wMsg);",
+                                                    "                                                        Ext.Ajax.request({",
+                                                    "                                                            url: '../Handlers/Finance/Loan/LoanSectorHandler.ashx',",
+                                                    "                                                            params: {",
+                                                    "                                                                method:'SaveLoanSector',",
+                                                    "                                                                loanSector:JSON.stringify(objloanSector)",
+                                                    "                                                            },",
+                                                    "                                                            success: function(response){",
+                                                    "                                                                waitSave.hide();",
+                                                    "                                                                var out=Ext.decode(response.responseText);",
+                                                    "                                                                if(out.success===\"true\")",
+                                                    "                                                                {",
+                                                    "                                                                    var message=out.root;",
+                                                    "                                                                    if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                                                                    {",
+                                                    "                                                                        msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                                                                            grd.bindStore(store);",
+                                                    "                                                                            store.removeAt(rowIndex);",
+                                                    "                                                                        });",
+                                                    "                                                                    }",
+                                                    "                                                                    else",
+                                                    "                                                                    {",
+                                                    "                                                                        msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                                                                    }",
+                                                    "                                                                }",
+                                                    "                                                                else",
+                                                    "                                                                {",
+                                                    "                                                                    msg(\"FAILURE\",out.message);",
+                                                    "                                                                }",
+                                                    "                                                            },",
+                                                    "                                                            failure: function ( result, request ) {",
+                                                    "                                                                waitSave.hide();",
+                                                    "                                                                var out=Ext.decode(response.responseText);",
+                                                    "                                                                msg(\"FAILURE\",out.message);",
+                                                    "                                                            }",
+                                                    "                                                        });",
+                                                    "",
+                                                    "                                                        return true;",
+                                                    "                                                    }",
+                                                    "                                                });"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "82a6e6cd-a223-4bfc-a626-5b173eb5e725"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.selection.RowModel",
+                                    "reference": {
+                                        "name": "selModel",
+                                        "type": "object"
+                                    },
+                                    "codeClass": "Ext.selection.RowModel",
+                                    "name": "MyRowSelectionModel6",
+                                    "designerId": "df2b5171-d240-48e4-8f8e-f48fc3bfc783"
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.RowEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.RowEditing",
+                                    "name": "MyRowEditingPlugin12",
+                                    "designerId": "639323e4-57fa-4fe4-96eb-b93b6708f42c",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onRowEditingValidateedit",
+                                                "implHandler": [
+                                                    "var errMsg='';",
+                                                    "var loanSectorCode=Ext.ComponentQuery.query('#txtLoanSectorCode')[0];",
+                                                    "var loanSectorDesc=Ext.ComponentQuery.query('#txtLoanSectorDesc')[0];",
+                                                    "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                                    "",
+                                                    "         var objLoanSector={",
+                                                    "                    loanSectorCOde:loanSectorCode.getValue(),",
+                                                    "                    loanSectorDesc:loanSectorDesc.getValue(),",
+                                                    "                    Action:action.getValue()",
+                                                    "",
+                                                    "                   };",
+                                                    "",
+                                                    "        var wMsg='';",
+                                                    "        if(action.getValue()==='I')",
+                                                    "            {",
+                                                    "                wMsg='Inserting....';",
+                                                    "            }",
+                                                    "        else",
+                                                    "            {",
+                                                    "                wMsg='Updting....';",
+                                                    "            }",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "                   url: '../Handlers/Finance/Maintenance/LoanSectorHandler.ashx',",
+                                                    "                   params: {",
+                                                    "                        method:'SaveLoanSector',",
+                                                    "                        loanSector:JSON.stringify(objLoanSector)",
+                                                    "                    },",
+                                                    "                    success: function(response){",
+                                                    "                    waitSave.hide();",
+                                                    "                    var out=Ext.decode(response.responseText);",
+                                                    "                    console.log(out);",
+                                                    "",
+                                                    "                    if(out.success===\"true\")",
+                                                    "                        {",
+                                                    "                            var message=out.root;",
+                                                    "                            if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                                {",
+                                                    "                                    msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                                        var grd = Ext.ComponentQuery.query('#grdLoanSector')[0];",
+                                                    "",
+                                                    "                                        var record = grd.getSelectionModel().getSelection()[0];",
+                                                    "                                        record.set('Action','U');",
+                                                    "",
+                                                    "                                    });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                                }",
+                                                    "                            else",
+                                                    "                                {",
+                                                    "                                  msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                                }",
+                                                    "                        }",
+                                                    "                        else",
+                                                    "                            {",
+                                                    "                                msg(\"FAILURE\",out.message);",
+                                                    "                            }",
+                                                    "                    },",
+                                                    "                    failure: function ( result, request ) {",
+                                                    "                        waitSave.hide();",
+                                                    "                        var out=Ext.decode(response.responseText);",
+                                                    "                        msg(\"FAILURE\",out.message);",
+                                                    "                    }",
+                                                    "",
+                                                    "                });",
+                                                    ""
+                                                ],
+                                                "name": "validateedit",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onRowEditingValidateedit",
+                                            "designerId": "37a4829c-49c5-4f59-b240-2a128f38572f"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Sub Sector"
+                    },
+                    "configAlternates": {
+                        "title": "string"
+                    },
+                    "name": "MyPanel10",
+                    "designerId": "3555d0be-efc9-4511-81e5-b9572b4aeda5",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig1",
+                            "designerId": "f04b872d-d370-4f05-85fe-0fd4e89e01ad",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTabActivate",
+                                        "implHandler": [
+                                            "  var store=Ext.getStore('LoanSubSectorStore');",
+                                            "        store.removeAll();",
+                                            "",
+                                            "                Ext.Ajax.request({",
+                                            "                    url: '../Handlers/Finance/Maintenance/LoanSubSectorHandler.ashx',",
+                                            "                    params: {",
+                                            "                        method:'GetLoanSubSector'",
+                                            "                    },",
+                                            "                    success: function(response){",
+                                            "",
+                                            "                    var data=Ext.decode(response.responseText);",
+                                            "                    store.removeAll();",
+                                            "                    store.add(data.root);",
+                                            "                        console.log(data.root);",
+                                            "",
+                                            "",
+                                            "                }",
+                                            "                });",
+                                            ""
+                                        ],
+                                        "name": "activate",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onTabActivate",
+                                    "designerId": "4ab1dca3-6e35-4551-b1fa-d664d7329f37"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "grdLoanSubSector",
+                                "store": "LoanSubSectorStore"
+                            },
+                            "configAlternates": {
+                                "title": "string",
+                                "itemId": "string",
+                                "store": "store"
+                            },
+                            "name": "MyGridPanel4",
+                            "designerId": "874d60f9-aba2-4c8a-847b-81c6fa562b30",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView3",
+                                    "designerId": "d91a6ae7-a718-4b11-a93b-e0bd48210745"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "bottom"
+                                    },
+                                    "configAlternates": {
+                                        "dock": "string"
+                                    },
+                                    "name": "MyToolbar8",
+                                    "designerId": "70aab8f1-e46e-4b01-bf04-8feee560273f",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "btnLoanSubSector",
+                                                "layout|flex": null,
+                                                "text": "Add Sub Sector"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string",
+                                                "layout|flex": "number",
+                                                "text": "string"
+                                            },
+                                            "name": "MyButton14",
+                                            "designerId": "41733377-6cd5-4e8a-8b6f-abee0f3e314f"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "LoanSubSectorCode",
+                                        "text": "LoanSubSectorCode",
+                                        "width": 150
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn86",
+                                    "designerId": "6df84012-b2b3-4c17-843d-00432b7173aa",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanSubSectorCode"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField141",
+                                            "designerId": "a0a441f5-50d9-4155-8595-8bfcd6b72c71"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "LoanSubSectorDesc",
+                                        "text": "LoanSubSectorDesc",
+                                        "width": 250
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn87",
+                                    "designerId": "e45cd2f1-ea41-4295-9b32-83165b385cd5",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanSubSectorDesc"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField142",
+                                            "designerId": "d103f6c4-fec1-44da-8bc4-093e6d2467f4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "LoanSectorCode",
+                                        "text": "LoanSectorCode"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn88",
+                                    "designerId": "357a0488-8449-4132-b7e7-1593e8f87698",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanSSectorCode"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField143",
+                                            "designerId": "809321b5-4df0-482e-9d4b-4777106c4642"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "LoanSectorDesc",
+                                        "text": "LoanSectorDesc",
+                                        "width": 200
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn89",
+                                    "designerId": "41e06048-4d35-4607-8770-e65f50395959",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanSSectorDesc"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField144",
+                                            "designerId": "b2488e50-df4b-4923-9f22-4118d5493268"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Action",
+                                        "text": "Action"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn90",
+                                    "designerId": "463878f1-5ea4-4d38-8485-6a2935eaf597",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtAction"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField145",
+                                            "designerId": "33ff5890-3d41-4a1b-8567-6db5baf38dbb"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Action",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumn14",
+                                    "designerId": "50a335d8-0f61-49a9-b626-af36cd0a36fe",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var store = Ext.getStore('LoanSubSectorStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#grdLoanSubSector')[0];",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the LoanSubSector ?', function(btn) {",
+                                                    "                                                    if(btn == 'yes'){",
+                                                    "                                                        var objloanSector={",
+                                                    "                                                            LoanSectorCode:row.LoanSectorCode,",
+                                                    "                                                            LoanSubSectorCode:row.LoanSubSectorCode,",
+                                                    "                                                            LoanSubSectorDesc:row.LoanSubSectorDesc,",
+                                                    "                                                            Action:'D'",
+                                                    "                                                        };",
+                                                    "",
+                                                    "                                                        var wMsg='Deleting....';",
+                                                    "                                                        var waitSave = watiMsg(wMsg);",
+                                                    "                                                        Ext.Ajax.request({",
+                                                    "                                                            url: '../Handlers/Finance/Maintenance/LoanSubSectorHandler.ashx',",
+                                                    "                                                            params: {",
+                                                    "                                                                method:'SaveLoanSubSector',",
+                                                    "                                                                loanSubSector:JSON.stringify(objloanSector)",
+                                                    "                                                            },",
+                                                    "                                                            success: function(response){",
+                                                    "                                                                waitSave.hide();",
+                                                    "                                                                var out=Ext.decode(response.responseText);",
+                                                    "                                                                if(out.success===\"true\")",
+                                                    "                                                                {",
+                                                    "                                                                    var message=out.root;",
+                                                    "                                                                    if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                                                                    {",
+                                                    "                                                                        msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                                                                            grd.bindStore(store);",
+                                                    "                                                                            store.removeAt(rowIndex);",
+                                                    "                                                                        });",
+                                                    "                                                                    }",
+                                                    "                                                                    else",
+                                                    "                                                                    {",
+                                                    "                                                                        msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                                                                    }",
+                                                    "                                                                }",
+                                                    "                                                                else",
+                                                    "                                                                {",
+                                                    "                                                                    msg(\"FAILURE\",out.message);",
+                                                    "                                                                }",
+                                                    "                                                            },",
+                                                    "                                                            failure: function ( result, request ) {",
+                                                    "                                                                waitSave.hide();",
+                                                    "                                                                var out=Ext.decode(response.responseText);",
+                                                    "                                                                msg(\"FAILURE\",out.message);",
+                                                    "                                                            }",
+                                                    "                                                        });",
+                                                    "",
+                                                    "                                                        return true;",
+                                                    "                                                    }",
+                                                    "                                                });"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "afcb1bb2-de58-41a1-b201-cce5bf25eeb3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.RowEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.RowEditing",
+                                    "name": "MyRowEditingPlugin13",
+                                    "designerId": "1da32a22-b626-459a-9412-8c1e758cbd82",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onRowEditingValidateedit1",
+                                                "implHandler": [
+                                                    "var errMsg='';",
+                                                    "var loanSubSectorCode=Ext.ComponentQuery.query('#txtLoanSubSectorCode')[0];",
+                                                    "var loanSubSectorDesc=Ext.ComponentQuery.query('#txtLoanSubSectorDesc')[0];",
+                                                    "var loanSectorCode=Ext.ComponentQuery.query('#txtLoanSSectorCode')[0];",
+                                                    "var loanSectorDesc=Ext.ComponentQuery.query('#txtLoanSSectorDesc')[0];",
+                                                    "var action =Ext.ComponentQuery.query('#txtAction')[0];",
+                                                    "",
+                                                    "         var objLoanSubSector={",
+                                                    "                    LoanSubSectorCode:loanSubSectorCode.getValue(),",
+                                                    "                    LoanSubSectorDesc:loanSubSectorDesc.getValue(),",
+                                                    "                    LoanSectorCode:loanSectorCode.getValue(),",
+                                                    "                    LoanSectorDesc:loanSectorDesc.getValue(),",
+                                                    "                    Action:action.getValue()",
+                                                    "",
+                                                    "                   };",
+                                                    "",
+                                                    "        var wMsg='';",
+                                                    "        if(action.getValue()==='I')",
+                                                    "            {",
+                                                    "                wMsg='Inserting....';",
+                                                    "            }",
+                                                    "        else",
+                                                    "            {",
+                                                    "                wMsg='Updting....';",
+                                                    "            }",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "                   url: '../Handlers/Finance/Maintenance/LoanSubSectorHandler.ashx',",
+                                                    "                   params: {",
+                                                    "                        method:'SaveLoanSubSector',",
+                                                    "                        loanSubSector:JSON.stringify(objLoanSubSector)",
+                                                    "                    },",
+                                                    "                    success: function(response){",
+                                                    "                    waitSave.hide();",
+                                                    "                    var out=Ext.decode(response.responseText);",
+                                                    "                    console.log(out);",
+                                                    "",
+                                                    "                    if(out.success===\"true\")",
+                                                    "                        {",
+                                                    "                            var message=out.root;",
+                                                    "                            if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                                {",
+                                                    "                                    msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                                        var grd = Ext.ComponentQuery.query('#grdLoanSubSector')[0];",
+                                                    "",
+                                                    "                                        var record = grd.getSelectionModel().getSelection()[0];",
+                                                    "                                        record.set('Action','U');",
+                                                    "",
+                                                    "                                    });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                                }",
+                                                    "                            else",
+                                                    "                                {",
+                                                    "                                  msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                                }",
+                                                    "                        }",
+                                                    "                        else",
+                                                    "                            {",
+                                                    "                                msg(\"FAILURE\",out.message);",
+                                                    "                            }",
+                                                    "                    },",
+                                                    "                    failure: function ( result, request ) {",
+                                                    "                        waitSave.hide();",
+                                                    "                        var out=Ext.decode(response.responseText);",
+                                                    "                        msg(\"FAILURE\",out.message);",
+                                                    "                    }",
+                                                    "",
+                                                    "                });",
+                                                    ""
+                                                ],
+                                                "name": "validateedit",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onRowEditingValidateedit1",
+                                            "designerId": "fb0f695d-9f5d-47de-8083-639d1c645783"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Purpose"
+                    },
+                    "configAlternates": {
+                        "title": "string"
+                    },
+                    "name": "MyPanel21",
+                    "designerId": "22907039-38e7-4e45-b6bf-bd7427633a3e",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig1",
+                            "designerId": "af779759-6b31-4bb9-96c4-f37b75ad95c1",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTabActivate1",
+                                        "implHandler": [
+                                            "  var store=Ext.getStore('LoanPurposeStore');",
+                                            "        store.removeAll();",
+                                            "",
+                                            "                Ext.Ajax.request({",
+                                            "                    url: '../Handlers/Finance/Maintenance/LoanPurposeHandler.ashx',",
+                                            "                    params: {",
+                                            "                        method:'GetLoanPurpose'",
+                                            "                    },",
+                                            "                    success: function(response){",
+                                            "",
+                                            "                    var data=Ext.decode(response.responseText);",
+                                            "                    store.removeAll();",
+                                            "                    store.add(data.root);",
+                                            "                        console.log(data.root);",
+                                            "",
+                                            "",
+                                            "                }",
+                                            "                });",
+                                            ""
+                                        ],
+                                        "name": "activate",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onTabActivate1",
+                                    "designerId": "4883d909-4c40-42fa-a575-2df1ab99f34f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "grdLoanSubSector",
+                                "store": "LoanPurposeStore"
+                            },
+                            "configAlternates": {
+                                "title": "string",
+                                "itemId": "string",
+                                "store": "store"
+                            },
+                            "name": "MyGridPanel4",
+                            "designerId": "67bc4c17-9051-4d90-9ebc-d15059f5fc14",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView3",
+                                    "designerId": "824bb5e0-8a26-431a-a265-b1bc39b3cdf9"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "bottom"
+                                    },
+                                    "configAlternates": {
+                                        "dock": "string"
+                                    },
+                                    "name": "MyToolbar8",
+                                    "designerId": "3ca9df8b-d23b-4b52-9940-f6ccd50dce89",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "btnLoanPurpose",
+                                                "layout|flex": null,
+                                                "text": "Add Loan Purpose"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string",
+                                                "layout|flex": "number",
+                                                "text": "string"
+                                            },
+                                            "name": "MyButton14",
+                                            "designerId": "a27631ca-077a-4279-aad7-bdeafede98c1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.RowEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.RowEditing",
+                                    "name": "MyRowEditingPlugin13",
+                                    "designerId": "33b55fd3-a601-4759-9548-dd8117bcbace",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onRowEditingValidateedit2",
+                                                "implHandler": [
+                                                    "var errMsg='';",
+                                                    "var loanPurposeCode=Ext.ComponentQuery.query('#txtLoanPurposeCode')[0];",
+                                                    "var loanPurposeDesc=Ext.ComponentQuery.query('#txtLoanPurposeDesc')[0];",
+                                                    "var loanSubSectorCode=Ext.ComponentQuery.query('#txtLoanSubSectorCode')[0];",
+                                                    "var loanSubSectorDesc=Ext.ComponentQuery.query('#txtLoanSubSectorDesc')[0];",
+                                                    "var cibCode=Ext.ComponentQuery.query('#txtCibCode')[0];",
+                                                    "",
+                                                    "",
+                                                    "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                                    "",
+                                                    "         var objLoanPurpose={",
+                                                    "                    LoanPurposeCode:loanPurposeCode.getValue(),",
+                                                    "                    LoanPurposeDesc:loanPurposeDesc.getValue(),",
+                                                    "                    SubSectorCode:loanSubSectorCode.getValue(),",
+                                                    "                    SubSectorDesc:loanSubSectorDesc.getValue(),",
+                                                    "                    CibCode:cibCode.getValue(),",
+                                                    "                    Action:action.getValue()",
+                                                    "",
+                                                    "                   };",
+                                                    "",
+                                                    "        var wMsg='';",
+                                                    "        if(action.getValue()==='I')",
+                                                    "            {",
+                                                    "                wMsg='Inserting....';",
+                                                    "            }",
+                                                    "        else",
+                                                    "            {",
+                                                    "                wMsg='Updting....';",
+                                                    "            }",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "                   url: '../Handlers/Finance/Maintenance/LoanPurposeHandler.ashx',",
+                                                    "                   params: {",
+                                                    "                        method:'SaveLoanPurpose',",
+                                                    "                        loanPurpose:JSON.stringify(objLoanPurpose)",
+                                                    "                    },",
+                                                    "                    success: function(response){",
+                                                    "                    waitSave.hide();",
+                                                    "                    var out=Ext.decode(response.responseText);",
+                                                    "                    console.log(out);",
+                                                    "",
+                                                    "                    if(out.success===\"true\")",
+                                                    "                        {",
+                                                    "                            var message=out.root;",
+                                                    "                            if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                                {",
+                                                    "                                    msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                                        var grd = Ext.ComponentQuery.query('#grdLoanSector')[0];",
+                                                    "",
+                                                    "                                        var record = grd.getSelectionModel().getSelection()[0];",
+                                                    "                                        record.set('Action','U');",
+                                                    "",
+                                                    "                                    });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                                }",
+                                                    "                            else",
+                                                    "                                {",
+                                                    "                                  msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                                }",
+                                                    "                        }",
+                                                    "                        else",
+                                                    "                            {",
+                                                    "                                msg(\"FAILURE\",out.message);",
+                                                    "                            }",
+                                                    "                    },",
+                                                    "                    failure: function ( result, request ) {",
+                                                    "                        waitSave.hide();",
+                                                    "                        var out=Ext.decode(response.responseText);",
+                                                    "                        msg(\"FAILURE\",out.message);",
+                                                    "                    }",
+                                                    "",
+                                                    "                });",
+                                                    ""
+                                                ],
+                                                "name": "validateedit",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onRowEditingValidateedit2",
+                                            "designerId": "5c1974ad-bc9d-4310-9367-c93498b43d52"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "LoanPurposeCode",
+                                        "text": "LoanPurposeCode"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn71",
+                                    "designerId": "bdf5e85a-4006-48f3-928f-f7e9c72a4ebe",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanPurposeCode"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField146",
+                                            "designerId": "bb0487c2-0f96-4bfe-93c5-228b259ddc11"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "LoanPurposeDesc",
+                                        "text": "LoanPurposeDesc",
+                                        "width": 200
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn80",
+                                    "designerId": "a16f5a67-28d0-45d5-8618-940783a54217",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanPurposeDesc"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField147",
+                                            "designerId": "17e9427a-b23d-4311-87f7-21b5e0d02799"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "SubSectorCode",
+                                        "text": "SubSectorCode"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn84",
+                                    "designerId": "8b462acf-3c28-4f54-8e60-2d76c9b53e7f",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanSubSectorCode"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField148",
+                                            "designerId": "3213cc50-ac0a-4d94-865f-221eb2076151"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "SubSectorDesc",
+                                        "text": "SubSectorDesc",
+                                        "width": 250
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn85",
+                                    "designerId": "18f99449-58d8-4715-a779-c2d0c57164d0",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanSubSectorDesc"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField149",
+                                            "designerId": "7901a3fc-f32a-4dd1-b291-17d6f862508a"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "CibCode",
+                                        "text": "CibCode"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn91",
+                                    "designerId": "b6e0e275-e633-47c6-9ba1-fe8bb72a6119",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtCibCode"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField150",
+                                            "designerId": "8fa7b8dc-ec3e-407f-a42e-604abcad3745"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Action",
+                                        "text": "Action"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn92",
+                                    "designerId": "c3a9c360-28f4-4080-99dc-2023610fb2f8",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtAction"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField151",
+                                            "designerId": "c84628ba-39aa-4c2f-a503-ccb85fe1c20a"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Action",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumn15",
+                                    "designerId": "ac30e5f1-9e9f-40c9-880f-dea5a8798c81",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var store = Ext.getStore('LoanPurposeStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#grdUserRole')[0];",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the Loan Purpose ?', function(btn) {",
+                                                    "    if(btn == 'yes'){",
+                                                    "        var roleUser={",
+                                                    "            LoanPurposeCode:row.LoanPurposeCode,",
+                                                    "            LoanPurposeDesc:row.LoanPurposeDesc,",
+                                                    "            SubSectorCode:row.DefaSubSectorCodeultModule,",
+                                                    "            CibCode:row.CibCode,",
+                                                    "            Action:'D'",
+                                                    "        };",
+                                                    "",
+                                                    "                                                        var wMsg='Deleting....';",
+                                                    "                                                        var waitSave = watiMsg(wMsg);",
+                                                    "                                                        Ext.Ajax.request({",
+                                                    "                                                            url: '../Handlers/Security/Role/UserRoleHandler.ashx',",
+                                                    "                                                            params: {",
+                                                    "                                                                method:'SaveUserRoles',",
+                                                    "                                                                userRoles:JSON.stringify(roleUser)",
+                                                    "                                                            },",
+                                                    "                                                            success: function(response){",
+                                                    "                                                                waitSave.hide();",
+                                                    "                                                                var out=Ext.decode(response.responseText);",
+                                                    "                                                                if(out.success===\"true\")",
+                                                    "                                                                {",
+                                                    "                                                                    var message=out.root;",
+                                                    "                                                                    if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                                                                    {",
+                                                    "                                                                        msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                                                                            grd.bindStore(store);",
+                                                    "                                                                            store.removeAt(rowIndex);",
+                                                    "                                                                        });",
+                                                    "                                                                    }",
+                                                    "                                                                    else",
+                                                    "                                                                    {",
+                                                    "                                                                        msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                                                                    }",
+                                                    "                                                                }",
+                                                    "                                                                else",
+                                                    "                                                                {",
+                                                    "                                                                    msg(\"FAILURE\",out.message);",
+                                                    "                                                                }",
+                                                    "                                                            },",
+                                                    "                                                            failure: function ( result, request ) {",
+                                                    "                                                                waitSave.hide();",
+                                                    "                                                                var out=Ext.decode(response.responseText);",
+                                                    "                                                                msg(\"FAILURE\",out.message);",
+                                                    "                                                            }",
+                                                    "                                                        });",
+                                                    "",
+                                                    "                                                        return true;",
+                                                    "                                                    }",
+                                                    "                                                });"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "01314a80-d4ba-40cc-b028-b60465105926"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Loan Product Purpose"
+                    },
+                    "configAlternates": {
+                        "title": "string"
+                    },
+                    "name": "MyPanel11",
+                    "designerId": "74d2d132-8bca-40c9-a242-c3b70b4f6e3e",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig1",
+                            "designerId": "9d9515e3-856a-4f03-9c4f-7a262ca423a9",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTabActivate2",
+                                        "implHandler": [
+                                            "var store=Ext.getStore('LoanProductPurposeStore');",
+                                            "var loanProductCode='1';",
+                                            "        store.removeAll();",
+                                            "",
+                                            "                Ext.Ajax.request({",
+                                            "                    url: '../Handlers/Finance/Maintenance/LoanPurposeProductsHandler.ashx?method=GetLoanPurposeProducts',",
+                                            "                    params: {",
+                                            "                        LoanProductCode:loanProductCode",
+                                            "",
+                                            "                    },",
+                                            "                    success: function(response){",
+                                            "",
+                                            "                    var data=Ext.decode(response.responseText);",
+                                            "                    store.removeAll();",
+                                            "                    store.add(data.root);",
+                                            "                        console.log(data.root);",
+                                            "",
+                                            "                }",
+                                            "                });",
+                                            ""
+                                        ],
+                                        "name": "activate",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onTabActivate2",
+                                    "designerId": "91ff2201-7c12-4243-8cd1-ba0fdc6c0fff"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Loan Product"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string"
+                            },
+                            "name": "MyTextField152",
+                            "designerId": "d6656930-0081-4501-9858-ffc27325d6e5"
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "grdLoanProductPurpose",
+                                "store": "LoanProductPurposeStore"
+                            },
+                            "configAlternates": {
+                                "title": "string",
+                                "itemId": "string",
+                                "store": "store"
+                            },
+                            "name": "MyGridPanel4",
+                            "designerId": "14da985b-dceb-4fda-a7e3-a15e89e8bcec",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView3",
+                                    "designerId": "3be86165-fa9c-4a11-8d74-083edab2e2d4"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "bottom"
+                                    },
+                                    "configAlternates": {
+                                        "dock": "string"
+                                    },
+                                    "name": "MyToolbar8",
+                                    "designerId": "913abc26-8083-45c4-85c0-a95283587e42",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "btnProductPurpose",
+                                                "layout|flex": null,
+                                                "text": "Add Product Purpose"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string",
+                                                "layout|flex": "number",
+                                                "text": "string"
+                                            },
+                                            "name": "MyButton14",
+                                            "designerId": "1d52ed3c-a74d-49e0-a63d-4d1e8cdf7874"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.RowEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.RowEditing",
+                                    "name": "MyRowEditingPlugin13",
+                                    "designerId": "990c3251-12f6-4776-bb83-651c1da08b3e",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onRowEditingValidateedit3",
+                                                "implHandler": [
+                                                    "var errMsg='';",
+                                                    "var loanPurposeCode=Ext.ComponentQuery.query('#txtLoanPCode')[0];",
+                                                    "var loanProductDesc=Ext.ComponentQuery.query('#txtLoanPDesc')[0];",
+                                                    "var interestRate=Ext.ComponentQuery.query('#txtInterestRate')[0];",
+                                                    "var minLoanAmount=Ext.ComponentQuery.query('#txtMinLoanAmount')[0];",
+                                                    "var maxLoanAmount=Ext.ComponentQuery.query('#txtMaxLoanAmount')[0];",
+                                                    "var maxLongTermMonth=Ext.ComponentQuery.query('#txtMaxLongTermMonth')[0];",
+                                                    "//var noOfAccountOpen=Ext.ComponentQuery.query('#chkNoOfAccOpen')[0];",
+                                                    "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                                    "",
+                                                    "         var objLoanProducts={",
+                                                    "                    LoanPurposeCode:loanPurposeCode.getValue(),",
+                                                    "                    LoanProductCode:loanPurposeCode.getValue(),",
+                                                    "                    InterestRate:interestRate.getValue(),",
+                                                    "                    MinLoanAmount:minLoanAmount.getValue(),",
+                                                    "                    MaxLoanAmount:maxLoanAmount.getValue(),",
+                                                    "                    MinLoanTermsMonths:'1',",
+                                                    "                    MaxLoanTermsMonths:'10',",
+                                                    "                    NoOfAccountOpen:'1',",
+                                                    "                    Active:'Y',",
+                                                    "                    Action:action.getValue()",
+                                                    "",
+                                                    "                   };",
+                                                    "",
+                                                    "        var wMsg='';",
+                                                    "        if(action.getValue()==='I')",
+                                                    "            {",
+                                                    "                wMsg='Inserting....';",
+                                                    "            }",
+                                                    "        else",
+                                                    "            {",
+                                                    "                wMsg='Updting....';",
+                                                    "            }",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "                   url: '../Handlers/Finance/Maintenance/LoanPurposeProductsHandler.ashx',",
+                                                    "                   params: {",
+                                                    "                        method:'SaveLoanPurposeProducts',",
+                                                    "                        loanPurposeProducts:JSON.stringify(objLoanProducts)",
+                                                    "                    },",
+                                                    "                    success: function(response){",
+                                                    "                    waitSave.hide();",
+                                                    "                    var out=Ext.decode(response.responseText);",
+                                                    "                    console.log(out);",
+                                                    "",
+                                                    "                    if(out.success===\"true\")",
+                                                    "                        {",
+                                                    "                            var message=out.root;",
+                                                    "                            if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                                {",
+                                                    "                                    msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                                        var grd = Ext.ComponentQuery.query('#grdLoanProductPurpose')[0];",
+                                                    "",
+                                                    "                                        var record = grd.getSelectionModel().getSelection()[0];",
+                                                    "                                        record.set('Action','U');",
+                                                    "",
+                                                    "                                    });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                                }",
+                                                    "                            else",
+                                                    "                                {",
+                                                    "                                  msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                                }",
+                                                    "                        }",
+                                                    "                        else",
+                                                    "                            {",
+                                                    "                                msg(\"FAILURE\",out.message);",
+                                                    "                            }",
+                                                    "                    },",
+                                                    "                    failure: function ( result, request ) {",
+                                                    "                        waitSave.hide();",
+                                                    "                        var out=Ext.decode(response.responseText);",
+                                                    "                        msg(\"FAILURE\",out.message);",
+                                                    "                    }",
+                                                    "",
+                                                    "                });",
+                                                    ""
+                                                ],
+                                                "name": "validateedit",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onRowEditingValidateedit3",
+                                            "designerId": "23f4df63-527b-46cc-9b39-4fd82538ce38"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "LoanPurposeCode",
+                                        "text": "LoanPurposeCode"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn101",
+                                    "designerId": "0c9ffd45-0df6-41bf-9d6d-278fc0aacda3",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanPCode"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField153",
+                                            "designerId": "546b05b6-ba35-484a-b5eb-0b804e6e5584"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "LoanPurposeDesc",
+                                        "text": "LoanPurposeDesc"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn102",
+                                    "designerId": "e604cf69-4cd0-449b-9c88-09d4162b99ed",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtLoanPDesc"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField154",
+                                            "designerId": "5bd29a3f-7b4e-4652-8181-d881469cac62"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "InterestRate",
+                                        "text": "InterestRate"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn103",
+                                    "designerId": "3fc7b3e9-63fb-4b6d-82e3-f1d86c98135e",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtInterestRate"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField155",
+                                            "designerId": "7a675496-4af8-4022-ba42-836acd1b99bb"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "MinLoanAmount",
+                                        "text": "MinLoanAmount"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn104",
+                                    "designerId": "25c55905-a581-4f40-b11b-be2b2a9cc7bf",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtMinLoanAmount"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField156",
+                                            "designerId": "69321cc2-8031-4f47-a8e5-c5f33839a516"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "MaximumLoanAmount",
+                                        "text": "MaximumLoanAmount"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn105",
+                                    "designerId": "d2fd7150-6dca-4a94-9f22-2e869f164b26",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtMaxLoanAmount"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField157",
+                                            "designerId": "6733c8d1-e68e-4545-9f19-7e57a991a92a"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "MaxLongTermMonths",
+                                        "text": "MaxLongTermMonths"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn106",
+                                    "designerId": "9fa753a6-9519-4a7d-b5f8-dac464da7243",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtMaxLongTermMonth"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField158",
+                                            "designerId": "b30fe1b6-aabf-407e-a7b1-cc25ed47b9b2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "NoOfAccountOpen",
+                                        "text": "NoOfAccountOpen"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn107",
+                                    "designerId": "2cdf27ec-ec49-4c7d-9502-5b83ed7eddd2",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "chkNoOfAccOpen"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyCheckbox19",
+                                            "designerId": "c1bb06eb-33ad-4cbb-9193-abc21f127526"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Action",
+                                        "text": "Action"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn108",
+                                    "designerId": "09ff1cd6-7a19-4440-8f77-d490e03aef11",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtAction"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField159",
+                                            "designerId": "c72f0173-fa8d-48c0-8190-a9f413caeab3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Action",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumn16",
+                                    "designerId": "8e949e07-1637-4585-b014-2b6c9b3e81f4",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "  var store = Ext.getStore('LoanProductPurposeStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#grdLoanProductPurpose')[0];",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the Loan Product Purpose ?', function(btn) {",
+                                                    "    if(btn == 'yes'){",
+                                                    "        var objLoanProductPurpose={",
+                                                    "            LoanPurposeCode:row.LoanPurposeCode,",
+                                                    "            LoanPurposeDesc:row.LoanPurposeDesc,",
+                                                    "            InterestRate:row.InterestRate,",
+                                                    "            MinLoanAmount:row.MinLoanAmount,",
+                                                    "            MaximumLoanAmount:row.MaximumLoanAmount,",
+                                                    "            MaxLongTermMonths:row.MaxLongTermMonths,",
+                                                    "            Action:'D'",
+                                                    "        };",
+                                                    "",
+                                                    "        var wMsg='Deleting....';",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "        Ext.Ajax.request({",
+                                                    "            url: '../Handlers/Finance/Maintenance/LoanSubSectorHandler.ashx',",
+                                                    "            params: {",
+                                                    "            method:'SaveLoanPurposeProducts',",
+                                                    "            loanPurposeProducts:JSON.stringify(objLoanProductPurpose)",
+                                                    "            },",
+                                                    "            success: function(response){",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                if(out.success===\"true\")",
+                                                    "                {",
+                                                    "                    var message=out.root;",
+                                                    "                    if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                    {",
+                                                    "                        msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                            grd.bindStore(store);",
+                                                    "",
+                                                    "                            store.removeAt(rowIndex);",
+                                                    "                        });",
+                                                    "                    }",
+                                                    "                    else",
+                                                    "                    {",
+                                                    "                        msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                    }",
+                                                    "                }",
+                                                    "                else",
+                                                    "                {",
+                                                    "                    msg(\"FAILURE\",out.message);",
+                                                    "                }",
+                                                    "            },",
+                                                    "            failure: function ( result, request ) {",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                msg(\"FAILURE\",out.message);",
+                                                    "            }",
+                                                    "        });",
+                                                    "",
+                                                    "                                                        return true;",
+                                                    "                                                    }",
+                                                    "                                                });",
+                                                    ""
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "4a359fb0-d081-47bc-bce1-f0d6351818c9"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

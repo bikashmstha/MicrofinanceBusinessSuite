@@ -1,0 +1,57 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "ApplicationWithUnverifiedModules",
+        "model": "ApplicationWithUnverifiedModules",
+        "storeId": "ApplicationWithUnverifiedModules"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "5eece3ae-1b62-408f-828b-7cc88d93eb47",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "../Handlers/Security/ApplicationHandler.ashx?method=GetApplicationsWithUnverifiedModules"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy100",
+            "designerId": "67ec07f2-fcfa-4285-83b7-47c81c83c159",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyJsonReader81",
+                    "designerId": "0aa4f325-41f5-495d-9d41-820b01c88198"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "    {",
+            "        \"countryName\": \"Nepal\",",
+            "        \"CountryId\": \"1\"",
+            "    },",
+            "    {",
+            "        \"countryName\": \"China\",",
+            "        \"CountryId\": \"2\"",
+            "    },",
+            "    {",
+            "        \"countryName\": \"India\",",
+            "        \"CountryId\": \"3\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "TestStore",
+        "storeId": "TestStore"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "0d57939e-a0bd-41b5-8b7e-9d808ffea0c6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy1",
+            "designerId": "a82351c2-de5e-4166-a78a-fbd50ce081fa",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader1",
+                    "designerId": "04a0a667-cac7-4f0f-a5a8-3b0c4d09ae20"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "countryName"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField2",
+            "designerId": "0f726d0f-3c69-4601-b578-7f0505d97123"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "CountryId"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField3",
+            "designerId": "fda7f370-32f6-4b92-9f67-e14f28629530"
+        }
+    ]
+}

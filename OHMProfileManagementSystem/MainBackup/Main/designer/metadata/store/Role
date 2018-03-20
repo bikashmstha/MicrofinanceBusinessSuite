@@ -1,0 +1,55 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Role",
+        "model": "Role",
+        "storeId": "Role"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "f44b8c34-744c-41ef-b547-f87cb0ebea54",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": null
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy10",
+            "designerId": "0ec93544-fbae-4384-b17f-59d1df21a15d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyJsonReader10",
+                    "designerId": "f9190800-f57e-4635-a801-2d869ea0f640"
+                }
+            ]
+        }
+    ]
+}

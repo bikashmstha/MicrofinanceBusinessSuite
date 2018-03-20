@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CollectionSheetMasterOnlineStore",
+        "model": "CollectionSheetMasterOnline",
+        "storeId": "CollectionSheetMasterOnlineStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore2",
+    "designerId": "c37a5348-13be-4034-84b2-60c9f9235745",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy60",
+            "designerId": "45c61514-2f5a-45f0-a4a5-92332e4e31f1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader60",
+                    "designerId": "83ef488b-5884-4efe-b18b-8259fb4960b0"
+                }
+            ]
+        }
+    ]
+}

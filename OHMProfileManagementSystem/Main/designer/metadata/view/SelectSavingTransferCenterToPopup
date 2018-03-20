@@ -1,0 +1,311 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SelectSavingTransferCenterToPopup",
+        "height": 500,
+        "itemId": "SelectSavingTransferCenterToPopup",
+        "maximizable": true,
+        "minimizable": true,
+        "modal": true,
+        "title": "Select Centers",
+        "width": 700
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "maximizable": "boolean",
+        "minimizable": "boolean",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "SelectSavingTransferCenterPopup1",
+    "designerId": "1ab382a5-11c5-4d9c-944f-fe6db14b8a30",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|columns": 2,
+                "layout": "table"
+            },
+            "configAlternates": {
+                "container|columns": "number",
+                "layout": "string"
+            },
+            "name": "MyContainer",
+            "designerId": "95d0fedc-eb8f-4088-899a-53f20ed98b97",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Search",
+                        "itemId": "txtSearchCenter"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "169fb194-1a34-4dea-b159-a3f239c26e65"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnSearchCenter",
+                        "text": "Search"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "62620e7a-b32a-47f6-9b23-2217f5420e81",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnSearchCenterClick",
+                                "implHandler": [
+                                    "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                                    "Ext.Ajax.request({",
+                                    "    url:'../Handlers/Finance/Transaction/EditTransaction/SavingTransferFromCenterHandler.ashx',",
+                                    "    params:{method:'GetSavTransferFrmCenter', OfficeCode:getOfficeCode(),",
+                                    "            CenterName:Ext.ComponentQuery.query('#txtSearchCenter')[0].getValue()",
+                                    "           },",
+                                    "    success: function ( result, request ) {",
+                                    "",
+                                    "        var obj = Ext.decode(result.responseText);",
+                                    "        if(obj.success === 'true'){",
+                                    "            //console.log(\"Resu\",obj.root);",
+                                    "            var store =Ext.getStore('CenterShortStore');",
+                                    "            store.removeAll();",
+                                    "            store.add(obj.root);",
+                                    "",
+                                    "",
+                                    "        }else{msg('FAILURE','Could Not Load Data');}",
+                                    "        waitSave.hide();",
+                                    "    },",
+                                    "    failure: function(form, action) {",
+                                    "        msg(\"FAILURE\",\"Could Not Load Data\");  waitSave.hide();  }",
+                                    "});",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnSearchCenterClick",
+                            "designerId": "c408de59-a0cc-4e34-af4d-5edbfd03858f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchCenter",
+                        "layout|colspan": 2,
+                        "store": "CenterShortStore",
+                        "title": "",
+                        "width": 606
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "store": "store",
+                        "title": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyGridPanel1",
+                    "designerId": "fa18242e-b473-4c82-97e8-38538e2abe23",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView1",
+                            "designerId": "50c2c558-7cf3-4358-91a0-8168ea2fd3a2"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel17",
+                            "designerId": "e06c7765-657b-45d1-8e15-db1a62ea67af",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "   if(btn === 'yes'){",
+                                            "",
+                                            "",
+                                            "       Ext.ComponentQuery.query('#txtSavingToCenterCode')[0].setValue(record.data.CenterCode);",
+                                            "       Ext.ComponentQuery.query('#txtSavingToCenterDesc')[0].setValue(record.data.CenterName);",
+                                            "",
+                                            "   }",
+                                            "",
+                                            "   else",
+                                            "   {",
+                                            "",
+                                            "   }",
+                                            "    var v=Ext.ComponentQuery.query('#SelectSavingTransferCenterToPopup')[0];",
+                                            "",
+                                            "    v.close();",
+                                            "});",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "0f88a1aa-c287-42ba-ad56-32557a65f3aa"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CenterCode",
+                                "text": "Center Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn258",
+                            "designerId": "3756677f-3b36-41c2-ae27-be7a4fb83ed9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CenterName",
+                                "text": "Center Name",
+                                "width": 245
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn267",
+                            "designerId": "7f52f50b-f06e-4212-83b4-ba5838eaed05"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSelectSavingTransferCenterToPopupAfterRender",
+                "implHandler": [
+                    "Ext.Ajax.request({",
+                    "    url:'../Handlers/Finance/Transaction/EditTransaction/SavingTransferFromCenterHandler.ashx',",
+                    "    params:{method:'GetSavTransferFrmCenter', OfficeCode:getOfficeCode(), CenterName:null",
+                    "           },",
+                    "    success: function ( result, request ) {",
+                    "",
+                    "        var obj = Ext.decode(result.responseText);",
+                    "        if(obj.success === 'true'){",
+                    "            //console.log(\"Resu\",obj.root);",
+                    "            var store =Ext.getStore('CenterShortStore');",
+                    "            store.removeAll();",
+                    "            store.add(obj.root);",
+                    "",
+                    "",
+                    "        }else{msg('FAILURE','Could Not Load Data');}",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "        msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                    "});",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onSelectSavingTransferCenterToPopupAfterRender",
+            "designerId": "a2b03688-dbd3-4a75-a08c-e5642771387f"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "AuthUpdatePKsStore",
+        "model": "AuthUpdatePKs",
+        "storeId": "AuthUpdatePKsStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "a0f10e72-5fe2-44f9-8a5e-5a17c0fcf75f",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "../Handlers/Common/AuthUpdate/AuthUpdatePKsHandler.ashx?method=GetAuthUpdatePKs"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy23",
+            "designerId": "eba754bd-0818-4a7f-94d5-f33b9fe2a4d6",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyJsonReader21",
+                    "designerId": "096fb9bb-3e1e-4e76-baee-2b7609f5655d"
+                }
+            ]
+        }
+    ]
+}

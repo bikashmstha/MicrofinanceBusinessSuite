@@ -1,0 +1,312 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectMemberForCheque",
+        "height": 500,
+        "itemId": "SelectMemberForCheque",
+        "maximizable": true,
+        "minimizable": true,
+        "modal": true,
+        "resizable": [
+            "false"
+        ],
+        "title": "Select Member For Cheque",
+        "width": 700
+    },
+    "configAlternates": {
+        "autoScroll": "boolean",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "maximizable": "boolean",
+        "minimizable": "boolean",
+        "modal": "boolean",
+        "resizable": "object",
+        "title": "string",
+        "width": "auto",
+        "y": "number",
+        "itemId": "string"
+    },
+    "name": "MyWindow",
+    "designerId": "f1ecbe5e-ed8b-460a-abdf-b3d658543b26",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyContainer3",
+            "designerId": "50e48e55-888e-4da3-9b4d-2c79f7ef407a",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnMemberForChequeSearch",
+                        "padding": 5,
+                        "text": "Search"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "padding": "auto",
+                        "text": "string"
+                    },
+                    "name": "MyButton50",
+                    "designerId": "32cb10c2-6b8e-4a14-9021-74d7248959e4",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnMemberForChequeSearchClick",
+                                "implHandler": [
+                                    "var offCode=Ext.ComponentQuery.query('#ddlOffice')[0].getValue();",
+                                    "var centerCode=Ext.ComponentQuery.query('#ddlCenter')[0].getValue();",
+                                    "var memberName=null;//Ext.ComponentQuery.query('#ddlOffCode')[0].getValue();",
+                                    "",
+                                    "var store=Ext.getStore('MemberForChequeStore');",
+                                    "store.removeAll();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/Finance/Transaction/SavingTransaction/MemberForChequeHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetMemberForCheque',",
+                                    "        offCode:offCode,",
+                                    "        centerCode:centerCode,",
+                                    "        memberName:memberName",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "    store.removeAll();",
+                                    "    store.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnMemberForChequeSearchClick",
+                            "designerId": "a01fbff4-4910-40ad-9c82-d0bd9a525eee"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyContainer4",
+            "designerId": "5a6b6176-f139-40b8-9677-984c833cffd4",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdMemberForCheque",
+                        "store": "MemberForChequeStore",
+                        "title": "Members"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "store": "store",
+                        "title": "string"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "5bae56a2-2317-4452-8161-86d8bab746cd",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "728cdbde-8c6a-493c-942e-c210cfd68bac"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ClientCode",
+                                "text": "Client Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn1",
+                            "designerId": "fcf1f6b4-13cf-4db1-963f-fce1efdaf347"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ClientName",
+                                "text": "Client Name",
+                                "width": 194
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn2",
+                            "designerId": "0c91a8ca-086c-4efd-821e-046b18b85cd8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CenterCode",
+                                "text": "Center Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn3",
+                            "designerId": "2fc175e6-ac53-45ee-b0f8-f7aeece8ebd1"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CenterName",
+                                "text": "Center Name"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn4",
+                            "designerId": "d04190a8-6b2f-47cf-bdc5-4cda2dacbcd9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ClientNo",
+                                "text": "Client No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn5",
+                            "designerId": "2aaab6fc-059d-41da-a316-736d3eef80de"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel",
+                            "designerId": "bd2c4987-fc99-4c53-97de-5d26f2d46f7f",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "    if(btn === 'yes'){",
+                                            "        console.log('record',record);",
+                                            "",
+                                            "        Ext.ComponentQuery.query('#txtMemberCode')[0].setValue(record.data.ClientNo);",
+                                            "        Ext.ComponentQuery.query('#txtMemberName')[0].setValue(record.data.ClientName);",
+                                            "",
+                                            "",
+                                            "        // return true;",
+                                            "    }",
+                                            "    else",
+                                            "    {",
+                                            "",
+                                            "    }",
+                                            "    var v=Ext.ComponentQuery.query('#SelectMemberForCheque')[0];",
+                                            "",
+                                            "    v.close();",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "c92750cc-3cbb-46eb-a0a3-056ec5bfae6d"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

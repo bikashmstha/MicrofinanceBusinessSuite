@@ -1,0 +1,402 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectStaffLoanAddDisburseLoanNumberPopup",
+        "height": 500,
+        "itemId": "SelectStaffLoanAddDisburseLoanNumberPopup",
+        "title": "Select Loan No",
+        "width": 800
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string",
+        "autoScroll": "boolean",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "SelectStaffLoanRepaymentLoanNumberPopup1",
+    "designerId": "2f9e9d79-2a2a-401e-91cd-70406dc6e07a",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "frame": true,
+                "itemId": "frmSelectStaffLoanRepaymentLoanNumberPopup"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string",
+                "itemId": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyForm2",
+            "designerId": "2ce28ad2-c178-47b5-8dad-ccd6be39c2c2",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "5e09e187-fb86-4e23-a4bc-94950773e96e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Search ACC No.",
+                                "itemId": "txtSeachLoanNumber"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField55",
+                            "designerId": "f9737f46-721c-4c73-9a76-b411b44735ad"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnSearchLoanNumber",
+                                "layout|colspan": 2,
+                                "margin": "0 0 0 5",
+                                "text": "Search"
+                            },
+                            "configAlternates": {
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "text": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "5f2c9b9a-3f45-414e-a1ab-d6c2e61b67df",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSearchSavingAccountNumberClick",
+                                        "implHandler": [
+                                            "var productcode=Ext.ComponentQuery.query('#ddlLoanProduct')[0].getValue();",
+                                            "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                                            "",
+                                            "    Ext.Ajax.request({",
+                                            "    url: '../Handlers/Finance/Transaction/StaffLoanTransaction/StaffLoanAdditionalLoanHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'GetStaffLoanAddLoan',",
+                                            "        OfficeCode:getOfficeCode(),",
+                                            "        ProductCode:productcode,",
+                                            "        ClientName:null,",
+                                            "",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "",
+                                            "",
+                                            "        var obj = Ext.decode(response.responseText);",
+                                            "",
+                                            "",
+                                            "",
+                                            "        if(obj.success === \"true\")",
+                                            "        {",
+                                            "",
+                                            "            var store=Ext.getStore('LoanNoForAdditionalDisbursementStore');",
+                                            "            store.removeAll();",
+                                            "            store.add(obj.root);",
+                                            "",
+                                            "",
+                                            "        }",
+                                            "        else",
+                                            "        {",
+                                            "            msg(\"FAILURE\",obj.message);",
+                                            "        }",
+                                            "        ",
+                                            "        waitSave.hide();",
+                                            "    }",
+                                            "});",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSearchSavingAccountNumberClick",
+                                    "designerId": "25c3e340-c00e-44d8-8594-5fe685fd0331"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchLoanNumber",
+                        "store": "LoanNoForAdditionalDisbursementStore",
+                        "title": ""
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "width": "auto",
+                        "itemId": "string",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "bb16eeb2-4898-40ee-b7c2-957051432b2f",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "29e7ade8-dbfc-4062-a79b-6a768477d5bc"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel4",
+                            "designerId": "ff4e1e00-e476-4cc7-902d-c2e8bc08436f",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "   if(btn === 'yes'){",
+                                            "       console.log('record',record);",
+                                            "",
+                                            "       Ext.ComponentQuery.query('#txtLoanNo')[0].setValue(record.data.LoanDno);",
+                                            "      // Ext.ComponentQuery.query('#txtMemberName')[0].setValue(record.data.ClientDesc);",
+                                            "       Ext.ComponentQuery.query('#hdnLoanNo')[0].setValue(record.data.LoanNo);",
+                                            "",
+                                            "",
+                                            "",
+                                            "      // return true;",
+                                            "   }",
+                                            "   else",
+                                            "   {",
+                                            "",
+                                            "   }",
+                                            "    var v=Ext.ComponentQuery.query('#SelectStaffLoanAddDisburseLoanNumberPopup')[0];",
+                                            "",
+                                            "    v.close();",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "3bfd37e2-cfa5-4d7b-8f5c-28a5e851cb2a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "LoanDno",
+                                "text": "Loan Dno"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn223",
+                            "designerId": "319312f7-dbca-47f4-b09f-8c0b08d1c253"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "LoanNo",
+                                "text": "Loan No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn225",
+                            "designerId": "6f526bbe-b3fd-42a3-9a3b-98f0fd86271e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ClientDesc",
+                                "text": "Client Description",
+                                "width": 183
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn227",
+                            "designerId": "d041a14c-a590-42fb-b9a0-446a4c60d3b5"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "LoanProductCode",
+                                "text": "Loan Product Code",
+                                "width": 111
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn229",
+                            "designerId": "b476717a-f451-4faa-95f6-4a0c84b76061"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "LoanDate",
+                                "text": "Loan Date"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn230",
+                            "designerId": "e6cfed3e-80d2-4e4a-93e0-87df7c7c6c41"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "MatureDate",
+                                "text": "Mature Date"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn234",
+                            "designerId": "9525cf35-d95f-40d2-b35f-e36e1e688c4a"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmSelectVdcPopupAfterRender",
+                        "implHandler": [
+                            "var store=Ext.getStore('LoanNoForAdditionalDisbursementStore');",
+                            "store.removeAll();"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmSelectVdcPopupAfterRender",
+                    "designerId": "66dc204a-a001-4218-8c6c-3d86716876ba"
+                }
+            ]
+        }
+    ]
+}

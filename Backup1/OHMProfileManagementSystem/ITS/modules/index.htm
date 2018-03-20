@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>.::[Inland Revenue Department Application]::.</title>
+    <link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all.css" />
+    <script type="text/javascript" src="../extjs/ext-all-debug.js"></script>
+    <link href="../resources/css/default.css" rel="stylesheet" type="text/css" />
+    <!--<script src="../extjs/jquery-1.5.1.js" type="text/javascript"></script>-->
+    <script type="text/javascript">
+
+        //jQuery.noConflict();
+
+        Ext.onReady(function () {
+
+            Ext.QuickTips.init();
+
+            Ext.application({
+                name: 'MyApp',
+                launch: function () {
+
+                    var store = Ext.create('Ext.data.TreeStore', {
+                    fields: ['text', 'moduleName','scriptFileName','formTitle'],
+                        root: {
+                            expanded: true,
+
+                            children: [
+                                                                            { text: "Registration", id: 'R000100', expanded: true,  iconCls: 'ico-test',
+                                                                                children: [
+
+                                                                                            { text: "Step One",iconCls:'x-tree-icon-Tax-Reg', id: 'C0000010000', leaf: true,moduleName:["registration"] },
+                                                                                            { text: "Step Two",iconCls:'x-tree-icon-Tax-Reg', id: 'C0000010001', leaf: true ,moduleName:["registration"]},
+                                                                                            { text: "Business Registration",iconCls:'x-tree-icon-Tax-Reg', id: 'C0000010002', leaf: true ,moduleName:["registration"]},
+                                                                                            { text: "Step Three",iconCls:'x-tree-icon-Tax-Reg', id: 'C0000010003', leaf: true ,moduleName:["registration"]},
+                                                                                            { text: "TaxPayer Registration",iconCls:'x-tree-icon-Register', id: 'C0000010004', leaf: true,moduleName:["registration"] },
+
+                                                                                            { text: "Login",iconCls:'x-tree-icon-Login', id: 'C0000010005', leaf: true,moduleName:["registration"] }
+                                                                                           ]
+                                                                            },
+
+                                                                            { text: "XCise", id: 'R000200',expanded: true,  iconCls: 'ico-test',
+                                                                                 children:[
+                                                                                            {text:"Sticker Management",id:'R000201',expanded: true,  iconCls: 'ico-test',
+                                                                                                children:[
+                                                                                                             { text: "Sticker Delivery List", id: 'C0000020000', leaf: true,moduleName:["XCise","Sticker Management"],scriptFileName:"StickerDelivery.js", },
+                                                                                                             { text: "Sticker1", id: 'C0000020001', leaf: true,moduleName:["XCise","Sticker Management"],scriptFileName:"Sticker11.js" },
+                                                                                                             { text: "Sticker2", id: 'C0000020002', leaf: true,moduleName:["XCise","Sticker Management"],  formTitle:"Sticker21"},
+                                                                                                             { text: "Sticker3", id: 'C0000020003', leaf: true,moduleName:["XCise","Sticker Management"]  },
+                                                                                                             { text: "Sticker Request", id: 'C0000020004', leaf: true,moduleName:["XCise","Sticker Management"]  }
+,{ text: "Sticker Order Placement", id: 'C0000020005', leaf: true,moduleName:["XCise","Sticker Management"],scriptFileName:"StickerOrderPlacement.js" }
+                                                                                                         ]
+                                                                                             }
+                                                                                          ]
+                                                                           },
+                                                                           { text: "VAT", id: 'R000300',expanded: true,  iconCls: 'ico-test',
+                                                                                 children:[
+                                                                                            {text:"VAT Management",id:'C0001',expanded: true,  iconCls: 'ico-test',
+                                                                                                children:[
+                                                                                                             { text: "VAT 1", id: 'C0000030000', leaf: true,moduleName:["VAT1","VATregistration2","VATLookup3"] },
+                                                                                                             { text: "VAT 2", id: 'C0000030001', leaf: true,moduleName:["VAT2","VATregistration2","VATLookup4"] }
+                                                                                                         ]
+                                                                                             }
+                                                                                          ]
+                                                                           }
+                                       ]
+                        }
+                    });
+
+                    var tr = Ext.create('Ext.tree.TreePanel', {
+                        showTitle: false,
+                        border: false,
+                        minHeight: 736,
+
+                        anchor: '75% 20%',
+                        rootVisible: false,
+
+                        listeners: {
+                            itemclick: function (view, rec, item, index, eventObj) {
+                                var idd = rec.data.id;
+
+                                Ext.get('mainContent').update('');
+
+                                if (idd.indexOf("C") >= 0) {
+                                    var scriptfilename=rec.data.text+".js";
+                                     var formTitle=rec.data.text;
+                                    if(rec.get('scriptFileName'))
+                                    {
+                                    scriptfilename=rec.get('scriptFileName');
+                                    }
+                                    if(rec.get('formTitle'))
+                                    {
+                                    formTitle=rec.get('formTitle');
+                                    }
+
+                                     arr = rec.get('moduleName');
+                                    var path="";
+                                    var v="";
+                                    for(i=0;i<arr.length;i++)
+                                    {
+                                      v= path==""?"":"/";
+                                      path=path+v+arr[i];
+                                    }////
+
+                                    Ext.get('irdTitle').update(formTitle);
+                 var js = document.createElement('script');
+                                    js.type = "text/javascript";
+                                    var scriptName = path+"/" + scriptfilename;
+
+                                    js.src = scriptName;
+                                    document.body.appendChild(js);
+                                }
+                            }
+                        },store:store
+                    });
+
+                    Ext.create('Ext.Viewport', {
+                        layout: {
+                            type: 'border',
+                            padding: 5
+                        },
+                        defaults: {
+                            split: true
+                        },
+                        items: [{
+                            region: 'west',
+                            collapsible: true,
+                            title: 'Navigation',
+                            split: true,
+                            margins: '0 0 0 2',
+                            width: '20%',
+                            minWidth: 100,
+                            minHeight: 140,
+                            items: [tr]
+                        },
+                        {
+                            title: '<div id="irdTitle">Title</div>',
+                            region: 'center',
+                            margins: 0,
+                            html: '<div id="mainContent" ></div>',
+                            autoScroll: true,
+                            layout:'fit'
+                        },{
+
+                            region: 'north',
+                            margins: 0,
+                            //height: 40,
+                            html: "<div class='irdheader' >Inland  Revenue  Department  Application</div>",
+
+                        },{
+
+                            region: 'south',
+                            margins: 0,
+                            height: 20,
+                            html: "<div >Footer</div>",
+
+                        }]
+
+                    });
+
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

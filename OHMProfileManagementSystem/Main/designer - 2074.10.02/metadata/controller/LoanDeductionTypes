@@ -1,0 +1,353 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoanDeductionTypes",
+        "stores": [
+            "LoanDeductionTypesStore",
+            "ProductTypeStore"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "stores": "typedarray"
+    },
+    "name": "MyController2",
+    "designerId": "eb63c516-f7d2-4721-b43e-7f47283b289e",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlSavingProductCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox70",
+                "fn": "onDdlSavingProductCodeAfterRender",
+                "implHandler": [
+                    "",
+                    "        Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Transaction/SavingTransaction/SavingProductHandler.ashx',",
+                    "            params:{method:'GetSavingProduct',",
+                    "                   },",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    var store =Ext.getStore('ProductTypeStore');",
+                    "                    store.removeAll();",
+                    "                    store.add(obj.root);",
+                    "",
+                    "",
+                    "                }else{msg('FAILURE','Could Not Load Data');}",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                    "        });"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlSavingProductCodeAfterRender",
+            "designerId": "90abb3fb-910d-47f1-bc64-c4f3ac8551ac"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlSavingProductCode",
+                "designer|params": [
+                    "combo",
+                    "records",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox70",
+                "fn": "onDdlSavingProductCodeSelect",
+                "implHandler": [
+                    "var productName = records[0].data.ProductName;",
+                    "",
+                    "",
+                    "",
+                    "Ext.ComponentQuery.query('#txtSavingProductDesc')[0].setValue(productName);",
+                    ""
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlSavingProductCodeSelect",
+            "designerId": "d0d316c1-e341-49ac-a8eb-51ac124db175"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlNonExistSavingProductCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox71",
+                "fn": "onDdlNonExistSavingProductCodeAfterRender",
+                "implHandler": [
+                    "",
+                    "        Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Transaction/SavingTransaction/SavingProductHandler.ashx',",
+                    "            params:{method:'GetSavingProduct',",
+                    "                   },",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    var store =Ext.getStore('ProductTypeStore');",
+                    "                    store.removeAll();",
+                    "                    store.add(obj.root);",
+                    "",
+                    "",
+                    "                }else{msg('FAILURE','Could Not Load Data');}",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                    "        });"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlNonExistSavingProductCodeAfterRender",
+            "designerId": "1e3ce7e6-bdb5-4a48-8f2a-ffafc23abe26"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlNonExistSavingProductCode",
+                "designer|params": [
+                    "combo",
+                    "records",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox71",
+                "fn": "onDdlNonExistSavingProductCodeSelect",
+                "implHandler": [
+                    "var nonExSavProductName = records[0].data.ProductName;",
+                    "",
+                    "Ext.ComponentQuery.query('#txtNonExistSavingProductDesc')[0].setValue(nonExSavProductName);"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlNonExistSavingProductCodeSelect",
+            "designerId": "67179a46-b720-45d0-b2ed-7b5365b8aea1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#frmLoanDeductionTypes",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyForm9",
+                "fn": "onFrmLoanDeductionTypesAfterRender",
+                "implHandler": [
+                    "Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Maintenance/LoanDeductionTypeHandler.ashx',",
+                    "            params:{method:'Get',",
+                    "                   },",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    var store =Ext.getStore('LoanDeductionTypesStore');",
+                    "                    store.removeAll();",
+                    "                    store.add(obj.root);",
+                    "                    //waitSave.hide();",
+                    "",
+                    "                }else{msg('FAILURE','Could Not Load Data');}",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                    "        });"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onFrmLoanDeductionTypesAfterRender",
+            "designerId": "ae1ceced-73a0-4120-8ce6-b314faaf37b3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#frmLoanDeductionTypes",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyForm9",
+                "fn": "onFrmLoanDeductionTypesAfterRender",
+                "implHandler": [
+                    "var waitSave = watiMsg(\"Loading data .Please wait ...\");",
+                    "Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Maintenance/LoanDeductionTypeHandler.ashx',",
+                    "            params:{method:'Get',",
+                    "                   },",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    waitSave.hide();",
+                    "                    var store =Ext.getStore('LoanDeductionTypesStore');",
+                    "                    store.removeAll();",
+                    "                    store.add(obj.root);",
+                    "                    //waitSave.hide();",
+                    "",
+                    "                }else{msg('FAILURE','Could Not Load Data');}",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                    "        });"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onFrmLoanDeductionTypesAfterRender",
+            "designerId": "7310a041-0639-437b-ac6e-b950214b63f5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnLoanDedAdd",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton52",
+                "fn": "onBtnLoanDedAddClick",
+                "implHandler": [
+                    "",
+                    "var store=Ext.getStore('LoanDeductionTypesStore');",
+                    "var objLoanDed ={",
+                    "            DeductionTypeCode:'',",
+                    "\t\t\tDeductionTypeDesc:'',",
+                    "\t\t\tSavingProductCode:'',",
+                    "\t\t\tSavingAccountDeduction:'',",
+                    "\t\t\tNonExistSavingProductCode:'',",
+                    "\t\t\tActiveFlag:'',",
+                    "\t\t\tAction:\"I\"",
+                    "};",
+                    "",
+                    "store.add(objLoanDed);",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onBtnLoanDedAddClick",
+            "designerId": "5e83e0d2-00f5-4456-a7c7-be593714bbd7"
+        }
+    ]
+}

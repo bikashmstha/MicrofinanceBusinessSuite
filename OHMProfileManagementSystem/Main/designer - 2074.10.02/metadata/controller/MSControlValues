@@ -1,0 +1,160 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MSControlValues",
+        "stores": [
+            "MsControlValuesStore",
+            "MsReferenceValuesStore"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "models": "typedarray",
+        "stores": "typedarray",
+        "views": "typedarray"
+    },
+    "name": "Office1",
+    "designerId": "22dc7779-3464-41c6-8bd8-b76f10bf7686",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#frmMsControlValues",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyForm7",
+                "fn": "onFrmMsControlValuesAfterRender",
+                "implHandler": [
+                    "var name =null;",
+                    "Ext.Ajax.request({",
+                    "\t\t    url: '../Handlers/GeneralMasterParameters/References/MsControlValuesHandler.ashx?method=GetMsControlValues',",
+                    "            method:'POST',",
+                    "            params:{name:name},",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                var data = obj.root;",
+                    "\t\t\t\tconsole.log('data',data);",
+                    "\t\t\t\tvar strMsControlValues = Ext.getStore('MsControlValuesStore');",
+                    "                strMsControlValues.add(data);",
+                    "",
+                    "",
+                    "\t\t\t\t//storeAcLines.add(data.AppealLinesLST);",
+                    "\t\t\t\tconsole.log('storeAcLines',strMsControlValues);",
+                    "",
+                    "",
+                    "",
+                    "            }",
+                    "",
+                    "",
+                    "        });",
+                    "",
+                    "Ext.ComponentQuery.query('#btnReferenceValues')[0].disable(true);",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onFrmMsControlValuesAfterRender",
+            "designerId": "7b45a233-9e2a-4ab7-b557-175e66216353"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnControlValues",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton4",
+                "fn": "onBtnControlValuesClick",
+                "implHandler": [
+                    " var store =Ext.getStore('MsControlValuesStore');",
+                    " var rec={NameEn:'',",
+                    "          ControlValue:'',",
+                    "          Remarks:'',",
+                    "          Action:'I'};",
+                    "        store.add(rec);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onBtnControlValuesClick",
+            "designerId": "a7ba264d-f52f-4580-9674-1ab959041170"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnReferenceValues",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton17",
+                "fn": "onBtnReferenceValuesClick",
+                "implHandler": [
+                    " var store =Ext.getStore('MsReferenceValuesStore');",
+                    " var rec={RefMstCode:'',",
+                    "          RefMstName:'',",
+                    "          Action:'I'};",
+                    "        store.add(rec);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onBtnReferenceValuesClick",
+            "designerId": "48c21242-b734-4f5e-87a6-ea91863c2da2"
+        }
+    ]
+}

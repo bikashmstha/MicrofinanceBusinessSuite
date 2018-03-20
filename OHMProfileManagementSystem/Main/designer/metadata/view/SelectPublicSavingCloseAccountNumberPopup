@@ -1,0 +1,433 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectPublicSavingCloseAccountNumberPopup",
+        "height": 500,
+        "itemId": "SelectPublicSavingCloseAccountNumberPopup",
+        "title": "Select Saving Account Number",
+        "width": 900
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string",
+        "autoScroll": "boolean",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "SelectPublicSavingWithdrawAccountNumberPopup1",
+    "designerId": "9df8e44f-4178-4c02-8599-7e6932ac81a4",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "frame": true,
+                "itemId": "frmSelectVdcPopup"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string",
+                "itemId": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyForm2",
+            "designerId": "6086eefe-5d04-4176-ad6e-f47e50dabe76",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "12cac2ff-ace3-48cf-8085-0bbeb0f98566",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Search ACC No.",
+                                "itemId": "txtSearchSavingAccountNumber"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField55",
+                            "designerId": "cf0a622c-fbd8-4af4-8c3a-9669497c4e7e"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnSearchSavingAccountNumber",
+                                "layout|colspan": 2,
+                                "margin": "0 0 0 5",
+                                "text": "Search"
+                            },
+                            "configAlternates": {
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "text": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "6c4db513-4bfe-451e-82bf-660b74b9d3fe",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSearchSavingAccountNumberClick",
+                                        "implHandler": [
+                                            "var savingAccountNumber=Ext.ComponentQuery.query('#txtSearchSavingAccountNumber')[0].getValue();",
+                                            "",
+                                            "var waitSave = watiMsg(\"Searching..Please wait ...\");",
+                                            "    Ext.Ajax.request({",
+                                            "    url: '../Handlers/Finance/Transaction/EditTransaction/PubSavingAccountSearchHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'GetPubSavAccSearch',",
+                                            "        OfficeCode:getOfficeCode(),",
+                                            "        SavingAccountNo:savingAccountNumber",
+                                            "",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "",
+                                            "",
+                                            "        var obj = Ext.decode(response.responseText);",
+                                            "",
+                                            "",
+                                            "",
+                                            "        if(obj.success === \"true\")",
+                                            "        {",
+                                            "            waitSave.hide();",
+                                            "            var store=Ext.getStore('SavingAccountNumberSearchStore');",
+                                            "            store.removeAll();",
+                                            "            store.add(obj.root);",
+                                            "",
+                                            "",
+                                            "        }",
+                                            "        else",
+                                            "        {",
+                                            "            waitSave.hide();",
+                                            "            msg(\"FAILURE\",obj.message);",
+                                            "        }",
+                                            "    }",
+                                            "});",
+                                            "",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSearchSavingAccountNumberClick",
+                                    "designerId": "6b8d3ee7-ad36-4977-9018-1a4cbc8dd317"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchSavingAccountNo",
+                        "store": "SavingAccountNumberSearchStore",
+                        "title": ""
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "width": "auto",
+                        "itemId": "string",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "b2bb2566-1c56-4a24-a2ff-779b87a8ea2d",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "3633f6e6-d9f5-4eae-ac63-3a2b994f919f"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel4",
+                            "designerId": "e508880c-b5e1-48db-9d26-6be242c7a1b8",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "    if(btn === 'yes'){",
+                                            "        console.log('record',record);",
+                                            "",
+                                            "        Ext.ComponentQuery.query('#txtSavingAccountNumber')[0].setValue(record.data.SavingAccountNo);",
+                                            "        Ext.ComponentQuery.query('#txtMemberName')[0].setValue(record.data.ClientDesc);",
+                                            "        Ext.ComponentQuery.query('#ddlSavingProduct')[0].setValue(record.data.ProductCode);",
+                                            "        Ext.ComponentQuery.query('#hdnAccountNo')[0].setValue(record.data.AccountNo);",
+                                            "",
+                                            "        Ext.Ajax.request({",
+                                            "            url: '../Handlers/Finance/Transaction/PublicSavingTransaction/QueryOnSavingAccountCloseHandler.ashx',",
+                                            "            params: {",
+                                            "                method:'GetQueryOnSavingAcClose',",
+                                            "                AccountNo:record.data.AccountNo,",
+                                            "                SavingProductCode:record.data.ProductCode,",
+                                            "                WithdrawDate:null,",
+                                            "                Username:getCurrentUser()",
+                                            "",
+                                            "            },",
+                                            "            success: function(response){",
+                                            "                var obj = Ext.decode(response.responseText);",
+                                            "                if(obj.success === \"true\")",
+                                            "                {",
+                                            "",
+                                            "                    Ext.ComponentQuery.query('#txtAmtAtMaturity')[0].setValue(obj.root[0].OutAmountAt_Maturity);",
+                                            "                    Ext.ComponentQuery.query('#txtClosingCharge')[0].setValue(obj.root[0].OutClosingCharge);",
+                                            "                    Ext.ComponentQuery.query('#txtMidTermIntAmt')[0].setValue(obj.root[0].OutMidTerm_Bal_With_Int);",
+                                            "                    Ext.ComponentQuery.query('#txtMidTermIntAmt')[0].setValue(obj.root[0].OutMidTerm_Int_Amt);",
+                                            "                    //Ext.ComponentQuery.query('#')[0].setValue(obj.root[0].OutMidTerm_Taxable_Amount);",
+                                            "                    //Ext.ComponentQuery.query('#')[0].setValue(obj.root[0].OutMidTerm_Tds_Amount);",
+                                            "                    Ext.ComponentQuery.query('#txtOtherIncome')[0].setValue(obj.root[0].OutOtherIncome);",
+                                            "                    Ext.ComponentQuery.query('#txtCurrentBalance')[0].setValue(obj.root[0].OutPresentBal_Without_Int);",
+                                            "                    Ext.ComponentQuery.query('#txtTotalBalance')[0].setValue(obj.root[0].OutPresentBalance_With_Int);",
+                                            "                    Ext.ComponentQuery.query('#txtReceivedInterest')[0].setValue(obj.root[0].OutReceivedInterest_Amount);",
+                                            "                    //Ext.ComponentQuery.query('#')[0].setValue(obj.root[0].OutTaxableUnpost_Interest);",
+                                            "                    //Ext.ComponentQuery.query('#')[0].setValue(obj.root[0].OutTdsDifference);",
+                                            "                    //Ext.ComponentQuery.query('#')[0].setValue(obj.root[0].OutTdsLimit_Amount);",
+                                            "                    Ext.ComponentQuery.query('#txtTaxAmt')[0].setValue(obj.root[0].OutTdsOn_Unpost_Interest);",
+                                            "                    Ext.ComponentQuery.query('#txtUnpostInterest')[0].setValue(obj.root[0].OutUnpostInterest);",
+                                            "                    //Ext.ComponentQuery.query()[0].setValue(obj.root[0].OutWaivedAmount);",
+                                            "                    Ext.ComponentQuery.query('#txtPaidAmount')[0].setValue(obj.root[0].OutWithdrawAmount);",
+                                            "                    Ext.ComponentQuery.query('#txtAcOpenDateAD')[0].setValue(obj.root[0].OutAccountOpen_Date);",
+                                            "",
+                                            "",
+                                            "                }",
+                                            "                else",
+                                            "                {",
+                                            "                    msg(\"FAILURE\",obj.message);",
+                                            "                }",
+                                            "            }",
+                                            "        });",
+                                            "",
+                                            "        Ext.Ajax.request({",
+                                            "            url: '../Handlers/Finance/Transaction/PublicSavingTransaction/PublicAccountChequeHandler.ashx',",
+                                            "            params: {",
+                                            "                method:'GetPubAccCheque',",
+                                            "                AccountNo:record.data.AccountNo,",
+                                            "                ChequeNo:null",
+                                            "",
+                                            "            },",
+                                            "            success: function(response){",
+                                            "                var obj = Ext.decode(response.responseText);",
+                                            "                if(obj.success === \"true\")",
+                                            "                {",
+                                            "",
+                                            "                    var store=Ext.getStore('PublicAccountChequeStore');",
+                                            "                    store.removeAll();",
+                                            "                    store.add(obj.root);",
+                                            "",
+                                            "                }",
+                                            "                else",
+                                            "                {",
+                                            "                    msg(\"FAILURE\",obj.message);",
+                                            "                }",
+                                            "            }",
+                                            "        });",
+                                            "       // return true;",
+                                            "   }",
+                                            "   else",
+                                            "   {",
+                                            "",
+                                            "   }",
+                                            "    var v=Ext.ComponentQuery.query('#SelectPublicSavingCloseAccountNumberPopup')[0];",
+                                            "",
+                                            "    v.close();",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "a37493bd-6b40-4db6-baac-956dce6e2c79"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SavingAccountNo",
+                                "text": "Saving Account No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn129",
+                            "designerId": "ac2b8215-2f27-47cc-ac74-44a5b4c687ba"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ClientDesc",
+                                "text": "Member Name",
+                                "width": 168
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn131",
+                            "designerId": "a3e2f74b-c760-4519-9720-c21db1d0b86f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "FixedCollectAmount",
+                                "text": "Fixed Collect Amount",
+                                "width": 120
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn136",
+                            "designerId": "90f7781c-2209-4ecb-a669-7d37db0520cc"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Address",
+                                "text": "Address",
+                                "width": 186
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn132",
+                            "designerId": "c12eb9b8-615d-4005-8191-fda91bb6e4b7"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmSelectVdcPopupAfterRender",
+                        "implHandler": [
+                            "var store=Ext.getStore('SavingAccountNumberSearchStore');",
+                            "store.removeAll();"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmSelectVdcPopupAfterRender",
+                    "designerId": "c6ee4d4a-8f1f-461b-be75-2a3a2db651ce"
+                }
+            ]
+        }
+    ]
+}

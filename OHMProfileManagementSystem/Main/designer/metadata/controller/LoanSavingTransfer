@@ -1,0 +1,1159 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoanSavingTransfer",
+        "stores": [
+            "CenterShortStore",
+            "MemberShortStore",
+            "LoanProductCodeStore",
+            "LoanNoStore",
+            "CenterShort1Store",
+            "LoanPurposePopupStore",
+            "SavingTypeStore",
+            "ProductTypeStore",
+            "LoanHeadingPopupStore"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "stores": "typedarray"
+    },
+    "name": "MyController1",
+    "designerId": "3acca2df-6efc-4680-8846-98f9fb09b170",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtFromCenterCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField485",
+                "fn": "onTxtFromCenterCodeAfterRender",
+                "implHandler": [
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectTransferCenterPopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtFromCenterCodeAfterRender",
+            "designerId": "0db96ce0-5156-4b67-be46-ae4c8d3c283e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtFromCenterCode",
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField485",
+                "fn": "onTxtFromCenterCodeChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#txtFromMemberCode')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromMemberDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#ddlFromLoanType')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromLoanNo')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromLoanNoDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromLoanDateBS')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromLoanDateAD')[0].reset();"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtFromCenterCodeChange",
+            "designerId": "ec77875e-574b-42bb-8742-399058adf001"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtFromMemberCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField239",
+                "fn": "onTxtFromMemberCodeAfterRender",
+                "implHandler": [
+                    "",
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectTransferMemberPopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtFromMemberCodeAfterRender",
+            "designerId": "c29a9b77-4a7a-4718-b9a3-899483e96c83"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtFromMemberCode",
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField239",
+                "fn": "onTxtFromMemberCodeChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#ddlFromLoanType')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromLoanNo')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromLoanNoDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromLoanDateBS')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromLoanDateAD')[0].reset();"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtFromMemberCodeChange",
+            "designerId": "568c4c23-02f5-47c5-ae04-c2fa5b48a22f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlFromLoanType",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox87",
+                "fn": "onDdlFromLoanTypeAfterRender",
+                "implHandler": [
+                    "Ext.Ajax.request({",
+                    "    url:'../Handlers/Finance/Transaction/EditTransaction/LoanTransferProductHandler.ashx',",
+                    "    params:{method:'GetLoanTransferProduct', ProductName:null",
+                    "           },",
+                    "    success: function ( result, request ) {",
+                    "",
+                    "        var obj = Ext.decode(result.responseText);",
+                    "        if(obj.success === 'true'){",
+                    "            //console.log(\"Resu\",obj.root);",
+                    "            var store =Ext.getStore('LoanProductCodeStore');",
+                    "            store.removeAll();",
+                    "            store.add(obj.root);",
+                    "",
+                    "",
+                    "        }else{msg('FAILURE','Could Not Load Data');}",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "        msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                    "});",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlFromLoanTypeAfterRender",
+            "designerId": "33d5e361-a070-4e7a-8adc-4ff00e6c01bd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlFromLoanType",
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox87",
+                "fn": "onDdlFromLoanTypeChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#txtFromLoanNo')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromLoanNoDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromLoanDateBS')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromLoanDateAD')[0].reset();"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlFromLoanTypeChange",
+            "designerId": "6e3e3278-e742-4e36-a7a1-e0386878e935"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtFromLoanNo",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField243",
+                "fn": "onTxtFromLoanNoAfterRender",
+                "implHandler": [
+                    "",
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectLoanPopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtFromLoanNoAfterRender",
+            "designerId": "8773d28e-b16c-4453-a4b3-bcc142967231"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtToCenterCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField247",
+                "fn": "onTxtToCenterCodeAfterRender",
+                "implHandler": [
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectTransferToCenterPopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtToCenterCodeAfterRender",
+            "designerId": "afe3a34a-676e-403f-82d2-e144e9d89236"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtToCenterCode",
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField247",
+                "fn": "onTxtToCenterCodeChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#txtToMemberCode')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToMemberDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#ddlToLoanType')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToLoanPurposeCode')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToLoanPurposeDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToLoanDateBS')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToLoanDateAD')[0].reset();"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtToCenterCodeChange",
+            "designerId": "d23905c4-15af-4663-a73d-158b24aa56a9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtToMemberCode",
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField249",
+                "fn": "onTxtToMemberCodeChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#ddlToLoanType')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToLoanPurposeCode')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToLoanPurposeDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToLoanDateBS')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToLoanDateAD')[0].reset();"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtToMemberCodeChange",
+            "designerId": "31274eb0-df44-4433-8def-43cead7f4a88"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlToLoanType",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox90",
+                "fn": "onDdlToLoanTypeAfterRender",
+                "implHandler": [
+                    "Ext.Ajax.request({",
+                    "    url:'../Handlers/Finance/Transaction/EditTransaction/LoanTransferProductHandler.ashx',",
+                    "    params:{method:'GetLoanTransferProduct', ProductName:null",
+                    "           },",
+                    "    success: function ( result, request ) {",
+                    "",
+                    "        var obj = Ext.decode(result.responseText);",
+                    "        if(obj.success === 'true'){",
+                    "            //console.log(\"Resu\",obj.root);",
+                    "            var store =Ext.getStore('LoanProductCodeStore');",
+                    "            store.removeAll();",
+                    "            store.add(obj.root);",
+                    "",
+                    "",
+                    "        }else{msg('FAILURE','Could Not Load Data');}",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "        msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                    "});",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlToLoanTypeAfterRender",
+            "designerId": "a19713bf-3185-4628-afca-54a4e9418dd3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlToLoanType",
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox90",
+                "fn": "onDdlToLoanTypeChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#txtToLoanPurposeCode')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToLoanPurposeDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToLoanDateBS')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtToLoanDateAD')[0].reset();"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlToLoanTypeChange",
+            "designerId": "f99ec4c8-0b32-4b31-bb06-4909cce1392d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtToLoanPurposeCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField253",
+                "fn": "onTxtToLoanPurposeCodeAfterRender",
+                "implHandler": [
+                    "",
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectTransferLoanPurposePopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtToLoanPurposeCodeAfterRender",
+            "designerId": "cccd157c-9f74-4338-af1b-60677da06ad8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtSavingFromCenterCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField247",
+                "fn": "onTxtSavingFromCenterCodeAfterRender",
+                "implHandler": [
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectSavingTransferCenterPopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtSavingFromCenterCodeAfterRender",
+            "designerId": "fce8026e-e543-466a-813d-9ad0018415aa"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtSavingFromCenterCode",
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField247",
+                "fn": "onTxtSavingFromCenterCodeChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#txtSavingFromMemberCode')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtSavingFromMemberDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromSavingTypeCode')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromSavingTypeDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromAccNo')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromOpenDateBS')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromOpenDateAD')[0].reset();"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtSavingFromCenterCodeChange",
+            "designerId": "6534fb37-8200-45a5-a079-a5630592548c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtSavingFromMemberCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField249",
+                "fn": "onTxtSavingFromMemberCodeAfterRender",
+                "implHandler": [
+                    "",
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectSavingTransferMemberPopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtSavingFromMemberCodeAfterRender",
+            "designerId": "ed4ef92b-ab86-4f62-8e04-f311646e1a21"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtSavingFromMemberCode",
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField249",
+                "fn": "onTxtSavingFromMemberCodeChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#txtFromSavingTypeCode')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromSavingTypeDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromAccNo')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromOpenDateBS')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtFromOpenDateAD')[0].reset();"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtSavingFromMemberCodeChange",
+            "designerId": "2ec0cc2e-55ee-4705-8af3-dd1c10e76eb6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtFromSavingTypeCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField",
+                "fn": "onTxtFromSavingTypeCodeAfterRender",
+                "implHandler": [
+                    "",
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectSavingTypeTransferPopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtFromSavingTypeCodeAfterRender",
+            "designerId": "9a5e9489-878e-4398-9ba6-4f251ff58361"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtSavingToCenterCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField247",
+                "fn": "onTxtSavingToCenterCodeAfterRender",
+                "implHandler": [
+                    "",
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectSavingTransferCenterToPopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtSavingToCenterCodeAfterRender",
+            "designerId": "203efbf5-07c4-493c-b88b-94d9a2660cbf"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtSavingToCenterCode",
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField247",
+                "fn": "onTxtSavingToCenterCodeChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#txtSavingToMemberCode')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtSavingToMemberDesc')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtSavingTypeToCode')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtSavingTypeToDesc')[0].reset();"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtSavingToCenterCodeChange",
+            "designerId": "ce68b3df-1ba4-4af8-b480-0ae6b6eb26bb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtSavingToMemberCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField249",
+                "fn": "onTxtSavingToMemberCodeAfterRender",
+                "implHandler": [
+                    "",
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectSavingTransferMemberToPopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtSavingToMemberCodeAfterRender",
+            "designerId": "d68e519d-0741-4642-8d13-b59c5eed52ce"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtSavingToMemberCode",
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField249",
+                "fn": "onTxtSavingToMemberCodeChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#txtSavingTypeToCode')[0].reset();",
+                    "Ext.ComponentQuery.query('#txtSavingTypeToDesc')[0].reset();"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtSavingToMemberCodeChange",
+            "designerId": "f4c7bba3-dcdc-4124-b349-90ed11f08856"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtSavingTypeToCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField2",
+                "fn": "onTxtSavingTypeToCodeAfterRender",
+                "implHandler": [
+                    "",
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectLoanProductsPopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtSavingTypeToCodeAfterRender",
+            "designerId": "b74e5ea7-e6fd-4228-b6dd-49c1d23c9794"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnSavingTransfer",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton28",
+                "fn": "onBtnSavingTransferClick",
+                "implHandler": [
+                    "var obj={",
+                    "FromCenterCode: Ext.ComponentQuery.query('#txtSavingFromCenterCode')[0].getValue(), ",
+                    "FromClientNo: Ext.ComponentQuery.query('#txtSavingFromMemberCode')[0].ClientNo, ",
+                    "FromSavingProduct: Ext.ComponentQuery.query('#txtFromSavingTypeCode')[0].getValue(),",
+                    "FromAccountNo: Ext.ComponentQuery.query('#txtFromAccNo')[0].getValue(), ",
+                    "FromAccountDate: Ext.ComponentQuery.query('#txtFromOpenDateAD')[0].getValue(), ",
+                    "ToCenterCode: Ext.ComponentQuery.query('#txtSavingToCenterCode')[0].getValue(), ",
+                    "ToClientNo: Ext.ComponentQuery.query('#txtSavingToMemberCode')[0].ClientNo, ",
+                    "ToSavingProduct: Ext.ComponentQuery.query('#txtSavingTypeToCode')[0].getValue(), ",
+                    "ModifiedOn: getMisDateAD(), ",
+                    "ModifiedBy: getCurrentUser(), ",
+                    "TranOfficeCode:getOfficeCode()",
+                    "};",
+                    "",
+                    " var waitSave = watiMsg('Saving. Please wait ...');",
+                    "Ext.Ajax.request({",
+                    "     url:'../Handlers/Finance/Transaction/EditTransaction/TransferSavingAccountHandler.ashx',",
+                    "     params:{method:'SaveTransferSavingAccount',transferSavingAccount:JSON.stringify(obj)},",
+                    "     success: function ( result, request ) {",
+                    "waitSave.hide();",
+                    "          var out = Ext.decode(result.responseText);",
+                    "\t\t\t\tif(out.success==='true'){",
+                    "\t\t\t\t\tmsg('SUCCESS',out.message);",
+                    "                    ",
+                    "\t\t\t\t\t\t}",
+                    "",
+                    "\t\t\t\telse{msg('FAILURE',out.message);",
+                    "",
+                    "",
+                    "          }",
+                    "     },",
+                    "     failure: function(form, action) {",
+                    "waitSave.hide();var out=Ext.decode(response.responseText);msg('FAILURE',out.message);     }",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onBtnSavingTransferClick",
+            "designerId": "bef43b48-6d79-435f-8c06-a8afd9cb284c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtToMemberCode",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTextField249",
+                "fn": "onTxtToMemberCodeAfterRender",
+                "implHandler": [
+                    "",
+                    "component.getEl().on('dblclick', function(){",
+                    "     var winPopup = Ext.create('MyApp.view.SelectTransferToMemberPopup',{",
+                    "",
+                    "        });",
+                    "",
+                    "        winPopup.extraParam={param:null};",
+                    "        winPopup.show();",
+                    "  });",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onTxtToMemberCodeAfterRender",
+            "designerId": "aa709800-6445-4adf-b43a-f1d4010c63b2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnLoanTransfer",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton28",
+                "fn": "onBtnLoanTransferClick",
+                "implHandler": [
+                    "var obj={",
+                    "FromCenterCode: Ext.ComponentQuery.query('#txtFromCenterCode')[0].getValue(), ",
+                    "FromClientNo:  Ext.ComponentQuery.query('#txtFromMemberCode')[0].ClientNo, ",
+                    "FromLoanProduct: Ext.ComponentQuery.query('#ddlFromLoanType')[0].getValue(),",
+                    "FromLoanNo: Ext.ComponentQuery.query('#txtFromLoanNo')[0].getValue(), ",
+                    "ToCenterCode: Ext.ComponentQuery.query('#txtToCenterCode')[0].getValue(), ",
+                    "ToClientNo: Ext.ComponentQuery.query('#txtToMemberCode')[0].ClientNo, ",
+                    "ToLoanProduct: Ext.ComponentQuery.query('#ddlToLoanType')[0].getValue(),",
+                    "ToLoanPurpose_Code: Ext.ComponentQuery.query('#txtToLoanPurposeCode')[0].getValue(),",
+                    "ModifiedOn: getMisDateAD(),",
+                    "ModifiedBy: getCurrentUser(),",
+                    "TranOfficeCode: getOfficeCode(),",
+                    "OutToLoan_No:null,",
+                    "",
+                    "};",
+                    "var waitSave = watiMsg('Saving. Please wait ...');",
+                    "Ext.Ajax.request({",
+                    "     url:'../Handlers/Finance/Transaction/EditTransaction/TransferLoanAccountHandler.ashx',",
+                    "     params:{method:'SaveTransferLoanAccount',transferLoanAccount:JSON.stringify(obj)},",
+                    "     success: function ( result, request ) {",
+                    "waitSave.hide();",
+                    "          var out = Ext.decode(result.responseText);",
+                    "\t\t\t\tif(out.success==='true'){",
+                    "\t\t\t\t\tmsg('SUCCESS',out.message);",
+                    "\t\t\t\t\t\t}",
+                    "",
+                    "\t\t\t\telse{msg('FAILURE',out.message);",
+                    "",
+                    "",
+                    "          }",
+                    "     },",
+                    "     failure: function(form, action) {",
+                    "waitSave.hide();var out=Ext.decode(response.responseText);msg('FAILURE',out.message);     }",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onBtnLoanTransferClick",
+            "designerId": "223d2941-f6e0-4095-b732-992fa83b1d09"
+        }
+    ]
+}

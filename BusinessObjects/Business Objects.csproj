@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{542EFC95-C2E9-4C6D-B35C-E221F01D38AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessObjects</RootNamespace>
+    <AssemblyName>BusinessObjects</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Country.cs" />
+    <Compile Include="Common\District.cs" />
+    <Compile Include="Common\FiscalYear.cs" />
+    <Compile Include="Common\Table.cs" />
+    <Compile Include="Common\Vdc.cs" />
+    <Compile Include="Criteria\Common\Office\OfficeCriteria.cs" />
+    <Compile Include="Criteria\Criteria.cs" />
+    <Compile Include="Criteria\Security\ApplicationCriteria.cs" />
+    <Compile Include="Criteria\Security\ApplicationRoleCriteria.cs" />
+    <Compile Include="Criteria\Security\ModuleCriteria.cs" />
+    <Compile Include="Criteria\Security\ModuleFunctionCriteria.cs" />
+    <Compile Include="Criteria\Security\ModuleMachineCriteria.cs" />
+    <Compile Include="Criteria\Security\OfficeApplicationCriteria.cs" />
+    <Compile Include="Criteria\Security\RoleCriteria.cs" />
+    <Compile Include="Criteria\Security\RoleModuleFunctionCriteria.cs" />
+    <Compile Include="Criteria\Security\ServiceCriteria.cs" />
+    <Compile Include="Criteria\Security\ServiceExposedCriteria.cs" />
+    <Compile Include="Criteria\Security\ServiceRoleCriteria.cs" />
+    <Compile Include="Criteria\Security\ServiceRoleExposedServiceCriteria.cs" />
+    <Compile Include="Criteria\Security\User RoleCriteria.cs" />
+    <Compile Include="Criteria\Security\UserProfileCriteria.cs" />
+    <Compile Include="Enums\Enumerations.cs" />
+    <Compile Include="BusinessRules\ValidateDate.cs" />
+    <Compile Include="Finance\AccountTransaction\ApprovedGlTransaction.cs" />
+    <Compile Include="Finance\AccountTransaction\BudgetAllocationAccount.cs" />
+    <Compile Include="Finance\AccountTransaction\BudgetAllocationDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\BudgetAllocationDetailDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\BudgetAllocationMaster.cs" />
+    <Compile Include="Finance\AccountTransaction\BudgetAllocationShare.cs" />
+    <Compile Include="Finance\AccountTransaction\BudgetAllocationShareDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\BudgetLimitAmt.cs" />
+    <Compile Include="Finance\AccountTransaction\ContraBankAccount.cs" />
+    <Compile Include="Finance\AccountTransaction\GlTransactionDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\GlTransactionMaster.cs" />
+    <Compile Include="Finance\AccountTransaction\JvDtlDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\JvMasterDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\JvSearchVoucher.cs" />
+    <Compile Include="Finance\AccountTransaction\Particulars.cs" />
+    <Compile Include="Finance\AccountTransaction\PaymentSearchVoucher.cs" />
+    <Compile Include="Finance\AccountTransaction\PaymentVoucherDetailDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\PaymentVoucherMasterDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\ReceiptSearchVoucher.cs" />
+    <Compile Include="Finance\AccountTransaction\ReceiptVoucherDetailDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\ReceiptVoucherMasterDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\RegenerateFiscalYearClosing.cs" />
+    <Compile Include="Finance\AccountTransaction\ReverseVoucher.cs" />
+    <Compile Include="Finance\AccountTransaction\ReverseVoucherDetailDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\ReverseVoucherMasterDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\VoucherAccount.cs" />
+    <Compile Include="Finance\AccountTransaction\VoucherApprovalDetail.cs" />
+    <Compile Include="Finance\AccountTransaction\VoucherApprovalMaster.cs" />
+    <Compile Include="Finance\Maintenance\ABBSCharge.cs" />
+    <Compile Include="Finance\Maintenance\AccountGroupEntry.cs" />
+    <Compile Include="Finance\Maintenance\AccountHeadEntry.cs" />
+    <Compile Include="Finance\Maintenance\Center.cs" />
+    <Compile Include="Finance\Maintenance\CenterLov.cs" />
+    <Compile Include="Finance\Maintenance\CompulsoryAccountsEntry.cs" />
+    <Compile Include="Finance\Maintenance\Group.cs" />
+    <Compile Include="Finance\Maintenance\InterestScheme.cs" />
+    <Compile Include="Finance\Maintenance\InterestSchemeDetail.cs" />
+    <Compile Include="Finance\Maintenance\InterestSchemeMaster.cs" />
+    <Compile Include="Finance\Maintenance\LoanDeductionDetail.cs" />
+    <Compile Include="Finance\Maintenance\LoanDeductionType.cs" />
+    <Compile Include="Finance\Maintenance\LoanDeductionTypeDetail.cs" />
+    <Compile Include="Finance\Maintenance\LoanProductAccountHead.cs" />
+    <Compile Include="Finance\Maintenance\LoanProductDetail.cs" />
+    <Compile Include="Finance\Maintenance\LoanPurposeProductDetail.cs" />
+    <Compile Include="Finance\Maintenance\LoanPurpose.cs" />
+    <Compile Include="Finance\Maintenance\LoanPurposeProducts.cs" />
+    <Compile Include="Finance\Maintenance\LoanSector.cs" />
+    <Compile Include="Finance\Maintenance\LoanSubSector.cs" />
+    <Compile Include="Finance\Maintenance\MainInterestScheme.cs" />
+    <Compile Include="Finance\Maintenance\MainLoanProductDefine.cs" />
+    <Compile Include="Finance\Maintenance\MainSavingProductDefine.cs" />
+    <Compile Include="Finance\Maintenance\Member.cs" />
+    <Compile Include="Finance\Maintenance\SavingMidTermInterest.cs" />
+    <Compile Include="Finance\Maintenance\SavingProductAccountHead.cs" />
+    <Compile Include="Finance\Maintenance\SavingProductDetail.cs" />
+    <Compile Include="Finance\Maintenance\SavingProductForSave.cs" />
+    <Compile Include="Finance\Maintenance\SavingType.cs" />
+    <Compile Include="Finance\Maintenance\Sector.cs" />
+    <Compile Include="Finance\Maintenance\SubSector.cs" />
+    <Compile Include="Finance\Processing\AbbsSavingDeposit.cs" />
+    <Compile Include="Finance\Processing\AbbsSavingWithdrawl.cs" />
+    <Compile Include="Finance\Processing\CallAbbsAdjustment.cs" />
+    <Compile Include="Finance\Processing\CollectionOfflineDate.cs" />
+    <Compile Include="Finance\Processing\CollectionSheetMasterOfflineController.cs" />
+    <Compile Include="Finance\Processing\CollectionSheetMasterOnline.cs" />
+    <Compile Include="Finance\Processing\CollectionSheetPosting.cs" />
+    <Compile Include="Finance\Processing\DayBeginProcess.cs" />
+    <Compile Include="Finance\Processing\DayEndProcess.cs" />
+    <Compile Include="Finance\Processing\DepositPostingPublic.cs" />
+    <Compile Include="Finance\Processing\LiveProtectBenefit.cs" />
+    <Compile Include="Finance\Processing\LiveProtectDeposit.cs" />
+    <Compile Include="Finance\Processing\LiveStockBenefitPosting.cs" />
+    <Compile Include="Finance\Processing\LiveStockDepositPosting.cs" />
+    <Compile Include="Finance\Processing\LoanDisbursement.cs" />
+    <Compile Include="Finance\Processing\LoanDisbursementPosting.cs" />
+    <Compile Include="Finance\Processing\LoanRepayment.cs" />
+    <Compile Include="Finance\Processing\LoanRepaymentPosting.cs" />
+    <Compile Include="Finance\Processing\MemberProtectBenefitPosting.cs" />
+    <Compile Include="Finance\Processing\MemberProtectionBenefit.cs" />
+    <Compile Include="Finance\Processing\MemberProtectionDeposit.cs" />
+    <Compile Include="Finance\Processing\MemberProtectionDepositPosting.cs" />
+    <Compile Include="Finance\Processing\PublicSavingWithdrawl.cs" />
+    <Compile Include="Finance\Processing\PublicSavingWithdrawlPosting.cs" />
+    <Compile Include="Finance\Processing\SavingDeposit.cs" />
+    <Compile Include="Finance\Processing\SavingDepositPosting.cs" />
+    <Compile Include="Finance\Processing\SavingWithdrawl.cs" />
+    <Compile Include="Finance\Processing\SavingWithdrawlPosting.cs" />
+    <Compile Include="Finance\Processing\StaffDisbursement.cs" />
+    <Compile Include="Finance\Processing\WithdrawlPostingPublic.cs" />
+    <Compile Include="Finance\Transaction\CollectionSheetTransaction\CenterDetailsFromCode.cs" />
+    <Compile Include="Finance\Transaction\CollectionSheetTransaction\CollectionAdjust.cs" />
+    <Compile Include="Finance\Transaction\CollectionSheetTransaction\CollectionSheetMaster.cs" />
+    <Compile Include="Finance\Transaction\CollectionSheetTransaction\EmployeeCenterCollection.cs" />
+    <Compile Include="Finance\Transaction\CollectionSheetTransaction\GenerateSavingCollection.cs" />
+    <Compile Include="Finance\Transaction\CollectionSheetTransaction\LoanCollectionDetail.cs" />
+    <Compile Include="Finance\Transaction\CollectionSheetTransaction\OfflineCollectionCenter.cs" />
+    <Compile Include="Finance\Transaction\CollectionSheetTransaction\OnlineCollectionCenter.cs" />
+    <Compile Include="Finance\Transaction\CollectionSheetTransaction\SavingCollectionSheet.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\AdjPubSavingAccount.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\Adjustmentaccountforwithdraw.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\CalLoanBalanceStatus.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\LoanAdjustLoan.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\LoanRepayAdjustRepay.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\LoanTransferFromCenter.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\LoanTransferFromClient.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\LoanTransferFromLoan.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\LoanTransferProduct.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\PublicSavingDeposit.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\PublicSavingWithdraw.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\PublicSavingWithdrawDetail.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\PublicSavingWithdrawProduct.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\PubSavingAccountSearch.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\PubSavingDepositDetail.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\PubSavingProduct.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\SavingTransferFromAccount.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\SavingTransferFromCenter.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\SavingTransferFromClient.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\SavingTransferProc.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\TransferLoanAccount.cs" />
+    <Compile Include="Finance\Transaction\EditTransaction\TransferSavingAccount.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\AdjustLoanIntPriPenNew.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\FundingAgency.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LasLoanDetail.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LasLoanSearch.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LasMember.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LasProduct.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\FLoan.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LnUtilizationDetail.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LnUtilizationLoan.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LoanAgainstSavingDisbursement.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LoanCollateral.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LoanInformation.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LoanLasSavingProduct.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LoanProductDeduction.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LoanRepayAdjustLoan.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LoanTransferToClient.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LoanUtilizationEntry.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MeAdditionalLoan.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MeAdditionalLoanDetail.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MeAdditionalLoanDisbursement.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MeLoanDetail.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MeLoanDisbursement.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MeLoanProduct.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MeLoanRepay.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MeLoanRepayDetail.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MeLoanSearch.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfAdditionalLoan.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfAdditionalLoanDetail.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfAdditionalLoanDisbursement.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfLoanDetail.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfLoanDisbursement.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfLoanRepayment.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfRepayLoan.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfRepayAdjustSaving.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfRepayDetail.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfRepaySearchLoan.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfSavingDepositEdit.cs" />
+    <Compile Include="Finance\Transaction\MemberTransaction\DropOutReason.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LoanMember.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\LoanProduct.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfAdjustSaving.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfLoanPurpose.cs" />
+    <Compile Include="Finance\Transaction\LoanTransaction\MfLoanSearch.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\AccountChequeList.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\ChequePrint.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\GroupBasedMember.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicAccountCheque.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicAccountChequeAccount.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicAccountCloseAccount.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicAccountCloseDetail.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicAccountCloseProduct.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicAccountDetail.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicAdjustmentdepositaccount.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicChequeNo.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicChequeUpdate.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicClient.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicClientDetail.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicMember.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicReferenceAccount.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicSavingAccountClosure.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicSavingAccountOpen.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicSavingDepositAccount.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\PublicWithdrawWithAccount.cs" />
+    <Compile Include="Finance\Transaction\PublicSavingTransaction\QueryOnSavingAccountClose.cs" />
+    <Compile Include="Finance\Transaction\CollectionSheetTransaction\UnapprovedCollection.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\AccountCloseDetail.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\AccountForClosing.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\AccountForDeposit.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\AccountForWithdrawl.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\AccountOpenDetail.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\ChequeGenerateDetail.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\ClientSavingAccount.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\GenerateChequeSequence.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\MemberAccountOpen.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\MemberForCheque.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\MfDepositDetail.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\MfSavingDeposit.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\MfSavingWithdraw.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\MfWithdrawlDetail.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\ProductForAccountClose.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\ProductForDeposit.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\ProductForWithdrawl.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\SavingAccountClosure.cs" />
+    <Compile Include="Finance\Transaction\SavingTransaction\SavingProduct.cs" />
+    <Compile Include="Finance\Transaction\MemberTransaction\MemberCancellationRestore.cs" />
+    <Compile Include="Finance\Transaction\MemberTransaction\MemberForCancellation.cs" />
+    <Compile Include="Finance\Transaction\MemberTransaction\TransferCenterToAnotherCenter.cs" />
+    <Compile Include="Finance\Transaction\MemberTransaction\TransferWithinCenter.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\EmployeeKycClient.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\EmployeeKycDetail.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\EmployeeKycEmployee.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\EmployeeKycInfo.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\LoanCollateral.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffAdditionalLoanDisbursement.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanAdditionalLoan.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanAdditionalScrLoan.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanAdjustmentDetail.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanDisbursement.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanDisbursementClient.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanDisbursementDetail.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanDisbursementLoan.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanDisbursementOpening.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanDisbursementProduct.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanRepayAdjustmentSaving.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanRepayDetail.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanRepayLoan.cs" />
+    <Compile Include="Finance\Transaction\StaffLoanTransaction\StaffLoanRepayment.cs" />
+    <Compile Include="GeneralMasterParameters\Group\Group.cs" />
+    <Compile Include="GeneralMasterParameters\Maintenance\ApplicationSequenceGenerator.cs" />
+    <Compile Include="GeneralMasterParameters\Maintenance\CasteDetail.cs" />
+    <Compile Include="GeneralMasterParameters\Maintenance\Department.cs" />
+    <Compile Include="GeneralMasterParameters\Maintenance\DepartmentMap.cs" />
+    <Compile Include="GeneralMasterParameters\Maintenance\Education.cs" />
+    <Compile Include="GeneralMasterParameters\Maintenance\EthnicityCasteInformation.cs" />
+    <Compile Include="GeneralMasterParameters\Maintenance\EthnicityInformation.cs" />
+    <Compile Include="GeneralMasterParameters\Maintenance\Holiday.cs" />
+    <Compile Include="GeneralMasterParameters\Maintenance\Occupation.cs" />
+    <Compile Include="GeneralMasterParameters\Maintenance\OfficeWiseHoliday.cs" />
+    <Compile Include="GeneralMasterParameters\Maintenance\Religion.cs" />
+    <Compile Include="GeneralMasterParameters\Menu\MenuEntry.cs" />
+    <Compile Include="GeneralMasterParameters\Menu\Module.cs" />
+    <Compile Include="GeneralMasterParameters\Menu\Report.cs" />
+    <Compile Include="GeneralMasterParameters\Menu\Tab.cs" />
+    <Compile Include="GeneralMasterParameters\Office\Office.cs" />
+    <Compile Include="GeneralMasterParameters\Office\OfficeMap.cs" />
+    <Compile Include="GeneralMasterParameters\Office\OfficeType.cs" />
+    <Compile Include="GeneralMasterParameters\Office\VDCCoverageByOffice.cs" />
+    <Compile Include="GeneralMasterParameters\References\MsControlValues.cs" />
+    <Compile Include="GeneralMasterParameters\References\MsReferenceCodeDetails.cs" />
+    <Compile Include="GeneralMasterParameters\References\MSReferenceCodeMaster.cs" />
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="BusinessObject.cs" />
+    <Compile Include="BusinessRules\BusinessRule.cs" />
+    <Compile Include="BusinessRules\ValidateCompare.cs" />
+    <Compile Include="BusinessRules\ValidateCreditcard.cs" />
+    <Compile Include="BusinessRules\ValidateEmail.cs" />
+    <Compile Include="BusinessRules\ValidateId.cs" />
+    <Compile Include="BusinessRules\ValidateIPAddress.cs" />
+    <Compile Include="BusinessRules\ValidateLength.cs" />
+    <Compile Include="BusinessRules\ValidateRange.cs" />
+    <Compile Include="BusinessRules\ValidateRegex.cs" />
+    <Compile Include="BusinessRules\ValidateRequired.cs" />
+    <Compile Include="BusinessRules\ValidationDataType.cs" />
+    <Compile Include="BusinessRules\ValidationOperator.cs" />
+    <Compile Include="HumanResource\Maintenance\Designation.cs" />
+    <Compile Include="HumanResource\Maintenance\Post.cs" />
+    <Compile Include="HumanResource\Transaction\EmployeeAllowanceAmount.cs" />
+    <Compile Include="HumanResource\Transaction\EmployeeAllowanceDetail.cs" />
+    <Compile Include="HumanResource\Transaction\EmployeeEducation.cs" />
+    <Compile Include="HumanResource\Transaction\EmployeeEducationDetail.cs" />
+    <Compile Include="HumanResource\Transaction\EmployeeLocalAllowance.cs" />
+    <Compile Include="HumanResource\Transaction\EmployeePromotion.cs" />
+    <Compile Include="HumanResource\Transaction\EmployeePromotionDetail.cs" />
+    <Compile Include="HumanResource\Transaction\EmployeeTrainingDetail.cs" />
+    <Compile Include="HumanResource\Transaction\EmployeeTrainingReceived.cs" />
+    <Compile Include="HumanResource\Transaction\EmployeeTransfer.cs" />
+    <Compile Include="HumanResource\Transaction\EmployeeTransferDetail.cs" />
+    <Compile Include="Inventory\Transaction\Asset.cs" />
+    <Compile Include="Inventory\Transaction\AssetDetail.cs" />
+    <Compile Include="Inventory\Transaction\AssetItem.cs" />
+    <Compile Include="Inventory\Transaction\AssetMaintenanceDetail.cs" />
+    <Compile Include="Inventory\Transaction\AssetSendReceiptDetail.cs" />
+    <Compile Include="Inventory\Transaction\DamageLostDetailDetail.cs" />
+    <Compile Include="Inventory\Transaction\DamageLostMasterDetail.cs" />
+    <Compile Include="Inventory\Transaction\Depreciation.cs" />
+    <Compile Include="Inventory\Transaction\DepreciationDetail.cs" />
+    <Compile Include="Inventory\Transaction\FaAssetSendReceipt.cs" />
+    <Compile Include="Inventory\Transaction\FaMaintenance.cs" />
+    <Compile Include="Inventory\Transaction\GoodReceiptDetailDetail.cs" />
+    <Compile Include="Inventory\Transaction\GoodReceiptEmployee.cs" />
+    <Compile Include="Inventory\Transaction\GoodReceiptItem.cs" />
+    <Compile Include="Inventory\Transaction\GoodReceiptMasterDetail.cs" />
+    <Compile Include="Inventory\Transaction\GoodReceiptReturn.cs" />
+    <Compile Include="Inventory\Transaction\GoodReceiptReturnDetail.cs" />
+    <Compile Include="Inventory\Transaction\GoodReceiptReturnItem.cs" />
+    <Compile Include="Inventory\Transaction\GoodReceiptReturnMasterDetail.cs" />
+    <Compile Include="Inventory\Transaction\GoodReceiptSearch.cs" />
+    <Compile Include="Inventory\Transaction\InfFaAsset.cs" />
+    <Compile Include="Inventory\Transaction\InItemTransactionMaster.cs" />
+    <Compile Include="Inventory\Transaction\ItemTransactionDetail.cs" />
+    <Compile Include="Inventory\Transaction\Location.cs" />
+    <Compile Include="Inventory\Transaction\MemoApproval.cs" />
+    <Compile Include="Inventory\Transaction\MemoApprovalDetail.cs" />
+    <Compile Include="Inventory\Transaction\MemoApprovalMasterDetail.cs" />
+    <Compile Include="Inventory\Transaction\MemoDetailDetail.cs" />
+    <Compile Include="Inventory\Transaction\MemoMasterDetail.cs" />
+    <Compile Include="Inventory\Transaction\MemoReturnDetailDetail.cs" />
+    <Compile Include="Inventory\Transaction\MemoReturnMasterDetail.cs" />
+    <Compile Include="Inventory\Transaction\MemoReturnReferenceNo.cs" />
+    <Compile Include="Inventory\Transaction\OpeningStockDetailDetail.cs" />
+    <Compile Include="Inventory\Transaction\OpeningStockMasterDetail.cs" />
+    <Compile Include="Inventory\Transaction\OsItem.cs" />
+    <Compile Include="Inventory\Transaction\Supplier.cs" />
+    <Compile Include="Inventory\Transaction\UserOffice.cs" />
+    <Compile Include="Maintenance\AccountControl\AccountCategory.cs" />
+    <Compile Include="Maintenance\AccountControl\AccountSubCategory.cs" />
+    <Compile Include="Maintenance\AccountControl\GLVoucherType.cs" />
+    <Compile Include="Maintenance\AccountControl\VoucherApprovalSecurity.cs" />
+    <Compile Include="Maintenance\GeneralDefinitions\InstallmentPeriod.cs" />
+    <Compile Include="Maintenance\GeneralDefinitions\LoanInstallmentPeriodMap.cs" />
+    <Compile Include="Maintenance\GeneralDefinitions\LoanPeriod.cs" />
+    <Compile Include="Maintenance\GeneralDefinitions\LoanProductPeriodMap.cs" />
+    <Compile Include="Maintenance\GeneralDefinitions\Narration.cs" />
+    <Compile Include="Maintenance\GeneralDefinitions\NepaliDateConversion.cs" />
+    <Compile Include="Maintenance\GeneralDefinitions\NepaliFiscalYear.cs" />
+    <Compile Include="MessageBase\AcknowledgeType.cs" />
+    <Compile Include="MessageBase\PersistType.cs" />
+    <Compile Include="MessageBase\RequestBase.cs" />
+    <Compile Include="MessageBase\ResponseBase.cs" />
+    <Compile Include="Message\Maintenance\GeneralDefinitions\NarrationRequest.cs" />
+    <Compile Include="Message\Maintenance\GeneralDefinitions\NarrationResponse.cs" />
+    <Compile Include="Message\Security\LoginRequest.cs" />
+    <Compile Include="Message\Security\LoginResponse.cs" />
+    <Compile Include="Message\Security\UserRequest.cs" />
+    <Compile Include="Message\Security\UserResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\GenericUser.cs" />
+    <Compile Include="Security\Login.cs" />
+    <Compile Include="Security\Menu.cs" />
+    <Compile Include="Security\Role.cs" />
+    <Compile Include="Security\User.cs" />
+    <Compile Include="Supervisor\ControlTable.cs" />
+    <Compile Include="Supervisor\Department.cs" />
+    <Compile Include="Supervisor\Employee.cs" />
+    <Compile Include="Supervisor\OfficeDepartment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_UML Diagram\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

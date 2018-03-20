@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PublicAccountChequeStore",
+        "model": "AccountCheque",
+        "storeId": "PublicAccountChequeStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore2",
+    "designerId": "cf935fe0-7207-4e5b-9527-5b7600878f5d",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy62",
+            "designerId": "e8a95980-8e5b-4c02-8078-908c103454c0",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader62",
+                    "designerId": "b0ce2e28-bd7f-43c1-a8ad-d948ec1e05c4"
+                }
+            ]
+        }
+    ]
+}

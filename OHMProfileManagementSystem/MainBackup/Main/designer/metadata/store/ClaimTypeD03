@@ -1,0 +1,74 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "     {  ClaimID:\"PA\",\r",
+            "        ClaimName:\"Credit Claim\",\r",
+            "        ClaimDesc:\"Creadit Claim\"\r",
+            "        \r",
+            "    },\r",
+            "     {  ClaimID:\"VT\",\r",
+            "        ClaimName:\"Transport Claim\",\r",
+            "        ClaimDesc:\"Transport Claim\"\r",
+            "        \r",
+            "    },\r",
+            "    {   ClaimID:\"CU\",\r",
+            "        ClaimName:\"Customs Claim\",\r",
+            "        ClaimDesc:\"Customs Claim\"\r",
+            "        \r",
+            "    },\r",
+            "    {   ClaimID:\"TD\",\r",
+            "        ClaimName:\"TDS\",\r",
+            "        ClaimDesc:\"TDS\"\r",
+            "        \r",
+            "    },    \r",
+            "    {   ClaimID:\"TC\",\r",
+            "        ClaimName:\"Transfer Of Credit\",\r",
+            "        ClaimDesc:\"Transfer Of Credit\"\r",
+            "        \r",
+            "    }\r",
+            "\r",
+            "]"
+        ],
+        "designer|userClassName": "ClaimTypeD03",
+        "model": "ClaimTypeD03",
+        "storeId": "MyArrayStore8"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "09e30473-d23a-4a66-8c74-14b1cc336390",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy44",
+            "designerId": "67533e01-a50f-4c8a-8f76-d428d9299db9",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader11",
+                    "designerId": "37cfaa8a-8cad-4691-9260-1abcc0f125a6"
+                }
+            ]
+        }
+    ]
+}

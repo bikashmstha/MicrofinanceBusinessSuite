@@ -1,0 +1,495 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "PictureCutter",
+        "height": 450,
+        "id": "PictureCutter",
+        "itemId": "PictureCutter",
+        "layout": "hbox",
+        "modal": true,
+        "title": "Edit Your Picture",
+        "width": 750,
+        "y": 200
+    },
+    "configAlternates": {
+        "container|align": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "layout": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto",
+        "y": "number"
+    },
+    "designerId": "f68de6e7-0560-41b1-b63b-68b306fd810a1",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": 4,
+                "padding": 5
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "layout": "string",
+                "layout|flex": "number",
+                "padding": "auto"
+            },
+            "name": "MyContainer9",
+            "designerId": "2348ff0e-73ad-4861-b311-8dc8b779bc4c",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": 1,
+                        "container|align": "stretch",
+                        "frame": true,
+                        "html": [
+                            "<div style=\"backgound-color:black;height:100%;width:100%;overflow:auto;\">\r",
+                            "<img src=\"http://localhost:2544/photo/f4e4cf4c-0ae3-4ff1-9c12-68e9b7619af8Lighthouse.jpg\" class=\"cropbox\" />\r",
+                            "</div>"
+                        ],
+                        "id": "picturesource",
+                        "itemId": "picturesource",
+                        "layout": "vbox",
+                        "layout|flex": 1,
+                        "title": "Picture Source"
+                    },
+                    "configAlternates": {
+                        "border": "auto",
+                        "container|align": "string",
+                        "frame": "boolean",
+                        "html": "object",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "layout|flex": "number",
+                        "title": "string"
+                    },
+                    "name": "MyPanel3",
+                    "designerId": "1533b1e2-7bea-4145-a19f-186bb7bc8f8c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": 1,
+                "padding": 10
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "layout": "string",
+                "layout|flex": "number",
+                "padding": "auto"
+            },
+            "name": "MyContainer10",
+            "designerId": "fe809123-c354-47b2-8bde-725c31570f10",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": 1,
+                        "container|align": "stretch",
+                        "frame": true,
+                        "layout": "vbox",
+                        "layout|flex": 1,
+                        "title": "Picture Preview "
+                    },
+                    "configAlternates": {
+                        "border": "auto",
+                        "container|align": "string",
+                        "frame": "boolean",
+                        "layout": "string",
+                        "layout|flex": "number",
+                        "title": "string"
+                    },
+                    "name": "MyPanel4",
+                    "designerId": "972ef348-c274-436c-bfa0-e3b6e2d6a152",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "hidden": true,
+                                "html": [
+                                    "\r",
+                                    " <div style=\"width:100px;height:100px;overflow:hidden;border: 2px solid black;margin: 2px;\" factor=1>\r",
+                                    "        <img id=\"PreviewImage\" style=\"width:100px;height:100px;\" src=\"http://localhost:2544/photo/2ec42c6c-8edc-4ed7-9852-37a2dcde765cJellyfish.jpg\" class=\"preview\" />\r",
+                                    "    </div>"
+                                ],
+                                "layout|flex": 0.5,
+                                "width": 109
+                            },
+                            "configAlternates": {
+                                "height": "auto",
+                                "hidden": "boolean",
+                                "html": "object",
+                                "layout|flex": "number",
+                                "width": "auto"
+                            },
+                            "name": "MyContainer11",
+                            "designerId": "7fbdc377-e53a-4261-8239-fd574b8c7221"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "center",
+                                "layout": "vbox",
+                                "layout|flex": 1,
+                                "maxWidth": null,
+                                "padding": 10,
+                                "width": 200
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "layout": "string",
+                                "layout|flex": "number",
+                                "maxWidth": "number",
+                                "padding": "auto",
+                                "width": "auto"
+                            },
+                            "name": "MyContainer12",
+                            "designerId": "d7123c58-e1dd-4934-b001-5fdbc6945bee",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Take This Picture"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton6",
+                                    "designerId": "2b482103-c707-4934-86e3-39567ab5834e",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "/*",
+                                                    "pictureCutter.objSubmissionNo=submissionNoValue;",
+                                                    "",
+                                                    "        pictureCutter.imgPathControlId=\"#frmEmpImageUpload\";",
+                                                    "        pictureCutter.imgControlId=\"#frmEmpImageUpload\";",
+                                                    "        pictureCutter.show();",
+                                                    "*/",
+                                                    "",
+                                                    "var pictureCutter=Ext.ComponentQuery.query('#PictureCutter')[0];",
+                                                    "",
+                                                    "//var submissionNoValue='\\\\Uploads\\\\EmployeeImg\\\\';",
+                                                    "var submissionNoValue=pictureCutter.submissionNo;",
+                                                    "var imgPathControlId=pictureCutter.imgPathControlId;",
+                                                    "var imgControlId=pictureCutter.imgControlId;",
+                                                    "var empId=pictureCutter.empId;",
+                                                    "var imgName=pictureCutter.imgName;",
+                                                    "var imgFolderPath=pictureCutter.imgFolderPath;",
+                                                    "",
+                                                    "",
+                                                    "console.log('pictureCutter',pictureCutter);",
+                                                    "submissionNoValue = pictureCutter.submissionNo;",
+                                                    "",
+                                                    "Ext.Ajax.request({",
+                                                    "    url: '../Handlers/Common/PHOTOCutter.ashx',",
+                                                    "    params: {",
+                                                    "        X: Ext.ComponentQuery.query('#X')[0].getValue(),",
+                                                    "        Y: Ext.ComponentQuery.query('#Y')[0].getValue(),",
+                                                    "        H: Ext.ComponentQuery.query('#H')[0].getValue(),",
+                                                    "        W: Ext.ComponentQuery.query('#W')[0].getValue(),",
+                                                    "        img:Ext.ComponentQuery.query('#ImgToSend')[0].getValue(),",
+                                                    "        submissionNo: submissionNoValue,",
+                                                    "        employeeId:empId,",
+                                                    "        imgName:imgName",
+                                                    "",
+                                                    "    },",
+                                                    "    success: function(response){",
+                                                    "        var responseObj = Ext.decode(response.responseText);",
+                                                    "       var imgsrc=imgFolderPath+responseObj.imgFullName;",
+                                                    "       var imgname=responseObj.imgName;",
+                                                    "",
+                                                    "        //Ext.getCmp('sespicid').setValue(responseObj.msg);",
+                                                    "       // Ext.getCmp('imgPerson').setSrc('../Handlers/PhotoHandle/temp/'+responseObj.macid+\"/\"+responseObj.msg);",
+                                                    "       //-- Ext.ComponentQuery.query(imgPathControlId)[0].setValue(\"\");",
+                                                    "        Ext.ComponentQuery.query(imgPathControlId)[0].imgsrc=imgsrc;",
+                                                    "",
+                                                    "        Ext.ComponentQuery.query(imgPathControlId)[0].setValue(imgname);",
+                                                    "       //-- Ext.ComponentQuery.query(imgControlId)[0].setSrc(\"\");",
+                                                    "        //alert(imgsrc);",
+                                                    "        Ext.ComponentQuery.query(imgControlId)[0].setSrc(imgsrc);",
+                                                    "        Ext.ComponentQuery.query(\"#imgEmployee\")[0].imgsrc=imgsrc;",
+                                                    "",
+                                                    "    }",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "53930960-dd27-4b02-b1cf-ba48ddf44247"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Label",
+                                        "id": "hdnstyleforimage",
+                                        "itemId": "hdnstyleforimage",
+                                        "layout|flex": 1
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyHiddenField2",
+                                    "designerId": "173e0870-b7f1-4590-ab9d-c23bb5f4364c"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPictureEditAfterRender",
+                "implHandler": [
+                    "//var referenceToImage = Ext.getCmp('picturesource').down('image').el.dom;\r",
+                    "$('.cropbox').Jcrop({\r",
+                    "    onChange: showPreview,\r",
+                    "    onSelect: showPreview,\r",
+                    "    setSelect:[ 109, 150, 50, 50 ],\r",
+                    "    aspectRatio: 1\r",
+                    "});\r",
+                    "\r",
+                    "function showPreview(coords)\r",
+                    "{\r",
+                    "\r",
+                    "\r",
+                    "    Ext.ComponentQuery.query('#X')[0].setValue(coords.x);\r",
+                    "    Ext.ComponentQuery.query('#Y')[0].setValue(coords.y);\r",
+                    "    Ext.ComponentQuery.query('#H')[0].setValue(coords.h);\r",
+                    "    Ext.ComponentQuery.query('#W')[0].setValue(coords.w);\r",
+                    "\r",
+                    "    if (parseInt(coords.w) > 0)\r",
+                    "    {\r",
+                    "        $('.preview').each(function(){\r",
+                    "\r",
+                    "            $(this).parent().width(coords.w*$(this).parent().attr('factor'));\r",
+                    "            $(this).parent().height(coords.h*$(this).parent().attr('factor'));\r",
+                    "\r",
+                    "            var rx = $(this).parent().width() / coords.w;\r",
+                    "            var ry = $(this).parent().height() / coords.h;\r",
+                    "\r",
+                    "            $(this).css({\r",
+                    "                width: Math.round(rx * 500) + 'px',\r",
+                    "                height: Math.round(ry * 370) + 'px',\r",
+                    "                marginLeft: '-' + Math.round(rx * coords.x) + 'px',\r",
+                    "                marginTop: '-' + Math.round(ry * coords.y) + 'px'\r",
+                    "            });\r",
+                    "\r",
+                    "        });\r",
+                    "\r",
+                    "    }\r",
+                    "}          \r",
+                    "\r",
+                    "\r",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPictureEditAfterRender",
+            "designerId": "7e607d4b-ec11-470c-96f3-27de430d1033"
+        },
+        {
+            "type": "Ext.form.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Label",
+                "id": "X",
+                "itemId": "X",
+                "layout|flex": null
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyHiddenField3",
+            "designerId": "88b1cecf-860d-4e64-af1c-dd4b453fd532"
+        },
+        {
+            "type": "Ext.form.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Label",
+                "id": "Y",
+                "itemId": "Y",
+                "layout|flex": null
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyHiddenField4",
+            "designerId": "22ddbac9-6c76-41de-9ea3-55b4aae7751d"
+        },
+        {
+            "type": "Ext.form.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Label",
+                "id": "H",
+                "itemId": "H",
+                "layout|flex": null
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyHiddenField5",
+            "designerId": "cd8dc641-89da-4939-9aa9-4ba55bc91b06"
+        },
+        {
+            "type": "Ext.form.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Label",
+                "id": "W",
+                "itemId": "W",
+                "layout|flex": null
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyHiddenField6",
+            "designerId": "24d82af3-addc-48d3-9822-4d43a3b04cd7"
+        },
+        {
+            "type": "Ext.form.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Label",
+                "id": "ImgToSend",
+                "itemId": "ImgToSend",
+                "layout|flex": null
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "id": "string",
+                "itemId": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyHiddenField7",
+            "designerId": "25be2c97-9d11-4091-a480-aa3a1b86c5e7"
+        }
+    ]
+}

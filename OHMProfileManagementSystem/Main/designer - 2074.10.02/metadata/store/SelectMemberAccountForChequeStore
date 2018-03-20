@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SelectMemberAccountForChequeStore",
+        "model": "SelectMemberAccountForCheque",
+        "storeId": "SelectMemberAccountForChequeStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "2c06b860-2318-437e-9015-ca7d58651046",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy30",
+            "designerId": "33a137e9-88b1-4f7b-ade8-12003ceb31cf",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader30",
+                    "designerId": "a9c3b2c0-ad0f-4a24-878d-72df644d9279"
+                }
+            ]
+        }
+    ]
+}

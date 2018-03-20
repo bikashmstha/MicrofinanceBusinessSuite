@@ -1,0 +1,64 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    {\r",
+            "\t\tEstPaymentModeID:'VO',\r",
+            "\t\tEstPaymentModeName:'Bank'\r",
+            "\t},\r",
+            "\t{\r",
+            "\t\tEstPaymentModeID:'CA',\r",
+            "\t\tEstPaymentModeName:'Cash'\r",
+            "\t},\r",
+            "\t{\r",
+            "\t\tEstPaymentModeID:'CH',\r",
+            "\t\tEstPaymentModeName:'Cheque'\r",
+            "\t},\r",
+            "\t{\r",
+            "\t\tEstPaymentModeID:'DR',\r",
+            "\t\tEstPaymentModeName:'Draft'\r",
+            "\t}\r",
+            "]"
+        ],
+        "designer|userClassName": "EstPaymentMode",
+        "model": "EstPaymentMode",
+        "storeId": "EstPaymentMode"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "305548ff-5006-4b97-afb9-3babada92823",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy81",
+            "designerId": "64a4eb59-b2a4-4bbd-9233-0237198add21",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader65",
+                    "designerId": "03e12bfa-660b-483e-b68e-a522e3354e41"
+                }
+            ]
+        }
+    ]
+}

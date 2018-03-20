@@ -1,0 +1,340 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectTransferToMemberPopup",
+        "height": 500,
+        "itemId": "SelectTransferToMemberPopup",
+        "modal": true,
+        "title": "Select Member",
+        "width": 700
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string",
+        "autoScroll": "boolean",
+        "height": "auto",
+        "width": "auto",
+        "modal": "boolean"
+    },
+    "name": "SelectTransferMemberPopup1",
+    "designerId": "26b0e265-ad59-461a-94bb-463d3e7ddd67",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "id": "frmSelectTransferToMemberPopup",
+                "itemId": "frmSelectTransferToMemberPopup",
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string",
+                "id": "string",
+                "itemId": "string"
+            },
+            "name": "MyForm2",
+            "designerId": "ced8577d-03e8-44f3-9f41-a9f930bd89c3",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "a0b89fd3-7636-40ac-82fd-7e60628c8ef3",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Search",
+                                "itemId": "txtSearchMember"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField55",
+                            "designerId": "e73db2a5-6538-4be6-8549-88ee113e85ff"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnSearchMember",
+                                "layout|colspan": 2,
+                                "margin": "0 0 0 5",
+                                "text": "Search"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "4ea3efb3-b4b9-419f-9d7c-3c0d5c2a17aa",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSearchMemberClick",
+                                        "implHandler": [
+                                            "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                                            "Ext.Ajax.request({",
+                                            "    url:'../Handlers/Finance/Transaction/LoanTransaction/LoanTransferToClientHandler.ashx',",
+                                            "    params:{method:'GetLoanTransferToClient', OfficeCode:getOfficeCode(),",
+                                            "            CenterCode: Ext.ComponentQuery.query('#txtToCenterCode')[0].getValue(),",
+                                            "            ProductCode:null,",
+                                            "            ClientName:Ext.ComponentQuery.query('#txtSearchMember')[0].getValue()",
+                                            "           },",
+                                            "    success: function ( result, request ) {",
+                                            "",
+                                            "        var obj = Ext.decode(result.responseText);",
+                                            "        if(obj.success === 'true'){",
+                                            "            //console.log(\"Resu\",obj.root);",
+                                            "            var store =Ext.getStore('MemberShortStore');",
+                                            "            store.removeAll();",
+                                            "            store.add(obj.root);",
+                                            "            waitSave.hide();",
+                                            "",
+                                            "        }else{msg('FAILURE','Could Not Load Data');}",
+                                            "    },",
+                                            "    failure: function(form, action) {",
+                                            "        msg(\"FAILURE\",\"Could Not Load Data\");  waitSave.hide();  }",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSearchMemberClick",
+                                    "designerId": "ff983c7c-b811-4ae0-aff2-9e3f81ada977"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchMember",
+                        "store": "MemberShortStore",
+                        "title": "",
+                        "width": ""
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "title": "string",
+                        "width": "auto",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "51bb24bd-c42c-42ea-bd64-a01f7dbb5145",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "6fee7a18-fec5-4506-97dd-4a27d366f5ce"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel17",
+                            "designerId": "f1b43b5e-b960-44d5-8dd3-6aadc5a7b812",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "   if(btn === 'yes'){",
+                                            "       //console.log('record',record);",
+                                            "",
+                                            "       Ext.ComponentQuery.query('#txtToMemberCode')[0].setValue(record.data.ClientCode);",
+                                            "       Ext.ComponentQuery.query('#txtToMemberDesc')[0].setValue(record.data.ClientName);",
+                                            "       Ext.ComponentQuery.query('#txtToMemberCode')[0].ClientNo=record.data.ClientNo;",
+                                            "",
+                                            "",
+                                            "      // return true;",
+                                            "   }",
+                                            "   else",
+                                            "   {",
+                                            "",
+                                            "   }",
+                                            "    var v = Ext.ComponentQuery.query('#SelectTransferToMemberPopup')[0];",
+                                            "                                       ",
+                                            "",
+                                            "    v.close();",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "7456c60e-39ed-436b-973e-b423592864b8"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ClientCode",
+                                "text": "ClientCode"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn",
+                            "designerId": "c05f2d1f-98d0-458e-b214-ca84067102fb"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ClientName",
+                                "text": "ClientName",
+                                "width": 210
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn6",
+                            "designerId": "47a0340e-4ba2-4273-9b26-200de66f0a64"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmSelectTransferToMemberPopupAfterRender",
+                        "implHandler": [
+                            "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                            "Ext.Ajax.request({",
+                            "    url:'../Handlers/Finance/Transaction/LoanTransaction/LoanTransferToClientHandler.ashx',",
+                            "    params:{method:'GetLoanTransferToClient', OfficeCode:getOfficeCode(),",
+                            "            CenterCode: Ext.ComponentQuery.query('#txtToCenterCode')[0].getValue(),",
+                            "            ProductCode:null,",
+                            "            ClientName:null",
+                            "           },",
+                            "    success: function ( result, request ) {",
+                            "",
+                            "        var obj = Ext.decode(result.responseText);",
+                            "        if(obj.success === 'true'){",
+                            "            //console.log(\"Resu\",obj.root);",
+                            "            var store =Ext.getStore('MemberShortStore');",
+                            "            store.removeAll();",
+                            "            store.add(obj.root);",
+                            "            waitSave.hide();",
+                            "",
+                            "        }else{msg('FAILURE','Could Not Load Data');}",
+                            "    },",
+                            "    failure: function(form, action) {",
+                            "        msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                            "});",
+                            ""
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmSelectTransferToMemberPopupAfterRender",
+                    "designerId": "e60f5f08-3cfd-4dd7-8eb5-1f5bd193b172"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,276 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "CSCenterCodePopUp",
+        "height": 500,
+        "itemId": "pnlSelectCenterCode",
+        "modal": true,
+        "title": "Select Center Code",
+        "width": 700
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string",
+        "autoScroll": "boolean",
+        "modal": "boolean",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "SelectOfficeTypePopUp1",
+    "designerId": "aa2da26f-fa01-420d-93f8-e95bc16a7906",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "itemId": "frmSelectCenterCode",
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string",
+                "itemId": "string"
+            },
+            "name": "MyForm2",
+            "designerId": "fc43bf80-d02f-44f9-b3b5-38d315ba6dfc",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSelectOfficeType",
+                        "store": "CSCenterCodePopUpStore",
+                        "title": "",
+                        "width": ""
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "title": "string",
+                        "width": "auto",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "24d27146-afcd-4555-a37b-928733e3c0a8",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "3881a698-8599-47d7-bfba-d4a1d3e9e6a9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CenterCode",
+                                "text": "CenterCode"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn116",
+                            "designerId": "03c1ca46-1bec-4287-a46e-c426f6841d21"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CenterFundAmount",
+                                "text": "CenterFundAmount",
+                                "width": 150
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn127",
+                            "designerId": "b0ff0b0e-54ea-4b78-aa4e-eda23896eb68"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CenterName",
+                                "text": "CenterName",
+                                "width": 250
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn129",
+                            "designerId": "e9bf4271-eb81-465c-a634-f9e4b8f655ed"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CollectionSheetNo",
+                                "text": "CollectionSheetNo",
+                                "width": 150
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn130",
+                            "designerId": "d1d83e4d-365d-4667-9edc-9c7f1fd064f4"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel14",
+                            "designerId": "491b5081-ca71-4ffd-aade-464c2bab0cc0",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "           if(btn === 'yes'){",
+                                            "               console.log('record',record);",
+                                            "",
+                                            "               Ext.ComponentQuery.query('#txtCenterCode')[0].setValue(record.data.CenterCode);",
+                                            "               Ext.ComponentQuery.query('#txtCenterName')[0].setValue(record.data.CenterName);",
+                                            "                Ext.ComponentQuery.query('#txtCollectionSheetNo')[0].setValue(record.data.CollectionSheetNo);",
+                                            "               Ext.ComponentQuery.query('#txtAdvanceRecAmount')[0].setValue(record.data.CenterFundAmount);",
+                                            "                Ext.ComponentQuery.query('#txtCollectionDateBS')[0].setValue(record.data.CollectionDateBs);",
+                                            "              // Ext.ComponentQuery.query('#txtCollectionDateAD')[0].setValue(record.data.CenterName);",
+                                            "",
+                                            "",
+                                            "",
+                                            "              }",
+                                            "             var v=Ext.ComponentQuery.query('#pnlSelectCenterCode')[0];",
+                                            "",
+                                            "            v.close();",
+                                            "        });"
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "da6f9979-e75c-4995-b302-821427fbf29b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmSelectCenterCodeAfterRender",
+                        "implHandler": [
+                            "var date='26-Jan-2014';",
+                            "var offCode=Ext.get('offCode').dom.innerHTML;",
+                            "//var offCode='01020';",
+                            "var centerName='';",
+                            "",
+                            "        Ext.Ajax.request",
+                            "        ({",
+                            "            url:'../Handlers/Finance/Transaction/CollectionSheetTransaction/OnlineCollectionCenterHandler.ashx?method=GetOnlineCenters',",
+                            "            params:{date:date,offCode:offCode,centerName:centerName},",
+                            "            success: function ( result, request ) {",
+                            "",
+                            "",
+                            "                var obj = Ext.decode(result.responseText);",
+                            "",
+                            "                if(obj.success === \"false\")",
+                            "                {",
+                            "                    msg(\"WARNING\",obj.message);",
+                            "                    return;",
+                            "                }",
+                            "                var data = obj.root;",
+                            "                 var storeUser = Ext.getStore('CSCenterCodePopUpStore');",
+                            "                 storeUser.removeAll();",
+                            "                  storeUser.add(data);",
+                            "",
+                            "            },",
+                            "            failure: function ( result, request ) {",
+                            "",
+                            "",
+                            "                msg(\"FAILURE\",\"Error in Fetching Data !!!\");",
+                            "            }",
+                            "        });",
+                            ""
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmSelectCenterCodeAfterRender",
+                    "designerId": "d7f19b90-e5c4-456f-a110-e7b949d4c29d"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,603 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|columns": 2,
+        "designer|userClassName": "BudgetAllocation",
+        "frame": true,
+        "layout": "table",
+        "title": "Budget Allocation"
+    },
+    "configAlternates": {
+        "container|columns": "number",
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "d7c11d18-a487-4229-b5c8-5f7f298de9a5",
+    "cn": [
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "FiscalYearCode",
+                "emptyText": "- - - Select - - -",
+                "fieldLabel": "Fiscal Year",
+                "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                "forceSelection": true,
+                "itemId": "ddlFiscalYear",
+                "labelWidth": 120,
+                "layout|colspan": 2,
+                "queryMode": "local",
+                "store": "FiscalYearShortStore",
+                "valueField": "FiscalYearCode"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "fieldStyle": "string",
+                "labelWidth": "number",
+                "layout|colspan": "number",
+                "displayField": "datafield",
+                "emptyText": "string",
+                "forceSelection": "boolean",
+                "itemId": "string",
+                "queryMode": "string",
+                "store": "store",
+                "valueField": "datafield"
+            },
+            "name": "MyComboBox86",
+            "designerId": "c11a82ef-1082-4f86-8927-39692eab41c0"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "OfficeName",
+                "emptyText": "- - - Select - - -",
+                "fieldLabel": "Office Code",
+                "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                "forceSelection": true,
+                "itemId": "ddlOffice",
+                "labelWidth": 120,
+                "layout|colspan": 2,
+                "queryMode": "local",
+                "store": "OfficeShortStore",
+                "valueField": "OfficeCode"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "fieldStyle": "string",
+                "labelWidth": "number",
+                "layout|colspan": "number",
+                "displayField": "datafield",
+                "emptyText": "string",
+                "forceSelection": "boolean",
+                "itemId": "string",
+                "queryMode": "string",
+                "store": "store",
+                "valueField": "datafield"
+            },
+            "name": "MyComboBox8",
+            "designerId": "1ee72955-615c-4408-a5a0-6e0719ffc085"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "emptyText": "YYYY-MM-DD",
+                "fieldLabel": "Allocation Date(B.S.)",
+                "itemId": "txtAllocationDateBS",
+                "labelWidth": 120
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "labelWidth": "number",
+                "emptyText": "string",
+                "itemId": "string"
+            },
+            "name": "MyTextField21",
+            "designerId": "472c6527-5db1-4ca4-9044-453824df2dbf",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTxtAllocationDateBSBlur",
+                        "implHandler": [
+                            "getEngDate(component.getValue(),function(data){",
+                            "    //console.log('date',data);",
+                            "    Ext.ComponentQuery.query('#txtAllocationDateAD')[0].setValue(data.message);",
+                            "});"
+                        ],
+                        "name": "blur",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onTxtAllocationDateBSBlur",
+                    "designerId": "7baba0c1-9db3-4d53-adfe-d41d825c936c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "emptyText": "DD-MON-YYYY",
+                "fieldLabel": "(A.D.)",
+                "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                "itemId": "txtAllocationDateAD",
+                "margin": "0 0 0 10"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "fieldStyle": "string",
+                "margin": "auto",
+                "emptyText": "string",
+                "itemId": "string"
+            },
+            "name": "MyTextField22",
+            "designerId": "b2dc3358-2978-43e9-8a53-bc4e02a2b975"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "grdBudgetAllocation",
+                "layout|colspan": 2,
+                "store": "BudgetAllocationStore",
+                "title": "Budget Allocation"
+            },
+            "configAlternates": {
+                "layout|colspan": "number",
+                "title": "string",
+                "itemId": "string",
+                "store": "store"
+            },
+            "name": "MyGridPanel7",
+            "designerId": "aa642cb5-be30-4104-9bf6-5dfc1a54dba8",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView6",
+                    "designerId": "73c6bf03-a59e-4752-b89f-b441fd14bf19"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "FiscalYear",
+                        "text": "FiscalYear"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn221",
+                    "designerId": "449ac4c3-972d-48fb-b561-764843d62d93"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "TranOfficeCode",
+                        "text": "TranOfficeCode"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn235",
+                    "designerId": "03b6cd68-8cc1-41df-b4f3-7d6e7f0e9d04"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "AccountCode",
+                        "text": "AccountCode"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn236",
+                    "designerId": "4e478bf7-d67c-435b-8281-7e220af88e79"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "AllocAmt",
+                        "text": "AllocAmt"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn237",
+                    "designerId": "407cd404-ba17-4867-a5bc-bcb0be25e6ca"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "NetAllocAmt",
+                        "text": "NetAllocAmt"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn238",
+                    "designerId": "e624f3eb-35fd-4ea1-a576-81d517d29e90"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "AccountNo",
+                        "text": "AccountNo"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn239",
+                    "designerId": "57cb87c2-74d8-46fc-aca1-37edb626e321"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "AccountDesc",
+                        "text": "AccountDesc"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn240",
+                    "designerId": "230d9ae3-2552-45ef-8b2a-1aac367ae497"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "center",
+                "height": 28,
+                "layout": "hbox",
+                "layout|colspan": 2,
+                "margin": "10 0 0 0 "
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "container|pack": "string",
+                "layout": "string",
+                "layout|colspan": "number",
+                "margin": "auto",
+                "height": "auto"
+            },
+            "name": "MyContainer12",
+            "designerId": "5c258688-36c4-4b68-9d71-4b0486bb892a",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnSaveBudgetAllocationDetails",
+                        "padding": 5,
+                        "text": "Save Budget Allocation Details"
+                    },
+                    "configAlternates": {
+                        "text": "string",
+                        "itemId": "string",
+                        "padding": "auto"
+                    },
+                    "name": "MyButton8",
+                    "designerId": "9035e999-18a0-4fd7-bd1c-52a0094469fe",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnSaveBudgetAllocationDetailsClick",
+                                "implHandler": [
+                                    "var errMsg='';",
+                                    "var categoryNo=Ext.ComponentQuery.query('#txtCategoryNo')[0];",
+                                    "var categoryDesc=Ext.ComponentQuery.query('#txtCategoryDesc')[0];",
+                                    "var categoryInitial=Ext.ComponentQuery.query('#txtCategoryInitial')[0];",
+                                    "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                    "",
+                                    "",
+                                    "var objBudgetAllocationMaster={CategoryNo:categorNo.getValu(),",
+                                    "         CategoryDesc:categoryDesc.getValue(),",
+                                    "         CategoryInitial:categoryInitial.getValue(),",
+                                    "         TranOfficeCode:null,",
+                                    "         Action:action.getValue()};",
+                                    "",
+                                    "/*",
+                                    "public string FiscalYear { get; set; }",
+                                    "        public string TranOfficeCode { get; set; }",
+                                    "        public string AllocDate { get; set; }",
+                                    "        public string Active { get; set; }",
+                                    "        public string InsertUpdateMst { get; set; }",
+                                    "        */",
+                                    "",
+                                    "",
+                                    "",
+                                    "var wMsg='Budget Allocation On Process...';",
+                                    "",
+                                    "var waitSave = watiMsg(wMsg);",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "            url: '../Handlers/Finance/AccountTransaction/BudgetAllocationMasterHandler.ashx',",
+                                    "            params: {",
+                                    "                method:'SaveBudgetAllocationMaster',",
+                                    "                budgetAllocationMaster:JSON.stringify(objBudgetAllocationMaster)",
+                                    "            },",
+                                    "            success: function(response){",
+                                    "            waitSave.hide();",
+                                    "            var out=Ext.decode(response.responseText);",
+                                    "            console.log(out);",
+                                    "",
+                                    "            if(out.success===\"true\")",
+                                    "                {",
+                                    "                    var message=out.root;",
+                                    "                    ",
+                                    "                            msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                    "                                //var grd = Ext.ComponentQuery.query('#grdAccountCategory')[0];",
+                                    "",
+                                    "                                //var record = grd.getSelectionModel().getSelection()[0];",
+                                    "                                //record.set('Action','U');",
+                                    "",
+                                    "                            });",
+                                    "",
+                                    "",
+                                    "",
+                                    "                    ",
+                                    "                }",
+                                    "                else",
+                                    "                    {",
+                                    "                        msg(\"FAILURE\",out.message);",
+                                    "                    }",
+                                    "            },",
+                                    "            failure: function ( result, request ) {",
+                                    "                waitSave.hide();",
+                                    "                var out=Ext.decode(response.responseText);",
+                                    "                msg(\"FAILURE\",out.message);",
+                                    "            }",
+                                    "",
+                                    "        });",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnSaveBudgetAllocationDetailsClick",
+                            "designerId": "b42e7357-c6ef-43ee-926b-88c5d08c7a5d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "var fiscalYearShortStore=Ext.getStore('FiscalYearShortStore');",
+                    "getFiscalYears(null,function(data){",
+                    "    fiscalYearShortStore.removeAll();",
+                    "    fiscalYearShortStore.add(data.root);",
+                    "    ",
+                    "});",
+                    "",
+                    "var officeShortStore=Ext.getStore('OfficeShortStore');",
+                    "getOfficeShort(function(data){",
+                    "    officeShortStore.removeAll();",
+                    "    officeShortStore.add(data.root);",
+                    "    ",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "c192f024-49e5-401e-a957-97b295996c8e"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "grdBudgetAllocationShare",
+                "store": "BudgetAllocationShareStore",
+                "title": "Budget Allocation Share",
+                "width": 788
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "store": "store",
+                "title": "string",
+                "width": "auto"
+            },
+            "name": "MyGridPanel24",
+            "designerId": "afdf445d-5ab9-4201-a0b7-7e122387763e",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView24",
+                    "designerId": "74d6da57-971d-4cd1-9078-036a8436d367"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "AccountCode",
+                        "text": "Account Code",
+                        "width": 165
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn243",
+                    "designerId": "83cb6bb7-4dfa-4dd6-9811-b3de14584427"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ReBudgetDate",
+                        "text": "Re Budget Date",
+                        "width": 111
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn244",
+                    "designerId": "49e0f33b-e750-48a4-9d40-9a889a2d1f92"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ReAllocAmt",
+                        "text": "Re Alloc Amt",
+                        "width": 244
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn245",
+                    "designerId": "26dc4139-f958-4937-8fd0-c9556c15066b"
+                }
+            ]
+        }
+    ]
+}

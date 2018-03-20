@@ -1,0 +1,176 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using BusinessObjects;
+using BusinessObjects.Finance.Transaction.SavingTransaction;
+using DataObjects.Interfaces.Finance;
+using Oracle.DataAccess.Client;
+namespace DataObjects.AdoNet.Oracle.Finance
+{
+    public class OracleProductForWithdrawlDao : IProductForWithdrawlDao
+    {
+        public object Get()
+        {
+            string sp = "productForWithdrawl_pkg.p_get";
+            OracleConnection conn = new OracleConnection();
+            OutMessage oMsg = new OutMessage();
+            try
+            {
+                conn = new GetConnection().GetDbConn();
+                List<OracleParameter> paramList = new List<OracleParameter>();
+                paramList.Add(SqlHelper.GetOraParam(":v_out_record", null, OracleDbType.RefCursor, ParameterDirection.Output));
+                DataSet ds = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, sp, paramList.ToArray());
+                List<ProductForWithdrawl> lst = new List<ProductForWithdrawl>();
+                foreach (DataRow drow in ((DataTable)ds.Tables[0]).Rows)
+                {
+                    ProductForWithdrawl obj = new ProductForWithdrawl();
+                    obj.SavingAccountNo = drow["SavingAccountNo"].ToString();
+                    obj.ClientCode = drow["ClientCode"].ToString();
+                    obj.ClientDesc = drow["ClientDesc"].ToString();
+                    obj.Address = drow["Address"].ToString();
+                    obj.ProductCode = drow["ProductCode"].ToString();
+                    obj.ProductName = drow["ProductName"].ToString();
+                    obj.ClientNo = drow["ClientNo"].ToString();
+                    obj.AccountNo = drow["AccountNo"].ToString();
+                    obj.FixedCollectAmount = double.Parse(drow["FixedCollectAmount"].ToString());
+                    obj.CenterCode = drow["CenterCode"].ToString();
+                    obj.CenterName = drow["CenterName"].ToString();
+                    obj.RowCount = double.Parse(drow["RowCount"].ToString());
+
+                    obj.Action = "U";
+                    lst.Add(obj);
+                }
+                oMsg.Result = lst;
+                return oMsg;
+            }
+            catch (Exception ex) { oMsg.OutResultMessage = ex.Message.ToString(); return oMsg; }
+            finally { conn.Close(); }
+        }
+
+        public object Save(ProductForWithdrawl productForWithdrawl)
+        {
+            string sp = "productForWithdrawl_pkg.p_save";
+            OracleConnection conn = new OracleConnection();
+            OracleTransaction tran = null;
+            OutMessage oMsg = new OutMessage();
+            try
+            {
+                conn = new GetConnection().GetDbConn();
+                tran = conn.BeginTransaction();
+                List<OracleParameter> paramList = new List<OracleParameter>();
+                paramList.Add(SqlHelper.GetOraParam(":p_SavingAccountNo", productForWithdrawl.SavingAccountNo, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_ClientCode", productForWithdrawl.ClientCode, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_ClientDesc", productForWithdrawl.ClientDesc, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_Address", productForWithdrawl.Address, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_ProductCode", productForWithdrawl.ProductCode, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_ProductName", productForWithdrawl.ProductName, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_ClientNo", productForWithdrawl.ClientNo, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_AccountNo", productForWithdrawl.AccountNo, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_FixedCollectAmount", productForWithdrawl.FixedCollectAmount, OracleDbType.Double, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_CenterCode", productForWithdrawl.CenterCode, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_CenterName", productForWithdrawl.CenterName, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_RowCount", productForWithdrawl.RowCount, OracleDbType.Double, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_action", productForWithdrawl.Action, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":P_OUT_RESULT_CODE", null, OracleDbType.Varchar2, ParameterDirection.Output));
+                paramList[paramList.Count - 1].Size = 20;
+                paramList.Add(SqlHelper.GetOraParam(":P_OUT_RESULT_DESC", null, OracleDbType.Varchar2, ParameterDirection.Output));
+                paramList[paramList.Count - 1].Size = 20;
+                SqlHelper.ExecuteNonQuery(tran, CommandType.StoredProcedure, sp, paramList.ToArray());
+                tran.Commit();
+                oMsg.OutResultCode = paramList[paramList.Count - 2].Value.ToString(); oMsg.OutResultMessage = paramList[paramList.Count - 1].Value.ToString();
+                return oMsg;
+            }
+            catch (Exception ex) { tran.Rollback(); oMsg.OutResultMessage = ex.Message.ToString(); return oMsg; }
+            finally { conn.Close(); }
+        }
+
+        public object Search(ProductForWithdrawl productForWithdrawl)
+        {
+            string sp = "productForWithdrawl_pkg.p_get";
+            OracleConnection conn = new OracleConnection();
+            OutMessage oMsg = new OutMessage();
+            try
+            {
+                conn = new GetConnection().GetDbConn();
+                List<OracleParameter> paramList = new List<OracleParameter>();
+                paramList.Add(SqlHelper.GetOraParam(":p_SavingAccountNo", productForWithdrawl.SavingAccountNo, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_ClientCode", productForWithdrawl.ClientCode, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_ClientDesc", productForWithdrawl.ClientDesc, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_Address", productForWithdrawl.Address, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_ProductCode", productForWithdrawl.ProductCode, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_ProductName", productForWithdrawl.ProductName, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_ClientNo", productForWithdrawl.ClientNo, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_AccountNo", productForWithdrawl.AccountNo, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_FixedCollectAmount", productForWithdrawl.FixedCollectAmount, OracleDbType.Double, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_CenterCode", productForWithdrawl.CenterCode, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_CenterName", productForWithdrawl.CenterName, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":p_RowCount", productForWithdrawl.RowCount, OracleDbType.Double, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":v_out_record", null, OracleDbType.RefCursor, ParameterDirection.Output));
+                DataSet ds = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, sp, paramList.ToArray());
+                List<ProductForWithdrawl> lst = new List<ProductForWithdrawl>();
+                foreach (DataRow drow in ((DataTable)ds.Tables[0]).Rows)
+                {
+                    ProductForWithdrawl obj = new ProductForWithdrawl();
+                    obj.SavingAccountNo = drow["SavingAccountNo"].ToString();
+                    obj.ClientCode = drow["ClientCode"].ToString();
+                    obj.ClientDesc = drow["ClientDesc"].ToString();
+                    obj.Address = drow["Address"].ToString();
+                    obj.ProductCode = drow["ProductCode"].ToString();
+                    obj.ProductName = drow["ProductName"].ToString();
+                    obj.ClientNo = drow["ClientNo"].ToString();
+                    obj.AccountNo = drow["AccountNo"].ToString();
+                    obj.FixedCollectAmount = double.Parse(drow["FixedCollectAmount"].ToString());
+                    obj.CenterCode = drow["CenterCode"].ToString();
+                    obj.CenterName = drow["CenterName"].ToString();
+                    obj.RowCount = double.Parse(drow["RowCount"].ToString());
+
+                    lst.Add(obj);
+                }
+                oMsg.Result = lst;
+                return oMsg;
+            }
+            catch (Exception ex) { oMsg.OutResultMessage = ex.Message.ToString(); return oMsg; }
+            finally { conn.Close(); }
+        }
+
+        public object GetProductForWithDrawl(string productName)
+        {
+            string sp = "fn_saving_utility_pkg.p_product_for_withdraw_lov";
+            OracleConnection conn = new OracleConnection();
+            OutMessage oMsg = new OutMessage();
+            try
+            {
+                conn = new GetConnection().GetDbConn();
+                List<OracleParameter> paramList = new List<OracleParameter>();
+                paramList.Add(SqlHelper.GetOraParam(":p_product_name", productName, OracleDbType.Varchar2, ParameterDirection.Input));
+                paramList.Add(SqlHelper.GetOraParam(":v_out_record", null, OracleDbType.RefCursor, ParameterDirection.Output));
+                DataSet ds = SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, sp, paramList.ToArray());
+                List<ProductForWithdrawl> lst = new List<ProductForWithdrawl>();
+                foreach (DataRow drow in ((DataTable)ds.Tables[0]).Rows)
+                {
+                    ProductForWithdrawl obj = new ProductForWithdrawl();
+                    //obj.SavingAccountNo = drow["Saving_Account_No"].ToString();
+                    //obj.ClientCode = drow["Client_Code"].ToString();
+                    //obj.ClientDesc = drow["Client_Desc"].ToString();
+                    //obj.Address = drow["Address"].ToString();
+                    obj.ProductCode = drow["Product_Code"].ToString();
+                    obj.ProductName = drow["Product_Name"].ToString();
+                    //obj.ClientNo = drow["Client_No"].ToString();
+                    //obj.AccountNo = drow["Account_No"].ToString();
+                    //obj.FixedCollectAmount = double.Parse(drow["FixedCollect_Amount"].ToString());
+                    //obj.CenterCode = drow["Center_Code"].ToString();
+                    //obj.CenterName = drow["Center_Name"].ToString();
+                    //obj.RowCount = double.Parse(drow["Row_Count"].ToString());
+
+                    lst.Add(obj);
+                }
+                oMsg.Result = lst;
+                return oMsg;
+            }
+            catch (Exception ex) { oMsg.OutResultMessage = ex.Message.ToString(); return oMsg; }
+            finally { conn.Close(); }
+        }
+    }
+}

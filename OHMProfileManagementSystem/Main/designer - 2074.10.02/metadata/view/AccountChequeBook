@@ -1,0 +1,650 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "AccountChequeBook",
+        "frame": true,
+        "title": "Saving Account Cheque List"
+    },
+    "configAlternates": {
+        "autoScroll": "boolean",
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "d2861fe2-4f3b-49af-b99c-59f4bf206fd4",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "id": "frm-AccountChequeBook",
+                "itemId": "frm-AccountChequeBook",
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "id": "string",
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "MyForm",
+            "designerId": "1e0a374f-34c6-4490-92a7-2c95f03aa248",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|columns": 4,
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "container|columns": "number",
+                        "layout": "string"
+                    },
+                    "name": "MyContainer",
+                    "designerId": "ad9bd9c7-6e37-40ae-9976-1860cc1b710e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Account Code",
+                                "labelWidth": 115,
+                                "layout|colspan": 4,
+                                "size": 65
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "layout|colspan": "number",
+                                "size": "number"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "cf5c12bc-5832-4b51-b827-a785ec47ed95"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Saving Product Code",
+                                "labelWidth": 115,
+                                "layout|colspan": 4,
+                                "size": 65
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "layout|colspan": "number",
+                                "size": "number"
+                            },
+                            "name": "MyComboBox",
+                            "designerId": "f10ba310-ba1a-4a5f-9cf6-76596d4cbbe5"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Member Name",
+                                "labelWidth": 115,
+                                "layout|colspan": 4,
+                                "size": 65
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "layout|colspan": "number",
+                                "size": "number"
+                            },
+                            "name": "MyComboBox1",
+                            "designerId": "997741d3-8da4-4bb2-b35c-b2b3d04a210d"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "No. Of Leaf Issue",
+                                "labelWidth": 115,
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "layout|colspan": "number"
+                            },
+                            "name": "MyTextField1",
+                            "designerId": "2fa73357-6c24-4770-9837-af5f95270f06"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Cheque No. From",
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number"
+                            },
+                            "name": "MyTextField2",
+                            "designerId": "2acb827c-fe7a-443a-9761-ab5e6e447cd9"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|colspan": 2,
+                                "text": "Generate Cheque Book"
+                            },
+                            "configAlternates": {
+                                "layout|colspan": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton",
+                            "designerId": "a26c1f72-e60d-4511-83a0-55946ac669b0"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Cheque No. To",
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number"
+                            },
+                            "name": "MyTextField3",
+                            "designerId": "464328db-98be-49ab-9115-eda47aab2a8d"
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|columns": 4,
+                                "layout": "table",
+                                "layout|colspan": 4,
+                                "title": "Account Cheque List"
+                            },
+                            "configAlternates": {
+                                "container|columns": "number",
+                                "layout": "string",
+                                "layout|colspan": "number",
+                                "title": "string"
+                            },
+                            "name": "MyFieldSet",
+                            "designerId": "54e3bf9a-5122-4e1e-a0ed-06eac9024d87",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Cheque No. From"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string"
+                                    },
+                                    "name": "MyComboBox2",
+                                    "designerId": "98a89a17-7981-421f-bd3b-622e895532f3"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Cheque No. To",
+                                        "labelWidth": 90,
+                                        "margin": "0 0 0 5"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyComboBox3",
+                                    "designerId": "29583b95-a8ac-4d32-8fb9-96ad9f97c743"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "emptyText": "--- SELECT ---",
+                                        "fieldLabel": "Cheque Status",
+                                        "labelWidth": 90,
+                                        "margin": "0 0 0 5"
+                                    },
+                                    "configAlternates": {
+                                        "emptyText": "string",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyComboBox4",
+                                    "designerId": "431819d6-3669-442c-b57d-18cc62fb2508"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "margin": "0 0 0 5",
+                                        "text": "Search Cheque"
+                                    },
+                                    "configAlternates": {
+                                        "margin": "auto",
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton1",
+                                    "designerId": "81607245-626c-4006-9d75-e15d5da63bd7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|colspan": 4,
+                                "title": ""
+                            },
+                            "configAlternates": {
+                                "layout|colspan": "number",
+                                "title": "string"
+                            },
+                            "name": "MyGridPanel",
+                            "designerId": "bea7146b-3727-454f-a11d-d26b3a0df2d6",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "string",
+                                        "text": "String"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn",
+                                    "designerId": "7f0e4991-0784-4382-b108-a9de88dd4083"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "number",
+                                        "text": "Number"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyNumberColumn",
+                                    "designerId": "836f63ba-523c-47f3-a593-8f69fbb72b03"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Date",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "date",
+                                        "text": "Date"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyDateColumn",
+                                    "designerId": "20743d18-c8a1-45cc-b055-896b8990ad85"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Boolean",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "bool",
+                                        "text": "Boolean"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyBooleanColumn",
+                                    "designerId": "c9a3061d-218f-46ab-95a2-901fa58fad54"
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView",
+                                    "designerId": "919d37dc-65b6-4830-8f10-90ceffc14303"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|columns": 2,
+                                "layout": "table",
+                                "layout|colspan": 4,
+                                "title": "Destination"
+                            },
+                            "configAlternates": {
+                                "container|columns": "number",
+                                "layout": "string",
+                                "layout|colspan": "number",
+                                "title": "string"
+                            },
+                            "name": "MyFieldSet1",
+                            "designerId": "605c1771-d21f-4650-be1a-d791bce0dc67",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Cheque No. From",
+                                        "labelWidth": 120,
+                                        "layout|colspan": 1
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "layout|colspan": "number"
+                                    },
+                                    "name": "MyComboBox5",
+                                    "designerId": "6953ac15-402b-46e7-976b-c264ababd8ee"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Cheque No. To",
+                                        "layout|colspan": 2,
+                                        "margin": "0 0 0 100"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|colspan": "number",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyComboBox6",
+                                    "designerId": "20ae3336-272b-4241-8b38-c9e8f5bedf2b"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Destination Format",
+                                        "labelWidth": 120,
+                                        "layout|colspan": 1,
+                                        "size": 30
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "layout|colspan": "number",
+                                        "size": "number"
+                                    },
+                                    "name": "MyComboBox7",
+                                    "designerId": "4e714396-6a9f-4b74-a451-d21a5f9fff61"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Destination Parameter",
+                                        "layout|colspan": 1,
+                                        "margin": "0 0 0 100",
+                                        "size": 30
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|colspan": "number",
+                                        "margin": "auto",
+                                        "size": "number"
+                                    },
+                                    "name": "MyComboBox8",
+                                    "designerId": "753ddcc3-3bf7-4c4d-aaae-c9e829030072"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Destination Type",
+                                        "labelWidth": 120,
+                                        "layout|colspan": 1,
+                                        "size": 35
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "layout|colspan": "number",
+                                        "size": "number"
+                                    },
+                                    "name": "MyComboBox9",
+                                    "designerId": "fa15eaa5-9c3d-499c-816a-8bc3ae029c65"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "",
+                                        "fieldLabel": "Print : ?",
+                                        "layout|colspan": 1,
+                                        "margin": "0 0 0 100"
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "layout|colspan": "number",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyCheckbox",
+                                    "designerId": "3a6d0439-12fd-4fdc-a565-df7a35e856c2"
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "container|pack": "center",
+                                        "height": 23,
+                                        "layout": "hbox",
+                                        "layout|colspan": 2
+                                    },
+                                    "configAlternates": {
+                                        "container|align": "string",
+                                        "container|pack": "string",
+                                        "height": "auto",
+                                        "layout": "string",
+                                        "layout|colspan": "number"
+                                    },
+                                    "name": "MyContainer1",
+                                    "designerId": "6d7c203f-caa2-4123-9dcb-b848c561eec7",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "text": "Print Cheque Book"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string"
+                                            },
+                                            "name": "MyButton2",
+                                            "designerId": "68e761fd-56b7-4273-b49e-9a918110a06c"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "container|pack": "center",
+                                "height": 23,
+                                "layout": "hbox",
+                                "layout|colspan": 4,
+                                "title": ""
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "container|pack": "string",
+                                "height": "auto",
+                                "layout": "string",
+                                "layout|colspan": "number",
+                                "title": "string"
+                            },
+                            "name": "MyFieldSet2",
+                            "designerId": "6a1119a5-e9e0-466e-8da6-e699f516c8db",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Account Info"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton3",
+                                    "designerId": "d675ff38-4db1-4180-8047-3728374ea0d4"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

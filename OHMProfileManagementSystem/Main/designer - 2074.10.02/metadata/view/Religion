@@ -1,0 +1,605 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Religion",
+        "frame": true,
+        "title": "Religion"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string"
+    },
+    "name": "MyPanel11",
+    "designerId": "e81bd56c-023b-4156-b0bf-9e6a4d11969e",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "itemId": "frmReligion"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "itemId": "string"
+            },
+            "name": "MyForm5",
+            "designerId": "ec6776ae-367b-44f3-95de-63409c9591a7",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdReligion",
+                        "store": "ReligionStore"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel10",
+                    "designerId": "ee7bfb6a-5e5e-46b4-976d-820036dd13ca",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView9",
+                            "designerId": "fa740da5-6ee1-4a20-91c4-4b1fc830e5a9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ReligionCode",
+                                "text": "Religion Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn79",
+                            "designerId": "31fe6280-fc01-40bb-b923-4f381fad9a5f",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtReligionCode"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField134",
+                                    "designerId": "140fd698-4037-4af2-9b0c-f03a796efca5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ReligionDesc",
+                                "text": "Religion Description",
+                                "width": 273
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn80",
+                            "designerId": "a6210a02-da56-4a0b-9910-9216692216d5",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtReligionDesc"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField135",
+                                    "designerId": "624242b9-0de1-40d9-9364-142fb206512f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CibCode",
+                                "text": "Cib Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "itemId": "string",
+                                "text": "string"
+                            },
+                            "name": "MyColumn81",
+                            "designerId": "582a4e06-ed7f-4c8c-b5bd-413cea7e1128",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtCibCode"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField136",
+                                    "designerId": "4db5c59a-1e27-4f50-8f42-a266b9e18255"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Action",
+                                "hidden": true,
+                                "text": "Action"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn69",
+                            "designerId": "db661f49-6747-4ba8-9a75-0c23c91781a7",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtAction"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField137",
+                                    "designerId": "82ddc5dd-11b3-4335-8a9c-557c8d5b4c24"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "delReligion"
+                            },
+                            "configAlternates": {
+                                "itemId": "string"
+                            },
+                            "name": "MyActionColumn12",
+                            "designerId": "552418a1-5c39-45b4-839b-92a8027b1aae",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem12",
+                                    "designerId": "6a84407b-72ff-47e0-b87d-32b6c3a88c06",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var store = Ext.getStore('ReligionStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#grdReligion')[0];",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected REligion?', function(btn) {",
+                                                    "    if(btn == 'yes'){",
+                                                    "",
+                                                    "        /*",
+                                                    "        nepaliDateConversion.FiscalYear, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_MONTH_CODE\", nepaliDateConversion.MonthCode, OracleDbType.Int16, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_ENGLISH_START_DATE\", nepaliDateConversion.EnglishStartDate, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_NEPALI_START_DATE\", nepaliDateConversion.NepaliStartDate, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_ENGLISH_END_DATE\", nepaliDateConversion.EnglishEndDate, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_NEPALI_END_DATE\", nepaliDateConversion.NepaliEndDate, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_NEPALI_YEAR\", nepaliDateConversion.NepaliYear, OracleDbType.Int16, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_NEPALI_PERIOD\", nepaliDateConversion.NepaliPeriod, OracleDbType.Int16, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_NO_OF_DAYS_IN_MONTH\", nepaliDateConversion.NoOfDays, OracleDbType.Int16, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_CREATED_MODIFIED_ON\", nepaliDateConversion.CreatedOn, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_CREATED_MODIFIED_BY\", nepaliDateConversion.CreatedBy, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_INSERT_UPDATE\", nepaliDateConversion.Action, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_OUT_RESULT_CODE\", null, OracleDbType.Varchar2, ParameterDirection.Output));",
+                                                    "            paramList.Add(SqlHelper.GetOraParam(\":P_OUT_RESULT_DESC\", null, OracleDbType.",
+                                                    "            */",
+                                                    "        var religion ={",
+                                                    "                ReligionCode : row.ReligionCode,",
+                                                    "                ReligionDesc : row.ReligionDesc,",
+                                                    "                CreatedBy : '',",
+                                                    "                CreatedOn : '',",
+                                                    "                CibCode : row.CibCode,",
+                                                    "                Action:'D'",
+                                                    "};",
+                                                    "",
+                                                    "        var wMsg='Deleting....';",
+                                                    "",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "                    url: '../Handlers/GeneralMasterParameters/Maintenance/ReligionHandler.ashx',",
+                                                    "                     params:{method:'Save',religion:JSON.stringify(religion)},",
+                                                    "                     success: function(response){",
+                                                    "                    waitSave.hide();",
+                                                    "                    var out=Ext.decode(response.responseText);",
+                                                    "                    console.log(out);",
+                                                    "",
+                                                    "                    if(out.success===\"true\")",
+                                                    "                        {",
+                                                    "",
+                                                    "                                    msg(\"SUCCESS\",out.message,function(){",
+                                                    "                                        grd.bindStore(store);",
+                                                    "                                        store.removeAt(rowIndex);",
+                                                    "                                    });",
+                                                    "                        }",
+                                                    "                        else",
+                                                    "                            {",
+                                                    "                                msg(\"FAILURE\",out.message);",
+                                                    "                            }",
+                                                    "                    },",
+                                                    "                    failure: function ( result, request ) {",
+                                                    "                        waitSave.hide();",
+                                                    "                        var out=Ext.decode(response.responseText);",
+                                                    "                        msg(\"FAILURE\",out.message);",
+                                                    "                    }",
+                                                    "",
+                                                    "                });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        return true;",
+                                                    "    }",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "aec19168-f0ee-4603-b3ad-ec438d5b9e00"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel6",
+                            "designerId": "00340b34-508d-4d0c-a846-f22aac690b4f"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "configAlternates": {
+                                "dock": "string"
+                            },
+                            "name": "MyToolbar12",
+                            "designerId": "16d0ed2d-9b8b-422e-999d-729d6434e821",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "btnAddReligion",
+                                        "layout|flex": null,
+                                        "text": "Add Religion"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string",
+                                        "layout|flex": "number",
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton21",
+                                    "designerId": "2f9ac7fb-c4af-4c2f-a0ce-cabecf2fd93c",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBtnAddReligionClick",
+                                                "implHandler": [
+                                                    "var store=Ext.getStore('ReligionStore');",
+                                                    "var religion ={",
+                                                    "                ReligionCode : '',",
+                                                    "                ReligionDesc : '',",
+                                                    "                CreatedBy : '',",
+                                                    "                CreatedOn : '',",
+                                                    "                CibCode : '',",
+                                                    "                Action:'I'",
+                                                    "};",
+                                                    "store.add(religion);",
+                                                    "",
+                                                    ""
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onBtnAddReligionClick",
+                                            "designerId": "839d4aa5-4685-4e4a-a1a4-2dcef6212edf"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin12",
+                            "designerId": "edac64a3-58f6-4624-b326-5703f4871f43",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingValidateedit",
+                                        "implHandler": [
+                                            "",
+                                            "var religionCode=Ext.ComponentQuery.query('#txtReligionCode')[0];",
+                                            "var religionDesc=Ext.ComponentQuery.query('#txtReligionDesc')[0];",
+                                            "var cibCode=Ext.ComponentQuery.query('#txtCibCode')[0];",
+                                            "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                            "",
+                                            "if (religionCode===''||religionCode===null)",
+                                            "{",
+                                            "    msg('WARNING','Please, Enter Religion Code');",
+                                            "    return;",
+                                            "}",
+                                            "if (religionDesc===''||religionDesc===null)",
+                                            "{",
+                                            "    msg('WARNING','Please, Enter Religion Description');",
+                                            "    return;",
+                                            "}",
+                                            "if (cibCode===''||cibCode===null)",
+                                            "{",
+                                            "    msg('WARNING','Please, Enter CIB Code');",
+                                            "    return;",
+                                            "}",
+                                            "",
+                                            "var religion ={",
+                                            "    ReligionCode : religionCode.getValue(),",
+                                            "    ReligionDesc : religionDesc.getValue(),",
+                                            "    CreatedBy : '',",
+                                            "    CreatedOn : '',",
+                                            "    CibCode : cibCode.getValue(),",
+                                            "    Action:action.getValue()",
+                                            "};",
+                                            "",
+                                            "var waitSave = watiMsg('Please wait ...');",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/GeneralMasterParameters/Maintenance/ReligionHandler.ashx',",
+                                            "    params:{method:'Save',religion:JSON.stringify(religion)},",
+                                            "    success: function ( response, request ) {",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        console.log(out);",
+                                            "",
+                                            "        if(out.success===\"true\")",
+                                            "        {",
+                                            "            msg(\"SUCCESS\",out.message,function(){",
+                                            "                var grd = Ext.ComponentQuery.query('#grdReligion')[0];",
+                                            "",
+                                            "                var record = grd.getSelectionModel().getSelection()[0];",
+                                            "                record.set('Action','U');",
+                                            "",
+                                            "            });",
+                                            "        }",
+                                            "        else",
+                                            "        {",
+                                            "            msg(\"FAILURE\",out.message);",
+                                            "        }",
+                                            "    },",
+                                            "    failure: function ( result, request ) {",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        msg(\"FAILURE\",out.message);",
+                                            "    }",
+                                            "",
+                                            "});",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "validateedit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingValidateedit",
+                                    "designerId": "fa5a1495-ae22-40fd-bb45-151578ddf381"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingCanceledit",
+                                        "name": "canceledit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingCanceledit",
+                                    "designerId": "c92ce696-989a-49dd-9e7f-7af0ffd10206"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmReligionAfterRender",
+                        "implHandler": [
+                            "var waitSave = watiMsg('Please wait ...');",
+                            "Ext.Ajax.request({",
+                            "     url: '../Handlers/GeneralMasterParameters/Maintenance/ReligionHandler.ashx',",
+                            "     params:{method:'Get'},",
+                            "     success: function ( result, request ) {",
+                            "waitSave.hide();",
+                            "          var obj = Ext.decode(result.responseText);",
+                            "          if(obj.success === 'true'){",
+                            "              var store =Ext.getStore('ReligionStore');",
+                            "              store.removeAll();",
+                            "              store.add(obj.root);",
+                            "",
+                            "",
+                            "          }else{}",
+                            "",
+                            "     },",
+                            "     failure: function(form, action) {",
+                            "     }",
+                            "});",
+                            ""
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmReligionAfterRender",
+                    "designerId": "cdca33e0-ca97-4799-b2e4-a9abe3961d30"
+                }
+            ]
+        }
+    ]
+}

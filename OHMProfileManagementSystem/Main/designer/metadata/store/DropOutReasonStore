@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DropOutReasonStore",
+        "model": "DropOutReason",
+        "storeId": "DropOutReasonStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "e30fab8f-f7c7-451a-af65-1e1423477c67",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy31",
+            "designerId": "a62deeb9-a161-48f4-878b-9d69d7aa1624",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader31",
+                    "designerId": "ea8577e6-0b2b-4d8a-baf7-c510c5b2becc"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[ \r",
+            "{\r",
+            "ApplSubCode: \"MA\",\r",
+            "ApplSubject: \"MA\",\r",
+            "AppealOnSubjectStore:[\r",
+            "        {\r",
+            "\tid:\"MA\",\r",
+            "\tappealOnSubj:\"MA\"\r",
+            "},\r",
+            "{\r",
+            "\tid:\"MP\",\r",
+            "\tappealOnSubj:\"MP\"\r",
+            "},\r",
+            "{\r",
+            "\tid:\"MI\",\r",
+            "\tappealOnSubj:\"MI\"\r",
+            "}\r",
+            "    \r",
+            "    ]\r",
+            "},\r",
+            "{\r",
+            "ApplSubCode: \"SP\",\r",
+            "ApplSubject: \"SP\",\r",
+            "AppealOnSubjectStore:[\r",
+            "      \r",
+            "{\r",
+            "    id:\"SP\",\r",
+            "\tappealOnSubj:\"SP\"\r",
+            "}\r",
+            "    \r",
+            "    ]\r",
+            "    \r",
+            "}\r",
+            "]\r",
+            "\r",
+            ""
+        ],
+        "designer|userClassName": "AppealSubjectAE",
+        "model": "AppealSubjectAE",
+        "storeId": "MyArrayStore16"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "742ae9bc-bcf0-44ff-9d54-b0e68e3a7634",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy38",
+            "designerId": "1af0f934-318a-4293-9bf4-146f09c74a98",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyArrayReader9",
+                    "designerId": "3a9ab434-82d1-4ed6-be07-1d5e2ec1411b"
+                }
+            ]
+        }
+    ]
+}

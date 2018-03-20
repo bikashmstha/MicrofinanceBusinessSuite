@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "VdcCoverageByOfficeStore",
+        "model": "VdcCoverageByOffice",
+        "storeId": "VdcCoverageByOfficeStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "b408eb13-32d7-4037-a93e-1167e666c51f",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy24",
+            "designerId": "302a0b8c-a906-4d1a-a343-d08a1525b102",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader24",
+                    "designerId": "6ba8df8a-bd57-4ae4-a261-d5e13599c71c"
+                }
+            ]
+        }
+    ]
+}

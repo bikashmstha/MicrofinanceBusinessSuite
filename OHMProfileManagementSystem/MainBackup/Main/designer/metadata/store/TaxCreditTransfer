@@ -1,0 +1,55 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TaxCreditTransfer",
+        "model": "TaxCreditTransfer",
+        "storeId": "TaxCreditTransfer"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "82bffcf9-c210-43da-a39e-1c87c71cd407",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": ""
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy60",
+            "designerId": "fc449e85-b92d-4520-aacd-62763ffc9e40",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyJsonReader44",
+                    "designerId": "1bb89141-f05a-4497-baaa-6f2a765b79c0"
+                }
+            ]
+        }
+    ]
+}

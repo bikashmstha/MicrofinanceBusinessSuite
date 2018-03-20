@@ -1,0 +1,57 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "ModuleMachine",
+        "designer|userClassName": "ModuleMachine",
+        "model": "ModuleMachine",
+        "storeId": "ModuleMachine"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "879d4ecb-c57f-4894-b723-afd58629b38c",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "../Handlers/Security/ModuleMachineHandler.ashx?method=LoadModuleMachine"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy114",
+            "designerId": "c096cb4c-a910-4336-b560-c95f8249d1f9",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyJsonReader95",
+                    "designerId": "2d93aaaa-f47a-4b3d-8e15-795dc5b3c3fe"
+                }
+            ]
+        }
+    ]
+}

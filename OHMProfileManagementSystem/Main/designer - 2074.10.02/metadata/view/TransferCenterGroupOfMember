@@ -1,0 +1,810 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TransferCenterGroupOfMember",
+        "frame": true,
+        "title": "Transfer Center/Group of Member"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "4d5fc6fd-623b-4051-a93c-2d8c7959e7f8",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "id": "frm-TransferCenterGroupOfMember",
+                "itemId": "frm-TransferCenterGroupOfMember",
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "id": "string",
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "MyForm16",
+            "designerId": "d10e28e0-3899-43a3-a5fc-82894a8bac30",
+            "cn": [
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "frame": true
+                    },
+                    "configAlternates": {
+                        "activeTab": "auto",
+                        "frame": "boolean"
+                    },
+                    "name": "MyTabPanel1",
+                    "designerId": "15deeade-94c1-4f09-88fb-d3126dbc81fa",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|columns": 2,
+                                "frame": true,
+                                "itemId": "TCGMtab1",
+                                "layout": "table",
+                                "title": "Group"
+                            },
+                            "configAlternates": {
+                                "container|columns": "number",
+                                "frame": "boolean",
+                                "layout": "string",
+                                "title": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyPanel3",
+                            "designerId": "bdcc325e-7e89-4151-bc52-fbe3975157a8",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig2",
+                                    "designerId": "47fe0ba1-5a64-4e45-902f-1970195038b3"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "New Member No:",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtGrpNewMemberNo",
+                                        "layout|colspan": 2,
+                                        "readOnly": true,
+                                        "size": 65,
+                                        "width": 556
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|colspan": "number",
+                                        "width": "auto",
+                                        "readOnly": "boolean",
+                                        "fieldStyle": "string",
+                                        "itemId": "string",
+                                        "size": "number"
+                                    },
+                                    "name": "MyTextField36",
+                                    "designerId": "588edc26-c057-4ece-bf19-e94e3f2700c9"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "MemberName",
+                                        "fieldLabel": "Old Member No:",
+                                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                                        "forceSelection": true,
+                                        "itemId": "ddlGrpOldMemberNo",
+                                        "layout|colspan": 2,
+                                        "queryMode": "local",
+                                        "size": 100,
+                                        "store": "SearchMemberStore",
+                                        "valueField": "ClientCode"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|colspan": "number",
+                                        "displayField": "datafield",
+                                        "fieldStyle": "string",
+                                        "forceSelection": "boolean",
+                                        "itemId": "string",
+                                        "queryMode": "string",
+                                        "size": "number",
+                                        "store": "store",
+                                        "valueField": "datafield"
+                                    },
+                                    "name": "MyComboBox22",
+                                    "designerId": "48e7d506-938d-4e38-b02e-1a2ef225ddc9"
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "container|pack": "center",
+                                        "layout": "hbox"
+                                    },
+                                    "configAlternates": {
+                                        "container|align": "string",
+                                        "container|pack": "string",
+                                        "layout": "string"
+                                    },
+                                    "name": "MyContainer2",
+                                    "designerId": "238abd0f-a0c5-4618-9749-111d972ad5e8",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "defaultAlign": "",
+                                                "padding": "15 0 0 0",
+                                                "text": "From:"
+                                            },
+                                            "configAlternates": {
+                                                "defaultAlign": "string",
+                                                "text": "string",
+                                                "padding": "auto"
+                                            },
+                                            "name": "MyLabel",
+                                            "designerId": "7d86ac92-49dc-4722-bc3c-6c5efa5f65a2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "container|pack": "center",
+                                        "layout": "hbox"
+                                    },
+                                    "configAlternates": {
+                                        "container|align": "string",
+                                        "container|pack": "string",
+                                        "layout": "string"
+                                    },
+                                    "name": "MyContainer3",
+                                    "designerId": "c83ced03-7776-48b8-919b-b34e4f70b585",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "defaultAlign": "",
+                                                "padding": "15 0 0 0",
+                                                "text": "To:"
+                                            },
+                                            "configAlternates": {
+                                                "defaultAlign": "string",
+                                                "text": "string",
+                                                "padding": "auto"
+                                            },
+                                            "name": "MyLabel",
+                                            "designerId": "26c32bb3-15c8-4084-aee4-9f9f0365d8ed"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Old Group Name:",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtGrpOldGroupName",
+                                        "readOnly": true,
+                                        "size": 50
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "readOnly": "boolean",
+                                        "fieldStyle": "string",
+                                        "itemId": "string",
+                                        "size": "number"
+                                    },
+                                    "name": "MyTextField39",
+                                    "designerId": "4d9d8b0a-43d9-4c9c-bea3-3b9527a98250"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "displayField": "GroupName",
+                                        "fieldLabel": "New Group Name:",
+                                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                                        "itemId": "ddlGrpNewGroupName",
+                                        "labelWidth": 110,
+                                        "margin": "0 0 0 15",
+                                        "queryMode": "local",
+                                        "size": 50,
+                                        "store": "SearchGroupStore",
+                                        "valueField": "GroupCode",
+                                        "width": 286
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "margin": "auto",
+                                        "width": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string",
+                                        "queryMode": "string",
+                                        "disabled": "boolean",
+                                        "displayField": "datafield",
+                                        "size": "number",
+                                        "store": "store",
+                                        "valueField": "datafield"
+                                    },
+                                    "name": "MyComboBox23",
+                                    "designerId": "47938826-f3da-4005-b092-e4c7537d8f6d"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Old Center Name:",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtGrpOldCenterName",
+                                        "readOnly": true,
+                                        "size": 50
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "readOnly": "boolean",
+                                        "fieldStyle": "string",
+                                        "itemId": "string",
+                                        "size": "number"
+                                    },
+                                    "name": "MyTextField41",
+                                    "designerId": "549f0a27-7b55-48ad-9d2c-de6575d8cbfb"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "New Center Name:",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtGrpNewCenterName",
+                                        "labelWidth": 110,
+                                        "margin": "0 0 0 15",
+                                        "readOnly": true,
+                                        "size": 50,
+                                        "width": 286
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "margin": "auto",
+                                        "width": "auto",
+                                        "readOnly": "boolean",
+                                        "fieldStyle": "string",
+                                        "itemId": "string",
+                                        "size": "number"
+                                    },
+                                    "name": "MyComboBox24",
+                                    "designerId": "5ee4ca55-74e6-45a2-a7ea-c7cf9e6aeb2c"
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "container|pack": "center",
+                                        "height": 25,
+                                        "layout": "hbox",
+                                        "layout|colspan": 2
+                                    },
+                                    "configAlternates": {
+                                        "container|align": "string",
+                                        "container|pack": "string",
+                                        "layout": "string",
+                                        "layout|colspan": "number",
+                                        "height": "auto"
+                                    },
+                                    "name": "MyContainer1",
+                                    "designerId": "3e475291-6a6c-44c0-94c8-a592c30a64b0",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "btnGroupTransfer",
+                                                "padding": 5,
+                                                "text": "Transfer"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string",
+                                                "padding": "auto",
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyButton1",
+                                            "designerId": "cd9a1b8d-a39e-401d-907c-a606a1a44644"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|columns": 2,
+                                "frame": true,
+                                "itemId": "TCGMtab2",
+                                "layout": "table",
+                                "title": "Center"
+                            },
+                            "configAlternates": {
+                                "container|columns": "number",
+                                "frame": "boolean",
+                                "layout": "string",
+                                "title": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyPanel8",
+                            "designerId": "843f5317-2c77-40a0-88c0-59bef6ccc160",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig2",
+                                    "designerId": "a81014e2-af27-4ce2-bd72-df7f799d0454"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "New Member No:",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtCenNewMemberNo",
+                                        "layout|colspan": 2,
+                                        "readOnly": true,
+                                        "size": 100,
+                                        "width": 556
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|colspan": "number",
+                                        "width": "auto",
+                                        "readOnly": "boolean",
+                                        "fieldStyle": "string",
+                                        "itemId": "string",
+                                        "size": "number"
+                                    },
+                                    "name": "MyTextField36",
+                                    "designerId": "b8aca95d-ae80-4635-b5d4-143f35cd330f"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "MemberName",
+                                        "fieldLabel": "Old Member No.",
+                                        "fieldStyle": " background-color:#DAEBE1;background-image:none;",
+                                        "forceSelection": true,
+                                        "itemId": "ddlCenOldMemberNo",
+                                        "layout|colspan": 2,
+                                        "queryMode": "local",
+                                        "size": 100,
+                                        "store": "SearchMemberStore",
+                                        "valueField": "ClientCode"
+                                    },
+                                    "configAlternates": {
+                                        "displayField": "datafield",
+                                        "fieldLabel": "string",
+                                        "fieldStyle": "string",
+                                        "forceSelection": "boolean",
+                                        "itemId": "string",
+                                        "layout|colspan": "number",
+                                        "queryMode": "string",
+                                        "size": "number",
+                                        "store": "store",
+                                        "valueField": "datafield"
+                                    },
+                                    "name": "MyComboBox",
+                                    "designerId": "31954f41-c560-4039-b317-f2ae1ed9f4e8"
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "container|pack": "center",
+                                        "layout": "hbox"
+                                    },
+                                    "configAlternates": {
+                                        "container|align": "string",
+                                        "container|pack": "string",
+                                        "layout": "string"
+                                    },
+                                    "name": "MyContainer2",
+                                    "designerId": "70ddb1d8-26a1-4566-b63a-6064bd95b7ab",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "defaultAlign": "",
+                                                "text": "From:"
+                                            },
+                                            "configAlternates": {
+                                                "defaultAlign": "string",
+                                                "text": "string"
+                                            },
+                                            "name": "MyLabel",
+                                            "designerId": "1e7c4631-073f-4278-9e63-2b7e28ff24df"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "container|pack": "center",
+                                        "layout": "hbox"
+                                    },
+                                    "configAlternates": {
+                                        "container|align": "string",
+                                        "container|pack": "string",
+                                        "layout": "string"
+                                    },
+                                    "name": "MyContainer3",
+                                    "designerId": "803f9635-1a26-4c37-b4a2-3a6d0e125023",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "defaultAlign": "",
+                                                "text": "To:"
+                                            },
+                                            "configAlternates": {
+                                                "defaultAlign": "string",
+                                                "text": "string"
+                                            },
+                                            "name": "MyLabel",
+                                            "designerId": "521e73ab-a495-4947-9c80-56c4e347aa3d"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Old Group Name:",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtCenOldGroupName",
+                                        "readOnly": true,
+                                        "size": 50
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "readOnly": "boolean",
+                                        "fieldStyle": "string",
+                                        "itemId": "string",
+                                        "size": "number"
+                                    },
+                                    "name": "MyTextField39",
+                                    "designerId": "42e91ddd-6863-4665-b8dd-6204f9d6285c"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "displayField": "CenterName",
+                                        "fieldLabel": "New Center Name",
+                                        "fieldStyle": " background-color:#DAEBE1;background-image:none;",
+                                        "itemId": "ddlCenNewCenterName",
+                                        "labelWidth": 105,
+                                        "margin": "0 0 0 5",
+                                        "queryMode": "local",
+                                        "size": 50,
+                                        "store": "SearchCenterStore",
+                                        "valueField": "CenterCode"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "fieldStyle": "string",
+                                        "itemId": "string",
+                                        "labelWidth": "number",
+                                        "disabled": "boolean",
+                                        "displayField": "datafield",
+                                        "margin": "auto",
+                                        "queryMode": "string",
+                                        "size": "number",
+                                        "store": "store",
+                                        "valueField": "datafield"
+                                    },
+                                    "name": "MyComboBox1",
+                                    "designerId": "d9650a20-53d4-430c-81d9-03a416a32f55"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Old Center Name:",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtCenOldCenterName",
+                                        "readOnly": true,
+                                        "size": 50
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "readOnly": "boolean",
+                                        "fieldStyle": "string",
+                                        "itemId": "string",
+                                        "size": "number"
+                                    },
+                                    "name": "MyTextField41",
+                                    "designerId": "abdca7fd-2c75-487e-ac13-87e47f9c722d"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "displayField": "GroupName",
+                                        "fieldLabel": "New Group Name",
+                                        "fieldStyle": " background-color:#DAEBE1;background-image:none;",
+                                        "itemId": "ddlCenNewGroupName",
+                                        "labelWidth": 105,
+                                        "margin": "0 0 0 5",
+                                        "queryMode": "local",
+                                        "size": 50,
+                                        "store": "SearchCenterGroupStore",
+                                        "valueField": "GroupCode"
+                                    },
+                                    "configAlternates": {
+                                        "displayField": "datafield",
+                                        "fieldLabel": "string",
+                                        "fieldStyle": "string",
+                                        "itemId": "string",
+                                        "labelWidth": "number",
+                                        "valueField": "datafield",
+                                        "disabled": "boolean",
+                                        "margin": "auto",
+                                        "queryMode": "string",
+                                        "size": "number",
+                                        "store": "store"
+                                    },
+                                    "name": "MyComboBox2",
+                                    "designerId": "7737992a-6b42-4ce6-a3e5-b3cc3e067c6a"
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "container|pack": "center",
+                                        "height": 25,
+                                        "layout": "hbox",
+                                        "layout|colspan": 2
+                                    },
+                                    "configAlternates": {
+                                        "container|align": "string",
+                                        "container|pack": "string",
+                                        "layout": "string",
+                                        "layout|colspan": "number",
+                                        "height": "auto"
+                                    },
+                                    "name": "MyContainer1",
+                                    "designerId": "e1e69da3-be8c-4be3-877a-3b0c170bcbfe",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "btnCenterTransfer",
+                                                "text": "Transfer"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string",
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyButton1",
+                                            "designerId": "ffd34c58-05e9-42b6-843b-a56437eb87da"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": "popupTool"
+            },
+            "configAlternates": {
+                "cls": "string"
+            },
+            "name": "MyTool3",
+            "designerId": "cd334024-9328-4516-94b9-205dd993ebdf",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "event",
+                            "toolEl",
+                            "owner",
+                            "tool"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "Ext.MessageBox.confirm('Reset Form', 'Are you sure ?', function(btn){",
+                            "",
+                            "",
+                            "    if(btn === 'yes'){",
+                            "Ext.ComponentQuery.query(\"#frm-TransferCenterGroupOfMember\")[0].getForm().reset();",
+                            "   }",
+                            "   else",
+                            "   {",
+                            "",
+                            "   }",
+                            "",
+                            "});"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "bfc7741d-2c74-4f87-8291-8ec13b335153"
+                }
+            ]
+        }
+    ]
+}

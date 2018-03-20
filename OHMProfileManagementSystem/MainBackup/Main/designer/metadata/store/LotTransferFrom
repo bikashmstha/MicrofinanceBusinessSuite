@@ -1,0 +1,55 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LotTransferFrom",
+        "model": "LotTransferFrom",
+        "storeId": "MyJsonStore108"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "040ef5bc-3641-4f70-ab96-1de2746f7958",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": ""
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy51",
+            "designerId": "ac7b8f3b-b4a1-4a6e-85ef-df47f09be5d4",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyJsonReader38",
+                    "designerId": "d259de34-6479-4cbc-a7a9-af731baa5afd"
+                }
+            ]
+        }
+    ]
+}

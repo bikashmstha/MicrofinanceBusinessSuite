@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="MemberCancellationRestoreHandler.ashx.cs" Class="MicrofinanceBusinessSuite.Handlers.Finance.Transaction.MemberTransaction.MemberCancellationRestoreHandler" %>

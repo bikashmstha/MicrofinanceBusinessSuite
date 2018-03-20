@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="PublicAccountChequeAccountHandler.ashx.cs" Class="MicrofinanceBusinessSuite.Handlers.Finance.Transaction.PublicSavingTransaction.PublicAccountChequeAccountHandler" %>

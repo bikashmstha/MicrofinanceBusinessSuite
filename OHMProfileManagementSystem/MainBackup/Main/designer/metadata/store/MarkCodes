@@ -1,0 +1,55 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MarkCodes",
+        "model": "MarkCodes",
+        "storeId": "MarkCodes"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "bc252d5e-341c-4a5d-b386-830cfa5274b3",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": ""
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy52",
+            "designerId": "c29a3e35-09cb-467d-bbce-c91ee5c2892f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyJsonReader39",
+                    "designerId": "da451876-328b-4518-9d08-1796d9a78035"
+                }
+            ]
+        }
+    ]
+}

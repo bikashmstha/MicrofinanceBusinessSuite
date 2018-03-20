@@ -1,0 +1,388 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectVdcCoverageOfficePopup",
+        "height": 500,
+        "itemId": "SelectVdcCoverageOfficePopup",
+        "layout": "fit",
+        "maximizable": true,
+        "minimizable": true,
+        "modal": true,
+        "title": "Select Office",
+        "width": 700,
+        "y": 80
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string",
+        "autoScroll": "boolean",
+        "height": "auto",
+        "layout": "string",
+        "maximizable": "boolean",
+        "minimizable": "boolean",
+        "modal": "boolean",
+        "width": "auto",
+        "y": "number"
+    },
+    "name": "SearchOfficePopup1",
+    "designerId": "da24150c-4abe-4779-bd7c-8bfe92cc1e1b",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "frame": true,
+                "itemId": "frmSearchOfficePopup",
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string",
+                "itemId": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyForm2",
+            "designerId": "2b6676de-6d6e-4273-b36b-c2db870fbec0",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "7a6d5b86-c63f-442c-8152-c3431a736f68",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Office Code",
+                                "itemId": "txtSearchOfficeCode"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField55",
+                            "designerId": "57ebcc55-fb3c-44c5-90f7-a5d9eb533e93"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Office Name",
+                                "itemId": "txtSearchOfficeName",
+                                "margin": "0 0 0 10",
+                                "width": 342
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "margin": "auto",
+                                "width": "auto"
+                            },
+                            "name": "MyTextField60",
+                            "designerId": "1c474c90-9f7f-49ad-b3e4-1528fe0f8ab9"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnSearchPopupOffice",
+                                "layout|colspan": 2,
+                                "margin": "0 0 0 5",
+                                "text": "Search"
+                            },
+                            "configAlternates": {
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "text": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "dadb210d-7a21-4145-b39a-110f48b4068c",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSearchPopupOfficeClick",
+                                        "implHandler": [
+                                            "var officeCode=Ext.ComponentQuery.query('#txtSearchOfficeCode')[0];",
+                                            "        var officeName=Ext.ComponentQuery.query('#txtSearchOfficeName')[0];",
+                                            "",
+                                            "var office={ OfficeCode:officeCode.getValue(),",
+                                            "        OfficeName: officeName.getValue()};",
+                                            "",
+                                            "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/GeneralMasterParameters/Office/OfficeHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'Search',",
+                                            "        office:JSON.stringify(office)",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "",
+                                            "",
+                                            "        var obj = Ext.decode(response.responseText);",
+                                            "",
+                                            "",
+                                            "      if(obj.success === \"true\")",
+                                            "      {",
+                                            "",
+                                            "          var store=Ext.getStore('VdcCoverageOfficeShortStore');",
+                                            "          store.removeAll();",
+                                            "          store.add(obj.root);",
+                                            "",
+                                            "      }",
+                                            "        else",
+                                            "        {",
+                                            "",
+                                            "            msg(\"FAILURE\",obj.message);",
+                                            "        }",
+                                            "        ",
+                                            "        waitSave.hide();",
+                                            "",
+                                            "",
+                                            "    }",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSearchPopupOfficeClick",
+                                    "designerId": "f3493f89-20b4-4d58-bd68-dc0ba12d1032"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchOffice",
+                        "store": "VdcCoverageOfficeShortStore",
+                        "title": ""
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "width": "auto",
+                        "itemId": "string",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "a8279537-c61b-4335-bc4f-6f07a3a8cd0b",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "79e83a52-9b64-44c5-ab2c-63192c8d1407"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel3",
+                            "designerId": "f947e278-2f5a-4b13-b24f-d7c2b3618774",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "   if(btn === 'yes'){",
+                                            "       var officeCode=record.data.OfficeCode;",
+                                            "",
+                                            "       Ext.ComponentQuery.query('#txtOfficeCode')[0].setValue(record.data.OfficeCode);",
+                                            "       Ext.ComponentQuery.query('#txtOfficeName')[0].setValue(record.data.OfficeName);",
+                                            "       var vdcCoverageObj={",
+                                            "           InstituteCode:officeCode",
+                                            "       };",
+                                            "",
+                                            "          Ext.Ajax.request({",
+                                            "            url: '../Handlers/GeneralMasterParameters/Office/VdcCoverageByOfficeHandler.ashx',",
+                                            "            params: {",
+                                            "                    method:'Search',",
+                                            "                    vdcCoverageByOffice:JSON.stringify(vdcCoverageObj)",
+                                            "           },",
+                                            "            success: function(response){",
+                                            "                var obj = Ext.decode(response.responseText);",
+                                            "                if(obj.success === \"true\")",
+                                            "                {",
+                                            "",
+                                            "                    var store=Ext.getStore('VdcCoverageByOfficeStore');",
+                                            "                    store.removeAll();",
+                                            "                    store.add(obj.root);",
+                                            "",
+                                            "                }",
+                                            "                else",
+                                            "                {",
+                                            "",
+                                            "                    msg(\"FAILURE\",obj.message);",
+                                            "                }",
+                                            "            }",
+                                            "        });",
+                                            "   }",
+                                            "",
+                                            "   else",
+                                            "   {",
+                                            "",
+                                            "   }",
+                                            "    var v=Ext.ComponentQuery.query('#SelectVdcCoverageOfficePopup')[0];",
+                                            "",
+                                            "    v.close();",
+                                            "});",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "b6562a24-9737-4f0a-8944-1d4a7b133761"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "OfficeCode",
+                                "text": "Office Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn98",
+                            "designerId": "6f944719-eb40-4546-842f-d0388e3026e7"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "OfficeName",
+                                "text": "Office Name",
+                                "width": 521
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn99",
+                            "designerId": "90b5f18c-92c6-4ba2-bf28-faa5f2041481"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSelectVdcCoverageOfficePopupAfterRender",
+                "implHandler": [
+                    "var store=Ext.getStore('VdcCoverageOfficeShortStore');",
+                    "store.removeAll();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onSelectVdcCoverageOfficePopupAfterRender",
+            "designerId": "fbf2ab79-1fe7-4953-8aca-7f90a807e45c"
+        }
+    ]
+}

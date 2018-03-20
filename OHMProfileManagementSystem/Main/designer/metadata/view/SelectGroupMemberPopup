@@ -1,0 +1,365 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectGroupMemberPopup",
+        "height": 500,
+        "itemId": "SelectGroupMemberPopup",
+        "layout": "fit",
+        "maximizable": true,
+        "minimizable": true,
+        "modal": true,
+        "resizable": [
+            "false"
+        ],
+        "title": "Select Member",
+        "width": 700,
+        "y": 80
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string",
+        "autoScroll": "boolean",
+        "height": "auto",
+        "layout": "string",
+        "maximizable": "boolean",
+        "minimizable": "boolean",
+        "modal": "boolean",
+        "resizable": "object",
+        "width": "auto",
+        "y": "number"
+    },
+    "designerId": "52cb740f-197e-4833-a893-4669ac44bee8",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "frame": true,
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyForm2",
+            "designerId": "4f30b119-60f4-44cd-9da5-156e44514ff1",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "336926e3-ae2d-43d5-bfb5-7432bfad28ee",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Member Code",
+                                "itemId": "txtSearchMemberCode"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField55",
+                            "designerId": "f76196de-6936-4c77-a608-bba78ede9e63"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Member Name",
+                                "itemId": "txtSearchMemberName",
+                                "margin": "0 0 0 5"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField89",
+                            "designerId": "0d8e66f8-70e3-4c78-994e-d54df7b43356"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnSearchMember",
+                                "layout|colspan": 2,
+                                "margin": "0 0 0 5",
+                                "text": "Search"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "a9ec3a07-a8a4-46dd-a81b-11f7503cc53e",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSearchMemberClick",
+                                        "implHandler": [
+                                            "var memeberCode=Ext.ComponentQuery.query('#txtSearchMemberCode')[0];",
+                                            "var memberName=Ext.ComponentQuery.query('#txtSearchMemberName')[0];",
+                                            "var memberObj={",
+                                            "",
+                                            "    MemberCode :memeberCode.getValue(),",
+                                            "    MemberName: memberName.getValue()",
+                                            "",
+                                            "};",
+                                            "var waitSave = watiMsg(\"Searching.Please wait ...\");",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/GeneralMasterParameters/Member/MemberHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'Search', member:JSON.stringify(memberObj)",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "    waitSave.hide();",
+                                            "",
+                                            "var obj = Ext.decode(response.responseText);",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "      if(obj.success === \"true\")",
+                                            "                {",
+                                            "",
+                                            "                    var store=Ext.getStore('MemberSearchStore');",
+                                            "                    store.removeAll();",
+                                            "                    store.add(obj.root);",
+                                            "",
+                                            "                }",
+                                            "                else",
+                                            "                {",
+                                            "",
+                                            "                    msg(\"FAILURE\",obj.message);",
+                                            "                }",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "    }",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSearchMemberClick",
+                                    "designerId": "51ec176c-49ff-41aa-9082-7fdedc286c72"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchMember",
+                        "store": "MemberSearchStore",
+                        "title": "",
+                        "width": ""
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "title": "string",
+                        "width": "auto",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "e87b00c7-6f08-479a-94a2-ff85c48d33d9",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "55e10746-c663-44f8-a248-c830faca8978"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "MemberCode",
+                                "text": "Member Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn78",
+                            "designerId": "be336c2f-9763-4944-b67a-321be26b41e2"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "MemberName",
+                                "text": "Member Name",
+                                "width": 471
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn79",
+                            "designerId": "781d7166-3315-4a5b-a6f0-59a27f7a9428"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel12",
+                            "designerId": "cdb80450-305f-49ad-b4d5-77952fd1f211",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "   if(btn === 'yes'){",
+                                            "",
+                                            "",
+                                            "       Ext.ComponentQuery.query('#txtGroupLeaderCode')[0].setValue(record.data.MemberCode);",
+                                            "       Ext.ComponentQuery.query('#txtGroupLeaderName')[0].setValue(record.data.MemberName);",
+                                            "",
+                                            "",
+                                            "      // return true;",
+                                            "   }",
+                                            "   else",
+                                            "   {",
+                                            "",
+                                            "   }",
+                                            "    var v=Ext.ComponentQuery.query('#SelectGroupMemberPopup')[0];",
+                                            "",
+                                            "    v.close();",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "fc7f9dff-fb00-428e-a18a-2c1bce4a7b8f"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSelectGroupMemberPopupAfterRender",
+                "implHandler": [
+                    "var store=Ext.getStore('MemberSearchStore');",
+                    "store.removeAll();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onSelectGroupMemberPopupAfterRender",
+            "designerId": "db3d814f-7231-4b29-ad29-a9aa51feb76f"
+        }
+    ]
+}

@@ -1,0 +1,288 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "IPORegistration",
+        "frame": true,
+        "height": null,
+        "title": "Person's List",
+        "width": null
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "designerId": "46d74e97-3203-460d-becf-1ee0245033cb",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "id": "frmIPORegistration",
+                "itemId": "frmIPORegistration",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "id": "string",
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "MyForm6",
+            "designerId": "143260d0-edc6-4320-a9ec-7824631391d8",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyContainer37",
+                    "designerId": "b4c25201-215d-493a-9923-8c9896ab4395",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|columns": 3,
+                                "layout": "table",
+                                "title": "Search Criteria"
+                            },
+                            "configAlternates": {
+                                "container|columns": "number",
+                                "layout": "string",
+                                "title": "string"
+                            },
+                            "name": "MyFieldSet3",
+                            "designerId": "f3863342-6c98-4d7c-8206-eae27e60679b",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Company",
+                                        "itemId": "ddlCompany",
+                                        "layout|colspan": 3,
+                                        "store": "CompanyStore"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "itemId": "string",
+                                        "layout|colspan": "number",
+                                        "store": "store"
+                                    },
+                                    "name": "MyComboBox4",
+                                    "designerId": "be62f5a1-6cbb-43b0-ba91-dc02d711aa26"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Group",
+                                        "itemId": "ddlGroup",
+                                        "layout|colspan": 3,
+                                        "store": "CompanyStore"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "itemId": "string",
+                                        "layout|colspan": "number",
+                                        "store": "store"
+                                    },
+                                    "name": "MyComboBox5",
+                                    "designerId": "43bc39c1-4adb-44c9-bf58-fd5d04bbc7e4"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "IPO ",
+                                        "itemId": "ddlIPOFormFillStatus",
+                                        "layout|colspan": 3,
+                                        "margin": null
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "itemId": "string",
+                                        "layout|colspan": "number",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyComboBox6",
+                                    "designerId": "55e2014d-fbb1-4df4-b32d-92740d958902"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "First Name",
+                                        "itemId": "txtFirstName"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField23",
+                                    "designerId": "9dbac5ed-ec86-46e9-9aab-7069d3fc7b12"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Middle Name",
+                                        "itemId": "txtMiddleName",
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "itemId": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyTextField24",
+                                    "designerId": "e6438443-468a-4f16-bde5-8be009c4f0ac"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Last Name",
+                                        "itemId": "txtLastName",
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "itemId": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyTextField25",
+                                    "designerId": "a8b84280-83a9-4ac2-9e82-78ff2d163eeb"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "emptyText": "YYYY.MM.DD",
+                                        "fieldLabel": "Beginning Date",
+                                        "itemId": "txtIPOBeginningDate"
+                                    },
+                                    "configAlternates": {
+                                        "emptyText": "string",
+                                        "fieldLabel": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField26",
+                                    "designerId": "98f2e6d3-b9a9-4801-a15e-a7c58d9155e9"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "emptyText": "YYYY.MM.DD",
+                                        "fieldLabel": "Closing Date",
+                                        "itemId": "txtIPOClosingDate",
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "emptyText": "string",
+                                        "fieldLabel": "string",
+                                        "itemId": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyTextField27",
+                                    "designerId": "59a2f0eb-3594-43a9-84e7-5b4174d6013f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmPersonListAfterRender",
+                        "implHandler": [
+                            "var me=this;\r",
+                            "\r",
+                            "var today=Ext.get('nepDate').dom.innerHTML;\r",
+                            "\r",
+                            "\r",
+                            "var begDate=Ext.ComponentQuery.query('txtIPOBeginningDate')[0];\r",
+                            "var cloDate=Ext.ComponentQury.query('txtIPOClosingDate')[0];\r",
+                            "\r",
+                            "begDate.setValue(today);\r",
+                            "cloDate.setValue(today);\r",
+                            "\r",
+                            "me.LoadCompanies(null,today);\r",
+                            "\r",
+                            ""
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmPersonListAfterRender",
+                    "designerId": "33455d37-a860-43e4-b10d-d2e56dd4c804"
+                }
+            ]
+        }
+    ]
+}

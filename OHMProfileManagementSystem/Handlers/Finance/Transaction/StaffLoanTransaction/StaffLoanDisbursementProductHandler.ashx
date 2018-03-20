@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="StaffLoanDisbursementProductHandler.ashx.cs" Class="MicrofinanceBusinessSuite.Handlers.Finance.Transaction.StaffLoanTransaction.StaffLoanDisbursementProductHandler" %>

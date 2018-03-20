@@ -1,0 +1,66 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    {\r",
+            "        EntityID:\"VRETURN\",\r",
+            "        EntityDesc:\"Vat Return\"\r",
+            "    },\r",
+            "    {\r",
+            "        EntityID:\"VMRETURN\",\r",
+            "        EntityDesc:\"Manual Vat Return\"\r",
+            "    },\r",
+            "    {\r",
+            "        EntityID:\"SPenalty\",\r",
+            "        EntityDesc:\"Special Penalty\"\r",
+            "    }\r",
+            "]"
+        ],
+        "designer|userClassName": "AuthUpdateEntityStore",
+        "model": "AuthUpdateEntity",
+        "storeId": "MyArrayStore5"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "f315a775-b775-4b3a-8504-09b390a636ba",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": null
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy22",
+            "designerId": "3185d342-1a42-4778-ba0d-0316d65e7eeb",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader1",
+                    "designerId": "e901329a-e64c-4380-b0a7-c887159b81f2"
+                }
+            ]
+        }
+    ]
+}

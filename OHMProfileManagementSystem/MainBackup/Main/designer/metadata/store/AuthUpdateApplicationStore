@@ -1,0 +1,64 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    {\r",
+            "        ApplId:\"REG\",\r",
+            "        ApplDesc:\"Registration\"\r",
+            "    },\r",
+            "    {\r",
+            "        ApplId:\"IT\",\r",
+            "        ApplDesc:\"Income Tax\"\r",
+            "    },\r",
+            "    {\r",
+            "        ApplId:\"VAT\",\r",
+            "        ApplDesc:\"VAT\"\r",
+            "    },\r",
+            "    {\r",
+            "        ApplId:\"Excise\",\r",
+            "        ApplDesc:\"Excise\"\r",
+            "    }\r",
+            "]"
+        ],
+        "designer|userClassName": "AuthUpdateApplicationStore",
+        "model": "AuthUpdateApplication",
+        "storeId": "MyArrayStore4"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "709e6908-2890-4465-b385-027b2c97acaa",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy21",
+            "designerId": "09a8f7ae-74b0-4cee-abad-3a2084bf968a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader",
+                    "designerId": "db94cba0-9bb7-4d46-9543-ed670b34089f"
+                }
+            ]
+        }
+    ]
+}

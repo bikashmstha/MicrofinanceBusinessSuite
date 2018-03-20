@@ -1,0 +1,340 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ApplicationSequenceGenerator",
+        "title": "Application Sequence"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "title": "string"
+    },
+    "name": "MyPanel18",
+    "designerId": "8a8a4f18-dc7f-43bf-8060-5bd7b12ba64d",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "itemId": "frmApplicationSequenceGenerator"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "itemId": "string"
+            },
+            "name": "MyForm12",
+            "designerId": "ad6a9d63-7aaa-4090-9797-b81f7943bdf5",
+            "cn": [
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0
+                    },
+                    "configAlternates": {
+                        "activeTab": "auto"
+                    },
+                    "name": "MyTabPanel2",
+                    "designerId": "ec4b75b5-284b-4d15-b789-9c5c58f0dada",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Application Sequence Master"
+                            },
+                            "configAlternates": {
+                                "title": "string"
+                            },
+                            "name": "MyPanel18",
+                            "designerId": "3ab37e4f-d53d-4d89-8e51-82a0a8e1eedd",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig9",
+                                    "designerId": "8adf2da8-aea7-4d7c-abd4-67bf06aba924"
+                                },
+                                {
+                                    "type": "Ext.grid.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "grdApplicationSequenceMaster",
+                                        "title": "Application Sequence Master List"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string",
+                                        "title": "string"
+                                    },
+                                    "name": "MyGridPanel14",
+                                    "designerId": "7d08f798-9921-4244-ae2e-e3f09dbba238",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "string",
+                                                "text": "String"
+                                            },
+                                            "configAlternates": {
+                                                "dataIndex": "datafield",
+                                                "text": "string"
+                                            },
+                                            "name": "MyColumn113",
+                                            "designerId": "f5577f25-7749-4832-bbb3-d89e47fdf15b"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "number",
+                                                "text": "Number"
+                                            },
+                                            "configAlternates": {
+                                                "dataIndex": "datafield",
+                                                "text": "string"
+                                            },
+                                            "name": "MyNumberColumn",
+                                            "designerId": "6bed1c23-7b66-41b4-b991-8bc658c00790"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Date",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "date",
+                                                "text": "Date"
+                                            },
+                                            "configAlternates": {
+                                                "dataIndex": "datafield",
+                                                "text": "string"
+                                            },
+                                            "name": "MyDateColumn",
+                                            "designerId": "72b3f3cb-32f7-4e4a-8726-a414cc2c215b"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Boolean",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "bool",
+                                                "text": "Boolean"
+                                            },
+                                            "configAlternates": {
+                                                "dataIndex": "datafield",
+                                                "text": "string"
+                                            },
+                                            "name": "MyBooleanColumn",
+                                            "designerId": "fc92fb4d-1074-4737-8d8f-1f9f999c4d2c"
+                                        },
+                                        {
+                                            "type": "Ext.grid.View",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyGridView14",
+                                            "designerId": "b5aa8f3b-4eba-4bb0-acfd-0cbdb783c004"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Application Sequence Detail Officewise"
+                            },
+                            "configAlternates": {
+                                "title": "string"
+                            },
+                            "name": "MyPanel22",
+                            "designerId": "e1a3e144-954a-4bcd-b1d6-c988ddc68afe",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig10",
+                                    "designerId": "9db59247-4f75-49ab-8212-b4cb452aa9f6"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "emptyText": "- - - Select Office - - -",
+                                        "fieldLabel": "Office",
+                                        "itemId": "ddlOffice",
+                                        "padding": "10 0 0 0"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "itemId": "string",
+                                        "padding": "auto",
+                                        "emptyText": "string"
+                                    },
+                                    "name": "MyComboBox25",
+                                    "designerId": "8cbb0350-325c-4128-957c-5e816e53a028"
+                                },
+                                {
+                                    "type": "Ext.grid.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "grdApplicationSequenceDetailOfficeWise",
+                                        "title": "Application Sequence Detail Officewise List"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string",
+                                        "title": "string"
+                                    },
+                                    "name": "MyGridPanel15",
+                                    "designerId": "a6a1956f-4db8-41e8-85c8-74dc0ba89bfe",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "string",
+                                                "text": "String"
+                                            },
+                                            "configAlternates": {
+                                                "dataIndex": "datafield",
+                                                "text": "string"
+                                            },
+                                            "name": "MyColumn114",
+                                            "designerId": "00ac8d7e-d1c3-4926-9c40-997dd5cbb3c0"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "number",
+                                                "text": "Number"
+                                            },
+                                            "configAlternates": {
+                                                "dataIndex": "datafield",
+                                                "text": "string"
+                                            },
+                                            "name": "MyNumberColumn3",
+                                            "designerId": "f063cd64-82de-47bf-8a0b-058d1b4dd5e5"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Date",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "date",
+                                                "text": "Date"
+                                            },
+                                            "configAlternates": {
+                                                "dataIndex": "datafield",
+                                                "text": "string"
+                                            },
+                                            "name": "MyDateColumn3",
+                                            "designerId": "4a0f143e-4db2-4b2e-89be-4f1aa6226240"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Boolean",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "bool",
+                                                "text": "Boolean"
+                                            },
+                                            "configAlternates": {
+                                                "dataIndex": "datafield",
+                                                "text": "string"
+                                            },
+                                            "name": "MyBooleanColumn3",
+                                            "designerId": "6c794aba-8897-45ee-b223-cc8e0e497fec"
+                                        },
+                                        {
+                                            "type": "Ext.grid.View",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyGridView15",
+                                            "designerId": "1c504ddd-d1e1-48dd-87dd-9293ad76cf4d"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

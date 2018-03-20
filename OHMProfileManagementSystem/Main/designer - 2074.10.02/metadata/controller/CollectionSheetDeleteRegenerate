@@ -1,0 +1,152 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CollectionSheetDeleteRegenerate",
+        "stores": [
+            "CollectionSheetDeleteRegenerateStore"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "stores": "typedarray"
+    },
+    "name": "MyController1",
+    "designerId": "c6f48e9a-a9fc-40cd-9d2c-343a0efdb8d4",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnLoadData",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton10",
+                "fn": "onBtnLoadDataClick",
+                "implHandler": [
+                    "var obj={",
+                    "",
+                    "    OfficeCode:Ext.get('offCode').dom.innerHTML",
+                    "",
+                    "",
+                    "",
+                    "};",
+                    "Ext.Ajax.request({",
+                    "    url:'../Handlers/Finance/Transaction/CollectionSheetTransaction/EmployeeCenterCollectionHandler.ashx',",
+                    "    params:{method:'RegenerateCollectionList',offCode:getOfficeCode()",
+                    "           },",
+                    "    success: function ( result, request ) {",
+                    "",
+                    "        var obj = Ext.decode(result.responseText);",
+                    "        if(obj.success === 'true'){",
+                    "            console.log(\"Resu\",obj.root);",
+                    "            msg(\"SUCCESS\",\"Load completed successfully.\");",
+                    "",
+                    "",
+                    "",
+                    "        }else{msg('FAILURE','Load unsuccessful.');}",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "        msg(\"FAILURE\",\"Load unsuccessful\");    }",
+                    "});",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onBtnLoadDataClick",
+            "designerId": "9701309f-b4e9-4141-83aa-6542e61f5d72"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnDelete",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton11",
+                "fn": "onBtnDeleteClick",
+                "implHandler": [
+                    "Ext.MessageBox.confirm('Delete Selected Collection Sheet', 'Are you sure want to Delete Selected Collection Sheet?', function(btn){",
+                    "",
+                    "",
+                    "    if(btn === 'yes'){",
+                    "        var obj={",
+                    "",
+                    "            //CollectionSheetNo:,",
+                    "",
+                    "",
+                    "        };",
+                    "        Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Transaction/CollectionSheetTransaction/CollectionAdjustHandler.ashx',",
+                    "            params:{method:'Delete',collectionAdjust:JSON.stringify(obj)",
+                    "                   },",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    msg(\"SUCCESS\",\"Selected Collection Sheet deleted successfully.\");",
+                    "",
+                    "",
+                    "",
+                    "                }else{msg('FAILURE','Selected Collection Sheet Deletion unsuccessful');}",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Selected Collection Sheet Deletion unsuccessful\");    }",
+                    "        });",
+                    "",
+                    "    }",
+                    "    else",
+                    "    {",
+                    "",
+                    "    }",
+                    "",
+                    "});",
+                    "",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onBtnDeleteClick",
+            "designerId": "18eb3427-9bc9-4fb1-8e36-9ffd8373b03b"
+        }
+    ]
+}

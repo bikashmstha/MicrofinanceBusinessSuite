@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="CenterDetailsFromCodeHandler.ashx.cs" Class="MicrofinanceBusinessSuite.Handlers.Finance.Transaction.CollectionSheetTransaction.CenterDetailsFromCodeHandler" %>

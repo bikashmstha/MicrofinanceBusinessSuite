@@ -1,0 +1,61 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    {\r",
+            "        Code:'A',\r",
+            "        Description:'ALL'\r",
+            "    },\r",
+            "    {\r",
+            "        Code: 'F',\r",
+            "        Description: 'FILLED'\r",
+            "    },\r",
+            "    {\r",
+            "        Code:'U',\r",
+            "        Description:'UNFILLED'\r",
+            "    }\r",
+            "]\r",
+            "        "
+        ],
+        "designer|userClassName": "IPOFormFillStatusStore1",
+        "model": "IPOFormFillStatus",
+        "storeId": "IPOFormFillStatusStore1"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "01b7e462-6548-42d7-9d5b-cd106b7d649c",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy119",
+            "designerId": "d59151d2-4b3d-470c-9fdf-b97425ec8432",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader99",
+                    "designerId": "2f38303b-d62d-4635-a13f-1a48813515af"
+                }
+            ]
+        }
+    ]
+}

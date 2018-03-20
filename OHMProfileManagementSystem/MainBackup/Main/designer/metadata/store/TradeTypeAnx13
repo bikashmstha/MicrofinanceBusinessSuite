@@ -1,0 +1,65 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "     {  TradeID:\"S\",\r",
+            "        TradeName:\"Sales\"\r",
+            "        \r",
+            "    },\r",
+            "    {  TradeID:\"P\",\r",
+            "        TradeName:\"Purchase\"\r",
+            "        \r",
+            "    },\r",
+            "    {  TradeID:\"D\",\r",
+            "        TradeName:\"Debtors\"\r",
+            "        \r",
+            "    },\r",
+            "    {  TradeID:\"C\",\r",
+            "        TradeName:\"Creditors\"\r",
+            "        \r",
+            "    }\r",
+            "    \r",
+            "]"
+        ],
+        "designer|userClassName": "TradeTypeAnx13",
+        "model": "TradeTypeAnx13",
+        "storeId": "MyArrayStore11"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "a7c2f5f1-9830-4004-970b-dc3780c714a3",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy59",
+            "designerId": "487d6a04-2565-4b76-8c95-2483e2296a67",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader15",
+                    "designerId": "a348bc4d-800c-4a20-8701-bfa3ad74c1e2"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DedItemsD03",
+        "model": "DedItemsD03",
+        "storeId": "MyJsonStore112"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "2dd822fa-8427-44c7-b34f-0f18ed84c36c",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "../Handlers/IncomeTax/D03/DeductibleItemsHandler.ashx?method=GetDeductibleItems"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy47",
+            "designerId": "179850b9-812e-4815-acf1-cae4c4003f24",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyJsonReader35",
+                    "designerId": "131ca23f-696d-486a-8d7a-cfd6fed1fe72"
+                }
+            ]
+        }
+    ]
+}

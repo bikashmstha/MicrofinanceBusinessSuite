@@ -1,0 +1,3155 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeTab": 1,
+        "designer|userClassName": "GeneralEntry",
+        "height": 264,
+        "title": "Cast/Education/Occupation/Ethnicity Entry Form",
+        "width": 713
+    },
+    "configAlternates": {
+        "activeTab": "auto",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto",
+        "title": "string"
+    },
+    "name": "MyTabPanel",
+    "designerId": "8a83c562-8972-40fb-b7ae-6d3562d703b1",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "title": "CasteDetail"
+            },
+            "configAlternates": {
+                "title": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyPanel13",
+            "designerId": "a39f8c2d-efb4-43c1-a630-aef83824359d",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "CasteDetail",
+                        "store": "CasteDetailStore",
+                        "title": "CasteDetail"
+                    },
+                    "configAlternates": {
+                        "store": "store",
+                        "title": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyGridPanel1",
+                    "designerId": "9a304524-e91a-44d9-8f90-54c60d8becba",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView1",
+                            "designerId": "f59a9e8c-ea9d-4984-8ba0-2a56b8fa8210"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin1",
+                            "designerId": "eb6df940-948e-4e5e-bcb3-8c31910f6502",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingCanceledit5",
+                                        "implHandler": [
+                                            ""
+                                        ],
+                                        "name": "canceledit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "onRowEditingCanceledit5",
+                                    "designerId": "5ae9fd6a-0487-42c7-b2dc-e085a01b1e68"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingValidateedit1",
+                                        "implHandler": [
+                                            "var errMsg='';",
+                                            "var casteDetailCode=Ext.ComponentQuery.query('#txtCasteCode')[0];",
+                                            "var casteDetailDesc=Ext.ComponentQuery.query('#txtCasteDesc')[0];",
+                                            "var cIBCode=Ext.ComponentQuery.query('#txtCIBCode')[0];",
+                                            "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                            "/*console.log(narrationCode.getValue());",
+                                            "console.log(narrationDesc.getValue());",
+                                            "console.log(action.getValue());",
+                                            "*/",
+                                            "",
+                                            "if(casteDetailCode.getValue()===null ||casteDetailCode.getValue()===\"\")",
+                                            "{",
+                                            "    errMsg+=\"Please,Enter Caste Code\";",
+                                            "}",
+                                            "if(casteDetailDesc.getValue()===null ||casteDetailDesc.getValue()===\"\")",
+                                            "{",
+                                            "    errMsg+=\"Please,Enter Caste Description\";",
+                                            "}",
+                                            "if(cIBCode.getValue()===null ||cIBCode.getValue()===\"\")",
+                                            "{",
+                                            "    errMsg+=\"Please,Enter CIBCode\";",
+                                            "}",
+                                            "if(errMsg!=='')",
+                                            "{",
+                                            "    msg(\"WARNING\",errMsg);",
+                                            "    return;",
+                                            "}",
+                                            "",
+                                            "",
+                                            "var casteDetail={",
+                                            "    CasteCode:casteDetailCode.getValue(),",
+                                            "    CasteDesc:casteDetailDesc.getValue(),",
+                                            "    CIBCode:cIBCode.getValue(),",
+                                            "    Action:action.getValue()",
+                                            "};",
+                                            "",
+                                            "var wMsg='';",
+                                            "if(action.getValue()==='I')",
+                                            "{",
+                                            "    wMsg='Inserting....';",
+                                            "}",
+                                            "else",
+                                            "{",
+                                            "    wMsg='Updating....';",
+                                            "}",
+                                            "var waitSave = watiMsg(wMsg);",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/GeneralMasterParameters/Maintenance/CasteDetailHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'SaveCasteDetail',",
+                                            "        casteDetail:JSON.stringify(casteDetail)",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        console.log(out);",
+                                            "",
+                                            "        if(out.success===\"true\")",
+                                            "        {",
+                                            "            var message=out.root;",
+                                            "            if(message.OutResultCode===\"SUCCESS\")",
+                                            "            {",
+                                            "                msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                            "                    var grd = Ext.ComponentQuery.query('#CasteDetail')[0];",
+                                            "",
+                                            "                    var record = grd.getSelectionModel().getSelection()[0];",
+                                            "                    record.set('Action','U');",
+                                            "",
+                                            "                });",
+                                            "",
+                                            "",
+                                            "",
+                                            "            }",
+                                            "            else",
+                                            "            {",
+                                            "                msg(\"FAILURE\",message.OutResultMessage);",
+                                            "            }",
+                                            "        }",
+                                            "        else",
+                                            "        {",
+                                            "            msg(\"FAILURE\",out.message);",
+                                            "        }",
+                                            "    },",
+                                            "    failure: function ( result, request ) {",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        msg(\"FAILURE\",out.message);",
+                                            "    }",
+                                            "",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "validateedit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingValidateedit1",
+                                    "designerId": "c44260cc-dd92-471b-9ab6-383569a00cd7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CasteCode",
+                                "text": "Caste"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn38",
+                            "designerId": "f41edb85-419d-42df-8b48-f57bccad046e",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtCasteCode"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField20",
+                                    "designerId": "a55c3fe3-c7b7-400c-8d4b-7ae0095a2fc2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CasteDesc",
+                                "text": "Caste Description",
+                                "width": 206
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn40",
+                            "designerId": "bb0b3e16-8c72-4d31-a7c0-7e70909635b8",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtCasteDesc",
+                                        "width": 100
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyTextField21",
+                                    "designerId": "ee66cb11-d8c8-4254-8f00-57f07fafdb3c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CIBCode",
+                                "text": "CIB Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn45",
+                            "designerId": "caebf7b1-c24f-41c9-95ad-6641df486b8a",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtCIBCode",
+                                        "width": 100
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyTextField22",
+                                    "designerId": "f9dd2cf2-e965-44a8-898b-79f7ee30edeb"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Action",
+                                "hidden": true,
+                                "text": "Action"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn46",
+                            "designerId": "f1dcea60-319e-4560-98f6-9173f55963b9",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtAction"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField23",
+                                    "designerId": "8d5afeb5-d7c1-45fa-8e18-2a1c881ee92a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyActionColumn2",
+                            "designerId": "c8c746de-1911-4b11-8c14-3aa8ced4536f",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem2",
+                                    "designerId": "a5fedfa4-fba7-4b10-8ee6-c92711c1e919",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var store = Ext.getStore('CasteDetailStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#CasteDetail')[0];",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "console.log('row',row);",
+                                                    "console.log('desc',row.CasteDesc);",
+                                                    "",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected Caste Detail ?', function(btn) {",
+                                                    "    if(btn == 'yes'){",
+                                                    "",
+                                                    "        var castedetail={",
+                                                    "            CasteCode:row.CasteCode,",
+                                                    "            CasteDesc:row.CasteDesc,",
+                                                    "            CIBCode:row.CIBCode,",
+                                                    "            Action:'D'",
+                                                    "        };",
+                                                    "",
+                                                    "",
+                                                    "        var wMsg='Deleting....';",
+                                                    "",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "            url: '../Handlers/GeneralMasterParameters/Maintenance/CasteDetailHandler.ashx',",
+                                                    "            params: {",
+                                                    "                method:'SaveCasteDetail',",
+                                                    "                casteDetail:JSON.stringify(castedetail)",
+                                                    "            },",
+                                                    "            success: function(response){",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                console.log(out);",
+                                                    "",
+                                                    "                if(out.success===\"true\")",
+                                                    "                {",
+                                                    "                    var message=out.root;",
+                                                    "                    if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                    {",
+                                                    "                        msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                            grd.bindStore(store);",
+                                                    "                            store.removeAt(rowIndex);",
+                                                    "                        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                    }",
+                                                    "                    else",
+                                                    "                    {",
+                                                    "                        msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                    }",
+                                                    "                }",
+                                                    "                else",
+                                                    "                {",
+                                                    "                    msg(\"FAILURE\",out.message);",
+                                                    "                }",
+                                                    "            },",
+                                                    "            failure: function ( result, request ) {",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                msg(\"FAILURE\",out.message);",
+                                                    "            }",
+                                                    "",
+                                                    "        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        return true;",
+                                                    "    }",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "8725fbfc-86d4-4b09-9708-610d429add12"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel2",
+                            "designerId": "c99b3d7f-b6fe-4480-b529-4681e2955c55"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar2",
+                    "designerId": "df3ef6e9-480d-4f4c-b999-1e23c30b4206",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnControlValuesCasteDetail",
+                                "layout|flex": null,
+                                "text": "Add Caste Details"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "210526c4-9e7a-415e-b2c9-3ab58e30129b",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnControlValuesCasteDetailClick",
+                                        "implHandler": [
+                                            "var store =Ext.getStore('CasteDetailStore');",
+                                            "var rec={CasteCode:'',",
+                                            "         CasteDesc:'',",
+                                            "         CIBCode:'',",
+                                            "         Action:'I'};",
+                                            "store.add(rec);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnControlValuesCasteDetailClick",
+                                    "designerId": "0e10ea92-e456-4e82-ab55-fc0ad0a802ba"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig5",
+                    "designerId": "cb35d0fb-8a7f-4b47-b5c7-43189c2ea3f2",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTabClick11",
+                                "implHandler": [
+                                    "var store=Ext.getStore('CasteDetailStore');",
+                                    "store.removeAll();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/Maintenance/CasteDetailHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetCasteDetails'",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "    console.log('data',data);",
+                                    "    store.removeAll();",
+                                    "    store.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onTabClick11",
+                            "designerId": "943083d7-af8f-4c34-b29d-f02522a4e73f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "title": "Education"
+            },
+            "configAlternates": {
+                "title": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyPanel3",
+            "designerId": "be78ed9b-5b5c-4095-9e94-de91ed6c7804",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "Education",
+                        "store": "EducationStore",
+                        "title": "Education"
+                    },
+                    "configAlternates": {
+                        "store": "store",
+                        "title": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyGridPanel1",
+                    "designerId": "20d657cc-3a89-45c6-aece-f0b974452732",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView1",
+                            "designerId": "2de9c55d-aa00-40fa-9a4b-550d32edce2f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "EducationCode",
+                                "text": "Education Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn4",
+                            "designerId": "7f28a785-84ba-42ef-9a3b-0191486b08ab",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtEducationCode"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField8",
+                                    "designerId": "8a683215-4a42-4329-a416-317833648a3e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "EducationDesc",
+                                "text": "Education Desc",
+                                "width": 295
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn5",
+                            "designerId": "f1d24e88-a058-4141-986f-40007e26c112",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtEducationDesc"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField9",
+                                    "designerId": "3861a2f4-7cdb-4081-9e09-9f5bd9aba6d2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin1",
+                            "designerId": "754ca9dc-53f7-4414-95e7-ff66d63e40c2",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingCanceledit",
+                                        "name": "canceledit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingCanceledit",
+                                    "designerId": "8b1e797f-536a-4bf6-8928-93a29b486406"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingValidateedit",
+                                        "implHandler": [
+                                            "var errMsg='';",
+                                            "var educationCode=Ext.ComponentQuery.query('#txtEducationCode')[0];",
+                                            "var educationDesc=Ext.ComponentQuery.query('#txtEducationDesc')[0];",
+                                            "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                            "/*console.log(narrationCode.getValue());",
+                                            "console.log(narrationDesc.getValue());",
+                                            "console.log(action.getValue());",
+                                            "*/",
+                                            "",
+                                            "if(educationCode.getValue()===null ||educationCode.getValue()===\"\")",
+                                            "{",
+                                            "    errMsg+=\"Please,Enter Education Code\";",
+                                            "}",
+                                            "if(educationDesc.getValue()===null ||educationDesc.getValue()===\"\")",
+                                            "{",
+                                            "    errMsg+=\"Please,Enter Education Description\";",
+                                            "}",
+                                            "",
+                                            "if(errMsg!=='')",
+                                            "{",
+                                            "    msg(\"WARNING\",errMsg);",
+                                            "    return;",
+                                            "}",
+                                            "",
+                                            "",
+                                            "var education={",
+                                            "    EducationCode:educationCode.getValue(),",
+                                            "    EducationDesc:educationDesc.getValue(),",
+                                            "    Action:action.getValue()",
+                                            "};",
+                                            "",
+                                            "var wMsg='';",
+                                            "if(action.getValue()==='I')",
+                                            "{",
+                                            "    wMsg='Inserting....';",
+                                            "}",
+                                            "else",
+                                            "{",
+                                            "    wMsg='Updating....';",
+                                            "}",
+                                            "var waitSave = watiMsg(wMsg);",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/GeneralMasterParameters/Maintenance/EducationHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'SaveEducation',",
+                                            "        education:JSON.stringify(education)",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        console.log(out);",
+                                            "",
+                                            "        if(out.success===\"true\")",
+                                            "        {",
+                                            "            var message=out.root;",
+                                            "            if(message.OutResultCode===\"SUCCESS\")",
+                                            "            {",
+                                            "                msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                            "                    var grd = Ext.ComponentQuery.query('#Education')[0];",
+                                            "",
+                                            "                    var record = grd.getSelectionModel().getSelection()[0];",
+                                            "                    record.set('Action','U');",
+                                            "",
+                                            "                });",
+                                            "",
+                                            "",
+                                            "",
+                                            "            }",
+                                            "            else",
+                                            "            {",
+                                            "                msg(\"FAILURE\",message.OutResultMessage);",
+                                            "            }",
+                                            "        }",
+                                            "        else",
+                                            "        {",
+                                            "            msg(\"FAILURE\",out.message);",
+                                            "        }",
+                                            "    },",
+                                            "    failure: function ( result, request ) {",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        msg(\"FAILURE\",out.message);",
+                                            "    }",
+                                            "",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "validateedit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "onRowEditingValidateedit",
+                                    "designerId": "ef1bdd77-4612-4a4d-9060-3a6e5cae60db"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Action",
+                                "hidden": true,
+                                "text": "Action"
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "dataIndex": "datafield",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn39",
+                            "designerId": "6099f70b-2519-40e0-96ea-37532689d89b",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtAction"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField19",
+                                    "designerId": "bf590571-c9e1-42ea-8aba-9c300360af8d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyActionColumn1",
+                            "designerId": "f6ee4ee5-f31b-491f-9373-6aaed3962178",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem1",
+                                    "designerId": "c4a7fbb3-b9ea-481b-bbda-1b5732298cc3",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var store = Ext.getStore('EducationStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#Education')[0];",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "console.log('row',row);",
+                                                    "console.log('desc',row.EducationDesc);",
+                                                    "",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected Education ?', function(btn) {",
+                                                    "    if(btn == 'yes'){",
+                                                    "",
+                                                    "        var education={",
+                                                    "            EducationCode:row.EducationCode,",
+                                                    "            EducationDesc:row.EducationDesc,",
+                                                    "            Action:'D'",
+                                                    "        };",
+                                                    "",
+                                                    "",
+                                                    "        var wMsg='Deleting....';",
+                                                    "",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "            url: '../Handlers/GeneralMasterParameters/Maintenance/EducationHandler.ashx',",
+                                                    "            params: {",
+                                                    "                method:'SaveEducation',",
+                                                    "                education:JSON.stringify(education)",
+                                                    "            },",
+                                                    "            success: function(response){",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                console.log(out);",
+                                                    "",
+                                                    "                if(out.success===\"true\")",
+                                                    "                {",
+                                                    "                    var message=out.root;",
+                                                    "                    if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                    {",
+                                                    "                        msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                            grd.bindStore(store);",
+                                                    "                            store.removeAt(rowIndex);",
+                                                    "                        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                    }",
+                                                    "                    else",
+                                                    "                    {",
+                                                    "                        msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                    }",
+                                                    "                }",
+                                                    "                else",
+                                                    "                {",
+                                                    "                    msg(\"FAILURE\",out.message);",
+                                                    "                }",
+                                                    "            },",
+                                                    "            failure: function ( result, request ) {",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                msg(\"FAILURE\",out.message);",
+                                                    "            }",
+                                                    "",
+                                                    "        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        return true;",
+                                                    "    }",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "b7e4061d-1edb-4ebc-9708-6eee10e5655b"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel1",
+                            "designerId": "44f5b030-0721-4888-b6a9-04542b58e648"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar2",
+                    "designerId": "7b2ed558-abec-4764-8453-3c3b045c3425",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnControlValuesEducation",
+                                "layout|flex": null,
+                                "text": "Add Education"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "dd99b26c-7def-47b0-8a5b-b8aff58ae17b",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnControlValuesEducationClick",
+                                        "implHandler": [
+                                            "var store =Ext.getStore('EducationStore');",
+                                            "var rec={EducationCode:'',",
+                                            "         EducationDesc:'',",
+                                            "         Action:'I'};",
+                                            "store.add(rec);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnControlValuesEducationClick",
+                                    "designerId": "099975b7-dc10-4681-aa94-409bfac5897e"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig5",
+                    "designerId": "e1050e59-6c7a-4188-aa88-65434cf9a287",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTabClick1",
+                                "implHandler": [
+                                    "",
+                                    "",
+                                    "var store=Ext.getStore('EducationStore');",
+                                    "store.removeAll();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/Maintenance/EducationHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetEducations'",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "    console.log('data',data);",
+                                    "    store.removeAll();",
+                                    "    store.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onTabClick1",
+                            "designerId": "d5d7012e-3ce3-4a3e-abbc-29f2e50e784d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "title": "Occupation"
+            },
+            "configAlternates": {
+                "title": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyPanel4",
+            "designerId": "3cc2ce2d-2411-4209-8cfc-583db8508aec",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar3",
+                    "designerId": "46e36eaa-a2bd-4d30-a93f-51dd889746c6",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnControlValuesOccupation",
+                                "layout|flex": null,
+                                "text": "Add Occupation"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "9106768a-9fad-49b5-9ae2-a69db7c74649",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnControlValuesOccupationClick",
+                                        "implHandler": [
+                                            "var store =Ext.getStore('OccupationStore');",
+                                            "var rec={OccupationCode:'',",
+                                            "         OccupationDesc:'',",
+                                            "         Action:'I'};",
+                                            "store.add(rec);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnControlValuesOccupationClick",
+                                    "designerId": "83ca9cfb-57f0-4efe-bba0-218bee294a77"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "Occupation",
+                        "store": "OccupationStore",
+                        "title": "Occupation"
+                    },
+                    "configAlternates": {
+                        "store": "store",
+                        "title": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyGridPanel2",
+                    "designerId": "0d1151cf-9834-492e-a252-53968d25f787",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView2",
+                            "designerId": "34ea5849-8ff5-4f87-8c96-e645e75f819e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "OccupationCode",
+                                "text": "Occupation Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn6",
+                            "designerId": "d3773cae-04f1-4519-9f04-52d8cb2f3546",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtOccupationCode"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField10",
+                                    "designerId": "fedb38b5-13ad-4fe7-a7b2-207e9e230549"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "OccupationDesc",
+                                "text": "Occupation Description",
+                                "width": 376
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn7",
+                            "designerId": "ac93ee86-a601-4169-bc41-6a2666803e56",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtOccupationDesc"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField11",
+                                    "designerId": "70c985cb-3560-4756-963f-7e5912408244"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin2",
+                            "designerId": "8f7d3d50-ecf3-451a-a215-7c69c865897d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingCanceledit1",
+                                        "name": "canceledit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingCanceledit1",
+                                    "designerId": "2dcd5ae0-4e8f-40c7-b9c1-dd7f4c46ac86"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingValidateedit2",
+                                        "implHandler": [
+                                            "var errMsg='';",
+                                            "var occupationCode=Ext.ComponentQuery.query('#txtOccupationCode')[0];",
+                                            "var occupationDesc=Ext.ComponentQuery.query('#txtOccupationDesc')[0];",
+                                            "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                            "/*console.log(narrationCode.getValue());",
+                                            "console.log(narrationDesc.getValue());",
+                                            "console.log(action.getValue());",
+                                            "*/",
+                                            "",
+                                            "if(occupationCode.getValue()===null ||occupationCode.getValue()===\"\")",
+                                            "{",
+                                            "    errMsg+=\"Please,Enter Occupation Code\";",
+                                            "}",
+                                            "if(occupationDesc.getValue()===null ||occupationDesc.getValue()===\"\")",
+                                            "{",
+                                            "    errMsg+=\"Please,Enter Occupation Description\";",
+                                            "}",
+                                            "",
+                                            "if(errMsg!=='')",
+                                            "{",
+                                            "    msg(\"WARNING\",errMsg);",
+                                            "    return;",
+                                            "}",
+                                            "",
+                                            "",
+                                            "var occupation={",
+                                            "    OccupationCode:occupationCode.getValue(),",
+                                            "    OccupationDesc:occupationDesc.getValue(),",
+                                            "    Action:action.getValue()",
+                                            "};",
+                                            "",
+                                            "var wMsg='';",
+                                            "if(action.getValue()==='I')",
+                                            "{",
+                                            "    wMsg='Inserting....';",
+                                            "}",
+                                            "else",
+                                            "{",
+                                            "    wMsg='Updating....';",
+                                            "}",
+                                            "var waitSave = watiMsg(wMsg);",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/GeneralMasterParameters/Maintenance/OccupationHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'SaveOccupation',",
+                                            "        occupation:JSON.stringify(occupation)",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        console.log(out);",
+                                            "",
+                                            "        if(out.success===\"true\")",
+                                            "        {",
+                                            "            var message=out.root;",
+                                            "            if(message.OutResultCode===\"SUCCESS\")",
+                                            "            {",
+                                            "                msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                            "                    var grd = Ext.ComponentQuery.query('#Occupation')[0];",
+                                            "",
+                                            "                    var record = grd.getSelectionModel().getSelection()[0];",
+                                            "                    record.set('Action','U');",
+                                            "",
+                                            "                });",
+                                            "",
+                                            "",
+                                            "",
+                                            "            }",
+                                            "            else",
+                                            "            {",
+                                            "                msg(\"FAILURE\",message.OutResultMessage);",
+                                            "            }",
+                                            "        }",
+                                            "        else",
+                                            "        {",
+                                            "            msg(\"FAILURE\",out.message);",
+                                            "        }",
+                                            "    },",
+                                            "    failure: function ( result, request ) {",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        msg(\"FAILURE\",out.message);",
+                                            "    }",
+                                            "",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "validateedit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "onRowEditingValidateedit2",
+                                    "designerId": "9d026ab8-4077-44e5-ab80-4a8eb292b6c1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Action",
+                                "hidden": true,
+                                "text": "Action"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn41",
+                            "designerId": "3a879b73-f69a-4617-9f53-79b1451f9c97",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtAction"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField5",
+                                    "designerId": "b3470b32-48db-422c-93bd-84192da2c1c2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel3",
+                            "designerId": "83986d19-c8cc-45bc-ac12-560432da8ee8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyActionColumn3",
+                            "designerId": "c31b1a4a-3e32-419b-9490-14fc16171b03",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem3",
+                                    "designerId": "050cee47-fe50-4f3e-a3fb-e69e42598350",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var store = Ext.getStore('OccupationStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#Occupation')[0];",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "console.log('row',row);",
+                                                    "console.log('desc',row.OccupationDesc);",
+                                                    "",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected Occupation ?', function(btn) {",
+                                                    "    if(btn == 'yes'){",
+                                                    "",
+                                                    "        var occupation={",
+                                                    "            OccupationCode:row.OccupationCode,",
+                                                    "            OccupationDesc:row.OccupationDesc,",
+                                                    "            Action:'D'",
+                                                    "        };",
+                                                    "",
+                                                    "",
+                                                    "        var wMsg='Deleting....';",
+                                                    "",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "            url: '../Handlers/GeneralMasterParameters/Maintenance/OccupationHandler.ashx',",
+                                                    "            params: {",
+                                                    "                method:'SaveOccupation',",
+                                                    "                occupation:JSON.stringify(occupation)",
+                                                    "            },",
+                                                    "            success: function(response){",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                console.log(out);",
+                                                    "",
+                                                    "                if(out.success===\"true\")",
+                                                    "                {",
+                                                    "                    var message=out.root;",
+                                                    "                    if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                    {",
+                                                    "                        msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                            grd.bindStore(store);",
+                                                    "                            store.removeAt(rowIndex);",
+                                                    "                        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                    }",
+                                                    "                    else",
+                                                    "                    {",
+                                                    "                        msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                    }",
+                                                    "                }",
+                                                    "                else",
+                                                    "                {",
+                                                    "                    msg(\"FAILURE\",out.message);",
+                                                    "                }",
+                                                    "            },",
+                                                    "            failure: function ( result, request ) {",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                msg(\"FAILURE\",out.message);",
+                                                    "            }",
+                                                    "",
+                                                    "        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        return true;",
+                                                    "    }",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "641366ff-2c20-471f-bbc0-f1da238128db"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig3",
+                    "designerId": "18387a9e-2225-4969-a912-7fc0e9a0112a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTabClick2",
+                                "implHandler": [
+                                    "var store=Ext.getStore('OccupationStore');",
+                                    "store.removeAll();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/Maintenance/OccupationHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetOccupations'",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "    console.log('data',data);",
+                                    "    store.removeAll();",
+                                    "    store.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onTabClick2",
+                            "designerId": "b240cf47-d27b-4d74-9979-ea2336cd2b06"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "title": "Ethinicity Information"
+            },
+            "configAlternates": {
+                "title": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyPanel5",
+            "designerId": "f0cff69a-1046-4f23-aa40-544c4f19bca5",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar5",
+                    "designerId": "78273723-a61a-4460-b2e9-5a8388e1425c",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnControlValuesEthnicityInformation",
+                                "layout|flex": null,
+                                "text": "Add Ethnicity Information"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "f228fb21-ad1e-42c0-94e7-be409461ec41",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnControlValuesEthnicityInformationClick",
+                                        "implHandler": [
+                                            "var store =Ext.getStore('EthnicityInofrmationStore');",
+                                            "var rec={EthnicityInformationCode:'',",
+                                            "         EthnicityInformationDesc:'',",
+                                            "         Action:'I'};",
+                                            "store.add(rec);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnControlValuesEthnicityInformationClick",
+                                    "designerId": "4ac15d92-cd61-4d68-914d-a07eeba1259a"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "EthnicityInformation",
+                        "store": "EthnicityInofrmationStore",
+                        "title": "Ethnicity Information"
+                    },
+                    "configAlternates": {
+                        "store": "store",
+                        "title": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyGridPanel3",
+                    "designerId": "89036b12-ab56-44a5-a7de-e43875fb2475",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView3",
+                            "designerId": "8fe0f1e4-0886-4ce6-b08e-89c10c6c5d20"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "EthnicityCode",
+                                "itemId": "EthnicityCode",
+                                "text": "Ethnicity Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyColumn8",
+                            "designerId": "c142455c-84e0-4a53-b65d-eed2c7fb6a7c",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtEthnicityCode",
+                                        "width": 100
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "itemId": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyTextField15",
+                                    "designerId": "26bee365-8e4d-4142-837f-08074c27b7d8"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "EthnicityDesc",
+                                "itemId": "EthnicityDesc",
+                                "text": "Ethnicity Description",
+                                "width": 275
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "itemId": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn9",
+                            "designerId": "848fe327-8091-4f25-b335-60facbedfba6",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtEthnicityDesc"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField16",
+                                    "designerId": "e6fcded7-a460-425c-9e1a-df591d107b44"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "MastEthnicity",
+                                "itemId": "MastEthnicity",
+                                "text": "Master Ethnicity",
+                                "width": 199
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "itemId": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn10",
+                            "designerId": "0e83fccb-e42d-4c29-be24-8e6b22b2c9a2",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtMastEthnicity",
+                                        "width": 100
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "itemId": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyTextField17",
+                                    "designerId": "e6105d02-92a0-4ce4-bbd4-286addd0cb76"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin3",
+                            "designerId": "ccc31e65-823c-4f54-bd3f-595ff4582f54",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingCanceledit2",
+                                        "name": "canceledit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingCanceledit2",
+                                    "designerId": "72ccd52a-9067-4ad3-b3de-0cdcc0db6478"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingValidateedit3",
+                                        "implHandler": [
+                                            "var errMsg='';",
+                                            "var ethnicityCode=Ext.ComponentQuery.query('#txtEthnicityCode')[0];",
+                                            "var ethnicityDesc=Ext.ComponentQuery.query('#txtEthnicityDesc')[0];",
+                                            "var mastEthnicity=Ext.ComponentQuery.query('#txtMastEthnicity')[0];",
+                                            "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                            "/*console.log(narrationCode.getValue());",
+                                            "console.log(narrationDesc.getValue());",
+                                            "console.log(action.getValue());",
+                                            "*/",
+                                            "",
+                                            "if(ethnicityCode.getValue()===null ||ethnicityCode.getValue()===\"\")",
+                                            "{",
+                                            "    errMsg+=\"Please,Enter Ethnicity Code\";",
+                                            "}",
+                                            "if(ethnicityDesc.getValue()===null ||ethnicityDesc.getValue()===\"\")",
+                                            "{",
+                                            "    errMsg+=\"Please,Enter Ethnicity Description\";",
+                                            "}",
+                                            "if(mastEthnicity.getValue()===null ||mastEthnicity.getValue()===\"\")",
+                                            "{",
+                                            "    errMsg+=\"Please,Enter Mast Ethnicity\";",
+                                            "}",
+                                            "",
+                                            "if(errMsg!=='')",
+                                            "{",
+                                            "    msg(\"WARNING\",errMsg);",
+                                            "    return;",
+                                            "}",
+                                            "",
+                                            "",
+                                            "var ethnicityInformation={",
+                                            "    EthnicityCode:ethnicityCode.getValue(),",
+                                            "    EthnicityDesc:ethnicityDesc.getValue(),",
+                                            "    MastEthnicity:mastEthnicity.getValue(),",
+                                            "    Action:action.getValue()",
+                                            "};",
+                                            "",
+                                            "var wMsg='';",
+                                            "if(action.getValue()==='I')",
+                                            "{",
+                                            "    wMsg='Inserting....';",
+                                            "}",
+                                            "else",
+                                            "{",
+                                            "    wMsg='Updating....';",
+                                            "}",
+                                            "var waitSave = watiMsg(wMsg);",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/GeneralMasterParameters/Maintenance/EthnicityInformationHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'SaveEthnicityInformation',",
+                                            "        ethnicityInformation:JSON.stringify(ethnicityInformation)",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        console.log(out);",
+                                            "",
+                                            "        if(out.success===\"true\")",
+                                            "        {",
+                                            "            var message=out.root;",
+                                            "            if(message.OutResultCode===\"SUCCESS\")",
+                                            "            {",
+                                            "                msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                            "                    var grd = Ext.ComponentQuery.query('#EthnicityInformation')[0];",
+                                            "",
+                                            "                    var record = grd.getSelectionModel().getSelection()[0];",
+                                            "                    record.set('Action','U');",
+                                            "",
+                                            "                });",
+                                            "",
+                                            "",
+                                            "",
+                                            "            }",
+                                            "            else",
+                                            "            {",
+                                            "                msg(\"FAILURE\",message.OutResultMessage);",
+                                            "            }",
+                                            "        }",
+                                            "        else",
+                                            "        {",
+                                            "            msg(\"FAILURE\",out.message);",
+                                            "        }",
+                                            "    },",
+                                            "    failure: function ( result, request ) {",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        msg(\"FAILURE\",out.message);",
+                                            "    }",
+                                            "",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "validateedit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "onRowEditingValidateedit3",
+                                    "designerId": "5d88c75e-8c17-46d0-aa4a-d6f17e30e7ed"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel4",
+                            "designerId": "f2b7ab0c-3dbe-45d1-af91-ca569730a0ba"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Action",
+                                "hidden": true,
+                                "text": "Action"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn42",
+                            "designerId": "8516cc28-65e3-4a72-8999-60c65f3f032f",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtAction"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField6",
+                                    "designerId": "100abc73-5eff-4498-9c24-1a078eb3b999"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyActionColumn4",
+                            "designerId": "2c50e99b-827d-4886-8adc-f828255b8f5c",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem4",
+                                    "designerId": "3e1065a1-4bbc-44d9-b56d-fb18691ead4f",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var store = Ext.getStore('EthnicityInofrmationStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#EthnicityInformation')[0];",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "console.log('row',row);",
+                                                    "console.log('desc',row.EthnicityDesc);",
+                                                    "",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected Ethnicity Inofrmation ?', function(btn) {",
+                                                    "    if(btn == 'yes'){",
+                                                    "",
+                                                    "        var ethnicityinformation={",
+                                                    "            EthnicityCode:row.EthnicityCode,",
+                                                    "            EthnicityDesc:row.EthnicityDesc,",
+                                                    "            Action:'D'",
+                                                    "        };",
+                                                    "",
+                                                    "",
+                                                    "        var wMsg='Deleting....';",
+                                                    "",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "            url: '../Handlers/GeneralMasterParameters/Maintenance/EthnicityInformationHandler.ashx',",
+                                                    "            params: {",
+                                                    "                method:'SaveEthnicityInformation',",
+                                                    "                ethnicityInformation:JSON.stringify(ethnicityinformation)",
+                                                    "            },",
+                                                    "            success: function(response){",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                console.log(out);",
+                                                    "",
+                                                    "                if(out.success===\"true\")",
+                                                    "                {",
+                                                    "                    var message=out.root;",
+                                                    "                    if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                    {",
+                                                    "                        msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                            grd.bindStore(store);",
+                                                    "                            store.removeAt(rowIndex);",
+                                                    "                        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                    }",
+                                                    "                    else",
+                                                    "                    {",
+                                                    "                        msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                    }",
+                                                    "                }",
+                                                    "                else",
+                                                    "                {",
+                                                    "                    msg(\"FAILURE\",out.message);",
+                                                    "                }",
+                                                    "            },",
+                                                    "            failure: function ( result, request ) {",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                msg(\"FAILURE\",out.message);",
+                                                    "            }",
+                                                    "",
+                                                    "        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        return true;",
+                                                    "    }",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "8a4525b1-870c-4a30-b6e6-b50c672d3b4b"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig2",
+                    "designerId": "98ab9cab-cd73-49d1-955c-b6d047bb1a96",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTabClick3",
+                                "implHandler": [
+                                    "var store=Ext.getStore('EthnicityInofrmationStore');",
+                                    "store.removeAll();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/Maintenance/EthnicityInformationHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetEthnicityInformations'",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "    console.log('data',data);",
+                                    "    store.removeAll();",
+                                    "    store.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onTabClick3",
+                            "designerId": "882af85e-6693-4692-9f6f-da4aa56d42fb"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "title": "Ethinicity Caste Information"
+            },
+            "configAlternates": {
+                "title": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyPanel6",
+            "designerId": "09ffed2a-f64f-482f-845e-0c4d5ae915cd",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "EthnicityDesc",
+                        "emptyText": "- - - Select - - -",
+                        "fieldLabel": "Ethnicity",
+                        "forceSelection": true,
+                        "itemId": "ddlEthinicityCasteCode",
+                        "margin": "10 10 10 10",
+                        "queryMode": "local",
+                        "store": "EthnicityInofrmationStore",
+                        "valueField": "EthnicityCode",
+                        "width": 300
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "margin": "auto",
+                        "width": "auto",
+                        "displayField": "datafield",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "emptyText": "string"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "709442ea-7b9f-44d0-bd39-107c570c493e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDdlEthinicityCasteCodeCollapse",
+                                "implHandler": [
+                                    "var store=Ext.getStore('EthnicityCasteInformationStore');",
+                                    "store.removeAll();",
+                                    "//var ethnicityCasteCode=Ext.ComponentQuery.query('#ddlEthinicityCasteCode')[0].getValue();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/Maintenance/EthnicityCasteInformationHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetEthnicityCasteInformations',",
+                                    "        ethnicityCasteCode:field.getValue()",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "    console.log('data',data);",
+                                    "    store.removeAll();",
+                                    "    store.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});"
+                                ],
+                                "name": "collapse",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDdlEthinicityCasteCodeCollapse",
+                            "designerId": "a3e7423a-6bbd-4442-be6d-e296d11abf0b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar4",
+                    "designerId": "cd961f94-40f1-4b01-a3f4-bdfabd884062",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnAddEthnicitCaste",
+                                "layout|flex": null,
+                                "text": "Add Ethnicity Caste Information"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "bb4190c4-d403-46be-a458-88ff127004bd",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnAddEthnicitCasteClick",
+                                        "implHandler": [
+                                            "var casteCode=Ext.ComponentQuery.query('#ddlEthinicityCasteCode')[0];",
+                                            "if(casteCode.getValue()===''||casteCode.getValue()===null)",
+                                            "    {",
+                                            "        msg('WARNING','Plase Select Ethnicity Caste');",
+                                            "        return;",
+                                            "    }",
+                                            "var store =Ext.getStore('EthnicityCasteInformationStore');",
+                                            "var rec={EthnicityCasteCode:'',",
+                                            "         EthnicityCasteDesc:'',",
+                                            "         CasteCode:'',",
+                                            "         Action:'I'};",
+                                            "store.add(rec);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnAddEthnicitCasteClick",
+                                    "designerId": "bb10009f-db46-4bb9-b322-6d7119898a5f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "EthnicityCasteInformation",
+                        "store": "EthnicityCasteInformationStore",
+                        "title": "Castes Detail"
+                    },
+                    "configAlternates": {
+                        "store": "store",
+                        "title": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyGridPanel4",
+                    "designerId": "28aadfcb-65b4-4e45-b193-9a7b7516334b",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView4",
+                            "designerId": "c65521cd-55af-4362-a18b-ba736b9e1a49"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CasteCode",
+                                "itemId": "Caste",
+                                "text": "Code",
+                                "width": 208
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "itemId": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn11",
+                            "designerId": "3571ee3f-a9eb-4e8c-bba2-a667d6573d9f",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "CasteDesc",
+                                        "itemId": "ddlCasteCode",
+                                        "queryMode": "local",
+                                        "store": "CasteDetailStore",
+                                        "valueField": "CasteCode",
+                                        "width": 100
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "itemId": "string",
+                                        "width": "auto",
+                                        "displayField": "datafield",
+                                        "queryMode": "string",
+                                        "store": "store",
+                                        "valueField": "datafield"
+                                    },
+                                    "name": "MyComboBox19",
+                                    "designerId": "33cc33f5-67a0-4980-a10b-e13feec09d81"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            " "
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "ffc3e411-d606-4acf-bbee-fd3aff24f8ac"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "EthnicityCasteDesc",
+                                "hidden": true,
+                                "text": "Description",
+                                "width": 444
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn12",
+                            "designerId": "e49425ef-45c6-4e35-ad96-bea4687cd934",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtCasteDesc"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField14",
+                                    "designerId": "b91315bd-2631-4878-8165-1d1ecb882d0f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin4",
+                            "designerId": "a6e7d114-a952-493c-9d43-9cee0ad00564",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingCanceledit4",
+                                        "implHandler": [
+                                            ""
+                                        ],
+                                        "name": "canceledit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "onRowEditingCanceledit4",
+                                    "designerId": "64c8fc14-b262-4d4d-93d7-537ebea18ef9"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingValidateedit4",
+                                        "implHandler": [
+                                            "var errMsg='';",
+                                            "var casteCode=Ext.ComponentQuery.query('#ddlCasteCode')[0];",
+                                            "//var casteDesc=Ext.ComponentQuery.query('#txtCasteDesc')[0];",
+                                            "var ethnicityCasteCode=Ext.ComponentQuery.query('#ddlEthinicityCasteCode')[0];",
+                                            "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                            "/*console.log(narrationCode.getValue());",
+                                            "console.log(narrationDesc.getValue());",
+                                            "console.log(action.getValue());",
+                                            "*/",
+                                            "if(casteCode.getValue()===null ||casteCode.getValue()===\"\")",
+                                            "{",
+                                            "    errMsg+=\"Please,Select Caste\";",
+                                            "}",
+                                            "",
+                                            "",
+                                            "if(errMsg!=='')",
+                                            "{",
+                                            "    msg(\"WARNING\",errMsg);",
+                                            "    return;",
+                                            "}",
+                                            "",
+                                            "",
+                                            "var ethnicityCasteInformation={",
+                                            "    EthnicityCasteCode:ethnicityCasteCode.getValue(),",
+                                            "    CasteCode:casteCode.getValue(),",
+                                            "    Action:action.getValue()",
+                                            "};",
+                                            "",
+                                            "var wMsg='';",
+                                            "if(action.getValue()==='I')",
+                                            "{",
+                                            "    wMsg='Inserting....';",
+                                            "}",
+                                            "else",
+                                            "{",
+                                            "    wMsg='Updating....';",
+                                            "}",
+                                            "var waitSave = watiMsg(wMsg);",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/GeneralMasterParameters/Maintenance/EthnicityCasteInformationHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'SaveEthnicityCasteInformation',",
+                                            "        ethnicityCasteInformation:JSON.stringify(ethnicityCasteInformation)",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        console.log(out);",
+                                            "",
+                                            "        if(out.success===\"true\")",
+                                            "        {",
+                                            "            var message=out.root;",
+                                            "            if(message.OutResultCode===\"SUCCESS\")",
+                                            "            {",
+                                            "                msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                            "                    var grd = Ext.ComponentQuery.query('#EthnicityCasteInformation')[0];",
+                                            "",
+                                            "                    var record = grd.getSelectionModel().getSelection()[0];",
+                                            "                    record.set('Action','U');",
+                                            "",
+                                            "                });",
+                                            "",
+                                            "",
+                                            "",
+                                            "            }",
+                                            "            else",
+                                            "            {",
+                                            "                msg(\"FAILURE\",message.OutResultMessage);",
+                                            "            }",
+                                            "        }",
+                                            "        else",
+                                            "        {",
+                                            "            msg(\"FAILURE\",out.message);",
+                                            "        }",
+                                            "    },",
+                                            "    failure: function ( result, request ) {",
+                                            "        waitSave.hide();",
+                                            "        var out=Ext.decode(response.responseText);",
+                                            "        msg(\"FAILURE\",out.message);",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ],
+                                        "name": "validateedit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingValidateedit4",
+                                    "designerId": "bc7f9031-c055-4736-838a-9d3d6e8c51a7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel5",
+                            "designerId": "43eb0a3b-72a9-4b05-a597-b93ff8ba614c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Action",
+                                "hidden": true,
+                                "text": "Action"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn43",
+                            "designerId": "54e663df-748f-47c1-b29d-fae64f221439",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtAction",
+                                        "width": 100
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "itemId": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyTextField7",
+                                    "designerId": "90a12eee-7f3c-471c-9c70-be747d0d3156"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyActionColumn5",
+                            "designerId": "91ecb089-ba0b-4b5d-84f5-27979d218cef",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem5",
+                                    "designerId": "ad42657e-a3ba-4251-acf3-5f62d34650e4",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var store = Ext.getStore('EthnicityCasteInformationStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#EthnicityCasteInformation')[0];",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "console.log('row',row);",
+                                                    "console.log('desc',row.EthnicityCasteDesc);",
+                                                    "",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected Ethnicity Caste Information ?', function(btn) {",
+                                                    "    if(btn == 'yes'){",
+                                                    "",
+                                                    "        var ethnicitycasteinformation={",
+                                                    "            CasteCode:row.CasteCode,",
+                                                    "            EthnicityCasteDesc:row.EthnicityCasteDesc,",
+                                                    "            Action:'D'",
+                                                    "        };",
+                                                    "",
+                                                    "",
+                                                    "        var wMsg='Deleting....';",
+                                                    "",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "            url: '../Handlers/GeneralMasterParameters/Maintenance/EthnicityCasteInformationHandler.ashx',",
+                                                    "            params: {",
+                                                    "                method:'SaveEthnicityCasteInformation',",
+                                                    "                ethnicityCasteInformation:JSON.stringify(ethnicitycasteinformation)",
+                                                    "            },",
+                                                    "            success: function(response){",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                console.log(out);",
+                                                    "",
+                                                    "                if(out.success===\"true\")",
+                                                    "                {",
+                                                    "                    var message=out.root;",
+                                                    "                    if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                    {",
+                                                    "                        msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                            grd.bindStore(store);",
+                                                    "                            store.removeAt(rowIndex);",
+                                                    "                        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                    }",
+                                                    "                    else",
+                                                    "                    {",
+                                                    "                        msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                    }",
+                                                    "                }",
+                                                    "                else",
+                                                    "                {",
+                                                    "                    msg(\"FAILURE\",out.message);",
+                                                    "                }",
+                                                    "            },",
+                                                    "            failure: function ( result, request ) {",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                msg(\"FAILURE\",out.message);",
+                                                    "            }",
+                                                    "",
+                                                    "        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        return true;",
+                                                    "    }",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "706736ab-afc5-444d-973d-4e12d73a8226"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onEthnicityCasteInformationBeforeRender",
+                                "implHandler": [
+                                    "var grid = Ext.ComponentQuery.query('#EthnicityCasteInformation')[0];",
+                                    "",
+                                    "        grid.columns[0].renderer = function(value, metaData, record, rowIndex, colIndex, store, view) {",
+                                    "            var temp=\"\";",
+                                    "",
+                                    "",
+                                    "            var items=Ext.getStore('CasteDetailStore').data.items;",
+                                    "",
+                                    "",
+                                    "            for(var i=0;i<items.length;i++)",
+                                    "            {",
+                                    "",
+                                    "                if(items[i].data.CasteCode==value)",
+                                    "                {",
+                                    "                    temp=items[i].data.CasteDesc;",
+                                    "                    break;",
+                                    "                }",
+                                    "            }",
+                                    "",
+                                    "",
+                                    "            return temp;",
+                                    "",
+                                    "        };"
+                                ],
+                                "name": "beforerender",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onEthnicityCasteInformationBeforeRender",
+                            "designerId": "7d3ec85b-1d03-4903-bf76-db34060171f8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig1",
+                    "designerId": "24e80d33-821b-452d-ae24-cd85b6d47fc0",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTabClick4",
+                                "implHandler": [
+                                    "Ext.ComponentQuery.query('#ddlEthinicityCasteCode')[0].reset();",
+                                    "",
+                                    "var store=Ext.getStore('EthnicityInofrmationStore');",
+                                    "store.removeAll();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/Maintenance/EthnicityInformationHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetEthnicityInformations'",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "",
+                                    "    store.removeAll();",
+                                    "    store.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});",
+                                    "",
+                                    "var casteDetailStore=Ext.getStore('CasteDetailStore');",
+                                    "casteDetailStore.removeAll();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/Maintenance/CasteDetailHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetCasteDetails'",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "",
+                                    "    casteDetailStore.removeAll();",
+                                    "    casteDetailStore.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});",
+                                    " var ethnicityCasteInformationStore=Ext.getStore('EthnicityCasteInformationStore');",
+                                    "ethnicityCasteInformationStore.removeAll();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onTabClick4",
+                            "designerId": "420688da-945d-4f84-8a75-f430046f3fa8"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

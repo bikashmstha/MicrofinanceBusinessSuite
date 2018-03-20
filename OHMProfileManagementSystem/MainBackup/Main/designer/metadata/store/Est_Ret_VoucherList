@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Est_Ret_VoucherList",
+        "model": "Est_Ret_Voucher",
+        "storeId": "MyJsonStore58"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "0515572e-9d03-4b08-bfc3-5325d41168b9",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy83",
+            "designerId": "86afbf53-a261-4abf-9969-a978170f1d2c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader67",
+                    "designerId": "30059225-3ce2-4a35-b422-1d086ceeb183"
+                }
+            ]
+        }
+    ]
+}

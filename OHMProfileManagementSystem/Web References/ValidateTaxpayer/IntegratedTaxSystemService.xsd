@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.pcs.com.np/types/" elementFormDefault="qualified" targetNamespace="http://www.pcs.com.np/types/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.101.166:81/IntegratedTaxSystemService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="TaxpayerRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcctType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Criteria" nillable="true" type="tns:TaxpayerCriteria" />
+          <xs:element minOccurs="0" name="PAN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Taxpayer" nillable="true" type="tns:Taxpayer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaxpayerRequest" nillable="true" type="tns:TaxpayerRequest" />
+  <xs:complexType name="RequestBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientTag" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LoadOptions" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:GenericUser" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestBase" nillable="true" type="tns:RequestBase" />
+  <xs:complexType name="GenericUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatabaseAccessUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatabaseAccessUserPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoggedIn" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericUser" nillable="true" type="tns:GenericUser" />
+  <xs:complexType name="ExternalClient">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Designation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OldPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValidTill" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExternalClient" nillable="true" type="tns:ExternalClient" />
+  <xs:complexType name="TaxPayerLgn">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="App_Owner" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IpAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsAdmin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Machine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OracleUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OsUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Profile" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubmissionNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TranDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaxPayerLgn" nillable="true" type="tns:TaxPayerLgn" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="App_Owner" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AuthorizationBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AuthorizationDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AuthorizationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmpID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IpAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsAdmin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Machine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficeUser" nillable="true" type="tns:OfficeUser" />
+          <xs:element minOccurs="0" name="OracleUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OsUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Profile" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TranDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="OfficeUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthorizationBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthorizationDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthorizationNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntryBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficeCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OfficeUser" nillable="true" type="tns:OfficeUser" />
+  <xs:complexType name="TaxpayerCriteria">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Criteria">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcctType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PAN" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaxpayerCriteria" nillable="true" type="tns:TaxpayerCriteria" />
+  <xs:complexType name="Criteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SortExpression" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Criteria" nillable="true" type="tns:Criteria" />
+  <xs:complexType name="Taxpayer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AcctStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AcctType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SITC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxpayerType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Taxpayer" nillable="true" type="tns:Taxpayer" />
+  <xs:complexType name="TaxpayerResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PAN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Taxpayer" nillable="true" type="tns:Taxpayer" />
+          <xs:element minOccurs="0" name="Taxpayers" nillable="true" type="tns:ArrayOfTaxpayer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaxpayerResponse" nillable="true" type="tns:TaxpayerResponse" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acknowledge" type="tns:AcknowledgeType" />
+      <xs:element minOccurs="0" name="Build" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorrelationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReservationExpires" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReservationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RowsAffected" type="xs:int" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:simpleType name="AcknowledgeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Failure" />
+      <xs:enumeration value="Success" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AcknowledgeType" nillable="true" type="tns:AcknowledgeType" />
+  <xs:complexType name="ArrayOfTaxpayer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Taxpayer" nillable="true" type="tns:Taxpayer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaxpayer" nillable="true" type="tns:ArrayOfTaxpayer" />
+</xs:schema>

@@ -1,0 +1,729 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "VoucherApproval",
+        "frame": true,
+        "title": "Voucher Approval"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "6d6cfc0b-4435-4348-b02b-a064831ef3df",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "title": "Voucher Master"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string"
+            },
+            "name": "MyForm3",
+            "designerId": "c7dcf6f3-c54d-4727-89be-2fc7b973b298",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "center",
+                        "height": 28,
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "layout": "string",
+                        "height": "auto"
+                    },
+                    "name": "MyContainer8",
+                    "designerId": "8835a7c6-1b17-442e-9766-58e4bc4d0b63",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 28,
+                                "itemId": "btnLoadData",
+                                "text": "Load Data"
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "height": "auto",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "34ba4ae6-3609-45b1-b1fa-32ed64f4a58a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnLoadDataClick",
+                                        "implHandler": [
+                                            "var store=Ext.getStore('VoucherApprovalMasterStore');",
+                                            "store.removeAll();",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/Finance/AccountTransaction/VoucherApprovalMasterHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'GetVouApprovalMst',OfficeCode:getOfficeCode()",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "",
+                                            "    var data=Ext.decode(response.responseText);",
+                                            "    store.removeAll();",
+                                            "    store.add(data.root);",
+                                            "",
+                                            "",
+                                            "}",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnLoadDataClick",
+                                    "designerId": "b6a3413c-ee91-4d64-8f59-a8d2248da57c"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdVoucherMaster",
+                        "padding": 10,
+                        "store": "VoucherApprovalMasterStore"
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "itemId": "string",
+                        "padding": "auto",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel2",
+                    "designerId": "397b21ff-4606-4077-b190-ddc65503e9d9",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView2",
+                            "designerId": "9c759834-a218-4f03-96bd-8673550cc7ec"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "VoucherNo",
+                                "text": "Voucher No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn206",
+                            "designerId": "443d6209-3988-40de-b7b1-7fc5dd3d4371"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "FiscalYear",
+                                "text": "Fiscal Year"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn208",
+                            "designerId": "c307298d-39c9-49ee-ae3e-d211c1f59cab"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Particulars",
+                                "text": "Particulars"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn209",
+                            "designerId": "a9b772e9-ffd5-49fe-8011-8f72b63b08b8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "TransactionDate",
+                                "text": "Transaction Date"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn210",
+                            "designerId": "ebddd142-dc0b-4f87-9425-5586171af20e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "NepDate",
+                                "text": "Nep Date"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn212",
+                            "designerId": "214b1066-1e43-400c-8cb3-f1624cf0c8dd"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "VoucherType",
+                                "text": "Voucher Type"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn216",
+                            "designerId": "9640ba40-dde5-41bb-9a0c-38f21b564f53"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Amount",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn218",
+                            "designerId": "c3d2294b-0e65-49fc-8222-3a17b4500a09"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyActionColumn25",
+                            "designerId": "7f1b0f6f-afb2-4f0f-8ff6-de70851981b9",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/Modify.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem24",
+                                    "designerId": "6d15a76c-b6bf-45b8-b389-2eefb5abc95b",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var store=Ext.getStore('VoucherApprovalDetailStore');",
+                                                    "store.removeAll();",
+                                                    "",
+                                                    "var voucherApprovalMasterStore = Ext.getStore('VoucherApprovalMasterStore');",
+                                                    "var grd =  Ext.ComponentQuery.query('#grdVoucherMaster')[0];",
+                                                    "var row = voucherApprovalMasterStore.getAt(rowIndex).data;",
+                                                    "",
+                                                    "Ext.Ajax.request({",
+                                                    "    url: '../Handlers/Finance/AccountTransaction/VoucherApprovalDetailHandler.ashx',",
+                                                    "    params: {",
+                                                    "        method:'GetVouApprovalDet',VoucherNo:row.VoucherNo",
+                                                    "    },",
+                                                    "    success: function(response){",
+                                                    "",
+                                                    "    var data=Ext.decode(response.responseText);",
+                                                    "    store.removeAll();",
+                                                    "    store.add(data.root);",
+                                                    "",
+                                                    "",
+                                                    "}",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "2da612bb-b03d-4eb6-b6e1-c18c186138a6"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin21",
+                            "designerId": "d4c2d820-1aee-485f-840d-c1b05b08c748"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdVoucherDetail",
+                        "padding": 10,
+                        "store": "VoucherApprovalDetailStore",
+                        "title": "Voucher Detail"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "padding": "auto",
+                        "store": "store",
+                        "title": "string"
+                    },
+                    "name": "MyGridPanel23",
+                    "designerId": "1cc7b82b-5f73-4775-8ba2-ac9153116342",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView23",
+                            "designerId": "2a82a39b-7186-412e-b290-ee618ae6845a"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "VoucherNo",
+                                "text": "Voucher No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn223",
+                            "designerId": "279b9f21-08ee-4d99-8c55-3a966a312a82"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "TransactionId",
+                                "text": "Transaction Id"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn225",
+                            "designerId": "ea0e878e-889e-43ca-8fd6-a3121e69ab3d"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "AccountCode",
+                                "text": "Account Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn227",
+                            "designerId": "a04551f6-50a9-4da5-a79b-23557d08d16a"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Particulars",
+                                "text": "Particulars"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn228",
+                            "designerId": "5597cdb4-b3f5-48ca-be1d-eae3d0ef7e95"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "DrCrFlag",
+                                "text": "Dr. Cr. Flag"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn229",
+                            "designerId": "44816748-f4c5-4966-8677-743c76755b69"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Remarks",
+                                "text": "Remarks"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn230",
+                            "designerId": "90fad28f-9ec8-48bf-bf3a-b645f559fe15"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "AccountNo",
+                                "text": "Account No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn231",
+                            "designerId": "7b0cdaca-9711-4850-b655-6ab12f289f94"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "AccountDesc",
+                                "text": "Account Desc"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn232",
+                            "designerId": "387e619c-6909-4c5c-8846-167ed168f90f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "DrAmount",
+                                "text": "Dr. Amount"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn233",
+                            "designerId": "5c5afb42-82f3-4782-8b5e-b78a09f131ce"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CrAmount",
+                                "text": "Cr. Amount"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn234",
+                            "designerId": "3e7d76c2-6c7b-4361-9504-e84555ef6b06"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "center",
+                        "height": 28,
+                        "layout": "hbox",
+                        "margin": "10 0 0 0 "
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "layout": "string",
+                        "margin": "auto",
+                        "height": "auto"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "09810895-b659-4aff-9026-30c2496c1fa6",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 28,
+                                "itemId": "btnVoucherAproval",
+                                "text": "Voucher Approval"
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "height": "auto",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton6",
+                            "designerId": "fdb60603-b771-45ae-a07a-9498fb586036",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnVoucherAprovalClick",
+                                        "implHandler": [
+                                            "var errMsg='';",
+                                            "var categoryNo=Ext.ComponentQuery.query('#txtCategoryNo')[0];",
+                                            "var categoryDesc=Ext.ComponentQuery.query('#txtCategoryDesc')[0];",
+                                            "var categoryInitial=Ext.ComponentQuery.query('#txtCategoryInitial')[0];",
+                                            "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                            "",
+                                            "",
+                                            "var objApprovedGLTransaction={ApprovedFlag:'',",
+                                            "         ApprovedDate:'',",
+                                            "         ApprovedDateBs:'',",
+                                            "         ApprovedBy:'',",
+                                            "         VoucherNo:''};",
+                                            "",
+                                            "/*",
+                                            " public string VoucherNo { get; set; }",
+                                            "        public string ApprovedFlag { get; set; }",
+                                            "        public string ApprovedDate { get; set; }",
+                                            "        public string ApprovedDateBs { get; set; }",
+                                            "        public string ApprovedBy { get; set; }*/",
+                                            "",
+                                            "",
+                                            "",
+                                            "var wMsg='Approving Voucher...';",
+                                            "",
+                                            "var waitSave = watiMsg(wMsg);",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "            url: '../Handlers/Finance/AccountTransaction/ApprovedGlTransactionHandler.ashx',",
+                                            "            params: {",
+                                            "                method:'SaveApprovedGlTransaction',",
+                                            "                approvedGLTransaction:JSON.stringify(objApprovedGLTransaction)",
+                                            "            },",
+                                            "            success: function(response){",
+                                            "            waitSave.hide();",
+                                            "            var out=Ext.decode(response.responseText);",
+                                            "            console.log(out);",
+                                            "",
+                                            "            if(out.success===\"true\")",
+                                            "                {",
+                                            "                    var message=out.root;",
+                                            "                    msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                            "                        var grd = Ext.ComponentQuery.query('#grdAccountCategory')[0];",
+                                            "",
+                                            "                        var record = grd.getSelectionModel().getSelection()[0];",
+                                            "                        ",
+                                            "",
+                                            "                    });",
+                                            "",
+                                            "",
+                                            "",
+                                            "                        ",
+                                            "                }",
+                                            "                else",
+                                            "                    {",
+                                            "                        msg(\"FAILURE\",out.message);",
+                                            "                    }",
+                                            "            },",
+                                            "            failure: function ( result, request ) {",
+                                            "                waitSave.hide();",
+                                            "                var out=Ext.decode(response.responseText);",
+                                            "                msg(\"FAILURE\",out.message);",
+                                            "            }",
+                                            "",
+                                            "        });",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnVoucherAprovalClick",
+                                    "designerId": "656b3ea6-2b57-4aee-a1a5-61e60dac61c3"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,571 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OfficeMap",
+        "frame": true,
+        "title": "Office Map"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "ee428a34-6bc0-4132-ba00-6b9837d06396",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|columns": 2,
+                "frame": true,
+                "height": 2000,
+                "layout": "table",
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|columns": "number",
+                "frame": "boolean",
+                "layout": "string",
+                "title": "string",
+                "height": "auto"
+            },
+            "name": "MyForm3",
+            "designerId": "3a5a788a-78f4-446d-89a8-c9d8d67d72d4",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "OfficeName",
+                        "fieldLabel": "Office Group",
+                        "itemId": "ddlOfficeGroup",
+                        "layout|colspan": 2,
+                        "queryMode": "local",
+                        "size": 40,
+                        "store": "OfficeMapGroupSearchStore",
+                        "valueField": "OfficeCode"
+                    },
+                    "configAlternates": {
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "queryMode": "string",
+                        "size": "number",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "7627a06c-6fc7-4a32-a906-6199baf3db7a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDdlOfficeGroupAfterRender",
+                                "implHandler": [
+                                    "",
+                                    "var officeObj={",
+                                    "        OfficeCode:'',",
+                                    "        OfficeName:''",
+                                    "",
+                                    "",
+                                    "};",
+                                    "//console.log('districtCode',districtCode);",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/office/OfficeHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'Search',",
+                                    "        office:JSON.stringify(officeObj)",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "",
+                                    "var obj = Ext.decode(response.responseText);",
+                                    "",
+                                    "                        console.log('resp',response);",
+                                    "",
+                                    "",
+                                    "",
+                                    "      if(obj.success === \"true\")",
+                                    "                {",
+                                    "",
+                                    "                    var store=Ext.getStore('OfficeMapGroupSearchStore');",
+                                    "                    store.removeAll();",
+                                    "                    store.add(obj.root);",
+                                    "",
+                                    "                }",
+                                    "                else",
+                                    "                {",
+                                    "",
+                                    "                    msg(\"FAILURE\",obj.message);",
+                                    "                }",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDdlOfficeGroupAfterRender",
+                            "designerId": "186d6060-70ee-497f-89ac-188d09e97266"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDdlOfficeGroupSelect",
+                                "implHandler": [
+                                    "var officeCode=Ext.ComponentQuery.query('#ddlOfficeGroup')[0];",
+                                    "var officeMapObj={",
+                                    "        OfficeGrpCode:officeCode.getValue()",
+                                    "};",
+                                    "//console.log('districtCode',districtCode);",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/office/OfficeMapHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'Search',",
+                                    "        officeMap:JSON.stringify(officeMapObj)",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "",
+                                    "var obj = Ext.decode(response.responseText);",
+                                    "",
+                                    "                        console.log('resp',response);",
+                                    "",
+                                    "",
+                                    "",
+                                    "      if(obj.success === \"true\")",
+                                    "                {",
+                                    "",
+                                    "                    var store=Ext.getStore('OfficeMapStore');",
+                                    "                    store.removeAll();",
+                                    "                    store.add(obj.root);",
+                                    "",
+                                    "                }",
+                                    "                else",
+                                    "                {",
+                                    "",
+                                    "                    msg(\"FAILURE\",obj.message);",
+                                    "                }",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDdlOfficeGroupSelect",
+                            "designerId": "4f1b8f35-475e-4475-af29-8ff77a50202a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdOfficeMap",
+                        "layout|colspan": 2,
+                        "store": "OfficeMapStore",
+                        "title": "",
+                        "width": 601
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "title": "string",
+                        "store": "store",
+                        "height": "auto",
+                        "width": "auto",
+                        "layout|flex": "number",
+                        "layout|margins": "string"
+                    },
+                    "name": "MyGridPanel2",
+                    "designerId": "4fc1835a-a945-44cb-a036-d22440dc25c8",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView2",
+                            "designerId": "4ddd7726-306d-400e-8b0c-8db2331a8801"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "OfficeCode",
+                                "text": "Office Code",
+                                "width": 96
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn62",
+                            "designerId": "4fe8c6f3-1996-45bf-a680-2be5a9780718"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "OfficeName",
+                                "text": "Office Name",
+                                "width": 342
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn63",
+                            "designerId": "5845a7e0-ce9e-4e20-bb45-d9779bd7302b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "OfficeGrpCode",
+                                "hidden": true,
+                                "text": "OfficeGrpCode"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "hidden": "boolean",
+                                "text": "string"
+                            },
+                            "name": "MyColumn64",
+                            "designerId": "08737bac-c4aa-46b7-952a-823bb1ebc47d"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyActionColumn",
+                            "designerId": "99d62b68-199a-4a80-a9cc-3c8e3f20909d",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem1",
+                                    "designerId": "c2f0fc23-737a-4f21-960d-5d0d7244c28e",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "Ext.ComponentQuery.query('#grdOfficeMap')[0].getSelectionModel().select(rowIndex);",
+                                                    "//get reference of store",
+                                                    "var store = Ext.getStore('OfficeMapStore');",
+                                                    "",
+                                                    "//get selected row using rowindex",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "// set values",
+                                                    "var officeCode=row.OfficeCode;",
+                                                    "var officeGrpCode=row.OfficeGrpCode;",
+                                                    "",
+                                                    "var obj={",
+                                                    "    OfficeCode:officeCode,",
+                                                    "    OfficeGrpCode:officeGrpCode,",
+                                                    "    Action:'D'",
+                                                    "};",
+                                                    "Ext.Ajax.request({",
+                                                    "    url: '../Handlers/GeneralMasterParameters/office/OfficeMapHandler.ashx',",
+                                                    "    params: {",
+                                                    "        method:'Save',",
+                                                    "        officeMap:JSON.stringify(obj)",
+                                                    "    },",
+                                                    "    success: function(response){",
+                                                    "",
+                                                    "",
+                                                    "        var out = Ext.decode(response.responseText);",
+                                                    "",
+                                                    "        console.log('resp',response);",
+                                                    "        if(out.success == \"true\")",
+                                                    "                {",
+                                                    "                    msg(\"SUCCESS\",out.message,function () {",
+                                                    "                       store.removeAt(rowIndex);",
+                                                    "                    });",
+                                                    "                }",
+                                                    "                else",
+                                                    "                {",
+                                                    "                    msg(\"FAILURE\",out.message);",
+                                                    "                }",
+                                                    "    }",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "4aaa82a4-1804-45a4-94ab-5fee65f81161"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel7",
+                            "designerId": "6ce077c9-e2f7-40fe-9491-3cbc8ac3a4df"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "OfficeName",
+                        "fieldLabel": "Office",
+                        "itemId": "ddlOffice",
+                        "margin": "10 0 0 0",
+                        "queryMode": "local",
+                        "size": 40,
+                        "store": "OfficeMapCodeSearchStore",
+                        "valueField": "OfficeCode"
+                    },
+                    "configAlternates": {
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "margin": "auto",
+                        "queryMode": "string",
+                        "size": "number",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "9f78847b-c587-47ca-aa04-684eb88502e7",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDdlOfficeAfterRender",
+                                "implHandler": [
+                                    "var officeObj={",
+                                    "        OfficeCode:'',",
+                                    "        OfficeName:''",
+                                    "",
+                                    "",
+                                    "};",
+                                    "//console.log('districtCode',districtCode);",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/office/OfficeHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'Search',",
+                                    "        office:JSON.stringify(officeObj)",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "",
+                                    "var obj = Ext.decode(response.responseText);",
+                                    "",
+                                    "                        console.log('resp',response);",
+                                    "",
+                                    "",
+                                    "",
+                                    "      if(obj.success === \"true\")",
+                                    "                {",
+                                    "",
+                                    "                    var store=Ext.getStore('OfficeMapCodeSearchStore');",
+                                    "                    store.removeAll();",
+                                    "                    store.add(obj.root);",
+                                    "",
+                                    "                }",
+                                    "                else",
+                                    "                {",
+                                    "",
+                                    "                    msg(\"FAILURE\",obj.message);",
+                                    "                }",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDdlOfficeAfterRender",
+                            "designerId": "5d8ece31-5ee7-49a1-816c-73e27d251368"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|columns": 3,
+                        "layout": "table",
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "container|columns": "number",
+                        "layout": "string",
+                        "layout|colspan": "number"
+                    },
+                    "name": "MyContainer11",
+                    "designerId": "dbd50619-f1c4-441f-8fff-052726ecea2b",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnInsertOfficeGroup",
+                                "margin": "10 0 0 5",
+                                "text": "Insert"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton8",
+                            "designerId": "29b1b25a-05e6-4800-806d-aef90833f4f6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    " var store=Ext.getStore('OfficeMapStore');",
+                    " store.removeAll();",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "38b4a887-e402-4509-a584-e38bb6d748ed"
+        }
+    ]
+}

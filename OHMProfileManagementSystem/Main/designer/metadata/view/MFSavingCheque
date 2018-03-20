@@ -1,0 +1,932 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MFSavingCheque",
+        "frame": true,
+        "title": "Cheque Update"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string"
+    },
+    "name": "MyPanel11",
+    "designerId": "1d7df850-54ed-4be5-84d9-8c0f64c7278b",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|columns": 2,
+                "frame": true,
+                "itemId": "frmMFSavingCheque",
+                "layout": "table"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|columns": "number",
+                "frame": "boolean",
+                "layout": "string",
+                "itemId": "string"
+            },
+            "name": "MyForm16",
+            "designerId": "32c149f7-3872-409a-b018-f4705e58b499",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "OfficeName",
+                        "fieldLabel": "Office Code",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "forceSelection": true,
+                        "itemId": "ddlOffice",
+                        "layout|colspan": 2,
+                        "queryMode": "local",
+                        "size": 40,
+                        "store": "OfficeShortStore",
+                        "valueField": "OfficeCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "size": "number",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "fd56b99a-ccdf-4350-b5e5-6955fe635ef7",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDdlOfficeChange",
+                                "implHandler": [
+                                    "Ext.ComponentQuery.query('#ddlCenter')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtMemberCode')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtMemberName')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtAccountNo')[0].reset();",
+                                    "Ext.ComponentQuery.query('#ddlChequeStatus')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtReasonForCancel')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtChequeNoFrom')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtChequeNoTo')[0].reset();",
+                                    "Ext.getStore('ChequeGenerateDetailStore').removeAll();",
+                                    "",
+                                    "var ccStore=Ext.getStore('CenterCodeStore');",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/Finance/Maintenance/CenterHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetCenterListLov',",
+                                    "        offCode:Ext.ComponentQuery.query('#ddlOffice')[0].getValue()",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "    ccStore.removeAll();",
+                                    "    ccStore.add(data.root);",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDdlOfficeChange",
+                            "designerId": "0516a5dc-0158-4aab-881e-150cdb6a3f28"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "CenterName",
+                        "fieldLabel": "Center Code",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "itemId": "ddlCenter",
+                        "layout|colspan": 2,
+                        "queryMode": "local",
+                        "size": 40,
+                        "store": "CenterCodeStore",
+                        "valueField": "CenterCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "size": "number",
+                        "displayField": "datafield",
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "bc4e2f3f-719b-4740-b472-7cc1cdf5781c",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDdlCenterChange",
+                                "implHandler": [
+                                    "Ext.ComponentQuery.query('#txtMemberCode')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtMemberName')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtAccountNo')[0].reset();",
+                                    "Ext.ComponentQuery.query('#ddlChequeStatus')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtReasonForCancel')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtChequeNoFrom')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtChequeNoTo')[0].reset();",
+                                    "Ext.getStore('ChequeGenerateDetailStore').removeAll();"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDdlCenterChange",
+                            "designerId": "1335b76d-ca21-4916-bb9c-27745d3f0fc4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Member Code",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "itemId": "txtMemberCode",
+                        "size": 40
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "size": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "8cd63979-0cf2-4e94-9bfe-1baf44a17772",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtMemberCodeAfterRender",
+                                "implHandler": [
+                                    "Ext.ComponentQuery.query('#txtMemberName')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtAccountNo')[0].reset();",
+                                    "Ext.ComponentQuery.query('#ddlChequeStatus')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtReasonForCancel')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtChequeNoFrom')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtChequeNoTo')[0].reset();",
+                                    "Ext.getStore('ChequeGenerateDetailStore').removeAll();",
+                                    "",
+                                    "component.getEl().on('dblclick', function(){",
+                                    "    var winPopup = Ext.create('MyApp.view.SelectMemberForCheque',{",
+                                    "",
+                                    "    });",
+                                    "    var store=Ext.getStore('MemberForChequeStore');",
+                                    "store.removeAll();",
+                                    "    winPopup.extraParam={param:null};",
+                                    "    winPopup.show();",
+                                    "});"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtMemberCodeAfterRender",
+                            "designerId": "5d0f227b-7c9a-4df7-baf1-5ef76139e098"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "MemberName",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "hideLabel": true,
+                        "itemId": "txtMemberName",
+                        "size": 50
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "size": "number",
+                        "hideLabel": "boolean",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "b0f8fb1d-76d0-44a1-be80-c64a808557b9"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Account No.",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "itemId": "txtAccountNo",
+                        "size": 30
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "size": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField279",
+                    "designerId": "b1b21be7-dd34-44c4-b998-cffc7381a90c",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtAccountNoAfterRender",
+                                "implHandler": [
+                                    "Ext.ComponentQuery.query('#ddlChequeStatus')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtReasonForCancel')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtChequeNoFrom')[0].reset();",
+                                    "Ext.ComponentQuery.query('#txtChequeNoTo')[0].reset();",
+                                    "Ext.getStore('ChequeGenerateDetailStore').removeAll();",
+                                    "component.getEl().on('dblclick', function(){",
+                                    "    var winPopup = Ext.create('MyApp.view.SelectMemberAccountForCheque',{",
+                                    "",
+                                    "    });",
+                                    "    Ext.getStore('SelectMemberAccountForChequeStore').removeAll();",
+                                    "    winPopup.extraParam={param:null};",
+                                    "    winPopup.show();",
+                                    "});"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtAccountNoAfterRender",
+                            "designerId": "a49ba0c6-209c-41e3-89aa-beca5e4bc5f5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "RefDtlName",
+                        "emptyText": "--- Select---",
+                        "fieldLabel": "Cheque Status",
+                        "forceSelection": true,
+                        "itemId": "ddlChequeStatus",
+                        "queryMode": "local",
+                        "store": "ReferenceShortStore",
+                        "valueField": "RefDtlCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "displayField": "datafield",
+                        "emptyText": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox27",
+                    "designerId": "e1b05ec5-f610-4f8f-8372-886f8d8dd224"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Reason For Cancel",
+                        "itemId": "txtReasonForCancel",
+                        "layout|colspan": 2,
+                        "maxWidth": 400,
+                        "size": 84,
+                        "width": 400
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|colspan": "number",
+                        "size": "number",
+                        "itemId": "string",
+                        "maxWidth": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "c578f29a-a552-416f-9337-3b2404b5d12f"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Cheque No. From",
+                        "hideTrigger": true,
+                        "itemId": "txtChequeNoFrom",
+                        "keyNavEnabled": false,
+                        "mouseWheelEnabled": false,
+                        "size": 30
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "size": "number",
+                        "itemId": "string",
+                        "hideTrigger": "boolean",
+                        "keyNavEnabled": "boolean",
+                        "mouseWheelEnabled": "boolean"
+                    },
+                    "name": "MyNumberField15",
+                    "designerId": "2394c45b-301a-43f3-a2a3-75365e52ffd3"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Cheque No. To",
+                        "hideTrigger": true,
+                        "itemId": "txtChequeNoTo",
+                        "keyNavEnabled": false,
+                        "mouseWheelEnabled": false,
+                        "size": 30
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "size": "number",
+                        "itemId": "string",
+                        "hideTrigger": "boolean",
+                        "keyNavEnabled": "boolean",
+                        "mouseWheelEnabled": "boolean"
+                    },
+                    "name": "MyNumberField16",
+                    "designerId": "bd2f0502-a0a4-446d-9d22-bec9da0b914d"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnGenerateChequeBook",
+                        "padding": 5,
+                        "text": "Generate Cheque Book"
+                    },
+                    "configAlternates": {
+                        "text": "string",
+                        "itemId": "string",
+                        "padding": "auto"
+                    },
+                    "name": "MyButton37",
+                    "designerId": "f7de6b77-b731-45d5-a934-6ab1d94357e4",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnGenerateChequeBookClick",
+                                "implHandler": [
+                                    "var errMsg='';",
+                                    "var office=Ext.ComponentQuery.query('#ddlOffice')[0];",
+                                    "var accountNo=Ext.ComponentQuery.query('#txtAccountNo')[0];",
+                                    "var status=Ext.ComponentQuery.query('#ddlChequeStatus')[0];",
+                                    "//var userName=Ext.ComponentQuery.query('#txtAction')[0];",
+                                    "var fromChequeNo=Ext.ComponentQuery.query('#txtChequeNoFrom')[0];",
+                                    "var toChequeNo=Ext.ComponentQuery.query('#txtChequeNoTo')[0];",
+                                    "",
+                                    "/*if(categoryNo.getValue()===null ||categoryNo.getValue()===\"\")",
+                                    "    {",
+                                    "        errMsg+=\"Please,Enter Category Number\";",
+                                    "    }",
+                                    "if(categoryDesc.getValue()===null ||categoryDesc.getValue()===\"\")",
+                                    "    {",
+                                    "        errMsg+=\"Please,Enter Category Description\";",
+                                    "    }",
+                                    "if(categoryInitial.getValue()===null ||categoryInitial.getValue()===\"\")",
+                                    "    {",
+                                    "        errMsg+=\"Please,Enter Catgory Initial\";",
+                                    "    }",
+                                    "",
+                                    "if(errMsg!=='')",
+                                    "    {",
+                                    "        msg(\"WARNING\",errMsg);",
+                                    "        return;",
+                                    "    }*/",
+                                    "",
+                                    "",
+                                    "var generateChequeSeq={OfficeCode:office.getValue(),",
+                                    "         AccountNo:accountNo.getValue(),",
+                                    "         Status:Ext.ComponentQuery.query('#ddlChequeStatus')[0].getValue(),",
+                                    "         UserName:'',",
+                                    "         FromChequeNo:fromChequeNo.getValue(),",
+                                    "                ToChequeNo: toChequeNo.getValue()     };",
+                                    "",
+                                    "",
+                                    "",
+                                    "var wMsg='Generating Cheque Sequence...';",
+                                    "",
+                                    "var waitSave = watiMsg(wMsg);",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "            url: '../Handlers/Finance/Transaction/SavingTransaction/GenerateChequeSequenceHandler.ashx',",
+                                    "            params: {",
+                                    "                method:'GenerateChequeSequence',",
+                                    "                generateChequeSequence:JSON.stringify(generateChequeSeq)",
+                                    "            },",
+                                    "            success: function(response){",
+                                    "            waitSave.hide();",
+                                    "            var out=Ext.decode(response.responseText);",
+                                    "            console.log(out);",
+                                    "",
+                                    "            if(out.success===\"true\")",
+                                    "                {",
+                                    "                    var message=out.root;",
+                                    "",
+                                    "                            msg(\"SUCCESS\",out.message,function(){",
+                                    "",
+                                    "                            });",
+                                    "",
+                                    "",
+                                    "                }",
+                                    "                else",
+                                    "                    {",
+                                    "                        msg(\"FAILURE\",out.message);",
+                                    "                    }",
+                                    "            },",
+                                    "            failure: function ( result, request ) {",
+                                    "                waitSave.hide();",
+                                    "                var out=Ext.decode(response.responseText);",
+                                    "                msg(\"FAILURE\",out.message);",
+                                    "            }",
+                                    "",
+                                    "        });"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnGenerateChequeBookClick",
+                            "designerId": "515759c7-1e73-4de8-a844-d71069bb8a52"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnSearchChequeBook",
+                        "padding": 5,
+                        "text": "Search Cheque Book"
+                    },
+                    "configAlternates": {
+                        "text": "string",
+                        "padding": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyButton37",
+                    "designerId": "dc2425ad-f1d3-49f9-a6f4-16b438844f90",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnSearchChequeBookClick",
+                                "implHandler": [
+                                    "var office=Ext.ComponentQuery.query('#ddlOffice')[0];",
+                                    "var accountNo=Ext.ComponentQuery.query('#txtAccountNo')[0];",
+                                    "",
+                                    "",
+                                    "var store=Ext.getStore('ChequeGenerateDetailStore');",
+                                    "store.removeAll();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/Finance/Transaction/SavingTransaction/ChequeGenerateDetailHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetChequeGenerateDetail',",
+                                    "        offCode:office.getValue(),",
+                                    "        accountNo:accountNo.getValue()",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "    store.removeAll();",
+                                    "    store.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnSearchChequeBookClick",
+                            "designerId": "f3d14417-5faf-40a5-9860-02d6e4e81e1a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "center",
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "layout": "string"
+                    },
+                    "name": "MyContainer43",
+                    "designerId": "c868a64e-edfb-4061-b10a-73bba8f043f0"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "center",
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "layout": "string"
+                    },
+                    "name": "MyContainer44",
+                    "designerId": "a3ce1fdc-e270-41b9-824d-d20c8a8419c6"
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdAccountCheque",
+                        "layout|colspan": 2,
+                        "margin": "15 0 0 0",
+                        "store": "ChequeGenerateDetailStore",
+                        "title": "Account Cheque List"
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "layout|colspan": "number",
+                        "margin": "auto",
+                        "itemId": "string",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel14",
+                    "designerId": "bf57b092-6e32-4296-90dd-4b586db503ef",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView14",
+                            "designerId": "4c8217f0-ffdf-441d-b8c4-ed1cbbcd0ba6"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "DisplayNo",
+                                "text": "Display No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn136",
+                            "designerId": "797eb906-8577-44c6-831e-a4b2cff6e208"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ChequeNo",
+                                "text": "Cheque No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn137",
+                            "designerId": "c1742e46-5d1c-4143-b6e1-88aea5646535"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Status",
+                                "text": "Status",
+                                "width": 74
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn138",
+                            "designerId": "57173e15-f897-457a-b0e0-194e6e3175b3"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ReasonForCancel",
+                                "text": "Reason For Cancel",
+                                "width": 175
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn139",
+                            "designerId": "41eb3f2d-1350-403f-b5f1-8f5edef90299"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "StatusValue",
+                                "text": "Status Value",
+                                "width": 83
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn140",
+                            "designerId": "60a9db23-f2f2-44b3-8796-4c7a4e373832"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "PrintedByOn",
+                                "text": "Printed By On"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn141",
+                            "designerId": "f54b7c67-3318-4f0a-95c7-fac28c58ac34"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "AccountNo",
+                                "text": "Account No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn142",
+                            "designerId": "ebabc612-aa0e-403a-a39c-f8a7ffad9de0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "margin": "15 0 0 0",
+                        "padding": 5,
+                        "text": "Print Cheque Book",
+                        "width": 116
+                    },
+                    "configAlternates": {
+                        "text": "string",
+                        "margin": "auto",
+                        "padding": "auto",
+                        "width": "auto"
+                    },
+                    "name": "MyButton38",
+                    "designerId": "b56e66dd-0f26-4d1a-a3ed-779c715e705a"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmMFSavingChequeAfterRender",
+                        "implHandler": [
+                            "var officeStore=Ext.getStore('OfficeShortStore');",
+                            "officeStore.removeAll();",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/GeneralMasterParameters/Office/OfficeHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetOfficeList'",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "    var data=Ext.decode(response.responseText);",
+                            "    officeStore.removeAll();",
+                            "    officeStore.add(data.root);",
+                            "",
+                            "",
+                            "}",
+                            "});",
+                            "",
+                            "var refStore=Ext.getStore('ReferenceShortStore');",
+                            "refStore.removeAll();",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/GeneralMasterParameters/References/MsRefrenceCodeDetailsHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetReferenceDetailListShort',referenceCode:'CHEQUE_STATUS'",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "    var data=Ext.decode(response.responseText);",
+                            "    refStore.removeAll();",
+                            "    refStore.add(data.root);",
+                            "",
+                            "",
+                            "}",
+                            "});"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmMFSavingChequeAfterRender",
+                    "designerId": "18dc2dab-0d0d-439d-abb8-ae531a963fd3"
+                }
+            ]
+        }
+    ]
+}

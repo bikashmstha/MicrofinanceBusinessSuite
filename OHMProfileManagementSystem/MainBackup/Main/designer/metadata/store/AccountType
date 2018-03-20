@@ -1,0 +1,65 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    \r",
+            "\t{\r",
+            "\t\tAcctType:\"00\",\r",
+            "\t\tAcctTypeDesc:\"VAT\"\r",
+            "\t},\r",
+            "\t{\r",
+            "\t\tAcctType:\"10\",\r",
+            "\t\tAcctTypeDesc:\"Income Tax\"\r",
+            "\t},\r",
+            "\t{\r",
+            "\t\tAcctType:\"20\",\r",
+            "\t\tAcctTypeDesc:\"Excise\"\r",
+            "\t}\r",
+            "    \r",
+            "   \r",
+            "    \r",
+            "   ]\r",
+            ""
+        ],
+        "designer|userClassName": "AccountType",
+        "model": "AccountType",
+        "storeId": "AccountType"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "0fedcd13-cf4e-4671-b336-64512e3e8cf4",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy34",
+            "designerId": "56ee92f4-49e8-4abb-adef-4311f96f7b13",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader6",
+                    "designerId": "92a3f31e-1bb6-443b-b975-e574e5617100"
+                }
+            ]
+        }
+    ]
+}

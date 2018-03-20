@@ -1,0 +1,706 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "VdcEntry",
+        "frame": true,
+        "title": "VDC Setup"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "d8c806fd-90d8-479c-b9d5-f81905e090b4",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|columns": 2,
+                "frame": true,
+                "itemId": "frmVdcEntry",
+                "layout": "table",
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|columns": "number",
+                "frame": "boolean",
+                "itemId": "string",
+                "layout": "string",
+                "title": "string"
+            },
+            "name": "MyForm",
+            "designerId": "3702dd97-0185-4115-b83c-3f5e8485492d",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "VDC/NP Name",
+                        "hidden": true,
+                        "itemId": "txtxSearchVDCName",
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "layout|colspan": "number"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "33e40d74-12aa-4d89-977e-dd752df8407e"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "DistrictDesc",
+                        "emptyText": "- - - Select- - - ",
+                        "fieldLabel": "District Name",
+                        "forceSelection": true,
+                        "frame": false,
+                        "itemId": "ddlDistrict",
+                        "queryMode": "local",
+                        "store": "VdcDistrictSearchStore",
+                        "valueField": "DistrictCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "frame": "boolean",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "queryMode": "string",
+                        "emptyText": "string"
+                    },
+                    "name": "MyComboBox4",
+                    "designerId": "15686411-d214-4641-a712-bdead5982174",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDdlDistrictCollapse",
+                                "implHandler": [
+                                    "var district=Ext.ComponentQuery.query('#ddlDistrict')[0];",
+                                    "",
+                                    "var Vdc ={",
+                                    "",
+                                    "                VdcnpDesc : '',",
+                                    "                DistrictCode : district.getValue()",
+                                    "",
+                                    "};",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "     url:'../Handlers/Common/VdcHandler.ashx',",
+                                    "     params:{method:'GetVDCShort',Vdc:JSON.stringify(Vdc)},",
+                                    "     success: function ( result, request ) {",
+                                    "",
+                                    "          var obj = Ext.decode(result.responseText);",
+                                    "          if(obj.success === 'true'){",
+                                    "\t\t  var store=Ext.getStore('VdcEntrySearchStore');",
+                                    "                    store.removeAll();",
+                                    "                    store.add(obj.root);",
+                                    "",
+                                    "          }else{msg('FAILURE','Could Not Load Data');}",
+                                    "     },",
+                                    "     failure: function(form, action) {",
+                                    "         msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                                    " });"
+                                ],
+                                "name": "collapse",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDdlDistrictCollapse",
+                            "designerId": "e2a06c3d-e902-4359-a74a-4b2a6bd45819"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "txtDistrictName",
+                        "margin": "0 0 0 5"
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "margin": "auto"
+                    },
+                    "name": "MyTextField2",
+                    "designerId": "e36cbcec-dfa3-46f0-8efb-bd84d58cc112"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "center",
+                        "height": 25,
+                        "layout": "hbox",
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "height": "auto",
+                        "layout": "string",
+                        "layout|colspan": "number"
+                    },
+                    "name": "MyContainer",
+                    "designerId": "e45f5c8b-0270-49de-87e7-57599205a010"
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 200,
+                        "itemId": "grdVDC",
+                        "layout|colspan": 2,
+                        "margin": "5 0 0 0",
+                        "store": "VdcEntrySearchStore",
+                        "width": 591
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "margin": "auto",
+                        "store": "store",
+                        "width": "auto"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "343a7566-0164-4786-8ef3-cc8a00d51bc2",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "d5edf1ab-ca15-489f-988d-6d6fdae904e6"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "VDCNPCode",
+                                "text": "VDC NP Code"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn9",
+                            "designerId": "62c3927d-321b-48a9-b0a1-d8490bf5f4bb",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtVDCNPCode"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField62",
+                                    "designerId": "f1041638-1637-42c7-aacb-2dc0498934a1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "VDCNPDesc",
+                                "text": "VDC NP Description",
+                                "width": 291
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn10",
+                            "designerId": "fd199e6e-b015-401d-b9f0-7db040eeb05a",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtVDCNPDesc"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField66",
+                                    "designerId": "0167e12f-64e0-45af-b7f2-624ca66b0aaf"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Action",
+                                "hidden": true,
+                                "text": "Action"
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "dataIndex": "datafield",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn57",
+                            "designerId": "7822515a-06ac-4d8e-84c4-0f252cc3cfef"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyActionColumn3",
+                            "designerId": "d46fd4dd-774f-4c28-a1f1-14dffe78a743",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem3",
+                                    "designerId": "d77e8405-1d18-4313-b5e4-47662d89c004",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var district =Ext.ComponentQuery.query('#ddlDistrict')[0];",
+                                                    "if(district.getValue()===null||district.getValue()==='')",
+                                                    "    {",
+                                                    "        msg('WARNING','Please, Select District.');",
+                                                    "        return;",
+                                                    "    }",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected VDC?', function(btn) {",
+                                                    "    if(btn == 'yes'){",
+                                                    "",
+                                                    "        var store = Ext.getStore('VdcEntrySearchStore');",
+                                                    "        var grd =  Ext.ComponentQuery.query('#grdVDC')[0];",
+                                                    "        var row = store.getAt(rowIndex).data;",
+                                                    "",
+                                                    "        var vdcObj ={",
+                                                    "            VDCNPCode : row.VDCNPCode,",
+                                                    "            VDCNPDesc: row.VDCNPDesc,",
+                                                    "            DistrictCode:district.getValue(),",
+                                                    "            Action:'D'",
+                                                    "        };",
+                                                    "",
+                                                    "        var wMsg='Deleting....';",
+                                                    "",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "            url: '../Handlers/Common/VdcHandler.ashx',",
+                                                    "            params:{method:'Save',Vdc:JSON.stringify(vdcObj)},",
+                                                    "            success: function(response){",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                ",
+                                                    "                if(out.success)",
+                                                    "                {",
+                                                    "",
+                                                    "                    msg(\"SUCCESS\",out.message,function(){",
+                                                    "                        //grd.bindStore(store);",
+                                                    "                        store.removeAt(rowIndex);",
+                                                    "                    });",
+                                                    "                }",
+                                                    "                else",
+                                                    "                {",
+                                                    "                    msg(\"FAILURE\",out.message);",
+                                                    "                }",
+                                                    "            },",
+                                                    "            failure: function ( result, request ) {",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                msg(\"FAILURE\",out.message);",
+                                                    "            }",
+                                                    "",
+                                                    "        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        return true;",
+                                                    "    }",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "57ff3f86-ab5c-4e68-9bbb-5cad184eb0bb"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel8",
+                            "designerId": "9ed642e9-da2f-4574-b457-de27ded0f07d"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin",
+                            "designerId": "41c2bb58-6a70-4871-8d6d-29ea36fee4e8",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingValidateedit",
+                                        "implHandler": [
+                                            "",
+                                            "var vdcNpCode=Ext.ComponentQuery.query('#txtVDCNPCode')[0];",
+                                            "var vdcNpDesc=Ext.ComponentQuery.query('#txtVDCNPDesc')[0];",
+                                            "var districtCode=Ext.ComponentQuery.query('#ddlDistrict')[0];",
+                                            "",
+                                            "var vdcObj ={",
+                                            "                VdcnpCode : vdcNpCode.getValue(),",
+                                            "                VdcnpDesc : vdcNpDesc.getValue(),",
+                                            "                DistrictCode : districtCode.getValue(),",
+                                            "                Action:e.newValues.Action",
+                                            "};",
+                                            "",
+                                            "var waitSave = watiMsg('Please wait ...');",
+                                            "Ext.Ajax.request({",
+                                            "     url: '../Handlers/Common/VdcHandler.ashx',",
+                                            "     params:{method:'Save',Vdc:JSON.stringify(vdcObj)},",
+                                            "     success: function ( response, request ) {",
+                                            "        waitSave.hide();",
+                                            "            var out=Ext.decode(response.responseText);",
+                                            "            console.log(out);",
+                                            "",
+                                            "            if(out.success===\"true\")",
+                                            "                {",
+                                            "                   msg(\"SUCCESS\",out.message,function(){",
+                                            "                                var grd = Ext.ComponentQuery.query('#grdVDC')[0];",
+                                            "",
+                                            "                                var record = grd.getSelectionModel().getSelection()[0];",
+                                            "                                record.set('Action','U');",
+                                            "",
+                                            "                            });",
+                                            "              }",
+                                            "                else",
+                                            "                    {",
+                                            "                        msg(\"FAILURE\",out.message);",
+                                            "                    }",
+                                            "            },",
+                                            "            failure: function ( response, request ) {",
+                                            "               waitSave.hide();",
+                                            "                var out=Ext.decode(response.responseText);",
+                                            "                msg(\"FAILURE\",out.message);",
+                                            "            }",
+                                            "",
+                                            "        });",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "validateedit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingValidateedit",
+                                    "designerId": "d951e1d5-dd49-4316-aa71-6e4c57e645fa"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingCanceledit",
+                                        "name": "canceledit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingCanceledit",
+                                    "designerId": "60718af2-8594-4424-90be-d8a31a6457be"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "width": 410
+                            },
+                            "configAlternates": {
+                                "dock": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyToolbar",
+                            "designerId": "81cd2bc3-a08f-44c6-ab37-9344708006f2",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "btnAddVDC",
+                                        "layout|flex": null,
+                                        "text": "Add District"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string",
+                                        "layout|flex": "number",
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton13",
+                                    "designerId": "1b0dfd28-f3ba-4e22-9132-531bb896ef5a",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBtnAddVDCClick",
+                                                "implHandler": [
+                                                    "var ddlDistrict=Ext.ComponentQuery.query('#ddlDistrict')[0];",
+                                                    "if(ddlDistrict.getValue()===null || ddlDistrict.getValue()==='')",
+                                                    "    {",
+                                                    "        msg('WARNING','Please, Select District');",
+                                                    "        return;",
+                                                    "    }",
+                                                    "var store=Ext.getStore('VdcEntrySearchStore');",
+                                                    "var Vdc ={",
+                                                    "                VdcnpCode : \"\",",
+                                                    "                VdcnpDesc : \"\",",
+                                                    "                DistrictCode : \"\",",
+                                                    "\t\t\t\tAction:\"I\"",
+                                                    "};",
+                                                    "",
+                                                    "store.add(Vdc);",
+                                                    ""
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onBtnAddVDCClick",
+                                            "designerId": "3c111711-ee20-476d-9898-3848e2942aa2"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayInfo": true,
+                                "dock": "bottom",
+                                "width": 360
+                            },
+                            "configAlternates": {
+                                "displayInfo": "boolean",
+                                "dock": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyPagingToolbar",
+                            "designerId": "b4c5973a-d9aa-491d-bd0b-4d5e15cc546f"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmVdcEntryAfterRender",
+                        "implHandler": [
+                            "var waitSave = watiMsg('Please wait ...');",
+                            "        Ext.Ajax.request({",
+                            "             url: '../Handlers/Common/DistrictHandler.ashx',",
+                            "             params:{method:'SearchDistrict',districtCode:'',districtName:''},",
+                            "             success: function ( result, request ) {",
+                            "        waitSave.hide();",
+                            "                  var obj = Ext.decode(result.responseText);",
+                            "                  if(obj.success === 'true'){",
+                            "                      var store =Ext.getStore('VdcDistrictSearchStore');",
+                            "                      store.removeAll();",
+                            "                      store.add(obj.root);",
+                            "",
+                            "",
+                            "",
+                            "                  } else {",
+                            "",
+                            "                  }",
+                            "",
+                            "             },",
+                            "             failure: function(form, action) {",
+                            "             }",
+                            "        });",
+                            "",
+                            "var vdcStore=Ext.getStore('VdcEntrySearchStore');",
+                            "vdcStore.removeAll();",
+                            ""
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmVdcEntryAfterRender",
+                    "designerId": "6c2d211a-2e49-4674-a123-5ba86d79abcf"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": [
+            "[\r",
+            "     {\r",
+            "        ModulID:'VatReturns',\r",
+            "        ModulName:'E-Vat Return Entry'\r",
+            "    },\r",
+            "     {\r",
+            "        ModulID:'EstimateReturn',\r",
+            "        ModulName:'E-Installment Return'\r",
+            "    },\r",
+            "    {\r",
+            "        ModulID:'SelfAssessmentD01',\r",
+            "        ModulName:'E-Self Assessment D01'\r",
+            "    },\r",
+            "    {\r",
+            "        ModulID:'SelfAssessmentD03',\r",
+            "        ModulName:'E-Self Assessment D03'\r",
+            "    }\r",
+            "    \r",
+            "]"
+        ],
+        "designer|userClassName": "strTPVModuls",
+        "model": "mdlTPVModuls",
+        "storeId": "strTPVModuls"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "59b3e33b-ca04-47ab-97e8-732a276941cd",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy33",
+            "designerId": "02ad1e3d-fd19-4678-80ef-ae97b4be86f7",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyArrayReader5",
+                    "designerId": "bd4728f6-e074-4884-a2fc-c28fb1d97968"
+                }
+            ]
+        }
+    ]
+}

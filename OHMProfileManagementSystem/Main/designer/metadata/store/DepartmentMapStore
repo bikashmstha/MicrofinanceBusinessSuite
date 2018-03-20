@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DepartmentMapStore",
+        "model": "DepartmentMap",
+        "storeId": "DepartmentMapStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "8a3cabf2-d4bd-41a3-917f-ffb2a69158b6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy27",
+            "designerId": "911749f9-6040-403a-a5fb-ae5377f89f3f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader27",
+                    "designerId": "392e6221-a106-422a-8dc3-263dafcf3c62"
+                }
+            ]
+        }
+    ]
+}

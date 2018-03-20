@@ -1,0 +1,68 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": [
+            "[\r",
+            "    {monthID:1,monthName:'बैशाख'},\r",
+            "    {monthID:2,monthName:'जेष्ठ'},\r",
+            "    {monthID:3,monthName:'आषाढ'},\r",
+            "    {monthID:4,monthName:'श्रावन'},\r",
+            "    {monthID:5,monthName:'भाद्र'},\r",
+            "    {monthID:6,monthName:'असोज'},\r",
+            "    {monthID:7,monthName:'कार्तिक'},\r",
+            "    {monthID:8,monthName:'मंसिर'},\r",
+            "    {monthID:9,monthName:'पाैष'},\r",
+            "    {monthID:10,monthName:'माघ'},\r",
+            "    {monthID:11,monthName:'फगुन'},\r",
+            "    {monthID:12,monthName:'चैञ'}\r",
+            "]"
+        ],
+        "designer|userClassName": "NepaliMonthStore",
+        "model": "NepaliMonthModel",
+        "storeId": "MyArrayStore12"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "b764ba69-80b7-43fe-9f6d-1f7a4095e44e",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy27",
+            "designerId": "2968d8c6-2626-47c0-baa7-c065199eb798",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": null
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyArrayReader3",
+                    "designerId": "217e1e02-b50a-4747-b7f7-fd972dcbeca3"
+                }
+            ]
+        }
+    ]
+}

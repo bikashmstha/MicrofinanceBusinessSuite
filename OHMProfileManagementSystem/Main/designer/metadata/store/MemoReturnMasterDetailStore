@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MemoReturnMasterDetailStore",
+        "model": "MemoReturnMasterDetail",
+        "storeId": "MemoReturnMasterDetailStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "252d55e1-980d-462a-8e85-c0226c2cf80e",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy62",
+            "designerId": "b72af330-b428-4c76-84c5-849b7c24bd5d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader62",
+                    "designerId": "456825e4-f009-4875-a83b-74b102c14d20"
+                }
+            ]
+        }
+    ]
+}

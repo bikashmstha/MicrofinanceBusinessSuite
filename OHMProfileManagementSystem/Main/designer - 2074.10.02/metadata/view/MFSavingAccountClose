@@ -1,0 +1,2004 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MFSavingAccountClose",
+        "frame": true,
+        "title": "MF Saving Account Closure"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string"
+    },
+    "name": "MyPanel11",
+    "designerId": "b066d62f-36ea-4417-be6f-03cb9c70db62",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "container|columns": 3,
+                "frame": true,
+                "itemId": "frmSavingAccountClosure",
+                "layout": "table"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|columns": "number",
+                "frame": "boolean",
+                "itemId": "string",
+                "layout": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyForm13",
+            "designerId": "a0195737-9331-4e5e-b92c-5118827c9a9f",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "AC Close Date (B.S)",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtAccountCloseDateBS",
+                        "labelWidth": 140,
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField180",
+                    "designerId": "567c9b35-4e9b-4d5e-b457-729da46c4d97"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "AC Close Date (A.D)",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtAccountCloseDateAD",
+                        "labelWidth": 135,
+                        "margin": "0 0 0 5"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField181",
+                    "designerId": "47a3a640-bd69-4ea1-8bbc-b5718f6984aa"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "ProductName",
+                        "emptyText": "---Select---",
+                        "fieldLabel": "Saving Product",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "forceSelection": true,
+                        "itemId": "ddlSavingProduct",
+                        "labelWidth": 140,
+                        "layout|colspan": 3,
+                        "queryMode": "local",
+                        "store": "SavingProductShortStore",
+                        "valueField": "ProductCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "displayField": "datafield",
+                        "emptyText": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox5",
+                    "designerId": "f2b89ee8-fe87-4bba-97bc-78d2a66efc5d"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "CenterName",
+                        "emptyText": "---Select---",
+                        "fieldLabel": "Center",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "forceSelection": true,
+                        "itemId": "ddlCenter",
+                        "labelWidth": 140,
+                        "layout|colspan": 3,
+                        "queryMode": "local",
+                        "store": "CenterCodeStore",
+                        "valueField": "CenterCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "displayField": "datafield",
+                        "emptyText": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "881851b0-0b43-4ab4-a897-1eb6849aba91",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDdlCenterSelect",
+                                "implHandler": [
+                                    "",
+                                    "Ext.ComponentQuery.query('#ddlEmpName')[0].setValue(records[0].data.EmployeeId);",
+                                    "",
+                                    "",
+                                    ""
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDdlCenterSelect",
+                            "designerId": "b7beb77f-4111-493d-ab81-e2d3c26e1bcb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Saving Account Number",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "itemId": "txtSavingAccountNumber",
+                        "labelWidth": 140,
+                        "layout|colspan": 3,
+                        "size": 64
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "size": "number",
+                        "itemId": "string",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyTextField6",
+                    "designerId": "c9955574-1e8e-486b-8113-bfe90e313772",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtSavingAccountNumberAfterRender",
+                                "implHandler": [
+                                    "component.getEl().on('dblclick', function(){",
+                                    "     var winPopup = Ext.create('MyApp.view.SelectSavingAccountNumberPopup',{",
+                                    "",
+                                    "        });",
+                                    "",
+                                    "        winPopup.extraParam={param:null};",
+                                    "        winPopup.show();",
+                                    "  });  "
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtSavingAccountNumberAfterRender",
+                            "designerId": "4aeb365c-9e09-426b-9882-6479ca0b554a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Member Name",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtMemberName",
+                        "labelWidth": 140,
+                        "layout|colspan": 3,
+                        "size": 64
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "size": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField187",
+                    "designerId": "9cc02b55-609e-4a20-bbd2-1c4a64500412"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "EmpName",
+                        "emptyText": "---Select---",
+                        "fieldLabel": "Emp Name",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "forceSelection": true,
+                        "itemId": "ddlEmpName",
+                        "labelWidth": 140,
+                        "layout|colspan": 3,
+                        "queryMode": "local",
+                        "store": "EmployeeSearchShortStore",
+                        "valueField": "EmpId"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "displayField": "datafield",
+                        "emptyText": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox6",
+                    "designerId": "230b97a8-9f64-45ec-a49d-327f5a4726ad"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "AC Open Date (B.S)",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtAccOpenDateBS",
+                        "labelWidth": 140,
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField190",
+                    "designerId": "b9efc03d-0687-413b-b116-16364efcbb10"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "AC Open Date (A.D)",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtAccOpenDateAD",
+                        "labelWidth": 135,
+                        "margin": "0 0 0 5"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField191",
+                    "designerId": "3eaa9ecc-3ac5-419a-86a7-a7ac97dc24ae"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Current Bal.",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtCurrentBal",
+                        "labelWidth": 140,
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField192",
+                    "designerId": "6ba06e0e-35fb-4f7e-8dc8-358555c1cb5c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Unpost Interest",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtUnpostInterest",
+                        "labelWidth": 135,
+                        "margin": "0 0 0 5"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField193",
+                    "designerId": "46bf0ddf-638d-477e-9f0b-23073a09f62c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Recieved Interest",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtReceivedInterest",
+                        "labelWidth": 140,
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField194",
+                    "designerId": "f379d170-489e-4fbf-b34d-65bec29c1ace"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Total Balance",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtTotalBalance",
+                        "labelWidth": 135,
+                        "margin": "0 0 0 5"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField195",
+                    "designerId": "fd499275-8f2e-46ae-a3ea-af8a55885d20"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Amt At Mautrity",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtAmtAtMaturity",
+                        "labelWidth": 140,
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField196",
+                    "designerId": "ce8d0f28-ceca-4397-9d75-0b0444d03ce0"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Tax Amount",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtTaxAmount",
+                        "labelWidth": 135,
+                        "margin": "0 0 0 5"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField197",
+                    "designerId": "af732d6b-07aa-4c5b-90e6-57ffb4e15daa"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Mid term Int Ratio",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtMideTermIntRatio",
+                        "labelWidth": 140,
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField198",
+                    "designerId": "80a270a9-cf9a-42ba-a31b-621152686b0e"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Mid Term Int Amount",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtMidTermIntAmount",
+                        "labelWidth": 135,
+                        "margin": "0 0 0 5"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField199",
+                    "designerId": "d2de2c60-40d1-415f-96ca-33ee4fcda833"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Payee Name",
+                        "itemId": "txtPayeeName",
+                        "labelWidth": 140,
+                        "layout|colspan": 2,
+                        "size": 64
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "size": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField200",
+                    "designerId": "da05036e-33b0-4399-be7c-a61d02bccafa"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "RefDtlName",
+                        "emptyText": "---SELECT---",
+                        "fieldLabel": "Mid Term Closing Type",
+                        "forceSelection": true,
+                        "itemId": "ddlMidTermClosingType",
+                        "labelWidth": 135,
+                        "margin": "0 0 0 5",
+                        "queryMode": "local",
+                        "size": 25,
+                        "store": "ReferenceShortStore",
+                        "valueField": "RefDtlCode"
+                    },
+                    "configAlternates": {
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "itemId": "string",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "queryMode": "string",
+                        "size": "number",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox22",
+                    "designerId": "d5e88d86-a415-4147-970f-00226c3277e2"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "AccountDesc",
+                        "emptyText": "---Select---",
+                        "fieldLabel": "Contra Account",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "forceSelection": true,
+                        "itemId": "ddlContraAccount",
+                        "labelWidth": 140,
+                        "layout|colspan": 2,
+                        "queryMode": "local",
+                        "size": 64,
+                        "store": "ContraAccountSearchShortStore",
+                        "valueField": "AccountCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "emptyText": "string",
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "queryMode": "string",
+                        "size": "number",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox7",
+                    "designerId": "83d99080-d8c6-4331-9f22-3463b6ff6cf3"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Closing Charge",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtClosingCharge",
+                        "labelWidth": 135,
+                        "margin": "0 0 0 5"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField209",
+                    "designerId": "e4cd3653-fcb9-4de3-84ce-2622116f6b2f"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "ReasonDesc",
+                        "emptyText": "---Select---",
+                        "fieldLabel": "Reason To Close",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "forceSelection": true,
+                        "itemId": "ddlReasonToClose",
+                        "labelWidth": 140,
+                        "layout|colspan": 3,
+                        "queryMode": "local",
+                        "size": 64,
+                        "store": "SavingAccountCloseReasonStore",
+                        "valueField": "ReasonCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "size": "number",
+                        "itemId": "string",
+                        "displayField": "datafield",
+                        "forceSelection": "boolean",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "emptyText": "string"
+                    },
+                    "name": "MyComboBox69",
+                    "designerId": "e70fee6f-d983-4969-84b2-d94ab7e09604"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Cheque No.",
+                        "itemId": "txtChequeNo",
+                        "labelWidth": 140,
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField204",
+                    "designerId": "24cc1670-4f50-4574-a3b2-be47a7168c28"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Other Income",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtOtherIncome",
+                        "labelWidth": 135,
+                        "margin": "0 0 0 5"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField205",
+                    "designerId": "899d7601-9e43-4d31-b6bc-d89ec9a7ad15"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Paid Amount ",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtPaidAmount",
+                        "labelWidth": 140,
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField206",
+                    "designerId": "8314a3e7-4e85-4b3a-93cf-c99e66a4bc2a"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Other Income Voucher",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtOtherIncomeVoucher",
+                        "labelWidth": 135,
+                        "margin": "0 0 0 5"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "fieldStyle": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField207",
+                    "designerId": "c96a4620-903b-4b21-b2b9-094cc8fdd19d"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Remarks",
+                        "itemId": "txtRemarks",
+                        "labelWidth": 140,
+                        "layout|colspan": 3,
+                        "size": 64
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "size": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField208",
+                    "designerId": "97aee13e-0390-40b8-81af-b54dc0e0014b"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|columns": 1,
+                        "container|tdAttrs": [
+                            "{align:'center'}"
+                        ],
+                        "layout": "table",
+                        "layout|colspan": 3,
+                        "width": 751
+                    },
+                    "configAlternates": {
+                        "container|columns": "number",
+                        "container|tdAttrs": "object",
+                        "layout": "string",
+                        "layout|colspan": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyContainer28",
+                    "designerId": "827149b9-6546-42a4-8691-5bb1c09e535a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Member Photo:"
+                            },
+                            "configAlternates": {
+                                "text": "string"
+                            },
+                            "name": "MyLabel6",
+                            "designerId": "868f0b04-5a3c-42be-bc6b-109dd1fce48d"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 201,
+                                "itemId": "imgMember",
+                                "width": 201
+                            },
+                            "configAlternates": {
+                                "height": "auto",
+                                "width": "auto",
+                                "itemId": "string"
+                            },
+                            "name": "MyImg3",
+                            "designerId": "1b1d810d-86fb-47fe-bdc8-d07cbd5f6d79"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "center",
+                        "height": 25,
+                        "layout": "hbox",
+                        "layout|colspan": 3
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "height": "auto",
+                        "layout": "string",
+                        "layout|colspan": "number"
+                    },
+                    "name": "MyContainer29",
+                    "designerId": "1cbb38da-6e6c-4866-abc0-e7df53ea3001",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnCloseAccount",
+                                "text": "Close Account"
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton24",
+                            "designerId": "2bb8ba54-d01c-4a78-ac0f-c699d74de608",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnCloseAccountClick",
+                                        "implHandler": [
+                                            "",
+                                            "var savingAccountObj={",
+                                            "\t AccountNo:Ext.ComponentQuery.query('#hdnAccountNumber')[0].getValue() ,",
+                                            "\t WithdrawDate:Ext.ComponentQuery.query('#txtAccountCloseDateAD')[0].getValue() ,",
+                                            "\t WithdrawAmount:Ext.ComponentQuery.query('#txtPaidAmount')[0].getValue() ,",
+                                            "\t ChequeNo:Ext.ComponentQuery.query('#txtChequeNo')[0].getValue() ,",
+                                            "\t PayeeName:Ext.ComponentQuery.query('#txtPayeeName')[0].getValue() ,",
+                                            "\t ContraAccount:Ext.ComponentQuery.query('#ddlContraAccount')[0].getValue() ,",
+                                            "\t Remarks:Ext.ComponentQuery.query('#txtRemarks')[0].getValue() ,",
+                                            "\t ClosingCharge:Ext.ComponentQuery.query('#txtClosingCharge')[0].getValue() ,",
+                                            "\t WithdrawType:'AC' ,",
+                                            "\t ReasonForClosing:Ext.ComponentQuery.query('#ddlReasonToClose')[0].getValue() ,",
+                                            "\t TranOfficeCode:Ext.get('offCode').dom.innerHTML ,",
+                                            "\t CurrentBalance:Ext.ComponentQuery.query('#txtCurrentBal')[0].getValue() ,",
+                                            "\t TaxOnUnpostInterest:Ext.ComponentQuery.query('#txtTaxAmount')[0].getValue(),",
+                                            "\t UnpostInterest:Ext.ComponentQuery.query('#txtUnpostInterest')[0].getValue() ,",
+                                            "\t PenaltyAmount:null,",
+                                            "\t ReceivedInterest:Ext.ComponentQuery.query('#txtReceivedInterest')[0].getValue() ,",
+                                            "\t MidTermClosing:null ,",
+                                            "\t MidTermBalance:Ext.ComponentQuery.query('#txtMidTermIntAmount')[0].getValue() ,",
+                                            "\t MidTermInterest:Ext.ComponentQuery.query('#txtMideTermIntRatio')[0].getValue() ,",
+                                            "\t MidTermTaxableAmount:null ,",
+                                            "\t TdsDifference:null,",
+                                            "\t OtherIncomeAmount:Ext.ComponentQuery.query('#txtOtherIncome')[0].getValue(),",
+                                            "\t WaivedAmount:null,",
+                                            "\t PrematuredIntRatio:Ext.ComponentQuery.query('#txtMideTermIntRatio')[0].getValue() ,",
+                                            "\t MidTermClosingType:Ext.ComponentQuery.query('#ddlMidTermClosingType')[0].getValue(),",
+                                            "\t OutFiscalYear:'' ,",
+                                            "\t OutWithdrawalNo:null,",
+                                            "",
+                                            "",
+                                            "};",
+                                            "",
+                                            "var waitSave = watiMsg(\"Closing Saving Account .Please wait ...\");",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/Finance/Transaction/SavingTransaction/SavingAccountClosureHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'Save',",
+                                            "        savingAccountClosure:JSON.stringify(savingAccountObj)",
+                                            "    },",
+                                            "    success: function ( response, request ) {",
+                                            "                 waitSave.hide();",
+                                            "                    var out=Ext.decode(response.responseText);",
+                                            "                    console.log(out);",
+                                            "",
+                                            "                    if(out.success===\"true\")",
+                                            "                        {",
+                                            "                           msg(\"SUCCESS\",out.message);",
+                                            "                      }",
+                                            "                        else",
+                                            "                            {",
+                                            "                                msg(\"FAILURE\",out.message);",
+                                            "                            }",
+                                            "                    },",
+                                            "                    failure: function ( result, request ) {",
+                                            "                        waitSave.hide();",
+                                            "                        var out=Ext.decode(response.responseText);",
+                                            "                        msg(\"FAILURE\",out.message);",
+                                            "                    }",
+                                            "",
+                                            "",
+                                            "",
+                                            "        });"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnCloseAccountClick",
+                                    "designerId": "b2bad80a-63c5-4740-a2fd-4fb375ac317d"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|columns": 3,
+                        "layout": "table",
+                        "layout|colspan": 3,
+                        "title": "Search"
+                    },
+                    "configAlternates": {
+                        "container|columns": "number",
+                        "layout": "string",
+                        "layout|colspan": "number",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet7",
+                    "designerId": "c0d30141-e828-47a5-9ab2-3f0feeaee3cc",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Account Close Date From (B.S)",
+                                "itemId": "txtSearchAccountCloseDateFromBS",
+                                "labelWidth": 175,
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField210",
+                            "designerId": "da38c854-cd7d-4631-b5ad-11d850de7f17"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Account Close Date To(B.S)",
+                                "itemId": "txtSearchAccountCloseDateToBS",
+                                "labelWidth": 175,
+                                "margin": "0 0 0 5"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "margin": "auto",
+                                "itemId": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField211",
+                            "designerId": "8c5d720f-482c-40e9-b041-be1e5e3bdc6a"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "SavingAccountNo",
+                                "fieldLabel": "Saving Account Number",
+                                "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                                "forceSelection": true,
+                                "itemId": "ddlSearchSavingAccountNumber",
+                                "labelWidth": 175,
+                                "layout|colspan": 2,
+                                "queryMode": "local",
+                                "size": 40,
+                                "store": "SavingAccountNumberSearchStore",
+                                "valueField": "SavingAccountNo"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "fieldStyle": "string",
+                                "layout|colspan": "number",
+                                "size": "number",
+                                "itemId": "string",
+                                "displayField": "datafield",
+                                "forceSelection": "boolean",
+                                "labelWidth": "number",
+                                "queryMode": "string",
+                                "store": "store",
+                                "valueField": "datafield"
+                            },
+                            "name": "MyComboBox8",
+                            "designerId": "f8759a31-67ce-468e-b683-75734cd0286e",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDdlSearchSavingAccountNumberSelect",
+                                        "implHandler": [
+                                            "Ext.ComponentQuery.query('#txtSearchMemberName')[0].setValue(records[0].data.ClientName);",
+                                            ""
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onDdlSearchSavingAccountNumberSelect",
+                                    "designerId": "137f7a8a-2445-4db5-837c-61743e2bad4c"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDdlSearchSavingAccountNumberFocus",
+                                        "implHandler": [
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/Finance/Transaction/SavingTransaction/ClientSavingAccountHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'GetMemberAccountOpen',",
+                                            "        offCode:getOfficeCode(),",
+                                            "        memberName:null",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "",
+                                            "",
+                                            "        var obj = Ext.decode(response.responseText);",
+                                            "",
+                                            "",
+                                            "",
+                                            "        if(obj.success === \"true\")",
+                                            "        {",
+                                            "",
+                                            "            var store=Ext.getStore('SavingAccountNumberSearchStore');",
+                                            "            store.removeAll();",
+                                            "            store.add(obj.root);",
+                                            "",
+                                            "",
+                                            "        }",
+                                            "        else",
+                                            "        {",
+                                            "            msg(\"FAILURE\",obj.message);",
+                                            "        }",
+                                            "    }",
+                                            "});"
+                                        ],
+                                        "name": "focus",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onDdlSearchSavingAccountNumberFocus",
+                                    "designerId": "4b2b6112-5575-45dd-b4de-11ed370397ce"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Member Name",
+                                "itemId": "txtSearchMemberName",
+                                "labelWidth": 175,
+                                "margin": "0 0 0 5",
+                                "size": 50
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "margin": "auto",
+                                "size": "number",
+                                "itemId": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField213",
+                            "designerId": "a5bbf770-7c2f-462a-b73b-5cbafd55fdde"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "container|pack": "center",
+                                "height": 25,
+                                "layout": "hbox",
+                                "layout|colspan": 3
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "container|pack": "string",
+                                "height": "auto",
+                                "layout": "string",
+                                "layout|colspan": "number"
+                            },
+                            "name": "MyContainer30",
+                            "designerId": "4e2da66e-badb-4df9-974a-43f7fdbff993",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "btnSearch",
+                                        "text": "Search"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyButton25",
+                                    "designerId": "ea894c43-e7e3-417a-a82f-d3f49e92834a",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBtnSearchClick",
+                                                "implHandler": [
+                                                    " var accountcloseDateFromBS=Ext.ComponentQuery.query('#txtSearchAccountCloseDateFromBS')[0].getValue();",
+                                                    " var accountCloseDateToBS=Ext.ComponentQuery.query('#txtSearchAccountCloseDateToBS')[0].getValue();",
+                                                    " var savingAccountNo=Ext.ComponentQuery.query('#ddlSearchSavingAccountNumber')[0].getValue();",
+                                                    "var memberName=Ext.ComponentQuery.query('#txtSearchMemberName')[0].getValue();",
+                                                    "",
+                                                    "",
+                                                    "Ext.Ajax.request({",
+                                                    "    url: '../Handlers/Finance/Transaction/SavingTransaction/AccountCloseDetailHandler.ashx',",
+                                                    "    params: {",
+                                                    "        method:'GetAccountCloseDetail',",
+                                                    "        offCode:getOfficeCode(),",
+                                                    "        savingAccountNo:savingAccountNo,",
+                                                    "        clientName:memberName,",
+                                                    "",
+                                                    "",
+                                                    "    },",
+                                                    "    success: function(response){",
+                                                    "",
+                                                    "",
+                                                    "var obj = Ext.decode(response.responseText);",
+                                                    "",
+                                                    "                        console.log('resp',response);",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "      if(obj.success === \"true\")",
+                                                    "                {",
+                                                    "",
+                                                    "                    var store=Ext.getStore('SavingAccountSearchStore');",
+                                                    "                    store.removeAll();",
+                                                    "                    store.add(obj.root);",
+                                                    "",
+                                                    "                }",
+                                                    "                else",
+                                                    "                {",
+                                                    "",
+                                                    "                    msg(\"FAILURE\",obj.message);",
+                                                    "                }",
+                                                    "        ",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "    }",
+                                                    "});"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onBtnSearchClick",
+                                            "designerId": "ab54b9ff-5941-4c4b-ba78-37821421a702"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmSavingAccountClosureAfterRender",
+                        "implHandler": [
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/Finance/Transaction/SavingTransaction/ProductForAccountCloseHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetProductForAccountClose',",
+                            "        productName:null,",
+                            "",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "",
+                            "        var obj = Ext.decode(response.responseText);",
+                            "",
+                            "",
+                            "",
+                            "        if(obj.success === \"true\")",
+                            "        {",
+                            "",
+                            "            var store=Ext.getStore('SavingProductShortStore');",
+                            "            store.removeAll();",
+                            "            store.add(obj.root);",
+                            "",
+                            "        }",
+                            "        else",
+                            "        {",
+                            "            msg(\"FAILURE\",obj.message);",
+                            "        }",
+                            "    }",
+                            "});",
+                            "",
+                            "",
+                            "var centerObj={",
+                            "    InstituteCode:Ext.get('offCode').dom.innerHTML,",
+                            "    CenterCode:null",
+                            "",
+                            "};",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/Finance/Maintenance/CenterLovHandler.ashx',",
+                            "    params: {",
+                            "        method:'Search',",
+                            "        centerlov:JSON.stringify(centerObj)",
+                            "",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "",
+                            "        var obj = Ext.decode(response.responseText);",
+                            "",
+                            "",
+                            "",
+                            "        if(obj.success === \"true\")",
+                            "        {",
+                            "",
+                            "            var store=Ext.getStore('CenterCodeStore');",
+                            "            store.removeAll();",
+                            "            store.add(obj.root);",
+                            "",
+                            "",
+                            "",
+                            "        }",
+                            "        else",
+                            "        {",
+                            "            msg(\"FAILURE\",obj.message);",
+                            "        }",
+                            "    }",
+                            "});",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/Supervisor/EmployeeHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetFieldAssistants',",
+                            "        officeCode:Ext.get('offCode').dom.innerHTML,",
+                            "        empName:null,",
+                            "",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "",
+                            "        var obj = Ext.decode(response.responseText);",
+                            "",
+                            "",
+                            "",
+                            "        if(obj.success === \"true\")",
+                            "        {",
+                            "",
+                            "            var store=Ext.getStore('EmployeeSearchShortStore');",
+                            "            store.removeAll();",
+                            "            store.add(obj.root);",
+                            "",
+                            "",
+                            "        }",
+                            "        else",
+                            "        {",
+                            "            msg(\"FAILURE\",obj.message);",
+                            "        }",
+                            "    }",
+                            "});",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/Finance/Maintenance/AccountHeadEntryHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetContraAccount',",
+                            "        offCode:Ext.get('offCode').dom.innerHTML,",
+                            "        accountDesc:null,",
+                            "",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "",
+                            "        var obj = Ext.decode(response.responseText);",
+                            "",
+                            "",
+                            "",
+                            "        if(obj.success === \"true\")",
+                            "        {",
+                            "",
+                            "            var store=Ext.getStore('ContraAccountSearchShortStore');",
+                            "            store.removeAll();",
+                            "            store.add(obj.root);",
+                            "            Ext.ComponentQuery.query('#ddlContraAccount')[0].select('100000021000002');",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "        }",
+                            "        else",
+                            "        {",
+                            "            msg(\"FAILURE\",obj.message);",
+                            "        }",
+                            "    }",
+                            "});",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/Finance/Transaction/MemberTransaction/DropOutReasonHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetCDReason',",
+                            "        reasonDesc:null",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "",
+                            "        var obj = Ext.decode(response.responseText);",
+                            "",
+                            "",
+                            "",
+                            "        if(obj.success === \"true\")",
+                            "        {",
+                            "",
+                            "            var store=Ext.getStore('SavingAccountCloseReasonStore');",
+                            "            store.removeAll();",
+                            "            store.add(obj.root);",
+                            "",
+                            "",
+                            "        }",
+                            "        else",
+                            "        {",
+                            "            msg(\"FAILURE\",obj.message);",
+                            "        }",
+                            "    }",
+                            "});",
+                            "",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/Finance/Transaction/SavingTransaction/ClientSavingAccountHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetMemberAccountOpen',",
+                            "        offCode:getOfficeCode(),",
+                            "        memberName:null",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "",
+                            "        var obj = Ext.decode(response.responseText);",
+                            "",
+                            "",
+                            "",
+                            "        if(obj.success === \"true\")",
+                            "        {",
+                            "",
+                            "            var store=Ext.getStore('SavingAccountNumberSearchStore');",
+                            "            store.removeAll();",
+                            "            store.add(obj.root);",
+                            "",
+                            "",
+                            "        }",
+                            "        else",
+                            "        {",
+                            "            msg(\"FAILURE\",obj.message);",
+                            "        }",
+                            "    }",
+                            "});",
+                            "",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/GeneralMasterParameters/References/MsRefrenceCodeDetailsHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetReferenceDetailListShort',",
+                            "        referenceCode:'MID_TERM_CLOSING_TYPE',",
+                            "",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "",
+                            "        var obj = Ext.decode(response.responseText);",
+                            "",
+                            "",
+                            "",
+                            "        if(obj.success === \"true\")",
+                            "        {",
+                            "",
+                            "            var store=Ext.getStore('ReferenceShortStore');",
+                            "            store.removeAll();",
+                            "            store.add(obj.root);",
+                            "",
+                            "",
+                            "        }",
+                            "        else",
+                            "        {",
+                            "            msg(\"FAILURE\",obj.message);",
+                            "        }",
+                            "    }",
+                            "});",
+                            "",
+                            "",
+                            "",
+                            "Ext.ComponentQuery.query('#txtAccountCloseDateBS')[0].setValue(getMisDateBS());",
+                            "Ext.ComponentQuery.query('#txtAccountCloseDateAD')[0].setValue(getMisDateAD());",
+                            "Ext.ComponentQuery.query('#txtSearchAccountCloseDateFromBS')[0].setValue(getMisDateBS());",
+                            "Ext.ComponentQuery.query('#txtSearchAccountCloseDateToBS')[0].setValue(getMisDateBS());",
+                            ""
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmSavingAccountClosureAfterRender",
+                    "designerId": "c8a7487e-9915-450d-9797-243564417b30"
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchSavingAccount",
+                        "layout|colspan": 3,
+                        "store": "SavingAccountSearchStore",
+                        "width": 1230
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "store": "store",
+                        "width": "auto"
+                    },
+                    "name": "MyGridPanel17",
+                    "designerId": "c45ccca9-3552-4c4f-a709-571b09160e94",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView17",
+                            "designerId": "96c6e042-8137-42a3-a923-db903154c5f0"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "WithdrawalNo",
+                                "text": "Withdrawl No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn191",
+                            "designerId": "7b5806ab-92b6-4e0c-aa95-d9766696ae02"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SavingAccountNo",
+                                "text": "Saving Account No",
+                                "width": 119
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn164",
+                            "designerId": "a02b055d-f617-4c3d-8fb2-ecc44296baf8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "WithdrawDate",
+                                "text": "Withdraw Date",
+                                "width": 146
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn116",
+                            "designerId": "30f666c9-53ac-46e6-b9ba-8bce06be1aa2"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ClientName",
+                                "text": "Client Name",
+                                "width": 318
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn163",
+                            "designerId": "d62da8e2-12ab-40d4-b6a5-b4c152d19c9b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "WithdrawAmount",
+                                "text": "Withdraw Amount"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn173",
+                            "designerId": "9b21bb33-d8d2-41fb-877e-d9018863bf23"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "UnpostInterest",
+                                "text": "Unpost Interest"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn176",
+                            "designerId": "65b13d5f-d898-4510-98d4-8b990f81e545"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ClosingCharge",
+                                "text": "Closing Charge"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn174",
+                            "designerId": "1692cd00-4bc5-4048-87fe-d8080b9ed8c4"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "WithdrawDateBs",
+                                "text": "Account Close Date",
+                                "width": 110
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn194",
+                            "designerId": "4fce6fd5-6133-4b49-800d-f346ebc66d3d"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "VoucherNo",
+                                "text": "Voucher No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn175",
+                            "designerId": "db60e3ac-81ef-40d7-86e7-1aefbc175009"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyActionColumn20",
+                            "designerId": "392bf65a-cc83-438e-997b-4a3f74e9d269",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/Modify.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem19",
+                                    "designerId": "bfcc0ec2-846c-4b21-a002-57128f840bba",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "Ext.ComponentQuery.query('#grdSearchSavingAccount')[0].getSelectionModel().select(rowIndex);",
+                                                    "//get reference of store",
+                                                    "var store = Ext.getStore('SavingAccountSearchStore');",
+                                                    "",
+                                                    "//get selected row using rowindex",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "",
+                                                    "",
+                                                    "// set values",
+                                                    "console.log('row',row);",
+                                                    "",
+                                                    "",
+                                                    "Ext.ComponentQuery.query('#txtAccountCloseDateBS')[0].setValue(row.WithdrawDateBs);",
+                                                    "Ext.ComponentQuery.query('#txtAccountCloseDateAD')[0].setValue(row.WithdrawDate);",
+                                                    "Ext.ComponentQuery.query('#ddlSavingProduct')[0].setValue(row.ProductCode);",
+                                                    "Ext.ComponentQuery.query('#ddlCenter')[0].setValue(row.CenterCode);",
+                                                    "Ext.ComponentQuery.query('#txtSavingAccountNumber')[0].setValue(row.SavingAccountNo);",
+                                                    "Ext.ComponentQuery.query('#txtMemberName')[0].setValue(row.ClientName);",
+                                                    "",
+                                                    "var centerObj={",
+                                                    "    InstituteCode:Ext.get('offCode').dom.innerHTML,",
+                                                    "    CenterCode:row.CenterCode",
+                                                    "",
+                                                    "};",
+                                                    "Ext.Ajax.request({",
+                                                    "    url: '../Handlers/Finance/Maintenance/CenterLovHandler.ashx',",
+                                                    "    params: {",
+                                                    "        method:'Search',",
+                                                    "        centerlov:JSON.stringify(centerObj)",
+                                                    "",
+                                                    "    },",
+                                                    "    success: function(response){",
+                                                    "",
+                                                    "",
+                                                    "        var obj = Ext.decode(response.responseText);",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        if(obj.success === \"true\")",
+                                                    "        {",
+                                                    "            Ext.ComponentQuery.query('#ddlEmpName')[0].setValue(obj.root.EmployeeName);",
+                                                    "        }",
+                                                    "        else",
+                                                    "        {",
+                                                    "            msg(\"FAILURE\",obj.message);",
+                                                    "        }",
+                                                    "    }",
+                                                    "});",
+                                                    "",
+                                                    "",
+                                                    "/*var eng_Date= row.AccountOpenDate;",
+                                                    "",
+                                                    " Ext.Ajax.request({",
+                                                    "\t\t\t\t\turl: '../Handlers/Common/DateHandler.ashx',",
+                                                    "\t\t\t\t\tparams:{method:'GetNepDate',engDate:eng_Date},",
+                                                    "\t\t\t\t\tsuccess: function(response){",
+                                                    "",
+                                                    "\t\t\t\t\t\tvar out=Ext.decode(response.responseText);",
+                                                    "\t\t\t\t\t\t//console.log(out);",
+                                                    "",
+                                                    "\t\t\t\t\t\tif(out.success===\"true\")",
+                                                    "\t\t\t\t\t\t{",
+                                                    "",
+                                                    "\t\t\t\t\t\t\t//console.log('out',out);",
+                                                    "                            Ext.ComponentQuery.query('#txtAccOpenDateBS')[0].setValue(out.message);",
+                                                    "\t\t\t\t\t\t}",
+                                                    "\t\t\t\t\t\telse",
+                                                    "\t\t\t\t\t\t{",
+                                                    "",
+                                                    "\t\t\t\t\t\t}",
+                                                    "\t\t\t\t\t},",
+                                                    "\t\t\t\t\tfailure: function ( result, request ) {",
+                                                    "",
+                                                    "\t\t\t\t\t\tvar out=Ext.decode(response.responseText);",
+                                                    "\t\t\t\t\t\tmsg(\"FAILURE\",out.message);",
+                                                    "\t\t\t\t\t}",
+                                                    "",
+                                                    "});*/",
+                                                    "",
+                                                    "",
+                                                    "Ext.ComponentQuery.query('#txtAccOpenDateAD')[0].setValue(row.AccountOpenDate);",
+                                                    "Ext.ComponentQuery.query('#txtCurrentBal')[0].setValue(row.CurrentBalance);",
+                                                    "Ext.ComponentQuery.query('#txtUnpostInterest')[0].setValue(row.UnpostInterest);",
+                                                    "Ext.ComponentQuery.query('#txtReceivedInterest')[0].setValue(row.ReceivedInterestAmount);",
+                                                    "Ext.ComponentQuery.query('#txtTotalBalance')[0].setValue(row.TotalBal);",
+                                                    "",
+                                                    "//Ext.ComponentQuery.query('#txtAmtAtMaturity')[0].setValue(row.RowID);",
+                                                    "",
+                                                    "Ext.ComponentQuery.query('#txtTaxAmount')[0].setValue(row.TaxAmount);",
+                                                    "Ext.ComponentQuery.query('#txtMideTermIntRatio')[0].setValue(row.MidTermIntRate);",
+                                                    "Ext.ComponentQuery.query('#txtMidTermIntAmount')[0].setValue(row.MidTermBalance);",
+                                                    "Ext.ComponentQuery.query('#txtPayeeName')[0].setValue(row.PayeeName);",
+                                                    "",
+                                                    "//Ext.ComponentQuery.query('#ddlMidTermClosingType')[0].setValue(row.RowID);",
+                                                    "",
+                                                    "Ext.ComponentQuery.query('#ddlContraAccount')[0].setValue(row.ContraAccount);",
+                                                    "Ext.ComponentQuery.query('#txtClosingCharge')[0].setValue(row.ClosingCharge);",
+                                                    "Ext.ComponentQuery.query('#ddlReasonToClose')[0].setValue(row.ReasonForClosing);",
+                                                    "Ext.ComponentQuery.query('#txtChequeNo')[0].setValue(row.ChequeNo);",
+                                                    "Ext.ComponentQuery.query('#txtOtherIncome')[0].setValue(row.OtherIncomeExpAmount);",
+                                                    "",
+                                                    "//Ext.ComponentQuery.query('#txtPaidAmount')[0].setValue(row.RowID);",
+                                                    "",
+                                                    "Ext.ComponentQuery.query('#txtOtherIncomeVoucher')[0].setValue(row.OtherIncomeExpVoucherNo);",
+                                                    "Ext.ComponentQuery.query('#txtRemarks')[0].setValue(row.Remarks);",
+                                                    "",
+                                                    ""
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "3205c1d0-95e3-49cf-b80d-a4f558a987ae"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "hidden": true,
+                        "itemId": "hdnAccountNumber"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hidden": "boolean",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField462",
+                    "designerId": "b19f430d-a8ef-4033-9c2d-1532c7aedbf4"
+                }
+            ]
+        }
+    ]
+}

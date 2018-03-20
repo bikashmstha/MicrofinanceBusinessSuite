@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="QueryOnSavingAccountCloseHandler.ashx.cs" Class="MicrofinanceBusinessSuite.Handlers.Finance.Transaction.PublicSavingTransaction.QueryOnSavingAccountCloseHandler" %>

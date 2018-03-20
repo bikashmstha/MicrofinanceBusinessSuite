@@ -1,0 +1,62 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "   ",
+            "    {",
+            "        \"Key\": \"M\",",
+            "        \"Value\": \"Married\"",
+            "    },",
+            "    {",
+            "        \"Key\": \"N\",",
+            "        \"Value\": \"Unmarried\"",
+            "    },",
+            "    {",
+            "        \"Key\": \"D\",",
+            "        \"Value\": \"Divorced\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "MaritalStatusStore",
+        "model": "ReferenceShort",
+        "storeId": "MaritalStatusStore"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "storeId": "string",
+        "model": "model"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "b3c25f2b-7b7e-4ad1-88a3-e1b7129b57d6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy31",
+            "designerId": "e6345513-2d03-4937-8107-6d3e7b7c62ed",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader31",
+                    "designerId": "5b9686a4-1296-4dd5-8c73-4f7c537f3914"
+                }
+            ]
+        }
+    ]
+}

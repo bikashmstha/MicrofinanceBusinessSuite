@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "InsuranceCodeStore",
+        "model": "InsuranceCode",
+        "storeId": "InsuranceCodeStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "7117490d-d5e0-4d62-b7e8-0694211755a2",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy19",
+            "designerId": "a7c17dab-edb5-458b-b5b6-21d3e05e9326",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader19",
+                    "designerId": "21127316-f939-43a0-a91a-8d47b888efa6"
+                }
+            ]
+        }
+    ]
+}

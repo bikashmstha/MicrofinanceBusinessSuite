@@ -1,0 +1,265 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UsersAuthorization",
+        "height": 190,
+        "title": "User Authorziation",
+        "width": 420
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "designerId": "caf3465b-4aac-403e-a77e-01b55d59193a",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "height": null,
+                "itemId": "frmUserAuthorization",
+                "margin": 5,
+                "title": null
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "height": "auto",
+                "itemId": "string",
+                "margin": "auto",
+                "title": "string"
+            },
+            "name": "MyForm2",
+            "designerId": "5b39a046-2fda-4466-867e-11b76f8bcd24",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Authorization By",
+                        "itemId": "txtAuthorizationBy",
+                        "labelWidth": 110,
+                        "layout|anchor": "100%",
+                        "maxLength": 50,
+                        "msgTarget": "side"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "labelWidth": "number",
+                        "layout|anchor": "string",
+                        "maxLength": "number",
+                        "msgTarget": "string"
+                    },
+                    "name": "MyTextField7",
+                    "designerId": "d03451db-9a4b-44ec-ad73-594eed5ff0bd"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "emptyText": "YYYY.MM.DD",
+                        "fieldLabel": "Authorization Date",
+                        "id": null,
+                        "itemId": "txtAuthorizationDate",
+                        "labelWidth": 110,
+                        "maxLength": 10,
+                        "maxWidth": 215,
+                        "msgTarget": "side",
+                        "width": 215
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "labelWidth": "number",
+                        "maxLength": "number",
+                        "maxWidth": "number",
+                        "msgTarget": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField8",
+                    "designerId": "86aa45ea-7469-40bf-8c17-31f8384c6359",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtAuthorizationDateBlur",
+                                "implHandler": [
+                                    "field.validate();"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtAuthorizationDateBlur",
+                            "designerId": "3ef0a68a-edde-4210-bb55-7edeb9243429"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value"
+                                ],
+                                "fn": "validator",
+                                "implHandler": [
+                                    "var errDate = \"\";\r",
+                                    "\r",
+                                    "errDate = validateNepDate(value);\r",
+                                    "\r",
+                                    "return errDate === \"\"?true:errDate;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "validator",
+                            "designerId": "17d1dd81-e375-49bc-800e-6ea0b72ef35c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Authorization No.",
+                        "itemId": "txtAuthorizationNo",
+                        "labelWidth": 110,
+                        "layout|anchor": "100%",
+                        "maxLength": 15,
+                        "maxWidth": 215,
+                        "msgTarget": "side",
+                        "width": 215
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "labelWidth": "number",
+                        "layout|anchor": "string",
+                        "maxLength": "number",
+                        "maxWidth": "number",
+                        "msgTarget": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField9",
+                    "designerId": "22d4780e-d1fe-4739-afef-eeee0969fee8"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "cntBtn",
+                        "padding": "0 0 0 265",
+                        "style": [
+                            "float:left;"
+                        ]
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "padding": "auto",
+                        "style": "object"
+                    },
+                    "name": "MyContainer14",
+                    "designerId": "716eb48e-2301-4121-b56c-2a1f39e5909a",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnAuthorizationOk",
+                                "text": "Ok"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "text": "string"
+                            },
+                            "name": "MyButton7",
+                            "designerId": "1d105ea3-55a1-4fdc-93a0-927531888bc6"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-cancel",
+                                "itemId": "btnAuthorizationCancel",
+                                "margin": 5,
+                                "text": "Cancel",
+                                "width": null
+                            },
+                            "configAlternates": {
+                                "iconCls": "string",
+                                "itemId": "string",
+                                "margin": "auto",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyButton8",
+                            "designerId": "5400dae1-1f66-4bc6-a9fd-ab46d6b4da25"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

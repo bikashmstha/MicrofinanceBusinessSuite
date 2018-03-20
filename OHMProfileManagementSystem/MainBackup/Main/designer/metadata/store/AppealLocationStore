@@ -1,0 +1,65 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            " [\r",
+            "{\r",
+            "\tcode:\"1\",\r",
+            "    name: \"प्रशासकिय पूनरावलोकन\"\r",
+            "},\r",
+            "{\r",
+            "\tcode:\"2\",\r",
+            "\tname: \"राजस्व  न्यायधिकरण\"\r",
+            "},\r",
+            "{\r",
+            "\tcode:\"3\",\r",
+            "\tname: \"पुनरावेदन अदालत\"\t\r",
+            "},\r",
+            "{\r",
+            "    code:\"4\",\r",
+            "\tname: \"सर्वोच्च अदालत\"\r",
+            "\r",
+            "}\r",
+            "]"
+        ],
+        "designer|userClassName": "AppealLocationStore",
+        "model": "AppealLocation",
+        "storeId": "MyArrayStore2"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "c0609760-b7ed-47d4-8238-b1549ea14743",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy91",
+            "designerId": "60c55ea7-9922-48f3-a823-50b3fe1d1b09",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader16",
+                    "designerId": "d6f8026a-f5a1-4d02-ad7b-a7d6de4f0b0d"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "\t{\r",
+            "\t\tRebateOnID:\"LP\",\r",
+            "\t\tRebateOnName:\"Late Payment(LP)\"\r",
+            "\t},\r",
+            "\t{\r",
+            "\t\tRebateOnID:\"LF\",\r",
+            "\t\tRebateOnName:\"Late Filing(LF)\"\r",
+            "\t},\r",
+            "\t{\r",
+            "\t\tRebateOnID:\"IN\",\r",
+            "\t\tRebateOnName:\"Interest(IN)\"\r",
+            "\t},\r",
+            "\t{\r",
+            "\t\tRebateOnID:\"MA\",\r",
+            "\t\tRebateOnName:\"Management Assesment(MA)\"\r",
+            "\t},\r",
+            "\t{\r",
+            "\t\tRebateOnID:\"MI\",\r",
+            "\t\tRebateOnName:\"MA Interest(MI)\"\r",
+            "\t}\r",
+            "    ,\r",
+            "\t{\r",
+            "\t\tRebateOnID:\"MP\",\r",
+            "\t\tRebateOnName:\"MA Penalty(MP)\"\r",
+            "\t}\r",
+            "    ,\r",
+            "\t{\r",
+            "\t\tRebateOnID:\"SP\",\r",
+            "\t\tRebateOnName:\"Special Penalty(SP)\"\r",
+            "\t}\r",
+            "\t]\r",
+            ""
+        ],
+        "designer|userClassName": "RebateOn",
+        "model": "RebateOn",
+        "storeId": "RebateOn"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "2199ab6b-d5a9-49b9-8814-4a39c8c871dc",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy93",
+            "designerId": "c832df38-41b8-4ea9-91cc-ee1803cf1231",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader18",
+                    "designerId": "b4f9a280-bf38-4167-8f35-dc2f91c96495"
+                }
+            ]
+        }
+    ]
+}

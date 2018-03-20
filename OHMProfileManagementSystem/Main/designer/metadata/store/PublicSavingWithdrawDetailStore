@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PublicSavingWithdrawDetailStore",
+        "model": "PublicSavingWithdrawDetail",
+        "storeId": "PublicSavingWithdrawDetailStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore2",
+    "designerId": "be01ea20-6031-41c3-b7ac-0368afcc617a",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy64",
+            "designerId": "589633c7-27de-4221-9d35-160ec1b0f47e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader64",
+                    "designerId": "9dc87e4f-6254-4449-8779-8cd166a02c20"
+                }
+            ]
+        }
+    ]
+}

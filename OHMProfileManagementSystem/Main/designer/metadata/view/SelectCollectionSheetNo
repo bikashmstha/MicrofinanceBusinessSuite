@@ -1,0 +1,530 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectCollectionSheetNo",
+        "height": 500,
+        "itemId": "SelectCollectionSheetNo",
+        "title": "Select Collection Sheet No",
+        "width": 1000
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string",
+        "autoScroll": "boolean",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "SelectLoanNoPopup1",
+    "designerId": "e81ddfb0-0d19-4711-a527-66f98c68260f",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "itemId": "frmSelectLoanNoPopup"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string",
+                "itemId": "string"
+            },
+            "name": "MyForm2",
+            "designerId": "98a4e0c9-b508-45f0-9095-e4c900bfce60",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "1f5bed41-b173-4f1e-8744-4a5112623ea9",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Repayment No",
+                                "itemId": "txtSearchRepaymentNo",
+                                "labelWidth": 130
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField55",
+                            "designerId": "84e7614c-47f5-4cce-99b3-88c680e67f3b"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnSearchRepayment",
+                                "layout|colspan": 2,
+                                "margin": "0 0 0 5",
+                                "text": "Search"
+                            },
+                            "configAlternates": {
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "text": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "64b3c103-fd27-424f-be27-c19f3068f8de",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSearchRepaymentClick",
+                                        "implHandler": [
+                                            "var loanNo=Ext.ComponentQuery.query('#hdnLoanNo')[0];",
+                                            "var repaymentNo=Ext.ComponentQuery.query('#txtSearchRepaymentNo')[0];",
+                                            "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/Finance/Transaction/EditTransaction/LoanRepayAdjustRepayHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'GetLoanRepayAdjustRepay',",
+                                            "        OfficeCode:getOfficeCode(),",
+                                            "        LoanNo: loanNo.getValue(),",
+                                            "        RepaymentNo:repaymentNo.getValue(),",
+                                            "        FromDate:null,",
+                                            "        ToDate:null",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "",
+                                            "",
+                                            "var obj = Ext.decode(response.responseText);",
+                                            "",
+                                            "      if(obj.success === \"true\")",
+                                            "      {",
+                                            "          var store=Ext.getStore('LoanRePaymentStore');",
+                                            "          store.removeAll();",
+                                            "          store.add(obj.root);",
+                                            "      }",
+                                            "        else",
+                                            "        {",
+                                            "",
+                                            "            msg(\"FAILURE\",obj.message);",
+                                            "        }",
+                                            "",
+                                            "",
+                                            "    waitSave.hide();",
+                                            "",
+                                            "",
+                                            "    }",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSearchRepaymentClick",
+                                    "designerId": "a4a3c74b-b9b8-43c5-be94-ae0ff4777b5d"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchRepayment",
+                        "store": "LoanRePaymentStore",
+                        "title": "",
+                        "width": 910
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "width": "auto",
+                        "itemId": "string",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "d19d4fbb-1653-4050-9ef0-a9ade3c2c0d5",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "ea6607fd-4523-4521-b5b1-9c2fea82b023"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel4",
+                            "designerId": "66660c14-a5b8-4857-a7fe-6c078f987dbd",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "   if(btn === 'yes'){",
+                                            "",
+                                            "",
+                                            "       Ext.ComponentQuery.query('#txtRepaymentDate')[0].setValue(record.data.PaymentDate);",
+                                            "       Ext.ComponentQuery.query('#txtLoanRepayment')[0].setValue(record.data.RepaymentNo);",
+                                            "",
+                                            "",
+                                            "        Ext.ComponentQuery.query('#txtPrincipleReceived')[0].setValue(record.data.PrincipalReceived);",
+                                            "       Ext.ComponentQuery.query('#txtInterestReceived')[0].setValue(record.data.InterestReceived);",
+                                            "       Ext.ComponentQuery.query('#txtSavingAccount')[0].setValue(record.data.SavingAccountNo);",
+                                            "Ext.ComponentQuery.query('#txtChequeNo')[0].setValue(record.data.ChequeNo);",
+                                            "       Ext.ComponentQuery.query('#txtTotalReceived')[0].setValue(record.data.TotalReceived);",
+                                            "",
+                                            "",
+                                            "       var myForm=Ext.ComponentQuery.query('#frmMFMERepaymentAdjust')[0];",
+                                            "       myForm.PaymentDateAD=record.data.PaymentDateAD;",
+                                            "       ",
+                                            "       var loanRePaymentStore= Ext.getStore('LoanRePaymentStore');",
+                                            "        loanRePaymentStore.removeAll();",
+                                            "",
+                                            "      // return true;",
+                                            "   }",
+                                            "   else",
+                                            "   {",
+                                            "",
+                                            "   }",
+                                            "    var v=Ext.ComponentQuery.query('#SelectCollectionSheetNo')[0];",
+                                            "",
+                                            "    v.close();",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "8442643f-7006-4f81-b8a6-d0a186c4c8b4"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CollectionSheetNo",
+                                "text": "Coll Sheet No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn189",
+                            "designerId": "def40784-9af6-4f88-aee1-cbcd72b81f20"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "RepaymentNo",
+                                "text": "Repayment No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn299",
+                            "designerId": "d565ce51-e274-4412-91a4-c5e3be59fbdd"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "PaymentDateNep",
+                                "text": "Payment Date Nep",
+                                "width": 106
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn311",
+                            "designerId": "b366addb-8a34-49ec-85e6-e074724fe636"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "PaymentDate",
+                                "text": "Payment Date"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn315",
+                            "designerId": "2af3ba7b-e36f-4d61-9c3b-640feda1cf47"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "LoanDno",
+                                "text": "Loan Dno"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn318",
+                            "designerId": "4d2c739a-516a-466d-a65a-69c07f8b5a03"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "TotalReceived",
+                                "text": "Total Received"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn320",
+                            "designerId": "bfbeeb04-d9ec-46df-8503-b9e48b2b3e95"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "PrincipalReceived",
+                                "text": "Principal Received"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn321",
+                            "designerId": "3fda493b-f821-46b5-a301-7e15547a66bd"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "InterestReceived",
+                                "text": "Interest Received"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn322",
+                            "designerId": "53f6b84f-4ab8-48ae-9215-ae89b12364e6"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "PenaltyReceived",
+                                "text": "Penalty Received"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn330",
+                            "designerId": "c284bfff-0327-4bc9-b35c-9b8efe4979c5"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ChequeNo",
+                                "text": "Cheque No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn331",
+                            "designerId": "6a14035c-7e3c-4971-ad8b-a4667d86584f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SavingAccountDno",
+                                "text": "Saving Account Dno"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn333",
+                            "designerId": "4958416a-a3a4-40a8-b373-4e798b451137"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "AdjustFromSaving",
+                                "text": "Adjust From Saving"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn334",
+                            "designerId": "07218724-33c4-4997-8293-33cd4824091e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SavingAccountNo",
+                                "text": "Saving Account No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn335",
+                            "designerId": "7ec3ee6d-2f8b-4ddb-98ab-ff3323701973"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ContraAccount",
+                                "text": "Contra Account"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn336",
+                            "designerId": "f3f446a2-15a9-4e5e-a1c1-a7f655708d3a"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RebateDetails",
+        "model": "RebateDetails",
+        "storeId": "RebateDetails"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "f3965271-13c9-494e-876f-cfd0818e8441",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": ""
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy94",
+            "designerId": "d9b1d549-bc00-436d-92d2-7030dbadce37",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyJsonReader75",
+                    "designerId": "3f6b03aa-66b8-48be-89e2-9b92ff444bb8"
+                }
+            ]
+        }
+    ]
+}

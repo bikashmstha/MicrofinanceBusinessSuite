@@ -1,0 +1,60 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    {\r",
+            "        Code: 'A',\r",
+            "        Description: 'ALL'\r",
+            "    },\r",
+            "    {\r",
+            "        Code: 'F',\r",
+            "        Description: 'FILLED'\r",
+            "    },\r",
+            "    {\r",
+            "        Code: 'U',\r",
+            "        Description: 'UNFILLED'\r",
+            "    }\r",
+            "]"
+        ],
+        "designer|userClassName": "IPOFormFillStatusStore",
+        "model": "IPOFormFillStatus",
+        "storeId": "IPOFormFillStatusStore"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "87ac8413-1abf-4c2b-b9dd-28faf49ec26b",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy120",
+            "designerId": "87c72fbf-1c9c-4100-be27-0ec319915b65",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader20",
+                    "designerId": "a84118c9-0f10-4b18-8d12-46527d000fc0"
+                }
+            ]
+        }
+    ]
+}

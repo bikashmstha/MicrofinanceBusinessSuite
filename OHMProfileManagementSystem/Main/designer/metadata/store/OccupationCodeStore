@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OccupationCodeStore",
+        "model": "OccupationCode",
+        "storeId": "OccupationCodeStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "4dae18e7-ab5a-4f63-a6fb-36ecb0652368",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy16",
+            "designerId": "2dfda64b-8a8f-4352-8008-0fad28d34cf9",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader16",
+                    "designerId": "7ad097fe-80a8-4cf2-898b-28382fbe7c33"
+                }
+            ]
+        }
+    ]
+}

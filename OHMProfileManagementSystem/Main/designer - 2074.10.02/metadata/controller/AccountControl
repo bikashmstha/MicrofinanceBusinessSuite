@@ -1,0 +1,93 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "AccountControl"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyController",
+    "designerId": "d04bd6d9-f10c-4e78-b2f2-21fb0fcb1373",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "LoadOffice",
+                "implHandler": [
+                    "var store=Ext.getStore('OfficeShortStore');",
+                    "store.removeAll();",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '../Handlers/GeneralMasterParameters/Office/OfficeHandler.ashx',",
+                    "    params: {",
+                    "        method:'GetOfficeShort'",
+                    "    },",
+                    "    success: function(response){",
+                    "",
+                    "    var data=Ext.decode(response.responseText);",
+                    "    store.removeAll();",
+                    "    store.add(data.root);",
+                    "",
+                    "",
+                    "}",
+                    "});",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "LoadOffice",
+            "designerId": "d7f18cac-394d-4e2c-adcf-48ea81f27a4f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "LoadFiscalYear",
+                "implHandler": [
+                    "",
+                    "var store=Ext.getStore('NepaliFiscalYearStore');",
+                    "store.removeAll();",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '../Handlers/Maintenance/GeneralDefinitions/NepaliFiscalYearHandler.ashx',",
+                    "    params: {",
+                    "        method:'GetNepaliFiscalYear'",
+                    "    },",
+                    "    success: function(response){",
+                    "",
+                    "    var data=Ext.decode(response.responseText);",
+                    "    console.log('data',data);",
+                    "    store.removeAll();",
+                    "    store.add(data.root);",
+                    "",
+                    "",
+                    "}",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "LoadFiscalYear",
+            "designerId": "1144d8a3-d987-4e86-ab83-752667fb6c73"
+        }
+    ]
+}

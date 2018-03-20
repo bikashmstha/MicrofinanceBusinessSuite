@@ -1,0 +1,82 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    {\r",
+            "        ModuleID:\"Registration\",\r",
+            "        ModuleName:\"E-Registration\"\r",
+            "    },\r",
+            "    {\r",
+            "        ModuleID:\"VatReturns\",\r",
+            "        ModuleName:\"E-VAT Returns\"\r",
+            "    },\r",
+            "    {\r",
+            "        ModuleID:\"InstallmentReturn\",\r",
+            "        ModuleName:\"E-Installment Return\"\r",
+            "    },\r",
+            "    {\r",
+            "        ModuleID:\"SelfAssessmentD01\",\r",
+            "        ModuleName:\"E-Self Assessment D01\"\r",
+            "    },\r",
+            "    {\r",
+            "        ModuleID:\"SelfAssessmentD03\",\r",
+            "        ModuleName:\"E-Self Assessment D03\"\r",
+            "    },\r",
+            "    {\r",
+            "        ModuleID:\"E-TDS\",\r",
+            "        ModuleName:\"E-TDS\"\r",
+            "    },\r",
+            "    {\r",
+            "        ModuleID:\"DiplomaticRefund\",\r",
+            "        ModuleName:\"Diplomatic Refund\"\r",
+            "    }\r",
+            "]"
+        ],
+        "designer|userClassName": "eServicesModuleOffV",
+        "model": "eServicesModuleOffV",
+        "storeId": "MyArrayStore19"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "565a278d-1359-4e62-90e6-ff0abc9207f6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy31",
+            "designerId": "e1c4907e-c9ca-4b08-966b-e2e0f13ea76c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": null
+                    },
+                    "configAlternates": {
+                        "root": "string"
+                    },
+                    "name": "MyArrayReader4",
+                    "designerId": "c6014534-4135-4cd8-af92-200e739aff26"
+                }
+            ]
+        }
+    ]
+}

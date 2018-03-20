@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OfficeWiseHolidayStore",
+        "model": "OfficeWiseHoliday",
+        "storeId": "OfficeWiseHolidayStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "33e0d7c7-8c67-48a1-94ab-390da835c84f",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy29",
+            "designerId": "d5a8a86f-bb70-4be2-b532-f4d592ef6907",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader29",
+                    "designerId": "f2005a4d-b2b3-4a5a-95e7-ddc3a3c90ba3"
+                }
+            ]
+        }
+    ]
+}

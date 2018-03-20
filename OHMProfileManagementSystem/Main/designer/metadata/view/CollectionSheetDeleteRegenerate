@@ -1,0 +1,458 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|columns": 2,
+        "designer|userClassName": "CollectionSheetDeleteRegenerate",
+        "frame": true,
+        "layout": "table",
+        "title": "Collection Sheet Delete Regenerate"
+    },
+    "configAlternates": {
+        "container|columns": "number",
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel11",
+    "designerId": "ba3f191d-96a7-4e47-b7fe-4600d35c467b",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "id": "frm-CollectionSheetDeleteRegenerate",
+                "itemId": "frm-CollectionSheetDeleteRegenerate",
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "id": "string",
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "MyForm",
+            "designerId": "caf30c81-642f-421d-b2ae-803fad08f839",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|columns": 2,
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "layout": "string",
+                        "layout|colspan": "number",
+                        "container|columns": "number"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "df3e742d-0ca8-454c-9de4-064a32d1fd65",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "container|pack": "center",
+                                "height": 30,
+                                "layout": "hbox",
+                                "layout|colspan": 2,
+                                "width": 1000
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "container|pack": "string",
+                                "height": "auto",
+                                "layout": "string",
+                                "layout|colspan": "number",
+                                "width": "auto"
+                            },
+                            "name": "MyContainer6",
+                            "designerId": "6fa9562d-7301-48f3-b616-331ceaccc737",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "btnLoadData",
+                                        "text": "Load Data"
+                                    },
+                                    "configAlternates": {
+                                        "margin": "auto",
+                                        "text": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyButton10",
+                                    "designerId": "0d83e455-06f3-44fb-90d2-e9cf5e58023b",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBtnLoadDataClick",
+                                                "implHandler": [
+                                                    "Ext.ComponentQuery.query('#grdCollectionSheetDeleteRegenerate')[0].setVisible(true);",
+                                                    "Ext.Ajax.request({",
+                                                    "    url:'../Handlers/Finance/Transaction/CollectionSheetTransaction/EmployeeCenterCollectionHandler.ashx',",
+                                                    "    params:{method:'RegenerateCollectionList', offCode:Ext.get('offCode').dom.innerHTML",
+                                                    "           },",
+                                                    "    success: function ( result, request ) {",
+                                                    "",
+                                                    "        var obj = Ext.decode(result.responseText);",
+                                                    "        if(obj.success === 'true'){",
+                                                    "            ",
+                                                    "            var store =Ext.getStore('CollectionSheetDeleteRegenerateStore');",
+                                                    "            store.removeAll();",
+                                                    "            store.add(obj.root);",
+                                                    "",
+                                                    "",
+                                                    "        }else{msg('FAILURE','Could Not Load Data');}",
+                                                    "    },",
+                                                    "    failure: function(form, action) {",
+                                                    "        msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                                                    "});",
+                                                    ""
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onBtnLoadDataClick",
+                                            "designerId": "4bb6f6e4-5a33-4d77-93dd-6b548ce71a08"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "grdCollectionSheetDeleteRegenerate",
+                                "layout|colspan": 2,
+                                "margin": "5 0 0 0",
+                                "store": "CollectionSheetDeleteRegenerateStore",
+                                "title": "",
+                                "width": 1000
+                            },
+                            "configAlternates": {
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "title": "string",
+                                "width": "auto",
+                                "itemId": "string",
+                                "store": "store",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyGridPanel9",
+                            "designerId": "b17f27c9-8083-4553-a2eb-05469c257fe5",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView8",
+                                    "designerId": "3aa8a04f-4bd5-4cef-8ef7-d8c39e6119cb"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "CollectionSheetNo",
+                                        "text": "Collection Sheet No",
+                                        "width": 151
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn131",
+                                    "designerId": "dde0eb58-9503-4e3a-93ba-7b2e54620ad5"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "CenterCode",
+                                        "text": "Center Code"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn132",
+                                    "designerId": "6ba7aef8-79c6-41ab-87e6-a69767a07366"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "CenterName",
+                                        "text": "Center Name",
+                                        "width": 119
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn133",
+                                    "designerId": "45ece90a-5325-4e39-b619-81d0e0b57a22"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "EmpName",
+                                        "text": "Employee Name",
+                                        "width": 152
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn135",
+                                    "designerId": "f0f4dae6-dbb1-4ba3-af81-43f38dcda014"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "CollnDate",
+                                        "text": "Collection Date"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn136",
+                                    "designerId": "d23ed506-9a53-4573-af67-b39e3518d94a"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "DataEntered",
+                                        "text": "Data Entered"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn137",
+                                    "designerId": "9ed8e9c0-d2d7-4d3a-bb98-6b19c54eab5b",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyCheckbox18",
+                                            "designerId": "d992e9fa-c3a5-4164-9eb5-278273b8b789"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.selection.CheckboxModel",
+                                    "reference": {
+                                        "name": "selModel",
+                                        "type": "object"
+                                    },
+                                    "codeClass": "Ext.selection.CheckboxModel",
+                                    "name": "MyCheckboxSelectionModel",
+                                    "designerId": "68641edf-b373-40a1-aee0-0eeb53d2d941"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "container|pack": "center",
+                                "height": 30,
+                                "layout": "hbox",
+                                "layout|colspan": 1,
+                                "width": 1000
+                            },
+                            "configAlternates": {
+                                "layout": "string",
+                                "layout|colspan": "number",
+                                "container|align": "string",
+                                "container|pack": "string",
+                                "height": "auto",
+                                "width": "auto"
+                            },
+                            "name": "MyContainer12",
+                            "designerId": "c2971d03-25a8-47e9-bbbc-d66c5410923d",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "btnDelete",
+                                        "text": "Delete"
+                                    },
+                                    "configAlternates": {
+                                        "margin": "auto",
+                                        "text": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyButton11",
+                                    "designerId": "e1919f1d-3c31-45fa-8529-a0946835a500",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBtnDeleteClick",
+                                                "implHandler": [
+                                                    "Ext.MessageBox.confirm('Delete Selected Collection Sheet', 'Are you sure want to Delete Selected Collection Sheet?', function(btn){",
+                                                    "console.log('e',e);",
+                                                    "",
+                                                    "if(btn === 'yes'){",
+                                                    "        var selectedItems=Ext.ComponentQuery.query('#grdCollectionSheetDeleteRegenerate')[0].getSelectionModel().getSelection();",
+                                                    "let len= selectedItems.length;",
+                                                    "",
+                                                    "var collectionSheetNoList=[];",
+                                                    "for(i=0; i<len; i++)",
+                                                    "{",
+                                                    "\t collectionSheetNoList.push(selectedItems[i].data.CollectionSheetNo);",
+                                                    "}",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "Ext.Ajax.request({",
+                                                    "     url:'../Handlers/Finance/Transaction/CollectionSheetTransaction/EmployeeCenterCollectionHandler.ashx',",
+                                                    "     params:{method:'DeleteCollectionSheetMaster',collectionSheetNos:JSON.stringify(collectionSheetNoList)},",
+                                                    "     success: function ( result, request ) {",
+                                                    "",
+                                                    "          var out = Ext.decode(result.responseText);",
+                                                    "\t\t\t\tif(out.success==='true'){",
+                                                    "\t\t\t\t\tmsg('SUCCESS',out.message);",
+                                                    "\t\t\t\t}",
+                                                    "\t\t\t\telse{msg('FAILURE',out.message);",
+                                                    "",
+                                                    "",
+                                                    "          }",
+                                                    "     },",
+                                                    "     failure: function(form, action) {",
+                                                    "var out=Ext.decode(response.responseText);msg('FAILURE',out.message);     }",
+                                                    "});",
+                                                    "",
+                                                    "",
+                                                    "   }",
+                                                    "   else",
+                                                    "   {",
+                                                    "",
+                                                    "   }",
+                                                    "",
+                                                    "});",
+                                                    "",
+                                                    ""
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onBtnDeleteClick",
+                                            "designerId": "9a14d324-93f0-48a4-a993-5c7d3eeb4911"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

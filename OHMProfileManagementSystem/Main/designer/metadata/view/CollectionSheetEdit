@@ -1,0 +1,381 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|columns": 2,
+        "designer|userClassName": "CollectionSheetEdit",
+        "frame": true,
+        "layout": "table",
+        "title": "Collection Sheet Edit"
+    },
+    "configAlternates": {
+        "container|columns": "number",
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel11",
+    "designerId": "45fb0551-c605-4c69-bdf4-a028907bac3d",
+    "cn": [
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "OfficeName",
+                "emptyText": "- - -Select - - -",
+                "fieldLabel": "Office Code",
+                "forceSelection": true,
+                "itemId": "ddlOffice",
+                "layout|colspan": 2,
+                "queryMode": "local",
+                "size": 50,
+                "store": "OfficeShortStore",
+                "valueField": "OfficeCode"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "displayField": "datafield",
+                "emptyText": "string",
+                "forceSelection": "boolean",
+                "itemId": "string",
+                "layout|colspan": "number",
+                "queryMode": "string",
+                "size": "number",
+                "store": "store",
+                "valueField": "datafield"
+            },
+            "name": "MyComboBox79",
+            "designerId": "cee6f8a7-1b63-4047-a3ce-33daf3d55ea9",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onDdlOfficeCollapse",
+                        "implHandler": [
+                            "var store=Ext.getStore('CollectionSheetUnentryStore');",
+                            "store.removeAll();",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/Finance/Transaction/CollectionSheetTransaction/UnapprovedCollectionHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetGetUnapprovedColl',OfficeCode:getOfficeCode()",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "    var data=Ext.decode(response.responseText);",
+                            "    store.removeAll();",
+                            "    store.add(data.root);",
+                            "",
+                            "",
+                            "}",
+                            "});"
+                        ],
+                        "name": "collapse",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onDdlOfficeCollapse",
+                    "designerId": "912cd34f-3e4d-4364-a889-95b498e459ea"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "grdCollectionSheetUnentry",
+                "layout|colspan": 2,
+                "store": "CollectionSheetUnentryStore",
+                "title": "Collections Sheets",
+                "width": 930
+            },
+            "configAlternates": {
+                "layout|colspan": "number",
+                "title": "string",
+                "itemId": "string",
+                "store": "store",
+                "width": "auto"
+            },
+            "name": "MyGridPanel10",
+            "designerId": "003adbd0-7182-484f-9a18-52202c0234cb",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView9",
+                    "designerId": "5e64b5d1-9417-4ce7-aca1-0c12ecb2b3ca"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "name": "MyRowSelectionModel15",
+                    "designerId": "41199397-95be-493a-b2b2-55342dbdebf4"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "CenterCode",
+                        "text": "Center Code"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn193",
+                    "designerId": "2fcb460d-2506-4256-8ac4-0162cfe1c4eb"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "CenterName",
+                        "text": "Center Name",
+                        "width": 262
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn196",
+                    "designerId": "d6b64762-45f8-4c58-907b-ef311ee89b50"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "CollectionSheetNo",
+                        "text": "Collection Sheet No",
+                        "width": 210
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn198",
+                    "designerId": "75a424d1-7958-44a5-bada-c2856aa7b973"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "EmployeeName",
+                        "text": "Employee Name",
+                        "width": 253
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn199",
+                    "designerId": "a3389636-72b4-485a-a492-9a9cae302567"
+                },
+                {
+                    "type": "Ext.grid.column.Action",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyActionColumn24",
+                    "designerId": "43acd349-3c4f-4566-b016-95b8ad2dbcd1",
+                    "cn": [
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "../ITS/resources/images/icons/cancel.png"
+                            },
+                            "configAlternates": {
+                                "icon": "string"
+                            },
+                            "name": "MyActionColumnItem23",
+                            "designerId": "1cb7f732-c4a1-4752-9dfd-c2a4a2fd90dc",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var store = Ext.getStore('CollectionSheetUnentryStore');",
+                                            "var grd =  Ext.ComponentQuery.query('#grdCollectionSheetUnentry')[0];",
+                                            "var row = store.getAt(rowIndex).data;",
+                                            "",
+                                            "Ext.Msg.confirm('Confirm Action', 'Do you want to Un-Enter the selected Collection Sheet ?', function(btn) {",
+                                            "    if(btn == 'yes'){",
+                                            "",
+                                            "         ",
+                                            "",
+                                            "        var wMsg='Collection Sheet On Un-Entry On Process....';",
+                                            "",
+                                            "        var waitSave = watiMsg(wMsg);",
+                                            "",
+                                            "        Ext.Ajax.request({",
+                                            "                    url: '../Handlers/Finance/Transaction/CollectionSheetTransaction/CollectionSheetMasterHandler.ashx',",
+                                            "                    params: {",
+                                            "                        method:'UnenterCollectionSheetMaster',",
+                                            "                        offCode:getOfficeCode(),",
+                                            "                        collectionSheetNo:row.CollectionSheetNo ",
+                                            "                    },",
+                                            "                    success: function(response){",
+                                            "                    waitSave.hide();",
+                                            "                    var out=Ext.decode(response.responseText);",
+                                            "                    console.log(out);",
+                                            "",
+                                            "                    if(out.success===\"true\")",
+                                            "                        {",
+                                            "                            ",
+                                            "                                    msg(\"SUCCESS\",out.message,function(){",
+                                            "                                        grd.bindStore(store);",
+                                            "                                        store.removeAt(rowIndex);",
+                                            "                                    });",
+                                            "",
+                                            "",
+                                            "",
+                                            "                            ",
+                                            "                        }",
+                                            "                        else",
+                                            "                            {",
+                                            "                                msg(\"FAILURE\",out.message);",
+                                            "                            }",
+                                            "                    },",
+                                            "                    failure: function ( result, request ) {",
+                                            "                        waitSave.hide();",
+                                            "                        var out=Ext.decode(response.responseText);",
+                                            "                        msg(\"FAILURE\",out.message);",
+                                            "                    }",
+                                            "",
+                                            "                });",
+                                            "",
+                                            "",
+                                            "",
+                                            "        return true;",
+                                            "    }",
+                                            "});"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "handler",
+                                    "designerId": "14ba756f-61e6-49c3-8b84-31b40d2bd1dc"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "name": "MyRowEditingPlugin20",
+                    "designerId": "162881ad-43a0-434b-9c46-7703720bbd1f"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "var officeStore=Ext.getStore('OfficeShortStore');",
+                    "getOfficeLov(getCurrentUser(),getOfficeCode(),function(obj){",
+                    "  officeStore.removeAll();",
+                    "    officeStore.add(obj.root);",
+                    "});",
+                    "",
+                    "var store=Ext.getStore('CollectionSheetUnentryStore');",
+                    "store.removeAll();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "70ba1ce1-09bf-4c8c-8494-13cc3e5dd192"
+        }
+    ]
+}

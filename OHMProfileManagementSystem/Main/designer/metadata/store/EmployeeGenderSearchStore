@@ -1,0 +1,61 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[    ",
+            "    {",
+            "        \"Key\": \"M\",",
+            "        \"Value\": \"Male\"",
+            "    },",
+            "    {",
+            "        \"Key\": \"F\",",
+            "        \"Value\": \"Female\"",
+            "    },",
+            "    {",
+            "        \"Key\": \"O\",",
+            "        \"Value\": \"Others\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "EmployeeGenderSearchStore",
+        "model": "ReferenceShort",
+        "storeId": "EmployeeGenderSearchStore"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "storeId": "string",
+        "model": "model"
+    },
+    "name": "EmployeeGenderStore1",
+    "designerId": "63958cb8-9b12-4120-a839-093aa1bc21e1",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy31",
+            "designerId": "22d8b6c6-6e12-4801-92fd-1acfa7c1b3f7",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader31",
+                    "designerId": "da4f206f-43a8-488f-b8ad-588febe97de1"
+                }
+            ]
+        }
+    ]
+}

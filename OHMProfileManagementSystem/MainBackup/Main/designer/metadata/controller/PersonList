@@ -1,0 +1,77 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PersonList"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "designerId": "f54b96fe-8da6-4771-8fa5-28f7955be55f",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "companyID",
+                    "fromDate",
+                    "toDate"
+                ],
+                "fn": "LoadCompanies",
+                "implHandler": [
+                    "var companies=Ext.getStore('CompanyStore');\r",
+                    "companies.removeAll();\r",
+                    "\r",
+                    "\r",
+                    "var waitMsg=waitMsg('Loading ...');\r",
+                    "\r",
+                    "Ext.Ajax.request\r",
+                    "({\r",
+                    "\r",
+                    "    url:'../Handlers/Common/Company/CompanyHandler.ashx?method=GetCompaniesForIPO',\r",
+                    "    params:{companyId:companyID,fromDate:fromDate,toDate:toDate},\r",
+                    "\r",
+                    "\r",
+                    "    success:function(response){\r",
+                    "        console.log(response.responseText);\r",
+                    "        var obj =Ext.decode(response.responseText);\r",
+                    "        var row = obj.root;\r",
+                    "        \r",
+                    "\r",
+                    "\r",
+                    "        companies.store.add(obj.root);\r",
+                    "        waitMsg.hide();\r",
+                    "\r",
+                    "    },\r",
+                    "\r",
+                    "    failure:function(response)\r",
+                    "    {\r",
+                    "        waitMsg.hide();\r",
+                    "        msg('FAILURE',Ext.decode(response));\r",
+                    "\r",
+                    "    }\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "LoadCompanies",
+            "designerId": "ca6b5042-16c2-4369-ac3d-4a40f5fb6d19"
+        }
+    ]
+}

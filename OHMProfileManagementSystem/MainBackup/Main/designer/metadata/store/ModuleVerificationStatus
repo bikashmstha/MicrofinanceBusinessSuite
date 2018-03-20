@@ -1,0 +1,60 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "{\r",
+            "status_code:\"U\",\r",
+            "status_name: \"Rejected\"\r",
+            "},\r",
+            "{\r",
+            "status_code:\"V\",\r",
+            "status_name: \"Verified\"\r",
+            "},\r",
+            "{\r",
+            "status_code:\"F\",\r",
+            "status_name: \"Forward\"\r",
+            "}\r",
+            "]"
+        ],
+        "designer|userClassName": "ModuleVerificationStatus",
+        "model": "ModuleVerificationStatus",
+        "storeId": "MyArrayStore20"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "9a725869-41cd-43ef-b4e5-b6ccb3faefc1",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy26",
+            "designerId": "16fb1b2f-0abe-40bb-b550-e4ae0679f9cf",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader2",
+                    "designerId": "7de17ac7-92cb-4e2f-a692-8f7f311919e6"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "    [   \r",
+            "        {\r",
+            "            MaReasonCode:\"1\",\r",
+            "            MaReasonNp:\"म्याद भित्र कर विवरण दाखिला नगरेकोले\",\r",
+            "            MaReasonEn:\"\"\r",
+            "        },\r",
+            "        {\r",
+            "            MaReasonCode:\"2\",\r",
+            "            MaReasonNp:\"अधुरो वा त्रूटिपुर्ण कर विवरण पेश गरेकोले\",\r",
+            "            MaReasonEn:\"\"\r",
+            "        },\r",
+            "        {\r",
+            "            MaReasonCode:\"3\",\r",
+            "            MaReasonNp:\"झुठा कर विवरण पेश गरेकोले\",\r",
+            "            MaReasonEn:\"\"\r",
+            "        },\r",
+            "        {\r",
+            "            MaReasonCode:\"4\",\r",
+            "            MaReasonNp:\"पुनरावेदनको निर्णय\",\r",
+            "            MaReasonEn:\"\"\r",
+            "        },\r",
+            "        {\r",
+            "            MaReasonCode:\"5\",\r",
+            "            MaReasonNp:\"अन्य\",\r",
+            "            MaReasonEn:\"\"\r",
+            "        },\r",
+            "\t]"
+        ],
+        "designer|userClassName": "MaReason",
+        "model": "MaReason",
+        "storeId": "MyJsonStore47"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "8f36aa3e-4a5b-4bce-b4bf-82c7b24cacea",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy97",
+            "designerId": "270170bd-710b-4007-b8c2-a0b8955968ee",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader78",
+                    "designerId": "4e1ec295-e991-47ea-8dd7-94220a6a53ee"
+                }
+            ]
+        }
+    ]
+}

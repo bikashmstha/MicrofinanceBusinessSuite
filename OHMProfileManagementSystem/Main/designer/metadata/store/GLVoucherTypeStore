@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "GLVoucherTypeStore",
+        "model": "GLVoucherType",
+        "storeId": "GLVoucherTypeStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore2",
+    "designerId": "b7782500-b934-491f-b9f3-e6bfef45567c",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy10",
+            "designerId": "cefbec58-bd10-48cd-87ab-635e85d2f7f9",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader10",
+                    "designerId": "22c84b86-eda2-4732-aea0-b2ad941df6b7"
+                }
+            ]
+        }
+    ]
+}

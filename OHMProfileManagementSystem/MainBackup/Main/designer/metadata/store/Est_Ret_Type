@@ -1,0 +1,49 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": [
+            "[{TypeName:\"Estimated Tax Return(IN)\",TypeID:\"IN\"},{TypeName:\"Revised Estimated Tax Return(IR)\",TypeID:\"IR\"}]"
+        ],
+        "designer|userClassName": "Est_Ret_Type",
+        "model": "EstimatedReturnType",
+        "storeId": "MyJsonStore57"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "23b234c1-9e6b-47d0-a6f6-056ed169dcf5",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy82",
+            "designerId": "e4bacfec-52d0-4a14-a5b5-f853afe7e5b5",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader66",
+                    "designerId": "6b850a6e-2993-4f99-a904-cb0acdba88e9"
+                }
+            ]
+        }
+    ]
+}

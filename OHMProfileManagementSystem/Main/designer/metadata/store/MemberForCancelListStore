@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MemberForCancelListStore",
+        "model": "MemberForCancelList",
+        "storeId": "MemberForCancelListStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MemberCodeStore1",
+    "designerId": "142701d9-c049-4a64-8cfa-b4cd57e284a7",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy23",
+            "designerId": "9c924887-6fff-4d8c-8905-3d4744277115",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader23",
+                    "designerId": "9f50c18f-8748-4c70-be51-f6f03e17f8a8"
+                }
+            ]
+        }
+    ]
+}

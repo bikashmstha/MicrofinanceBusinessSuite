@@ -1,0 +1,1237 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "MSControlValues",
+        "frame": true,
+        "height": 250,
+        "itemId": "pnlMsControlValues",
+        "title": "MS Control Values/Reference Values",
+        "width": null
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "height": "auto",
+        "title": "string",
+        "width": "auto",
+        "itemId": "string",
+        "autoScroll": "boolean"
+    },
+    "name": "FloorSheetUpload1",
+    "designerId": "72103585-85e4-409d-b77f-72e9dac11d6a",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "iconCls": null,
+                "itemId": "frmMsControlValues",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "iconCls": "string",
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "MyForm7",
+            "designerId": "8bfb1cd0-3b82-472a-93b0-d97e596bda34",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyContainer40",
+                    "designerId": "17d63db8-9f72-4b46-b874-cfe39bcfbae1",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "activeTab": 0
+                            },
+                            "configAlternates": {
+                                "activeTab": "auto"
+                            },
+                            "name": "MyTabPanel1",
+                            "designerId": "c497116e-41e7-4b80-8c89-6f3d2a4de7c3",
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "MS Control Values"
+                                    },
+                                    "configAlternates": {
+                                        "title": "string"
+                                    },
+                                    "name": "MyPanel13",
+                                    "designerId": "b15bdd5c-9c5f-4c13-bd1f-84576ec89d4f",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "grdControlValues",
+                                                "store": "MsControlValuesStore",
+                                                "title": "Ms Control Values"
+                                            },
+                                            "configAlternates": {
+                                                "store": "store",
+                                                "title": "string",
+                                                "height": "auto",
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyGridPanel10",
+                                            "designerId": "97e9721a-79b4-4a7d-bacd-b1eb60be8b03",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "name": "MyGridView10",
+                                                    "designerId": "05cd7d2f-8021-433f-97ba-889aa7152eb2"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "NameEn",
+                                                        "text": "Name",
+                                                        "width": 200
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn41",
+                                                    "designerId": "c498808b-5211-40c6-98c1-0044a7dc8e0b",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "txtName"
+                                                            },
+                                                            "configAlternates": {
+                                                                "itemId": "string"
+                                                            },
+                                                            "name": "MyTextField4",
+                                                            "designerId": "2444c142-bfaf-49d6-b14f-706aa0b7a84d"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "ControlValue",
+                                                        "text": "Control Value",
+                                                        "width": 200
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn42",
+                                                    "designerId": "d1cbf217-5025-4d7d-b148-fcee0d09aa13",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "txtControlValue"
+                                                            },
+                                                            "configAlternates": {
+                                                                "itemId": "string"
+                                                            },
+                                                            "name": "MyTextField5",
+                                                            "designerId": "dfd97e23-3579-4cbb-a978-4b0700c5edf0"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "Remarks",
+                                                        "text": "Remarks",
+                                                        "width": 250
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn43",
+                                                    "designerId": "65747ca7-3f2c-495a-ae0a-026b4db46a21",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "txtRemarks"
+                                                            },
+                                                            "configAlternates": {
+                                                                "itemId": "string"
+                                                            },
+                                                            "name": "MyTextField6",
+                                                            "designerId": "edd00821-64a9-4ac9-89d5-a52c419acb8b"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "Action",
+                                                        "text": "Action"
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn38",
+                                                    "designerId": "9c1b805c-a47e-48c0-99ca-13eacbcc2c99",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "txtAction",
+                                                                "readOnly": true
+                                                            },
+                                                            "configAlternates": {
+                                                                "itemId": "string",
+                                                                "readOnly": "boolean"
+                                                            },
+                                                            "name": "MyTextField6",
+                                                            "designerId": "394d068a-9790-46c9-916f-1c45c5776b94"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "Active",
+                                                        "text": "Active"
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string"
+                                                    },
+                                                    "name": "MyColumn44",
+                                                    "designerId": "3d8f9333-507a-433b-b7ab-f1a76eed2ab2",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "txtActive"
+                                                            },
+                                                            "configAlternates": {
+                                                                "itemId": "string"
+                                                            },
+                                                            "name": "MyTextField7",
+                                                            "designerId": "cb061b62-c927-406c-90b2-db5a5d9ea0f9"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Action",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                                    },
+                                                    "configAlternates": {
+                                                        "icon": "string"
+                                                    },
+                                                    "name": "MyActionColumn1",
+                                                    "designerId": "8dda7717-7650-4764-a986-5fa9090ed3bd",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "view",
+                                                                    "rowIndex",
+                                                                    "colIndex",
+                                                                    "item",
+                                                                    "e",
+                                                                    "record",
+                                                                    "row"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "var store = Ext.getStore('MsControlValuesStore');",
+                                                                    "var grd =  Ext.ComponentQuery.query('#grdControlValues')[0];",
+                                                                    "var row = store.getAt(rowIndex).data;",
+                                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected ControlValues ?', function(btn) {",
+                                                                    "                      if(btn == 'yes'){",
+                                                                    "//test",
+                                                                    "",
+                                                                    "",
+                                                                    "                             var contolValues={",
+                                                                    "                                        RowId:'',",
+                                                                    "                                        NameEn:row.NameEn,",
+                                                                    "                                        ControlValue:row.ControlValue,",
+                                                                    "                                        TranOfficeCode:null,",
+                                                                    "                                        Active:'Y',",
+                                                                    "                                        AppTitle:'',",
+                                                                    "                                        Remarks:row.Remarks,",
+                                                                    "                                        User:'',",
+                                                                    "                                        Date:'',",
+                                                                    "                                        Action:'D'",
+                                                                    "                                    };",
+                                                                    "",
+                                                                    "",
+                                                                    "                            Ext.Ajax.request({",
+                                                                    "                                       url: '../Handlers/GeneralMasterParameters/References/MsControlValuesHandler.ashx',",
+                                                                    "                                       params: {",
+                                                                    "                                            method:'SaveMsControlValues',",
+                                                                    "                                            controlValues:JSON.stringify(contolValues)",
+                                                                    "                                        },",
+                                                                    "                                        success: function(response){",
+                                                                    "                                        var out=Ext.decode(response.responseText);",
+                                                                    "                                        console.log(out);",
+                                                                    "",
+                                                                    "                                        if(out.success===\"true\")",
+                                                                    "                                            {",
+                                                                    "                                                var message=out.root;",
+                                                                    "                                                if(message.OutResultCode===\"SUCCESS\")",
+                                                                    "                                                    {",
+                                                                    "                                                        msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                                    "                                                           grd.bindStore(store);",
+                                                                    "                                                           store.removeAt(rowIndex);",
+                                                                    "",
+                                                                    "                                                        });",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "                                                    }",
+                                                                    "                                                else",
+                                                                    "                                                    {",
+                                                                    "                                                      msg(\"FAILURE\",message.OutResultMessage);",
+                                                                    "                                                    }",
+                                                                    "                                            }",
+                                                                    "                                            else",
+                                                                    "                                                {",
+                                                                    "                                                    msg(\"FAILURE\",out.message);",
+                                                                    "                                                }",
+                                                                    "                                        },",
+                                                                    "                                        failure: function ( result, request ) {",
+                                                                    "                                            waitSave.hide();",
+                                                                    "                                            var out=Ext.decode(response.responseText);",
+                                                                    "                                            msg(\"FAILURE\",out.message);",
+                                                                    "                                        }",
+                                                                    "",
+                                                                    "                                    });",
+                                                                    "",
+                                                                    "",
+                                                                    "                          //test",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "                      }",
+                                                                    " });"
+                                                                ]
+                                                            },
+                                                            "configAlternates": {
+                                                                "designer|params": "typedarray",
+                                                                "fn": "string",
+                                                                "implHandler": "code"
+                                                            },
+                                                            "name": "handler",
+                                                            "designerId": "7ffd0544-598c-4dbe-840c-fc8b3b4b6b8c"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.plugin.RowEditing",
+                                                    "reference": {
+                                                        "name": "plugins",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": "Ext.grid.plugin.RowEditing",
+                                                    "name": "MyRowEditingPlugin2",
+                                                    "designerId": "922a2acb-5eeb-4913-b19e-7f2f44f069a9",
+                                                    "cn": [
+                                                        {
+                                                            "type": "basiceventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onRowEditingEdit",
+                                                                "implHandler": [
+                                                                    "/*var errMsg='';",
+                                                                    "var name=Ext.ComponentQuery.query('#txtName')[0].getValue();",
+                                                                    "var controlValue=Ext.ComponentQuery.query('#txtControlValue')[0].getValue();",
+                                                                    "var remarks=Ext.ComponentQuery.query('#txtRemarks')[0].getValue();",
+                                                                    "var action=Ext.ComponentQuery.query('#txtAction')[0].getValue();",
+                                                                    "",
+                                                                    "        var contolValues={",
+                                                                    "            NameEn:name,",
+                                                                    "            ControlValue:controlValue,",
+                                                                    "            Remarks:remarks,",
+                                                                    "            Action:action",
+                                                                    "        };",
+                                                                    "",
+                                                                    "        Ext.Ajax.request({",
+                                                                    "                   url: '../Handlers/GeneralMasterParameters/References/MsControlValuesHandler.ashx',",
+                                                                    "                    params: {",
+                                                                    "                        method:'SaveMsControlValues',",
+                                                                    "                        controlValues:JSON.stringify(contolValues)",
+                                                                    "                    },",
+                                                                    "                    success: function(response){",
+                                                                    "",
+                                                                    "                    var out=Ext.decode(response.responseText);",
+                                                                    "                    console.log(out);",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "                }",
+                                                                    "                });",
+                                                                    "*/"
+                                                                ],
+                                                                "name": "edit",
+                                                                "scope": "me"
+                                                            },
+                                                            "configAlternates": {
+                                                                "fn": "string",
+                                                                "implHandler": "code",
+                                                                "name": "string",
+                                                                "scope": "string"
+                                                            },
+                                                            "name": "onRowEditingEdit",
+                                                            "designerId": "506af1b7-3906-4bff-a95b-37831d88412d"
+                                                        },
+                                                        {
+                                                            "type": "basiceventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onRowEditingValidateedit",
+                                                                "implHandler": [
+                                                                    "var errMsg='';",
+                                                                    "var name=Ext.ComponentQuery.query('#txtName')[0];",
+                                                                    "var controlValue=Ext.ComponentQuery.query('#txtControlValue')[0];",
+                                                                    "var remarks=Ext.ComponentQuery.query('#txtRemarks')[0];",
+                                                                    "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                                                    "",
+                                                                    "        if(name.getValue()===null ||name.getValue()===\"\")",
+                                                                    "            {",
+                                                                    "                errMsg+=\"Please,Enter Name\";",
+                                                                    "            }",
+                                                                    "        if(controlValue.getValue()===null ||controlValue.getValue()===\"\")",
+                                                                    "            {",
+                                                                    "                errMsg+=\"Please,Enter ControlValue\";",
+                                                                    "            }",
+                                                                    "        if(errMsg!=='')",
+                                                                    "            {",
+                                                                    "                msg(\"WARNING\",errMsg);",
+                                                                    "                return;",
+                                                                    "            }",
+                                                                    "",
+                                                                    "",
+                                                                    "         var contolValues={",
+                                                                    "                    RowId:'',",
+                                                                    "                    NameEn:name.getValue(),",
+                                                                    "                    ControlValue:controlValue.getValue(),",
+                                                                    "                    TranOfficeCode:null,",
+                                                                    "                    Active:'Y',",
+                                                                    "                    AppTitle:'',",
+                                                                    "                    Remarks:remarks.getValue(),",
+                                                                    "                    User:'',",
+                                                                    "                    Date:'',",
+                                                                    "                    Action:action.getValue()",
+                                                                    "                };",
+                                                                    "",
+                                                                    "        var wMsg='';",
+                                                                    "        if(action.getValue()==='I')",
+                                                                    "            {",
+                                                                    "                wMsg='Inserting....';",
+                                                                    "            }",
+                                                                    "        else",
+                                                                    "            {",
+                                                                    "                wMsg='Updting....';",
+                                                                    "            }",
+                                                                    "        var waitSave = watiMsg(wMsg);",
+                                                                    "",
+                                                                    "        Ext.Ajax.request({",
+                                                                    "                   url: '../Handlers/GeneralMasterParameters/References/MsControlValuesHandler.ashx',",
+                                                                    "                   params: {",
+                                                                    "                        method:'SaveMsControlValues',",
+                                                                    "                        controlValues:JSON.stringify(contolValues)",
+                                                                    "                    },",
+                                                                    "                    success: function(response){",
+                                                                    "                    waitSave.hide();",
+                                                                    "                    var out=Ext.decode(response.responseText);",
+                                                                    "                    console.log(out);",
+                                                                    "",
+                                                                    "                    if(out.success===\"true\")",
+                                                                    "                        {",
+                                                                    "                            var message=out.root;",
+                                                                    "                            if(message.OutResultCode===\"SUCCESS\")",
+                                                                    "                                {",
+                                                                    "                                    msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                                    "                                        var grd = Ext.ComponentQuery.query('#grdControlValues')[0];",
+                                                                    "",
+                                                                    "                                        var record = grd.getSelectionModel().getSelection()[0];",
+                                                                    "                                        record.set('Action','U');",
+                                                                    "",
+                                                                    "                                    });",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "                                }",
+                                                                    "                            else",
+                                                                    "                                {",
+                                                                    "                                  msg(\"FAILURE\",message.OutResultMessage);",
+                                                                    "                                }",
+                                                                    "                        }",
+                                                                    "                        else",
+                                                                    "                            {",
+                                                                    "                                msg(\"FAILURE\",out.message);",
+                                                                    "                            }",
+                                                                    "                    },",
+                                                                    "                    failure: function ( result, request ) {",
+                                                                    "                        waitSave.hide();",
+                                                                    "                        var out=Ext.decode(response.responseText);",
+                                                                    "                        msg(\"FAILURE\",out.message);",
+                                                                    "                    }",
+                                                                    "",
+                                                                    "                });",
+                                                                    ""
+                                                                ],
+                                                                "name": "validateedit",
+                                                                "scope": "me"
+                                                            },
+                                                            "configAlternates": {
+                                                                "fn": "string",
+                                                                "implHandler": "code",
+                                                                "name": "string",
+                                                                "scope": "string"
+                                                            },
+                                                            "name": "onRowEditingValidateedit",
+                                                            "designerId": "a48880c9-fe0f-4597-b3e3-af21e3746ae1"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.tab.Tab",
+                                            "reference": {
+                                                "name": "tabConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "tbControlValues"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "TabConfig2",
+                                            "designerId": "d7709c01-197b-4536-a80d-a7ce68db8fdf",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onTbControlValuesActivate",
+                                                        "implHandler": [
+                                                            "",
+                                                            "var name =null;",
+                                                            "Ext.Ajax.request({",
+                                                            "\t\t    url: '../Handlers/GeneralMasterParameters/References/MsControlValuesHandler.ashx?method=GetMsControlValues',",
+                                                            "            method:'POST',",
+                                                            "            params:{name:name},",
+                                                            "            success: function ( result, request ) {",
+                                                            "",
+                                                            "                var obj = Ext.decode(result.responseText);",
+                                                            "                var data = obj.root;",
+                                                            "\t\t\t\tconsole.log('data',data);",
+                                                            "\t\t\t\tvar strMsControlValues = Ext.getStore('MsControlValuesStore');",
+                                                            "                strMsControlValues.removeAll();",
+                                                            "                strMsControlValues.add(data);",
+                                                            "",
+                                                            "            }",
+                                                            "",
+                                                            "",
+                                                            "        });",
+                                                            "//Ext.ComponentQuery.query('#btnReferenceValues')[0].enable(true);",
+                                                            "",
+                                                            "",
+                                                            "//Ext.ComponentQuery.query('#btnReferenceValues')[0].disable(true);",
+                                                            ""
+                                                        ],
+                                                        "name": "activate",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "name": "string",
+                                                        "scope": "string",
+                                                        "implHandler": "code"
+                                                    },
+                                                    "name": "onTbControlValuesActivate",
+                                                    "designerId": "4c1d44fc-d216-4981-bf88-7aa4cbf48e8c"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "Reference Values"
+                                    },
+                                    "configAlternates": {
+                                        "title": "string"
+                                    },
+                                    "name": "MyPanel14",
+                                    "designerId": "745c4935-d995-45cd-9112-614b947b38ec",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "grdReferenceValues",
+                                                "store": "MsReferenceValuesStore",
+                                                "title": "MsReference Values"
+                                            },
+                                            "configAlternates": {
+                                                "store": "store",
+                                                "title": "string",
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyGridPanel11",
+                                            "designerId": "83369cb0-9359-4b0f-a2e1-69412c362c31",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "name": "MyGridView11",
+                                                    "designerId": "00ec7dd5-6c10-47f5-b8b4-09f33e655aeb"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.plugin.RowEditing",
+                                                    "reference": {
+                                                        "name": "plugins",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": "Ext.grid.plugin.RowEditing",
+                                                    "name": "MyRowEditingPlugin1",
+                                                    "designerId": "b7e0e7ae-7bcc-4608-99b2-e9011b4e7b10",
+                                                    "cn": [
+                                                        {
+                                                            "type": "basiceventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onRowEditingValidateedit1",
+                                                                "implHandler": [
+                                                                    "var errMsg='';",
+                                                                    "var refMstCode=Ext.ComponentQuery.query('#txtRefMstCode')[0];",
+                                                                    "var refMstName=Ext.ComponentQuery.query('#txtRefMstName')[0];",
+                                                                    "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                                                    "console.log(action.getValue());",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "         var referenceValues={",
+                                                                    "                    RefMstCode:refMstCode.getValue(),",
+                                                                    "                    RefMstName:refMstName.getValue(),",
+                                                                    "                    Active:'Y',",
+                                                                    "                    User:'',",
+                                                                    "                    Date:'',",
+                                                                    "                    Action:action.getValue()",
+                                                                    "                };",
+                                                                    "",
+                                                                    "        var wMsg='';",
+                                                                    "        if(action.getValue()==='I')",
+                                                                    "            {",
+                                                                    "                wMsg='Inserting....';",
+                                                                    "            }",
+                                                                    "        else",
+                                                                    "            {",
+                                                                    "                wMsg='Updting....';",
+                                                                    "            }",
+                                                                    "        var waitSave = watiMsg(wMsg);",
+                                                                    "",
+                                                                    "        Ext.Ajax.request({",
+                                                                    "                   url: '../Handlers/GeneralMasterParameters/References/MsReferenceCodeMasterHandler.ashx',",
+                                                                    "                   params: {",
+                                                                    "                        method:'SaveMsReferenceCodeMaster',",
+                                                                    "                        referenceValuues:JSON.stringify(referenceValues)",
+                                                                    "                    },",
+                                                                    "                    success: function(response){",
+                                                                    "                    waitSave.hide();",
+                                                                    "                    var out=Ext.decode(response.responseText);",
+                                                                    "                    console.log(out);",
+                                                                    "",
+                                                                    "                    if(out.success===\"true\")",
+                                                                    "                        {",
+                                                                    "                            var message=out.root;",
+                                                                    "                            if(message.OutResultCode===\"SUCCESS\")",
+                                                                    "                                {",
+                                                                    "                                    msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                                    "                                        var grd = Ext.ComponentQuery.query('#grdReferenceValues')[0];",
+                                                                    "",
+                                                                    "                                        var record = grd.getSelectionModel().getSelection()[0];",
+                                                                    "                                        record.set('Action','U');",
+                                                                    "",
+                                                                    "                                    });",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "                                }",
+                                                                    "                            else",
+                                                                    "                                {",
+                                                                    "                                  msg(\"FAILURE\",message.OutResultMessage);",
+                                                                    "                                }",
+                                                                    "                        }",
+                                                                    "                        else",
+                                                                    "                            {",
+                                                                    "                                msg(\"FAILURE\",out.message);",
+                                                                    "                            }",
+                                                                    "                    },",
+                                                                    "                    failure: function ( result, request ) {",
+                                                                    "                        waitSave.hide();",
+                                                                    "                        var out=Ext.decode(response.responseText);",
+                                                                    "                        msg(\"FAILURE\",out.message);",
+                                                                    "                    }",
+                                                                    "",
+                                                                    "                });",
+                                                                    ""
+                                                                ],
+                                                                "name": "validateedit",
+                                                                "scope": "me"
+                                                            },
+                                                            "configAlternates": {
+                                                                "fn": "string",
+                                                                "implHandler": "code",
+                                                                "name": "string",
+                                                                "scope": "string"
+                                                            },
+                                                            "name": "onRowEditingValidateedit1",
+                                                            "designerId": "0f162445-0b0f-496f-8cab-6558d289ba03"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "RefMstCode",
+                                                        "text": "Ref Master Code",
+                                                        "width": 200
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn39",
+                                                    "designerId": "be825aab-504b-4cce-ad4b-d38d0fd42279",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "txtRefMstCode"
+                                                            },
+                                                            "configAlternates": {
+                                                                "itemId": "string"
+                                                            },
+                                                            "name": "MyTextField8",
+                                                            "designerId": "af1fccda-d25d-4e35-b966-90c5eb3daad9"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "RefMstName",
+                                                        "text": "Ref Master Name",
+                                                        "width": 300
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "text": "string",
+                                                        "width": "auto"
+                                                    },
+                                                    "name": "MyColumn40",
+                                                    "designerId": "a5d72856-ee19-4443-914b-cd59168127e5",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "txtRefMstName"
+                                                            },
+                                                            "configAlternates": {
+                                                                "itemId": "string"
+                                                            },
+                                                            "name": "MyTextField9",
+                                                            "designerId": "1e2df3c8-e5df-40fd-934a-daf3982a3b4d"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "Action",
+                                                        "itemId": "txtRAction",
+                                                        "text": "Action"
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "itemId": "string",
+                                                        "text": "string"
+                                                    },
+                                                    "name": "MyColumn45",
+                                                    "designerId": "522dee2b-5e72-4bc4-8fd7-dad6ea28f685",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "txtAction"
+                                                            },
+                                                            "configAlternates": {
+                                                                "itemId": "string"
+                                                            },
+                                                            "name": "MyTextField10",
+                                                            "designerId": "23e29922-3b90-4781-b7ac-2b9a0553ebe7"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "Active",
+                                                        "itemId": "txtActive",
+                                                        "text": "Active"
+                                                    },
+                                                    "configAlternates": {
+                                                        "dataIndex": "datafield",
+                                                        "itemId": "string",
+                                                        "text": "string"
+                                                    },
+                                                    "name": "MyColumn46",
+                                                    "designerId": "33f2a97a-54d6-472f-8d8d-84fa7fb24f32",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "txtActive"
+                                                            },
+                                                            "configAlternates": {
+                                                                "itemId": "string"
+                                                            },
+                                                            "name": "MyTextField10",
+                                                            "designerId": "51549814-be8c-46a7-b18c-a17b0fe111c3"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Action",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                                    },
+                                                    "configAlternates": {
+                                                        "icon": "string"
+                                                    },
+                                                    "name": "MyActionColumn11",
+                                                    "designerId": "71e45a10-b4bf-43fa-9b8e-5915144fb055",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "view",
+                                                                    "rowIndex",
+                                                                    "colIndex",
+                                                                    "item",
+                                                                    "e",
+                                                                    "record",
+                                                                    "row"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "var store = Ext.getStore('MsReferenceValuesStore');",
+                                                                    "var grd =  Ext.ComponentQuery.query('#grdReferenceValues')[0];",
+                                                                    "var row = store.getAt(rowIndex).data;",
+                                                                    "",
+                                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected ReferenceValues ?', function(btn) {",
+                                                                    "    if(btn == 'yes'){",
+                                                                    "",
+                                                                    "       var referenceValues={",
+                                                                    "                    RefMstCode:row.RefMstCode,",
+                                                                    "                    RefMstName:row.RefMstName,",
+                                                                    "                    Active:'Y',",
+                                                                    "                    User:'',",
+                                                                    "                    Date:'',",
+                                                                    "                    Action:'D'",
+                                                                    "                };",
+                                                                    "",
+                                                                    "",
+                                                                    "        var wMsg='Deleting....';",
+                                                                    "",
+                                                                    "        var waitSave = watiMsg(wMsg);",
+                                                                    "",
+                                                                    "        Ext.Ajax.request({",
+                                                                    "                    url: '../Handlers/GeneralMasterParameters/References/MsReferenceCodeMasterHandler.ashx',",
+                                                                    "                   params: {",
+                                                                    "                        method:'SaveMsReferenceCodeMaster',",
+                                                                    "                        referenceValuues:JSON.stringify(referenceValues)",
+                                                                    "                    },",
+                                                                    "                   success: function(response){",
+                                                                    "                    waitSave.hide();",
+                                                                    "                    var out=Ext.decode(response.responseText);",
+                                                                    "                    console.log(out);",
+                                                                    "",
+                                                                    "                    if(out.success===\"true\")",
+                                                                    "                        {",
+                                                                    "                            var message=out.root;",
+                                                                    "                            if(message.OutResultCode===\"SUCCESS\")",
+                                                                    "                                {",
+                                                                    "                                    msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                                    "                                        grd.bindStore(store);",
+                                                                    "                                        store.removeAt(rowIndex);",
+                                                                    "                                    });",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "                                }",
+                                                                    "                            else",
+                                                                    "                                {",
+                                                                    "                                  msg(\"FAILURE\",message.OutResultMessage);",
+                                                                    "                                }",
+                                                                    "                        }",
+                                                                    "                        else",
+                                                                    "                            {",
+                                                                    "                                msg(\"FAILURE\",out.message);",
+                                                                    "                            }",
+                                                                    "                    },",
+                                                                    "                    failure: function ( result, request ) {",
+                                                                    "                        waitSave.hide();",
+                                                                    "                        var out=Ext.decode(response.responseText);",
+                                                                    "                        msg(\"FAILURE\",out.message);",
+                                                                    "                    }",
+                                                                    "",
+                                                                    "                });",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "        return true;",
+                                                                    "    }",
+                                                                    "});"
+                                                                ]
+                                                            },
+                                                            "configAlternates": {
+                                                                "designer|params": "typedarray",
+                                                                "fn": "string",
+                                                                "implHandler": "code"
+                                                            },
+                                                            "name": "handler",
+                                                            "designerId": "323c67df-c750-4cd6-8fc4-567c648de9f9"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.tab.Tab",
+                                            "reference": {
+                                                "name": "tabConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "tbReferenceValues"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "TabConfig3",
+                                            "designerId": "04a75d16-de6e-4cfa-812a-489dcf8bdd1c",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onTbReferenceValuesActivate",
+                                                        "implHandler": [
+                                                            "",
+                                                            "var name =null;",
+                                                            "Ext.Ajax.request({",
+                                                            "\t\t    url: '../Handlers/GeneralMasterParameters/References/MsReferenceCodeMasterHandler.ashx?method=GetMsReferenceCodeMaster',",
+                                                            "            method:'POST',",
+                                                            "            params:{name:name},",
+                                                            "            success: function ( result, request ) {",
+                                                            "",
+                                                            "                var obj = Ext.decode(result.responseText);",
+                                                            "                var data = obj.root;",
+                                                            "\t\t\t\tconsole.log('data',data);",
+                                                            "\t\t\t\tvar storeRefValues = Ext.getStore('MsReferenceValuesStore');",
+                                                            "                storeRefValues.removeAll();",
+                                                            "                storeRefValues.add(data);",
+                                                            "",
+                                                            "            }",
+                                                            "",
+                                                            "",
+                                                            "        });",
+                                                            "",
+                                                            "Ext.ComponentQuery.query('#btnControlValues')[0].disable(true);",
+                                                            "Ext.ComponentQuery.query('#btnReferenceValues')[0].enable(true);",
+                                                            "",
+                                                            ""
+                                                        ],
+                                                        "name": "activate",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onTbReferenceValuesActivate",
+                                                    "designerId": "8f687af0-ddd5-4305-ac7e-2ff1d6157840"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar",
+                    "designerId": "ec1ae356-d35e-4a4b-8ff5-cd6f55c53d12",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnControlValues",
+                                "layout|flex": null,
+                                "text": "Add ControlValues"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "7e6c4055-f6f6-463e-ae13-7d686ee0a497"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnReferenceValues",
+                                "layout|flex": null,
+                                "text": "Add Reference Values"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton17",
+                            "designerId": "9fc30273-6b96-4892-b365-773bba6afc09"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

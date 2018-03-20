@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "AssetDetailStore",
+        "model": "AssetDetail",
+        "storeId": "AssetDetailStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "e2b6009b-04d6-44ce-91a8-437bc0a42c46",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy58",
+            "designerId": "ed550f17-3662-48fc-bc1f-fd7dc7aaa232",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader58",
+                    "designerId": "37dee338-7f93-4dd0-accd-bc9d3d3679cc"
+                }
+            ]
+        }
+    ]
+}

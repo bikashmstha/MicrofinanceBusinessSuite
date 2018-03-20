@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoanHeadingPopupStore",
+        "model": "LoanHeading",
+        "storeId": "LoanHeadingPopupStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore2",
+    "designerId": "d243d062-cbc8-4e40-a30a-392f198a1fdc",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy58",
+            "designerId": "08dd5bf0-72e8-493d-976c-20fcb4dc9754",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader58",
+                    "designerId": "f0c6476a-9cab-4c4a-8bf2-9071f84e6a41"
+                }
+            ]
+        }
+    ]
+}

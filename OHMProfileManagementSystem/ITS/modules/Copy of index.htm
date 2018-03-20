@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Border Layout Example</title>
+    <link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all.css" />
+    <script type="text/javascript" src="../extjs/ext-all-debug.js"></script>
+    <script src="../extjs/jquery-1.5.1.js" type="text/javascript"></script>
+    <script>        jQuery.noConflict();</script>
+    <script type="text/javascript" >
+       
+        Ext.require(['*']);
+        Ext.onReady(function () {
+            ////////////////
+
+            var store = Ext.create('Ext.data.TreeStore', {
+                root: {
+                    expanded: true,
+                    children: [
+                                                                            { text: "Reistration", id: 'R0001', leaf: true, iconCls: 'ico-test' },
+                                                                            { text: "XCise", id: 'Rooo2', expanded: true,
+                                                                                children: [
+                                                                                            { text: "Client Registration", id: 'C000001', leaf: true },
+                                                                                            { text: "Tameli Type", id: 'C000002', leaf: true }
+                                                                                        ]
+                                                                            },
+                                                                            { text: "VAT", id: 'R0003', leaf: true },
+                                                                            { text: "EPan", id: 'R0004', leaf: true }
+                                                                        ]
+                }
+            });
+
+            var tr = Ext.create('Ext.tree.Panel', {
+                title: 'Menu',
+               
+                
+                store: store,
+                rootVisible: false,
+                listeners: {
+                    itemclick: function (view, rec, item, index, eventObj) {
+                        var idd = rec.data.id;
+                        Ext.get('mainContent').update('');
+                        if (idd.indexOf("C") >= 0) {
+
+                            jQuery('#irdTitle').html(rec.data.text);
+                            var js = document.createElement('script');
+                            js.type = "text/javascript";
+                            var scriptName = 'registration/' + rec.data.text + '.js';
+                            js.src = scriptName;
+                            document.body.appendChild(js);
+                        }
+                    }
+                }
+            });
+            //////////////////
+            var cw;
+
+
+            Ext.create('Ext.Viewport', {
+                layout: {
+                    type: 'border',
+                    padding: 5
+                },
+                defaults: {
+                    split: true
+                },
+                items: [ {
+                    region: 'west',
+                    collapsible: true,
+                    title: 'Starts at width 30%',
+                    split: true,
+                    width: '30%',
+                    minWidth: 100,
+                    minHeight: 140,
+                    html: 'west<br>I am floatable'
+                },
+
+
+
+
+               {
+                   region: 'center',
+                   layout: 'border',
+                   minWidth: 220,
+                   border: false,
+                   items: [{
+                       region: 'center',
+                       //html: 'center center',
+                       title: 'Center',
+                       minHeight: 80,
+                       items: [tr]
+                   }]
+               }]
+            });
+        });
+
+    </script>
+</head>
+<body></body>
+</html>

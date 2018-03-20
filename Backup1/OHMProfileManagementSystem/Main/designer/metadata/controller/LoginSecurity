@@ -1,0 +1,516 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoginSecurity",
+        "stores": [
+            "LoginUser"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "stores": "typedarray"
+    },
+    "designerId": "0fcbadbe-7639-4821-bdf6-91bc5862ae98",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnLoginSec",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnLoginSecClick",
+                "implHandler": [
+                    "var me = this;\r",
+                    "\r",
+                    "        var form = button.up('form').getForm();\r",
+                    "\r",
+                    "        if(!form.isValid())\r",
+                    "        {\r",
+                    "            return;\r",
+                    "        }\r",
+                    "\r",
+                    "        me.newLogin();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onBtnLoginSecClick",
+            "designerId": "b5d61e61-7948-488c-9772-570186f80e68"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnCancelSec",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnCancelSecClick",
+                "implHandler": [
+                    "var txtUserName = Ext.ComponentQuery.query('#txtUserNameSec')[0];\r",
+                    "        var txtPassword = Ext.ComponentQuery.query('#txtPasswordSec')[0];\r",
+                    "\r",
+                    "        txtUserName.setValue(\"\");\r",
+                    "        txtPassword.setValue(\"\");\r",
+                    "\r",
+                    "        txtUserName.clearInvalid();\r",
+                    "        txtPassword.clearInvalid();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onBtnCancelSecClick",
+            "designerId": "f62ce68b-5abe-463a-80f6-b95c9d7ef14a"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "init",
+                "implHandler": [
+                    "\r",
+                    "\r",
+                    "var me = this;\r",
+                    "var user;\r",
+                    "/*\r",
+                    "var store = Ext.getStore('LoginUser');\r",
+                    "store.load();\r",
+                    "\r",
+                    "user = store.first();\r",
+                    "\r",
+                    "/\r",
+                    "if(!user){\r",
+                    "store.add({loggedIn: false});\r",
+                    "user = store.first();\r",
+                    "store.sync();\r",
+                    "}\r",
+                    "\r",
+                    "*/"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "init",
+            "designerId": "083a161d-3a72-42e2-8f4a-b768c03bca2c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtPasswordSec",
+                "designer|targetType": "Ext.form.field.Text",
+                "fn": "onTxtPasswordSecKeypress",
+                "implHandler": [
+                    "var me = this;\r",
+                    "\r",
+                    "        if(e.keyCode === 13)\r",
+                    "        {\r",
+                    "            var form = textfield.up('form').getForm();\r",
+                    "\r",
+                    "            if(!form.isValid())\r",
+                    "            {\r",
+                    "                return;\r",
+                    "            }\r",
+                    "\r",
+                    "            me.newLogin();\r",
+                    "        }"
+                ],
+                "name": "keypress",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onTxtPasswordSecKeypress",
+            "designerId": "9dc2243d-32bd-4ef1-a642-5c177fa23494"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "clearSession",
+                "implHandler": [
+                    "var me = this;",
+                    "        var valid = null;",
+                    "",
+                    "        var waitSave = watiMsg(\"LogOut processing ...\");",
+                    "",
+                    "        Ext.Ajax.request({",
+                    "            url: '../Handlers/Security/SessionHandler.ashx?method=ClearSession',",
+                    "            async : false,",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                waitSave.hide();",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "",
+                    "                var el = Ext.get('logOUt');",
+                    "                var elLoginTitle = Ext.get('LoginTitle');",
+                    "",
+                    "",
+                    "                if(obj.success === \"true\")",
+                    "                {",
+                    "                    Ext.ComponentQuery.query('#CntHeaderRight')[0].setVisible(false);",
+                    "                    el.child('span').dom.innerHTML = \"LogIn\";",
+                    "                    elLoginTitle.dom.innerHTML = \"Welcome\";",
+                    "                    me.getController('MyApp.controller.Main').showLoginView();",
+                    "",
+                    "                    valid =  true;",
+                    "",
+                    "                }",
+                    "                else",
+                    "                {",
+                    "                    valid =  false;",
+                    "                }",
+                    "",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                waitSave.hide();",
+                    "",
+                    "                switch (action.failureType)",
+                    "                {",
+                    "                    case Ext.form.action.Action.CLIENT_INVALID:",
+                    "                    msg('Failure', 'Form fields may not be submitted with invalid values');",
+                    "                    break;",
+                    "                    case Ext.form.action.Action.CONNECT_FAILURE:",
+                    "                    msg('Failure', 'Ajax communication failed');",
+                    "                    break;",
+                    "                    case Ext.form.action.Action.SERVER_INVALID:",
+                    "                    msg('Failure', action.result.msg);",
+                    "                }",
+                    "",
+                    "                valid =  false;",
+                    "            }",
+                    "",
+                    "        });",
+                    "",
+                    "        /*",
+                    "        if(valid !== null)",
+                    "        {",
+                    "        return valid;",
+                    "        }",
+                    "",
+                    "",
+                    "        */",
+                    "",
+                    "        /*",
+                    "        user.destroy();",
+                    "",
+                    "        var store = this.getUserStore();",
+                    "        store.sync();",
+                    "        */",
+                    "",
+                    "        //return true;"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "clearSession",
+            "designerId": "78ea394a-c100-4aa8-8eee-dcbd542ddbd5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getUser",
+                "implHandler": [
+                    " return user;"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "getUser",
+            "designerId": "8553946c-eac4-4311-91d8-3c3ab255b235"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "arg"
+                ],
+                "fn": "validateSession",
+                "implHandler": [
+                    "var me = this;\r",
+                    "        var valid = null;\r",
+                    "\r",
+                    "        var waitSave = watiMsg(\"Please wait ...\");\r",
+                    "\r",
+                    "        Ext.Ajax.request({\r",
+                    "            url: '../Handlers/Security/SessionHandler.ashx?method=ValidateSession',\r",
+                    "            async : false,\r",
+                    "            success: function ( result, request ) {\r",
+                    "\r",
+                    "                waitSave.hide();\r",
+                    "\r",
+                    "                var obj = Ext.decode(result.responseText);\r",
+                    "\r",
+                    "\r",
+                    "                if(obj.success === \"false\") \r",
+                    "                {   \r",
+                    "                    if(arg !== \"default\")\r",
+                    "                    {\r",
+                    "                        msg(\"FAILURE\",obj.message);\r",
+                    "                    }\r",
+                    "\r",
+                    "                    me.getController('MyApp.controller.Main').showLoginView();\r",
+                    "\r",
+                    "                    valid =  false;\r",
+                    "\r",
+                    "                }\r",
+                    "                else\r",
+                    "                {\r",
+                    "                    valid =  true;\r",
+                    "                }\r",
+                    "\r",
+                    "            },\r",
+                    "            failure: function(form, action) {\r",
+                    "                waitSave.hide();\r",
+                    "\r",
+                    "                switch (action.failureType) \r",
+                    "                {\r",
+                    "                    case Ext.form.action.Action.CLIENT_INVALID:\r",
+                    "                    msg('Failure', 'Form fields may not be submitted with invalid values');\r",
+                    "                    break;\r",
+                    "                    case Ext.form.action.Action.CONNECT_FAILURE:\r",
+                    "                    msg('Failure', 'Ajax communication failed');\r",
+                    "                    break;\r",
+                    "                    case Ext.form.action.Action.SERVER_INVALID:\r",
+                    "                    msg('Failure', action.result.msg);\r",
+                    "                }\r",
+                    "\r",
+                    "                valid =  false;\r",
+                    "            }\r",
+                    "\r",
+                    "        });\r",
+                    "\r",
+                    "        if(valid !== null)\r",
+                    "        {\r",
+                    "            return valid;\r",
+                    "        }"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "validateSession",
+            "designerId": "3ae2ecfe-3085-414b-af49-c93fed0c09fa"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "newLogin",
+                "implHandler": [
+                    "var me = this;",
+                    "        //var userName = Ext.ComponentQuery.query('#txtUserNameSec')[0].getValue();",
+                    "        //var password = Ext.ComponentQuery.query('#txtPasswordSec')[0].getValue();",
+                    "",
+                    "        /*",
+                    "        console.log(\"getUserName\",me.getUserName().getValue());",
+                    "        console.log(\"getPassword\",me.getPassword().getValue());",
+                    "        */",
+                    "",
+                    "        var userName = me.getUserName().getValue();",
+                    "        var user = {",
+                    "            userID : me.getUserName().getValue(),",
+                    "            password : me.getPassword().getValue()",
+                    "        };",
+                    "",
+                    "        /*",
+                    "",
+                    "",
+                    "        var user = {",
+                    "        userID :userName,",
+                    "        password : password",
+                    "        };",
+                    "",
+                    "        */",
+                    "",
+                    "",
+                    "",
+                    "        var waitSave = watiMsg(\"Please wait ...\");",
+                    "",
+                    "        //------------------------------------------------------",
+                    "        // NB: Posting Data to Server",
+                    "        //------------------------------------------------------",
+                    "",
+                    "        Ext.Ajax.request({",
+                    "            url: '../Handlers/Security/LoginHandler.ashx',",
+                    "            params:user,",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                waitSave.hide();",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "",
+                    "                var el = Ext.get('logOUt');",
+                    "                var elLoginTitle = Ext.get('LoginTitle');",
+                    "                var elNepDate=Ext.get('nepDate');",
+                    "                var elOffCode=Ext.get('offCode');",
+                    "",
+                    "                if(obj.success === \"true\")",
+                    "                {",
+                    "                    Ext.ComponentQuery.query('#CntHeaderRight')[0].setVisible(true);",
+                    "                    //Sets Office Code",
+                    "                    //elOffCode.dom.innerHTML=obj.root.Obj.OfficeUser.OfficeCode;",
+                    "",
+                    "                    //Sets Nepali Date",
+                    "                    //GetNepaliDate(function(nepaliDate){",
+                    "                    //    elNepDate.dom.innerHTML=nepaliDate;",
+                    "                    //});",
+                    "",
+                    "",
+                    "                    el.child('span').dom.innerHTML = \"LogOut\";",
+                    "                    elLoginTitle.dom.innerHTML = \"Welcome \" + userName;",
+                    "                    me.getController('MyApp.controller.Main').showMainView();",
+                    "",
+                    "                    var store=Ext.getStore('TreePanelDataStore');",
+                    "",
+                    "                    store.setRootNode(obj.root.MenuObj);",
+                    "",
+                    "                }",
+                    "                else",
+                    "                {",
+                    "",
+                    "                    msg(\"FAILURE\",obj.message);",
+                    "                }",
+                    "",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                waitSave.hide();",
+                    "",
+                    "                switch (action.failureType)",
+                    "                {",
+                    "                    case Ext.form.action.Action.CLIENT_INVALID:",
+                    "                    msg('Failure', 'Form fields may not be submitted with invalid values');",
+                    "                    break;",
+                    "                    case Ext.form.action.Action.CONNECT_FAILURE:",
+                    "                    msg('Failure', 'Ajax communication failed');",
+                    "                    break;",
+                    "                    case Ext.form.action.Action.SERVER_INVALID:",
+                    "                    msg('Failure', action.result.msg);",
+                    "                }",
+                    "            }",
+                    "",
+                    "        });",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "newLogin",
+            "designerId": "e5aaecb7-0fb7-4bd0-bd00-12344120b93a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "userName",
+                "selector": "#txtUserNameSec",
+                "xtype": "textfield"
+            },
+            "configAlternates": {
+                "ref": "string",
+                "selector": "string",
+                "xtype": "string"
+            },
+            "name": "userName",
+            "designerId": "ad1915ee-667b-41a6-9cdf-17aeeec7be2f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "password",
+                "selector": "#txtPasswordSec",
+                "xtype": "textfield"
+            },
+            "configAlternates": {
+                "ref": "string",
+                "selector": "string",
+                "xtype": "string"
+            },
+            "name": "password",
+            "designerId": "92156965-8b18-4e5d-8cb4-7795f3e4f5dc"
+        }
+    ]
+}

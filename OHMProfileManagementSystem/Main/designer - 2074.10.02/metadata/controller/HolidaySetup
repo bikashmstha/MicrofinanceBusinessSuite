@@ -1,0 +1,147 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "HolidaySetup",
+        "stores": [
+            "HolidayStore",
+            "FiscalYearShortStore"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "stores": "typedarray"
+    },
+    "name": "MyController",
+    "designerId": "d86d5e12-c4f1-4476-b78f-f5b0589706c4",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#frmHolidaySetup",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "HolidaySetup",
+                "fn": "onFrmHolidaySetupAfterRender",
+                "implHandler": [
+                    "var fiscalYearStore=Ext.getStore('FiscalYearShortStore');",
+                    "fiscalYearStore.removeAll();",
+                    "Ext.Ajax.request",
+                    "({",
+                    "",
+                    "    url:'../Handlers/Common/FiscalYearHandler.ashx?method=GetFiscalYearShort',",
+                    "",
+                    "    success:function(response){",
+                    "",
+                    "        var obj =Ext.decode(response.responseText);",
+                    "        var row = obj.root;",
+                    "",
+                    "        fiscalYearStore.add(row);",
+                    "",
+                    "    },",
+                    "    failure:function()",
+                    "    {",
+                    "        msg('FAILURE',Ext.decode(response));",
+                    "",
+                    "    }",
+                    "",
+                    "",
+                    "",
+                    "});",
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onFrmHolidaySetupAfterRender",
+            "designerId": "cf4f0ea8-42bf-4f6d-afd9-121d3f76cb51"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlFiscalYear",
+                "designer|params": [
+                    "field",
+                    "newValue",
+                    "oldValue",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox2",
+                "fn": "onDdlFiscalYearChange",
+                "implHandler": [
+                    "",
+                    "",
+                    "var fiscalYear=Ext.ComponentQuery.query('#ddlFiscalYear')[0].getValue();",
+                    "Ext.Ajax.request",
+                    "({",
+                    "",
+                    "    url:'../Handlers/Common/FiscalYearHandler.ashx?method=Get',",
+                    "    params:{fiscalYear:fiscalYear},",
+                    "    success:function(response){",
+                    "        var obj =Ext.decode(response.responseText);",
+                    "        var row = obj.root[0];",
+                    "",
+                    "        console.log('fy',row);",
+                    "",
+                    "        Ext.ComponentQuery.query('#txtStartDate')[0].setValue(row.StartDateNep);",
+                    "        Ext.ComponentQuery.query('#txtStartDateAD')[0].setValue(row.StartDate);",
+                    "        Ext.ComponentQuery.query('#txtEndDate')[0].setValue(row.EndDateNep);",
+                    "        Ext.ComponentQuery.query('#txtEndDateAD')[0].setValue(row.EndDate);",
+                    "",
+                    "    },",
+                    "    failure:function()",
+                    "    {",
+                    "        msg('FAILURE',Ext.decode(response));",
+                    "",
+                    "    }",
+                    "",
+                    "",
+                    "",
+                    "});",
+                    "",
+                    "",
+                    ""
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onDdlFiscalYearChange",
+            "designerId": "2d059d3a-d372-4681-872d-8dd7c53839e5"
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "\t{\r",
+            "\t\tTypeID:\"01\",\r",
+            "\t\tTypeName:\"DAMAGE\"\r",
+            "\t},\r",
+            "\t{\r",
+            "\t\tTypeID:\"02\",\r",
+            "\t\tTypeName:\"EXCESS\"\r",
+            "\t},\r",
+            "\t{\r",
+            "\t\tTypeID:\"03\",\r",
+            "\t\tTypeName:\"SHORTAGE\"\r",
+            "\t}\r",
+            "]\r",
+            "\r",
+            "\r",
+            ""
+        ],
+        "designer|userClassName": "AdjustmentType",
+        "model": "AdjustmentType",
+        "storeId": "AdjustmentType"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "b6e06f85-3f01-48b2-91ac-639ae916ef78",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy35",
+            "designerId": "9d247b2a-3460-472c-a76a-39c8dda02163",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader7",
+                    "designerId": "9041ecba-b6d6-41b8-9639-18e882c297a2"
+                }
+            ]
+        }
+    ]
+}

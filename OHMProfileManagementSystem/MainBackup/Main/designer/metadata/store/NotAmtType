@@ -1,0 +1,56 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    {\r",
+            "        AmtType:'डेबिट',\r",
+            "        Type:'Dr'\r",
+            "    },\r",
+            "    {\r",
+            "        AmtType:'क्रेडिट',\r",
+            "        Type:'Cr'\r",
+            "    }\r",
+            "]"
+        ],
+        "designer|userClassName": "NotAmtType",
+        "model": "NotAmtType",
+        "storeId": "NotAmtType"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "bf18ab02-c5a4-456c-8579-d0bcbf0a3ab3",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy53",
+            "designerId": "90b9ab58-3501-4c37-8e87-5a152fd52e31",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader40",
+                    "designerId": "2e0469b6-d47a-49da-ab4a-aff38823def8"
+                }
+            ]
+        }
+    ]
+}

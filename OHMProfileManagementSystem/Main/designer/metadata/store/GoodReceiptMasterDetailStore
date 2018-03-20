@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "GoodReceiptMasterDetailStore",
+        "model": "GoodReceiptMasterDetail",
+        "storeId": "GoodReceiptMasterDetailStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "ce71e74b-2600-46f9-9fc8-3403fbbaf061",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy60",
+            "designerId": "6066226c-170a-4826-8377-9e7687ad3106",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader60",
+                    "designerId": "1ec8cb1b-2a0b-4788-8538-33d900140b70"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,213 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SelectCenterPopup",
+        "frame": true,
+        "itemId": "SelectCenterPopup",
+        "title": "Select Center"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string"
+    },
+    "designerId": "06bbf757-b2e8-44d4-a419-fe069bf5d45c",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string"
+            },
+            "name": "MyForm2",
+            "designerId": "e30b54b0-60ae-4c01-85c3-de1ddf5663b2",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "f6fe66bc-dfda-46a4-bdfc-7427c040baad",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Search",
+                                "itemId": "txtSearchCenter"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField55",
+                            "designerId": "7ba728dc-6b8b-4cf3-be06-f166cef70c8f"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnSearchCenter",
+                                "layout|colspan": 2,
+                                "margin": "0 0 0 5",
+                                "text": "Search"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "5e11e679-ae71-4466-bcd0-3a5918853917"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchCenter",
+                        "title": ""
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "title": "string"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "570b1392-e148-477e-886a-a8daf3e87228",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "e3c75e48-5428-4033-a703-6f5784fe0065"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": ""
+                            },
+                            "configAlternates": {
+                                "text": "string"
+                            },
+                            "name": "MyColumn",
+                            "designerId": "f93e26ec-51d1-4df1-9cee-a890d1731750"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Center Code"
+                            },
+                            "configAlternates": {
+                                "text": "string"
+                            },
+                            "name": "MyColumn1",
+                            "designerId": "b44b86e3-71fa-4f30-8b22-5203d8d28088"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Center Name"
+                            },
+                            "configAlternates": {
+                                "text": "string"
+                            },
+                            "name": "MyColumn2",
+                            "designerId": "5a27fd40-1f67-499f-ac07-be03d10b446a"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Emp Id"
+                            },
+                            "configAlternates": {
+                                "text": "string"
+                            },
+                            "name": "MyColumn3",
+                            "designerId": "c3e5c363-66e0-4c81-8631-d7bc38bf2f42"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Emp Name"
+                            },
+                            "configAlternates": {
+                                "text": "string"
+                            },
+                            "name": "MyColumn4",
+                            "designerId": "128fc9de-ebec-483b-8357-5bf94029fd81"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

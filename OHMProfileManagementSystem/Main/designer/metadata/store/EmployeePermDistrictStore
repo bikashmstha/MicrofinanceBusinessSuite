@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EmployeePermDistrictStore",
+        "model": "DistrictSearch",
+        "storeId": "EmployeePermDistrictStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "DistrictSearchStore3",
+    "designerId": "f3a089f9-aa19-490c-b3a1-3e4cd559f7b7",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy1",
+            "designerId": "b92a1137-dec7-4ca1-abd8-acbf70305797",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader1",
+                    "designerId": "5ea6681f-87d4-4d45-bd4b-42fdc2ebcca1"
+                }
+            ]
+        }
+    ]
+}

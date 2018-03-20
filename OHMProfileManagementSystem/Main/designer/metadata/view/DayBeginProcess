@@ -1,0 +1,236 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|columns": 2,
+        "designer|userClassName": "DayBeginProcess",
+        "frame": true,
+        "layout": "table",
+        "title": "Day Begin Operation"
+    },
+    "configAlternates": {
+        "container|columns": "number",
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel18",
+    "designerId": "744b561b-9372-4ad1-a27c-ef1f3c2c0b57",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Date(B.S.)",
+                "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                "itemId": "txtDateBS",
+                "labelWidth": 60,
+                "margin": "0 0 0 50",
+                "padding": 10
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "fieldStyle": "string",
+                "labelWidth": "number",
+                "margin": "auto",
+                "padding": "auto",
+                "itemId": "string"
+            },
+            "name": "MyTextField45",
+            "designerId": "ec8cc7d8-dbcb-4f62-8177-28576bcb5949"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "(A.D.)",
+                "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                "itemId": "txtDateAD",
+                "labelWidth": 50,
+                "margin": "0 0 0 50"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "fieldStyle": "string",
+                "labelWidth": "number",
+                "margin": "auto",
+                "itemId": "string"
+            },
+            "name": "MyTextField46",
+            "designerId": "b32dd4c5-802a-48d5-9019-d37d675b93d7"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "center",
+                "container|padding": "",
+                "height": 28,
+                "layout": "hbox",
+                "layout|colspan": 2
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "container|pack": "string",
+                "container|padding": "auto",
+                "layout": "string",
+                "layout|colspan": "number",
+                "padding": "auto",
+                "height": "auto"
+            },
+            "name": "MyContainer16",
+            "designerId": "480eb762-5d97-4458-89a6-22bbf4455b74",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnDayBeginOperation",
+                        "text": "Day Begin Operation"
+                    },
+                    "configAlternates": {
+                        "text": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyButton23",
+                    "designerId": "8d7e5bb4-6d8f-4a2e-8d39-8afed4b72de5",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnDayBeginOperationClick",
+                                "implHandler": [
+                                    "var date=Ext.ComponentQuery.query('#txtDateBS')[0];",
+                                    "var edate =Ext.ComponentQuery.query('#txtDateAD')[0];",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "/*TranOfficeCode { get; set; }",
+                                    "        public string Date { get; set; }",
+                                    "        public string EDate { get; set; }",
+                                    "        public string OutDayBegin_Date { get; set; }",
+                                    "*/",
+                                    "Ext.Msg.confirm('Confirm Action', 'Are You Sure to Start Day Begin Operation ?', function(btn) {",
+                                    "    if(btn == 'yes'){",
+                                    "",
+                                    "         var objDayBeginProcess={TranOfficeCode:getOfficeCode(),",
+                                    "         Date:date.getValue(),",
+                                    "         EDate:edate.getValue()};",
+                                    "",
+                                    "        var wMsg='Day Begin Operation On Process....';",
+                                    "",
+                                    "        var waitSave = watiMsg(wMsg);",
+                                    "",
+                                    "        Ext.Ajax.request({",
+                                    "                    url: '../Handlers/Finance/Processing/DayBeginProcessHandler.ashx',",
+                                    "                    params: {",
+                                    "                        method:'SaveDayBeginProcess',",
+                                    "                        dayBeginProcess:JSON.stringify(objDayBeginProcess)",
+                                    "                    },",
+                                    "                    success: function(response){",
+                                    "                    waitSave.hide();",
+                                    "                    var out=Ext.decode(response.responseText);",
+                                    "                    console.log(out);",
+                                    "",
+                                    "                    if(out.success===\"true\")",
+                                    "                        {",
+                                    "                            var message=out.root;",
+                                    "                            ",
+                                    "                                    msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                    "                                        ",
+                                    "                                    });",
+                                    "",
+                                    "",
+                                    "",
+                                    "                            ",
+                                    "                        }",
+                                    "                        else",
+                                    "                            {",
+                                    "                                msg(\"FAILURE\",out.message);",
+                                    "                            }",
+                                    "                    },",
+                                    "                    failure: function ( result, request ) {",
+                                    "                        waitSave.hide();",
+                                    "                        var out=Ext.decode(response.responseText);",
+                                    "                        msg(\"FAILURE\",out.message);",
+                                    "                    }",
+                                    "",
+                                    "                });",
+                                    "",
+                                    "",
+                                    "",
+                                    "        return true;",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnDayBeginOperationClick",
+                            "designerId": "1badaa12-24a8-4eb9-a0d4-e52de6829acf"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#txtDateBS')[0].setValue(getMisDateBS());",
+                    "Ext.ComponentQuery.query('#txtDateAD')[0].setValue(getMisDateAD());"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "66c4fc29-4a7e-4f34-86ec-a711a67e396a"
+        }
+    ]
+}

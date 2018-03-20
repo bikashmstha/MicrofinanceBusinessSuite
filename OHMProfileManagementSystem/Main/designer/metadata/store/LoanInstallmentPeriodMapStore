@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoanInstallmentPeriodMapStore",
+        "model": "LoanInstallmentPeriodMap",
+        "storeId": "LoanInstallmentPeriodMapStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "d5fff218-7dac-4b6b-80e3-cc31583873de",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy6",
+            "designerId": "e89ee106-e3a9-4eef-9efd-14b00b75b09c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader6",
+                    "designerId": "e0d05098-0492-46ca-85ff-4fa8c2010a84"
+                }
+            ]
+        }
+    ]
+}

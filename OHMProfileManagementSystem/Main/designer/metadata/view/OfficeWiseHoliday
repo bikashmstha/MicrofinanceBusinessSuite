@@ -1,0 +1,648 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OfficeWiseHoliday",
+        "frame": true,
+        "title": "Office Wise Holiday"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto",
+        "frame": "boolean"
+    },
+    "name": "MyPanel23",
+    "designerId": "d8db295b-06e6-4e04-af1e-34df6b40ad66",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "frame": true,
+                "itemId": "frmOfficeWiseHoliday",
+                "title": "Daily Calender"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "title": "string",
+                "frame": "boolean",
+                "itemId": "string"
+            },
+            "name": "MyForm15",
+            "designerId": "5c6910be-9386-452d-83a4-cefa1dc6080d",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "OfficeName",
+                        "emptyText": "- - -Select - - - ",
+                        "fieldLabel": "Office Code",
+                        "itemId": "ddlOffice",
+                        "layout|anchor": "100%",
+                        "maxWidth": 400,
+                        "queryMode": "local",
+                        "store": "OfficeShortStore",
+                        "valueField": "OfficeCode",
+                        "width": 400
+                    },
+                    "configAlternates": {
+                        "displayField": "datafield",
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "maxWidth": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyComboBox27",
+                    "designerId": "22a512fe-784f-476b-98eb-98910b5bc503"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "FiscalYearCode",
+                        "emptyText": "- - -Select - - - ",
+                        "fieldLabel": "Fiscal Year",
+                        "itemId": "ddlFiscalYear",
+                        "layout|anchor": "100%",
+                        "maxWidth": 250,
+                        "queryMode": "local",
+                        "store": "FiscalYearShortStore",
+                        "valueField": "FiscalYearCode",
+                        "width": 250
+                    },
+                    "configAlternates": {
+                        "displayField": "datafield",
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|anchor": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "maxWidth": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyComboBox28",
+                    "designerId": "3b2684f7-d9ed-4649-b1e2-f4193fcf21f0",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDdlFiscalYearChange",
+                                "implHandler": [
+                                    "var office=Ext.ComponentQuery.query('#ddlOffice')[0];",
+                                    "var fiscalYear=Ext.ComponentQuery.query('#ddlFiscalYear')[0];",
+                                    "",
+                                    "var officeWiseHolidayStore=Ext.getStore('OfficeWiseHoliday');",
+                                    "officeWiseHolidayStore.removeAll();",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/GeneralMasterParameters/Miantenance/OfficeWiseHolidayHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetOfficeShort'",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "    var data=Ext.decode(response.responseText);",
+                                    "    officeWiseHolidayStore.removeAll();",
+                                    "    officeWiseHolidayStore.add(data.root);",
+                                    "",
+                                    "",
+                                    "}",
+                                    "});",
+                                    ""
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDdlFiscalYearChange",
+                            "designerId": "706e9844-dd44-4e34-9777-7a61d131f868"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdOfficeWiseHoliday",
+                        "store": "OfficeWiseHolidayStore",
+                        "title": "Holidays"
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "itemId": "string",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel16",
+                    "designerId": "f3527411-4746-4752-ad54-2b8ff6c840d0",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView16",
+                            "designerId": "6e7d20a2-39af-4154-a845-2040ed68e244"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "OfficeCode",
+                                "text": "OfficeCode"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn120",
+                            "designerId": "28d029e5-d699-469a-a39e-c31d6be2ccb8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "EnglishDate",
+                                "text": "English Date"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn121",
+                            "designerId": "0e6607ab-3a69-4fac-8f70-59d711eadbc2",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtEnglishDate"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField178",
+                                    "designerId": "f5a1edb9-cb01-4b16-9cfa-6b3e2f36658b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "NepaliDate",
+                                "text": "Nepali Date"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn122",
+                            "designerId": "c49cd603-90d0-43b1-a763-4268575e3e97",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtNepaliDate"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField179",
+                                    "designerId": "e3a62843-d976-4485-8e3c-80ec367c730a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Holiday",
+                                "text": "Holiday"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn123",
+                            "designerId": "e4e1e21c-fb55-4e10-a389-e0de4f0d131a",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "chkHoliday"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyCheckbox16",
+                                    "designerId": "3bcdd0b7-9727-4c43-b777-085004db00b7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "HolidayDesc",
+                                "text": "Holiday Description",
+                                "width": 116
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn124",
+                            "designerId": "8dc1ffbd-62cb-42e8-b277-890740ef1b23",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtHolidayDesc"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField180",
+                                    "designerId": "2f694922-4771-46d0-8425-87715a71083a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "LoanHoliday",
+                                "text": "Loan Holiday"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn125",
+                            "designerId": "470a6a34-c52b-4261-8641-b5d7d79efe8a",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "chkLoanHoliday"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyCheckbox15",
+                                    "designerId": "eef0ea67-673e-4653-9714-cb93bdd3ba63"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "LoanHolidayDesc",
+                                "text": "Loan Holiday Description",
+                                "width": 148
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn126",
+                            "designerId": "30ba0e45-2958-4ffc-9d4a-bdd57cfabe96",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtLoanHolidayDesc"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField181",
+                                    "designerId": "e1235c6f-eefe-4c39-865b-21f87974a6f3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Action",
+                                "text": "Action"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn128",
+                            "designerId": "d5f3bd79-a85b-40d4-9c66-ff3abb35335d",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtAction"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField182",
+                                    "designerId": "7f4f4a65-7de2-484b-a02a-20cf1b95200c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "itemId": "delOfficeWiseHoliday"
+                            },
+                            "configAlternates": {
+                                "hidden": "boolean",
+                                "itemId": "string"
+                            },
+                            "name": "MyActionColumn19",
+                            "designerId": "c0198df2-6d26-4ee3-acd8-63edc6957a39",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyActionColumnItem18",
+                                    "designerId": "8daea3c5-dcd2-4228-a65b-bbba1dc4104c",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": null
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "ad960d35-af81-499a-80d7-39330bb6b9c5"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel13",
+                            "designerId": "5c6192d1-0779-4685-b53a-85e96a6615ba"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin18",
+                            "designerId": "0510a499-84ec-4c5c-95bb-4990232a367b",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingValidateedit",
+                                        "name": "validateedit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingValidateedit",
+                                    "designerId": "732cda3c-c19c-41b0-a4c7-7a06f1601f7a"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingCanceledit",
+                                        "name": "canceledit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingCanceledit",
+                                    "designerId": "465e7abb-26db-4003-b209-508af3edf241"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmOfficeWiseHolidayAfterRender",
+                        "implHandler": [
+                            "var officeShortStore=Ext.getStore('OfficeShortStore');",
+                            "officeShortStore.removeAll();",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/GeneralMasterParameters/Office/OfficeHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetOfficeShort'",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "    var data=Ext.decode(response.responseText);",
+                            "    officeShortStore.removeAll();",
+                            "    officeShortStore.add(data.root);",
+                            "",
+                            "",
+                            "}",
+                            "});",
+                            "",
+                            "var fiscalYearShortStore=Ext.getStore('FiscalYearShortStore');",
+                            "fiscalYearShortStore.removeAll();",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '../Handlers/Common/FiscalYearHandler.ashx',",
+                            "    params: {",
+                            "        method:'GetFiscalYearShort'",
+                            "    },",
+                            "    success: function(response){",
+                            "",
+                            "    var data=Ext.decode(response.responseText);",
+                            "    fiscalYearShortStore.removeAll();",
+                            "    fiscalYearShortStore.add(data.root);",
+                            "",
+                            "",
+                            "}",
+                            "});"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmOfficeWiseHolidayAfterRender",
+                    "designerId": "8a18f28f-f986-44a1-8f81-d74a238129f3"
+                }
+            ]
+        }
+    ]
+}

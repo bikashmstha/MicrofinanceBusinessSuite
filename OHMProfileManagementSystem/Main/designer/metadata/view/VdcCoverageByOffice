@@ -1,0 +1,1220 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "VdcCoverageByOffice",
+        "frame": true,
+        "itemId": "VdcCoverageByOffice",
+        "title": "VDC Coverage By Office"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "itemId": "string",
+        "title": "string",
+        "frame": "boolean"
+    },
+    "name": "MyPanel11",
+    "designerId": "ac10e320-9882-4cdb-a784-f62267ababbd",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "container|columns": 2,
+                "frame": true,
+                "layout": "table"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|columns": "number",
+                "frame": "boolean",
+                "layout": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyForm11",
+            "designerId": "c7924edd-0df1-4a4a-8a5b-5671b17eb413",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "table",
+                        "layout|colspan": 3
+                    },
+                    "configAlternates": {
+                        "layout|colspan": "number",
+                        "layout": "string"
+                    },
+                    "name": "MyContainer20",
+                    "designerId": "eff3d500-dedd-498a-a777-088b56038bf7",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "OfficeName",
+                                "emptyText": "- - - Select Office - - -",
+                                "fieldLabel": "Office",
+                                "forceSelection": true,
+                                "itemId": "ddlOffice",
+                                "queryMode": "local",
+                                "store": "OfficeShortStore",
+                                "valueField": "OfficeCode",
+                                "width": 404
+                            },
+                            "configAlternates": {
+                                "displayField": "datafield",
+                                "emptyText": "string",
+                                "fieldLabel": "string",
+                                "forceSelection": "boolean",
+                                "itemId": "string",
+                                "queryMode": "string",
+                                "store": "store",
+                                "valueField": "datafield",
+                                "width": "auto"
+                            },
+                            "name": "MyComboBox30",
+                            "designerId": "83d6a5c0-29f5-48e2-9017-f54ef3856115",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDdlOfficeCollapse",
+                                        "implHandler": [
+                                            "var vdcCoverageObj={",
+                                            "           InstituteCode:field.getValue()",
+                                            "       };",
+                                            "",
+                                            "          Ext.Ajax.request({",
+                                            "            url: '../Handlers/GeneralMasterParameters/Office/VDCCoverageByOfficeHandler.ashx',",
+                                            "            params: {",
+                                            "                    method:'Search',",
+                                            "                    vdcCoverageByOffice:JSON.stringify(vdcCoverageObj)",
+                                            "           },",
+                                            "            success: function(response){",
+                                            "                var obj = Ext.decode(response.responseText);",
+                                            "                if(obj.success === \"true\")",
+                                            "                {",
+                                            "",
+                                            "                    var store=Ext.getStore('VdcCoverageByOfficeStore');",
+                                            "                    store.removeAll();",
+                                            "                    store.add(obj.root);",
+                                            "",
+                                            "                }",
+                                            "                else",
+                                            "                {",
+                                            "",
+                                            "                    msg(\"FAILURE\",obj.message);",
+                                            "                }",
+                                            "            }",
+                                            "        });"
+                                        ],
+                                        "name": "collapse",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onDdlOfficeCollapse",
+                                    "designerId": "f1ae6f73-a1a5-428d-a873-3d92c6d6b7b9"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 250,
+                        "itemId": "grdVdcCoverage",
+                        "layout|colspan": 2,
+                        "store": "VdcCoverageByOfficeStore",
+                        "width": 700
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "store": "store",
+                        "width": "auto"
+                    },
+                    "name": "MyGridPanel12",
+                    "designerId": "c579b2ae-545f-485d-8756-e6eac8ffb607",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView12",
+                            "designerId": "d9418507-a5c2-4565-8ab1-40b67602225b"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "configAlternates": {
+                                "dock": "string"
+                            },
+                            "name": "MyToolbar15",
+                            "designerId": "188aad43-218b-49d3-a912-bd01c71b1c15",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "btnAddVdc",
+                                        "layout|flex": null,
+                                        "text": "Add "
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string",
+                                        "layout|flex": "number",
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton23",
+                                    "designerId": "64c6d40a-2160-4bdf-8fbb-3b841343de5c",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBtnAddVdcClick",
+                                                "implHandler": [
+                                                    "var store=Ext.getStore('VdcCoverageByOfficeStore');",
+                                                    "var vdcCoverageObj ={",
+                                                    "                InstituteCode : \"\",",
+                                                    "                VdcnpName : \"\",",
+                                                    "                Remarks : \"\",",
+                                                    "\t\t\t\tAction:\"I\"",
+                                                    "};",
+                                                    "",
+                                                    "store.add(vdcCoverageObj);",
+                                                    ""
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onBtnAddVdcClick",
+                                            "designerId": "bc522b25-cf17-45d1-8abc-c0916f3a0761"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "VdcnpCode",
+                                "text": "VDC",
+                                "width": 217
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn90",
+                            "designerId": "63487822-32f9-4863-9d61-d0b2be6e294e",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "VDCNPDesc",
+                                        "forceSelection": true,
+                                        "itemId": "ddlVDC",
+                                        "queryMode": "local",
+                                        "store": "VdcSearchStore",
+                                        "valueField": "VDCNPCode"
+                                    },
+                                    "configAlternates": {
+                                        "displayField": "datafield",
+                                        "forceSelection": "boolean",
+                                        "itemId": "string",
+                                        "queryMode": "string",
+                                        "store": "store",
+                                        "valueField": "datafield"
+                                    },
+                                    "name": "MyComboBox32",
+                                    "designerId": "1fc722df-d255-4a85-85c0-f0a9ff87caca"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Remarks",
+                                "text": "Remarks",
+                                "width": 237
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn103",
+                            "designerId": "5493142b-c696-4f2f-b5a2-b69e47fd39ca",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "txtRemarks"
+                                    },
+                                    "configAlternates": {
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField150",
+                                    "designerId": "f2c3a829-66b6-4a88-ab4a-39405df309ce"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Action",
+                                "text": "Action"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn105",
+                            "designerId": "d1e72cc6-9705-4bad-bb6a-f65c59ab6322"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyActionColumn15",
+                            "designerId": "6cf04e6a-6765-41d3-a5ad-dcf4cc1e7d73",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem15",
+                                    "designerId": "bdbd4c5e-62b8-406f-a4cf-f37c6f0aa734",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var officeCode=Ext.ComponentQuery.query('#ddlOffice')[0];",
+                                                    "var vdcCode=Ext.ComponentQuery.query('#ddlVDC')[0];",
+                                                    "var remarks=Ext.ComponentQuery.query('#txtRemarks')[0];",
+                                                    "",
+                                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected VDC Coverage?', function(btn) {",
+                                                    "    if(btn == 'yes'){",
+                                                    "",
+                                                    "        var store = Ext.getStore('VdcCoverageByOfficeStore');",
+                                                    "        var grd =  Ext.ComponentQuery.query('#grdVdcCoverage')[0];",
+                                                    "        var row = store.getAt(rowIndex).data;",
+                                                    "",
+                                                    "        var vdcCoverageObj ={",
+                                                    "                InstituteCode : officeCode.getValue(),",
+                                                    "                VdcnpCode : vdcCode.getValue(),",
+                                                    "                Remarks : remarks.getValue(),",
+                                                    "                Action:'D'",
+                                                    "",
+                                                    "            };",
+                                                    "",
+                                                    "        var wMsg='Deleting....';",
+                                                    "",
+                                                    "        var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "        Ext.Ajax.request({",
+                                                    "                 url: '../Handlers/GeneralMasterParameters/Office/VdcCoverageByOfficeHandler.ashx',",
+                                                    "                params:{method:'Save',vdcCoverageByOffice:JSON.stringify(vdcCoverageObj)},",
+                                                    "                success: function(response){",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "",
+                                                    "                if(out.success)",
+                                                    "                {",
+                                                    "",
+                                                    "                    msg(\"SUCCESS\",out.message,function(){",
+                                                    "                        //grd.bindStore(store);",
+                                                    "                        store.removeAt(rowIndex);",
+                                                    "                    });",
+                                                    "                }",
+                                                    "                else",
+                                                    "                {",
+                                                    "                    msg(\"FAILURE\",out.message);",
+                                                    "                }",
+                                                    "            },",
+                                                    "            failure: function ( result, request ) {",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                msg(\"FAILURE\",out.message);",
+                                                    "            }",
+                                                    "",
+                                                    "        });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "        return true;",
+                                                    "    }",
+                                                    "});"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "18bbf59a-1594-4428-b475-0f92be06ab4d"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel11",
+                            "designerId": "fed0d71e-dfa4-4d19-a16d-9b11ab38bda9",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "",
+                                            "//Ext.ComponentQuery.query('#grdDateWiseVdcCoverage')[0].setVisible(true);",
+                                            "Ext.ComponentQuery.query('#txtHdnVdcCode')[0].setValue(record.data.VdcnpCode);",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "ee1f7ccc-8f6d-49f7-85d2-05372c05c0ac"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin17",
+                            "designerId": "8502a8e4-ca76-490c-9a00-815a3ee53b25",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingValidateedit",
+                                        "implHandler": [
+                                            "var officeCode=Ext.ComponentQuery.query('#ddlOffice')[0];",
+                                            "var vdcCode=Ext.ComponentQuery.query('#ddlVDC')[0];",
+                                            "var remarks=Ext.ComponentQuery.query('#txtRemarks')[0];",
+                                            "",
+                                            "",
+                                            "var vdcCoverageObj ={",
+                                            "                InstituteCode : officeCode.getValue(),",
+                                            "                VdcnpCode : vdcCode.getValue(),",
+                                            "                Remarks : remarks.getValue(),",
+                                            "                Action:e.newValues.Action",
+                                            "",
+                                            "};",
+                                            "",
+                                            "var waitSave = watiMsg('Please wait ...');",
+                                            "Ext.Ajax.request({",
+                                            "     url: '../Handlers/GeneralMasterParameters/Office/VdcCoverageByOfficeHandler.ashx',",
+                                            "     params:{method:'Save',vdcCoverageByOffice:JSON.stringify(vdcCoverageObj)},",
+                                            "     success: function ( response, request ) {",
+                                            "        waitSave.hide();",
+                                            "            var out=Ext.decode(response.responseText);",
+                                            "            console.log(out);",
+                                            "",
+                                            "            if(out.success===\"true\")",
+                                            "                {",
+                                            "                   msg(\"SUCCESS\",out.message,function(){",
+                                            "                                var grd = Ext.ComponentQuery.query('#grdVdcCoverage')[0];",
+                                            "",
+                                            "                                var record = grd.getSelectionModel().getSelection()[0];",
+                                            "                                record.set('Action','U');",
+                                            "",
+                                            "                            });",
+                                            "              }",
+                                            "                else",
+                                            "                    {",
+                                            "                        msg(\"FAILURE\",out.message);",
+                                            "                    }",
+                                            "            },",
+                                            "            failure: function ( response, request ) {",
+                                            "               waitSave.hide();",
+                                            "                var out=Ext.decode(response.responseText);",
+                                            "                msg(\"FAILURE\",out.message);",
+                                            "            }",
+                                            "",
+                                            "        });"
+                                        ],
+                                        "name": "validateedit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingValidateedit",
+                                    "designerId": "d63045f2-693e-4152-a4fe-cba43eed99c1"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingCanceledit",
+                                        "name": "canceledit",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowEditingCanceledit",
+                                    "designerId": "2d70c97c-d18e-4d95-90da-483cb4c29136"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGrdVdcCoverageBeforeRender",
+                                "implHandler": [
+                                    " var grid = Ext.ComponentQuery.query('#grdVdcCoverage')[0];",
+                                    "",
+                                    "        grid.columns[0].renderer = function(value, metaData, record, rowIndex, colIndex, store, view) {",
+                                    "            var temp=\"\";   ",
+                                    "",
+                                    "",
+                                    "            var items=Ext.getStore('VdcSearchStore').data.items;",
+                                    "",
+                                    "",
+                                    "            for(var i=0;i<items.length;i++)",
+                                    "            {",
+                                    "",
+                                    "                if(items[i].data.VDCNPCode==value)",
+                                    "                {",
+                                    "                    temp=items[i].data.VDCNPDesc;",
+                                    "                    break;",
+                                    "                }       ",
+                                    "            }",
+                                    "",
+                                    "",
+                                    "            return temp;",
+                                    "        };",
+                                    "",
+                                    ""
+                                ],
+                                "name": "beforerender",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onGrdVdcCoverageBeforeRender",
+                            "designerId": "3ab38f94-1f44-420f-91f2-133a7971de9c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyContainer14",
+                    "designerId": "43f5a755-5f2c-4125-b45b-75a1ebd797c8",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 250,
+                                "hidden": true,
+                                "itemId": "grdDateWiseVdcCoverage",
+                                "margin": "10 0 0 0",
+                                "store": "VdcCoverageDateWise",
+                                "title": "Date Wise VDC Coverage",
+                                "width": 700
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|colspan": "number",
+                                "title": "string",
+                                "height": "auto",
+                                "margin": "auto",
+                                "store": "store",
+                                "width": "auto",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyGridPanel13",
+                            "designerId": "b1d16ec9-2443-4c85-a9a0-5f00bfe109f2",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView13",
+                                    "designerId": "4a8b8db7-e690-48a6-a583-65b804e96355"
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.RowEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.RowEditing",
+                                    "name": "MyRowEditingPlugin16",
+                                    "designerId": "10e8dcfc-972c-4123-b955-3f30f8cecbd5",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onRowEditingValidateedit1",
+                                                "implHandler": [
+                                                    "var vdcnpDate=Ext.ComponentQuery.query('#txtEngDate')[0];",
+                                                    "var hhCovered=Ext.ComponentQuery.query('#txtHhCovered')[0];",
+                                                    "var hhServed=Ext.ComponentQuery.query('#txtHhServed')[0];",
+                                                    "var hhPotential=Ext.ComponentQuery.query('#txtHhPotential')[0];",
+                                                    "var remarks=Ext.ComponentQuery.query('#txtDatewiseRemarks')[0];",
+                                                    "var officeCode=Ext.ComponentQuery.query('#txtOfficeCode')[0];",
+                                                    "var vdcCode=Ext.ComponentQuery.query('#txtHdnVdcCode')[0];",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "var vdcDatewiseObj ={",
+                                                    "                InstituteCode : officeCode.getValue(),",
+                                                    "                VdcnpCode : vdcCode.getValue(),",
+                                                    "                Remarks : remarks.getValue(),",
+                                                    "                HhCovered:hhCovered.getValue(),",
+                                                    "                HhServed:hhServed.getValue(),",
+                                                    "                HhPotential:hhPotential.getValue(),",
+                                                    "                VdcnpDate:vdcnpDate.getValue(),",
+                                                    "                Action:e.newValues.Action",
+                                                    "",
+                                                    "};",
+                                                    "",
+                                                    "var waitSave = watiMsg('Please wait ...');",
+                                                    "Ext.Ajax.request({",
+                                                    "     url: '../Handlers/GeneralMasterParameters/Office/OfficeVdcDatewiseHandler.ashx',",
+                                                    "     params:{method:'Save',officeVdcDatewise:JSON.stringify(vdcDatewiseObj)},",
+                                                    "     success: function ( response, request ) {",
+                                                    "        waitSave.hide();",
+                                                    "            var out=Ext.decode(response.responseText);",
+                                                    "            console.log(out);",
+                                                    "",
+                                                    "            if(out.success===\"true\")",
+                                                    "                {",
+                                                    "                   msg(\"SUCCESS\",out.message,function(){",
+                                                    "                                var grd = Ext.ComponentQuery.query('#grdDateWiseVdcCoverage')[0];",
+                                                    "",
+                                                    "                                var record = grd.getSelectionModel().getSelection()[0];",
+                                                    "                                record.set('Action','U');",
+                                                    "",
+                                                    "                            });",
+                                                    "              }",
+                                                    "                else",
+                                                    "                    {",
+                                                    "                        msg(\"FAILURE\",out.message);",
+                                                    "                    }",
+                                                    "            },",
+                                                    "            failure: function ( response, request ) {",
+                                                    "               waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                msg(\"FAILURE\",out.message);",
+                                                    "            }",
+                                                    "",
+                                                    "        });"
+                                                ],
+                                                "name": "validateedit",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onRowEditingValidateedit1",
+                                            "designerId": "99aa56bb-6543-4b46-8eb2-50af48ae5646"
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onRowEditingCanceledit1",
+                                                "name": "canceledit",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onRowEditingCanceledit1",
+                                            "designerId": "9d6a82a4-ffb0-4725-9548-65f5045bf457"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top"
+                                    },
+                                    "configAlternates": {
+                                        "dock": "string"
+                                    },
+                                    "name": "MyToolbar16",
+                                    "designerId": "f1c67dce-ed07-49eb-9c3e-3cdbb6a93e62",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "text": "Add"
+                                            },
+                                            "configAlternates": {
+                                                "layout|flex": "number",
+                                                "text": "string"
+                                            },
+                                            "name": "MyButton27",
+                                            "designerId": "b75885fe-38be-4328-991f-c289c024aa7a",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onButtonClick",
+                                                        "implHandler": [
+                                                            "var store=Ext.getStore('VdcCoverageDateWise');",
+                                                            "var vdcCoverageDatewiseObj ={",
+                                                            "                InstituteCode : \"\",",
+                                                            "                VdcnpName : \"\",",
+                                                            "                Remarks : \"\",",
+                                                            "                HhCovered:\"\",",
+                                                            "                HhServed:\"\",",
+                                                            "                HhPotential:\"\",",
+                                                            "                VdcnpDate:\"\",",
+                                                            "                DateBS:\"\",",
+                                                            "\t\t\t\tAction:\"I\"",
+                                                            "};",
+                                                            "",
+                                                            "store.add(vdcCoverageDatewiseObj);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onButtonClick",
+                                                    "designerId": "6f2e905f-25ab-44d2-ba68-f592159d8f9c"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "DateBS",
+                                        "text": "Date(B.S)"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn111",
+                                    "designerId": "13c58d46-89c8-499a-b285-e784a001a1f5",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtNepDate"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField152",
+                                            "designerId": "8e15f6ee-4775-4909-a355-0b011bee8f03"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "VdcnpDate",
+                                        "text": "Date(A.D)"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn109",
+                                    "designerId": "3054a786-5ef3-4176-bba3-3aac2d1e3418",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtEngDate"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField153",
+                                            "designerId": "a510ed68-c029-4a3e-8e27-5e5dff75f7d3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "HhCovered",
+                                        "text": "HH Covered"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn100",
+                                    "designerId": "ad3be6bb-82b9-4104-945f-37ee9ae2133c",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtHhCovered"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField154",
+                                            "designerId": "d3ad2831-39d7-4c30-b741-ad9896997adb"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "HhServed",
+                                        "text": "HH Served"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn101",
+                                    "designerId": "832ae139-80bb-4e99-bff2-5022ab15411d",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtHhServed"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField155",
+                                            "designerId": "2f07ef61-3b4e-4570-a85c-b55d4d53f91d"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "HhPotential",
+                                        "text": "HH Potential"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn107",
+                                    "designerId": "d6a806d0-f867-4e1f-8f98-8af1899fc4d2",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtHhPotential"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField156",
+                                            "designerId": "21e4385a-2d45-4c23-804d-7af71740f1fe"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Remarks",
+                                        "text": "Remarks"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn110",
+                                    "designerId": "d7e57dac-cc96-42d0-9d71-3ebf04f9666b",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtDatewiseRemarks"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField157",
+                                            "designerId": "1f780dfb-bb71-4f71-a8af-836eaf4b1f27"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Action",
+                                        "text": "Action"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn115",
+                                    "designerId": "fd818b7b-c8c3-48c9-a657-7f2214902915"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "hidden": true,
+                        "itemId": "txtHdnVdcCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hidden": "boolean",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField158",
+                    "designerId": "e5c9641d-57b6-4485-b6d1-d829b778c089"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onVdcCoverageByOfficeAfterRender",
+                "implHandler": [
+                    "var store=Ext.getStore('VdcCoverageByOfficeStore');",
+                    "store.removeAll();",
+                    "",
+                    "",
+                    "var store=Ext.getStore('OfficeShortStore');",
+                    "store.removeAll();",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '../Handlers/GeneralMasterParameters/Office/OfficeHandler.ashx',",
+                    "    params: {",
+                    "        method:'GetOfficeShort'",
+                    "    },",
+                    "    success: function(response){",
+                    "",
+                    "    var data=Ext.decode(response.responseText);",
+                    "    store.removeAll();",
+                    "    store.add(data.root);",
+                    "",
+                    "",
+                    "}",
+                    "});",
+                    "",
+                    "var vdcStore=Ext.getStore('VdcSearchStore');",
+                    "vdcStore.removeAll();",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '../Handlers/Common/VdcHandler.ashx',",
+                    "    params: {",
+                    "        method:'GetVDCShort',Vdc:JSON.stringify({DistrictCode:null,VDCNPDesc:null})",
+                    "    },",
+                    "    success: function(response){",
+                    "",
+                    "    var data=Ext.decode(response.responseText);",
+                    "    vdcStore.removeAll();",
+                    "    vdcStore.add(data.root);",
+                    "",
+                    "",
+                    "}",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onVdcCoverageByOfficeAfterRender",
+            "designerId": "98bfd34d-3079-4e69-884b-2ca4e8b541d4"
+        }
+    ]
+}

@@ -1,0 +1,773 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{552A9A1E-2D11-4D2C-B88A-7D318E0E9BF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataObjects</RootNamespace>
+    <AssemblyName>DataObjects</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=4.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\app\Manoz\product\11.2.0\client_1\odp.net\bin\2.x\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdoNet\Db.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AdoNet\Oracle\Common\OracleCountryDao.cs" />
+    <Compile Include="AdoNet\Oracle\Common\OracleDateDao.cs" />
+    <Compile Include="AdoNet\Oracle\Common\OracleDistrictDao.cs" />
+    <Compile Include="AdoNet\Oracle\Common\OracleFiscalYearDao.cs" />
+    <Compile Include="AdoNet\Oracle\Common\OracleVdcDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleApprovedGlTransactionDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleBudgetAllocationAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleBudgetAllocationDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleBudgetAllocationDetailDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleBudgetAllocationMasterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleBudgetAllocationShareDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleBudgetAllocationShareDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleBudgetLimitAmtDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleContraBankAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleGlTransactionDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleGlTransactionMasterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleInterestSchemeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleJvDtlDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleJvMasterDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleJvSearchVoucherDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleInterestSchemeDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleInterestSchemeMasterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleLoanDeductionDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleLoanProductAccountHeadDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleLoanProductDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleSavingProductAccountHeadDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleSavingProductDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleSavingTypeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLoanInformationDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLoanProductDeductionDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLoanTransferToClientDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicChequeNoDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicChequeUpdateDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Transaction\OracleEmployeeAllowanceAmountDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Transaction\OracleEmployeeAllowanceDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Transaction\OracleEmployeeEducationDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Transaction\OracleEmployeeEducationDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Transaction\OracleEmployeeLocalAllowanceDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Transaction\OracleEmployeePromotionDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Transaction\OracleEmployeePromotionDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Transaction\OracleEmployeeTrainingDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Transaction\OracleEmployeeTrainingReceivedDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Transaction\OracleEmployeeTransferDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Transaction\OracleEmployeeTransferDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleAssetSendReceiptDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleFaMaintenanceDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleMemoApprovalDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleMemoApprovalMasterDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleOpeningStockDetailDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleParticularsDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OraclePaymentSearchVoucherDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OraclePaymentVoucherDetailDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OraclePaymentVoucherMasterDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleReceiptSearchVoucherDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleReceiptVoucherDetailDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleReceiptVoucherMasterDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleRegenerateFiscalYearClosingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleReverseVoucherDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleReverseVoucherDetailDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleReverseVoucherMasterDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleVoucherAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleVoucherApprovalDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\AccountTransaction\OracleVoucherApprovalMasterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleCenterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleCenterLovDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleCompulsoryAccountsEntryDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleABBSChargeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleAccountGroupEntryDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleAccountHeadEntryDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleLoanDeductionTypeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleLoanDeductionTypeDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleLoanPurposeProductDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleLoanPurposeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleLoanPurposeProductsDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleLoanSectorDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleLoanSubSectorDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleMainInterestSchemeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleMainLoanProductDefineDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleMainSavingProductDefineDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleMemberDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleSavingMidTermInterestDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleSectorDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Maintenance\OracleSubSectorDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleAbbsSavingDepositDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleAbbsSavingWithdrawlDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleCallAbbsAdjustmentDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleCollectionOfflineDateDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleCollectionSheetMasterOfflineDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleCollectionSheetMasterOnlineDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleCollectionSheetPostingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleDayBeginProcessDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleDayEndProcessDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleDepositPostingPublicDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleLiveProtectBenefitDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleLiveProtectDepositDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleLiveStockBenefitPostingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleLiveStockDepositPostingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleLoanDisbursementDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleLoanDisbursementPostingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleLoanRepaymentDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleLoanRepaymentPostingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleMemberProtectBenefitPostingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleMemberProtectionBenefitDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleMemberProtectionDepositDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleMemberProtectionDepositPostingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OraclePublicSavingWithdrawlDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OraclePublicSavingWithdrawlPostingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleSavingDepositDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleSavingDepositPostingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleSavingWithdrawlDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleSavingWithdrawlPostingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleStaffDisbursementDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Processing\OracleWithdrawlPostingPublicDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\CollectionSheetTransaction\OracleCenterDetailsFromCodeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\CollectionSheetTransaction\OracleCollectionAdjustDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\CollectionSheetTransaction\OracleCollectionSheetMasterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\CollectionSheetTransaction\OracleEmployeeCenterCollectionDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\CollectionSheetTransaction\OracleGenerateSavingCollectionDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleAdjPubSavingAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleAdjustmentaccountforwithdrawDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleLoanAdjustLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\CollectionSheetTransaction\OracleLoanCollectionDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\CollectionSheetTransaction\OracleOfflineCollectionCenterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\CollectionSheetTransaction\OracleOnlineCollectionCenterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\CollectionSheetTransaction\OracleSavingCollectionSheetDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleCalLoanBalanceStatusDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleLoanTransferFromCenterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleLoanTransferFromClientDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleLoanTransferFromLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleLoanTransferProductDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OraclePublicSavingDepositDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OraclePublicSavingWithdrawDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OraclePublicSavingWithdrawDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OraclePublicSavingWithdrawProductDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OraclePubSavingAccountSearchDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OraclePubSavingDepositDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OraclePubSavingProductDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleSavingTransferFromAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleSavingTransferFromCenterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleSavingTransferFromClientDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleSavingTransferProcDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleTransferLoanAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleTransferSavingAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleAdjustLoanIntPriPenNewDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleFundingAgencyDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLasLoanDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLasLoanSearchDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLasMemberDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLasProductDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLnUtilizationDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLnUtilizationLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLoanAgainstSavingDisbursementDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLoanCollateralDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLoanLasSavingProductDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLoanMemberDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLoanProductDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLoanRepayAdjustLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleLoanUtilizationEntryDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMeAdditionalLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMeAdditionalLoanDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMeAdditionalLoanDisbursementDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMeLoanDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMeLoanDisbursementDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMeLoanProductDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMeLoanRepayDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMeLoanRepayDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMeLoanSearchDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfAdditionalLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfAdditionalLoanDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfAdditionalLoanDisbursementDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfAdjustSavingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfLoanDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfLoanDisbursementDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfLoanPurposeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfLoanRepaymentDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfLoanSearchDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfRepayAdjustSavingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfRepayDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfRepaySearchLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\LoanTransaction\OracleMfSavingDepositEditDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\EditTransaction\OracleLoanRepayAdjustRepayDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OracleGroupBasedMemberDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffAdditionalLoanDisbursementDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanAdditionalLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanAdditionalScrLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanAdjustmentDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanDisbursementOpeningDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OracleChequePrintDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicAccountChequeAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicAccountChequeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicAccountCloseAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicAccountCloseDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicAccountCloseProductDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicAccountDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicAdjustmentdepositaccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicClientDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicClientDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicMemberDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicReferenceAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicSavingAccountClosureDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicSavingAccountOpenDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicSavingDepositAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OraclePublicWithdrawWithAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\PublicSavingTransaction\OracleQueryOnSavingAccountCloseDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\CollectionSheetTransaction\OracleUnapprovedCollectionDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleAccountCloseDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleAccountForClosingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleAccountForDepositDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleAccountForWithdrawlDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleAccountOpenDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleChequeGenerateDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleClientSavingAccountDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleGenerateChequeSequenceDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleMemberAccountOpenDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleMemberForChequeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleMfDepositDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleMfSavingDepositDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleMfSavingWithdrawDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleMfWithdrawlDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleProductForAccountCloseDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleProductForDepositDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleProductForWithdrawlDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleSavingAccountClosureDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\SavingTransaction\OracleSavingProductDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\MemberTransaction\OracleMemberForCancellationDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\MemberTransaction\OracleDropOutReasonDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\MemberTransaction\OracleMemberCancellationRestoreDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\MemberTransaction\OracleTransferCenterToAnotherCenterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\MemberTransaction\OracleTransferWithinCenterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleEmployeeKycClientDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleEmployeeKycDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleEmployeeKycEmployeeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleEmployeeKycInfoDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanDisbursementClientDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanDisbursementDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanDisbursementDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanDisbursementLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanDisbursementProductDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanRepayAdjustmentSavingDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanRepayDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanRepayLoanDao.cs" />
+    <Compile Include="AdoNet\Oracle\Finance\Transaction\StaffLoanTransaction\OracleStaffLoanRepaymentDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Group\OracleGroupDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Maintenance\OracleApplicationSequenceGeneratorDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Maintenance\OracleCasteDetailDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Maintenance\OracleDepartmentDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Maintenance\OracleDepartmentMapDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Maintenance\OracleEducationDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Maintenance\OracleEthnicityCasteInformationDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Maintenance\OracleEthnicityInformationDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Maintenance\OracleHolidayDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Maintenance\OracleOccupationDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Maintenance\OracleOfficeWiseHolidayDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Maintenance\OracleReligionDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Menu\OracleMenuEntryDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Menu\OracleModuleDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Menu\OracleReportDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Menu\OracleTabDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Office\OracleOfficeDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Office\OracleOfficeMapDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Office\OracleOfficeTypeDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\Office\OracleVDCCoverageByOfficeDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\References\OracleMsControlValuesDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\References\OracleMsReferenceCodeDetailsDao.cs" />
+    <Compile Include="AdoNet\Oracle\GeneralMasterParameters\References\OracleMsReferenceCodeMasterDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Maintenance\OracleDesignationDao.cs" />
+    <Compile Include="AdoNet\Oracle\HumanResource\Maintenance\OraclePostDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleAssetDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleAssetDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleAssetItemDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleAssetMaintenanceDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleDamageLostDetailDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleDamageLostMasterDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleDepreciationDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleDepreciationDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleFaAssetSendReceiptDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleGoodReceiptDetailDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleGoodReceiptEmployeeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleGoodReceiptItemDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleGoodReceiptMasterDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleGoodReceiptReturnDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleGoodReceiptReturnDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleGoodReceiptReturnItemDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleGoodReceiptReturnMasterDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleGoodReceiptSearchDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleInfFaAssetDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleInItemTransactionMasterDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleItemTransactionDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleLocationDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleMemoApprovalDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleMemoDetailDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleMemoMasterDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleMemoReturnDetailDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleMemoReturnMasterDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleMemoReturnReferenceNoDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleOpeningStockMasterDetailDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleOsItemDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleSupplierDao.cs" />
+    <Compile Include="AdoNet\Oracle\Inventory\Transaction\OracleUserOfficeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\AccountControl\OracleAccountCategoryDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\AccountControl\OracleAccountSubCategoryDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\AccountControl\OracleGlTypeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\AccountControl\OracleVoucherApprovalSecurityDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\GeneralDefinitions\OracleGeneralDefinitionsUtilityDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\GeneralDefinitions\OracleInstallmentPeriodDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\GeneralDefinitions\OracleLoanInstallmentPeriodMapDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\GeneralDefinitions\OracleLoanPeriodDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\GeneralDefinitions\OracleLoanProductPeriodMapDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\GeneralDefinitions\OracleNarrationDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\GeneralDefinitions\OracleNepaliDateConversionDao.cs" />
+    <Compile Include="AdoNet\Oracle\Maintenance\GeneralDefinitions\OracleNepaliFiscalYearDao.cs" />
+    <Compile Include="AdoNet\Oracle\OracleDaoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AdoNet\Oracle\OracleUtilityDao.cs" />
+    <Compile Include="AdoNet\Oracle\Security\OracleLoginDao.cs" />
+    <Compile Include="AdoNet\Oracle\Security\OracleMenuDao.cs" />
+    <Compile Include="AdoNet\Oracle\Security\OracleRoleDao.cs" />
+    <Compile Include="AdoNet\Oracle\Security\OracleUserDao.cs" />
+    <Compile Include="AdoNet\Oracle\Supervisor\OracleControlTableDao.cs" />
+    <Compile Include="AdoNet\Oracle\Supervisor\OracleEmployeeDao.cs" />
+    <Compile Include="AdoNet\Oracle\Supervisor\OracleOfficeDepartmentDao.cs" />
+    <Compile Include="DaoFactory.cs" />
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="CredentialManager.cs" />
+    <Compile Include="DaoFactories.cs" />
+    <Compile Include="Interfaces\Common\ICountryDao.cs" />
+    <Compile Include="Interfaces\Common\IDateDao.cs" />
+    <Compile Include="Interfaces\Common\IDistrictDao.cs" />
+    <Compile Include="Interfaces\Common\IFiscalYearDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IApprovedGlTransactionDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IBudgetAllocationAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IBudgetAllocationDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IBudgetAllocationDetailDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IBudgetAllocationMasterDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IBudgetAllocationShareDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IBudgetAllocationShareDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IBudgetLimitAmtDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IContraBankAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IGlTransactionDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IGlTransactionMasterDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IJvDtlDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IJvMasterDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IJvSearchVoucherDoa.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IParticularsDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IPaymentSearchVoucherDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IPaymentVoucherDetailDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IPaymentVoucherMasterDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IReceiptSearchVoucherDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IReceiptVoucherDetailDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IReceiptVoucherMasterDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IRegenerateFiscalYearClosingDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IReverseVoucherDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IReverseVoucherDetailDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IReverseVoucherMasterDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IVoucherAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IVoucherApprovalDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\AccountTransaction\IVoucherApprovalMasterDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\IABBSChargeDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\IAccountGroupEntryDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\IAccountHeadEntryDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ICenterDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ICenterLovDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ICompulsoryAccountsEntryDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\IInterestSchemeDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\IInterestSchemeDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\IInterestSchemeMasterDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ILoanDeductionDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ILoanProductAccountHeadDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ILoanProductDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ISavingProductAccountHeadDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ISavingProductDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ISavingTypeDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IAbbsSavingDepositDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IAbbsSavingWithdrawlDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ICallAbbsAdjustmentDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ICollectionOfflineDateDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ICollectionSheetMasterOfflineDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ICollectionSheetMasterOnlineDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ICollectionSheetPostingDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IDayBeginProcessDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IDayEndProcessDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IDepositPostingPublicDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ILiveProtectBenefitDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ILiveProtectDepositDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ILiveStockBenefitPostingDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ILiveStockDepositPostingDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ILoanDisbursementDoa.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ILoanDisbursementPostingDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ILoanRepaymentDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ILoanRepaymentPostingDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IMemberProtectBenefitPostingDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IMemberProtectionBenefitDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IMemberProtectionDepositDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IMemberProtectionDepositPostingDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IPublicSavingWithdrawlDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IPublicSavingWithdrawlPostingDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ISavingDepositDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ISavingDepositPostingDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ISavingWithdrawlDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\ISavingWithdrawlPostingDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IStaffDisbursementDao.cs" />
+    <Compile Include="Interfaces\Finance\Processing\IWithdrawlPostingPublicDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\CollectionSheetTransaction\ICollectionSheetMasterDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\CollectionSheetTransaction\IEmployeeCenterCollectionDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\IGroupDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ILoanDeductionTypeDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ILoanDeductionTypeDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ILoanPurposeProductDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ILoanPurposeDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ILoanPurposeProductsDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ILoanSectorDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ILoanSubSectorDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\IMainInterestSchemeDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\IMainLoanProductDefineDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\IMainSavingProductDefineDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\IMemberDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ISavingMidTermInterestDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ISectorDao.cs" />
+    <Compile Include="Interfaces\Finance\Maintenance\ISubSectorDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\CollectionSheetTransaction\ICenterDetailsFromCodeDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\CollectionSheetTransaction\ICollectionAdjustDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\CollectionSheetTransaction\IGenerateSavingCollectionDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\CollectionSheetTransaction\ILoanCollectionDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\CollectionSheetTransaction\ILoanRepayAdjustRepayDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\CollectionSheetTransaction\IOfflineCollectionCenterDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\CollectionSheetTransaction\IOnlineCollectionCenterDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\CollectionSheetTransaction\ISavingCollectionSheetDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\IAdjPubSavingAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\IAdjustmentaccountforwithdrawDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ICalLoanBalanceStatusDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ILoanAdjustLoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ILoanRepayAdjustRepayDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ILoanTransferFromCenterDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ILoanTransferFromClientDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ILoanTransferFromLoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ILoanTransferProductDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\IPublicSavingDepositDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\IPublicSavingWithdrawDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\IPublicSavingWithdrawDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\IPublicSavingWithdrawProductDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\IPubSavingAccountSearchDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\IPubSavingDepositDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\IPubSavingProductDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ISavingTransferFromAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ISavingTransferFromCenterDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ISavingTransferFromClientDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ISavingTransferProcDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ITransferLoanAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\EditTransaction\ITransferSavingAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IAdjustLoanIntPriPenNewDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IFundingAgencyDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILasLoanDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILasLoanSearchDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILasMemberDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILasProductDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILnUtilizationDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILnUtilizationLoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILoanAgainstSavingDisbursementDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILoanCollateralDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILoanInformationDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILoanLasSavingProductDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILoanMemberDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILoanProductDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILoanProductDeductionDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILoanRepayAdjustLoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILoanTransferToClientDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\ILoanUtilizationEntryDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMeAdditionalLoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMeAdditionalLoanDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMeAdditionalLoanDisbursementDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMeLoanDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMeLoanDisbursementDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMeLoanProductDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMeLoanRepayDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMeLoanRepayDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMeLoanSearchDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfAdditionalLoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfAdditionalLoanDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfAdditionalLoanDisbursementDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfAdjustSavingDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfLoanDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfLoanDisbursementDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfLoanPurposeDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfLoanRepaymentDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfLoanSearchDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfRepayAdjustSavingDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfRepayDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfRepaySearchLoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\LoanTransaction\IMfSavingDepositEditDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IChequePrintDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IGroupBasedMemberDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IMemoReturnReferenceNoDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicAccountChequeAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicAccountChequeDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicAccountCloseAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicAccountCloseDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicAccountCloseProductDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicAccountDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicAdjustmentdepositaccountDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicChequeNoDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicChequeUpdateDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicClientDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicClientDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicMemberDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicReferenceAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicSavingAccountClosureDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicSavingAccountOpenDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicSavingDepositAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IPublicWithdrawWithAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\IQueryOnSavingAccountCloseDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\CollectionSheetTransaction\IUnapprovedCollectionDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IAccountCloseDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IAccountForClosingDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IAccountForDepositDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IAccountForWithdrawlDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IAccountOpenDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IChequeGenerateDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IClientSavingAccountDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IGenerateChequeSequenceDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IMemberAccountOpenDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IMemberForChequeDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IMfDepositDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IMfSavingDepositDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IMfSavingWithdrawDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IMfWithdrawlDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IProductForAccountCloseDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IProductForDepositDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\IProductForWithdrawlDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\ISavingAccountClosureDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\PublicSavingTransaction\SavingTransaction\ISavingProductDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\MemberTransaction\IDropOutReasonDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\MemberTransaction\IMemberCancellationRestoreDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\MemberTransaction\IMemberForCancellationDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\MemberTransaction\ITransferCenterToAnotherCenterDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\MemberTransaction\ITransferWithinCenterDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IEmployeeKycClientDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IEmployeeKycDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IEmployeeKycEmployeeDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IEmployeeKycInfoDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffAdditionalLoanDisbursementDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanAdditionalLoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanAdditionalScrLoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanAdjustmentDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanDisbursementClientDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanDisbursementDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanDisbursementDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanDisbursementLoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanDisbursementOpeningDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanDisbursementProductDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanRepayAdjustmentSavingDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanRepayDetailDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanRepayLoanDao.cs" />
+    <Compile Include="Interfaces\Finance\Transaction\StaffLoanTransaction\IStaffLoanRepaymentDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Maintenance\IApplicationSequenceGeneratorDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Maintenance\ICasteDetailDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Maintenance\IDepartmentDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Maintenance\IDepartmentMapDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Maintenance\IEducationDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Maintenance\IEthnicityCasteInformationDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Maintenance\IEthnicityInformationDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Maintenance\IHolidayDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Maintenance\IOccupationDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Maintenance\IOfficeWiseHolidayDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Maintenance\IReligionDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Menu\IMenuEntryDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Menu\IModuleDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Menu\IReportDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Menu\ITabDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Office\IOfficeDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Office\IOfficeMapDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Office\IOfficeTypeDao.cs" />
+    <Compile Include="Interfaces\Common\IVdcDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\Office\IVDCCoverageByOfficeDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\References\IMsControlValuesDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\References\IMsReferenceCodeDetailsDao.cs" />
+    <Compile Include="Interfaces\GeneralMasterParameters\References\IMsReferenceCodeMasterDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Maintenance\IDesignationDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Maintenance\IPostDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Transaction\IEmployeeAllowanceAmountDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Transaction\IEmployeeAllowanceDetailDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Transaction\IEmployeeEducationDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Transaction\IEmployeeEducationDetailDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Transaction\IEmployeeLocalAllowanceDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Transaction\IEmployeePromotionDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Transaction\IEmployeePromotionDetailDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Transaction\IEmployeeTrainingDetailDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Transaction\IEmployeeTrainingReceivedDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Transaction\IEmployeeTransferDao.cs" />
+    <Compile Include="Interfaces\HumanResource\Transaction\IEmployeeTransferDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IAssetDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IAssetDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IAssetItemDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IAssetMaintenanceDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IAssetSendReceiptDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IDamageLostDetailDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IDamageLostMasterDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IDepreciationDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IDepreciationDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IFaAssetSendReceiptDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IFaMaintenanceDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IGoodReceiptDetailDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IGoodReceiptEmployeeDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IGoodReceiptItemDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IGoodReceiptMasterDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IGoodReceiptReturnDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IGoodReceiptReturnDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IGoodReceiptReturnItemDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IGoodReceiptReturnMasterDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IGoodReceiptSearchDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IInfFaAssetDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IInItemTransactionMasterDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IItemTransactionDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\ILocationDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IMemoApprovalDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IMemoApprovalDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IMemoApprovalMasterDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IMemoDetailDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IMemoMasterDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IMemoReturnDetailDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IMemoReturnMasterDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IMemoReturnReferenceNoDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IOpeningStockDetailDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IOpeningStockMasterDetailDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IOsItemDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\ISupplierDao.cs" />
+    <Compile Include="Interfaces\Inventory\Transaction\IUserOfficeDao.cs" />
+    <Compile Include="Interfaces\Maintenance\AccountControl\IAccountCategoryDao.cs" />
+    <Compile Include="Interfaces\Maintenance\AccountControl\IGLVoucherTypeDao.cs" />
+    <Compile Include="Interfaces\Maintenance\AccountControl\IAccountSubCategoryDao.cs" />
+    <Compile Include="Interfaces\Maintenance\AccountControl\IVoucherApprovalSecurityDao.cs" />
+    <Compile Include="Interfaces\Maintenance\GeneralDefinitions\IInstallmentPeriodDao.cs" />
+    <Compile Include="Interfaces\Maintenance\GeneralDefinitions\ILoanInstallmentPeriodMapDao.cs" />
+    <Compile Include="Interfaces\Maintenance\GeneralDefinitions\ILoanPeriodDao.cs" />
+    <Compile Include="Interfaces\Maintenance\GeneralDefinitions\ILoanProductPeriodMapDao.cs" />
+    <Compile Include="Interfaces\Maintenance\GeneralDefinitions\INarrationDao.cs" />
+    <Compile Include="Interfaces\Maintenance\GeneralDefinitions\INepaliDateConversionDao.cs" />
+    <Compile Include="Interfaces\Maintenance\GeneralDefinitions\INepaliFiscalYearDao.cs" />
+    <Compile Include="Interfaces\Maintenance\GeneralDefinitions\IGeneralDefinitionsUtilityDao.cs" />
+    <Compile Include="Interfaces\Security\ILoginDao.cs" />
+    <Compile Include="Interfaces\Security\IMenuDao.cs" />
+    <Compile Include="Interfaces\Security\IRoleDao.cs" />
+    <Compile Include="Interfaces\Security\IUserDao.cs" />
+    <Compile Include="Interfaces\Supervisor\IControlTableDao.cs" />
+    <Compile Include="Interfaces\Supervisor\IEmployeeDao.cs" />
+    <Compile Include="Interfaces\Supervisor\IOfficeDepartmentDao.cs" />
+    <Compile Include="OracleError.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SQLHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\ErrorLog.cs" />
+    <Compile Include="Utilities\ErrorObject.cs" />
+    <Compile Include="Utilities\General.cs" />
+    <Compile Include="Utilities\image2byteConverter.cs" />
+    <Compile Include="Utilities\MessageObject.cs" />
+    <Compile Include="Utilities\oQueryParser.cs" />
+    <Compile Include="Utilities\oSPWrapper.cs" />
+    <Compile Include="Utilities\oSQLWrapper.cs" />
+    <Compile Include="Utilities\SPWrapper.cs" />
+    <Compile Include="Utilities\SystemMacAddress.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObjects\Business Objects.csproj">
+      <Project>{542EFC95-C2E9-4C6D-B35C-E221F01D38AE}</Project>
+      <Name>Business Objects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="_UML Diagram\ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

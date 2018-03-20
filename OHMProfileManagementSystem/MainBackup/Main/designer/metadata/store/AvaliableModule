@@ -1,0 +1,43 @@
+re{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "AvaliableModule",
+        "storeId": "AvaliableModule",
+        "designer|userClassName": "AvaliableModule",
+        "designer|userAlias": "AvaliableModule"
+    },
+    "designerId": "32db3291-784a-429c-91a6-50f74c37e8e8",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "../Handlers/Verification/AvailableModuleHandler.ashx?method=GetAvailableModules"
+            },
+            "designerId": "5901735d-69d9-4ec1-bdf8-9bdca34f5e1e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "root"
+                    },
+                    "designerId": "b16c82d6-8478-4b9a-9f97-1b3d7aaab5ab"
+                }
+            ]
+        }
+    ]
+}

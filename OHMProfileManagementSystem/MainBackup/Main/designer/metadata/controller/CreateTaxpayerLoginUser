@@ -1,0 +1,352 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CreateTaxpayerLoginUser"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "designerId": "3b123ec4-0c15-4781-ad33-918d11c9e689",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnTaxpayerLoginReset",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnTaxpayerLoginResetClick",
+                "implHandler": [
+                    "this.ClaerControl();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onBtnTaxpayerLoginResetClick",
+            "designerId": "bc57f77f-76f9-4fc0-87d6-66593b5640e3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "SaveCreateTaxpayerLoginUser",
+                "implHandler": [
+                    "var me = this;\r",
+                    "var count = 0;\r",
+                    "var errorMsg = \"\";\r",
+                    "var loadMsg = \"\";\r",
+                    "\r",
+                    "var txtTaxpayerLoginPan = Ext.ComponentQuery.query(\"#txtTaxpayerLoginPan\")[0].getValue();\r",
+                    "var txtTaxpayerLoginUserName = Ext.ComponentQuery.query(\"#txtTaxpayerLoginUserName\")[0].getValue();\r",
+                    "\r",
+                    "var txtTaxpayerLoginEmail = Ext.ComponentQuery.query(\"#txtTaxpayerLoginEmail\")[0].getValue();\r",
+                    "var txtTaxpayerLoginPhoneNo = Ext.ComponentQuery.query(\"#txtTaxpayerLoginPhoneNo\")[0].getValue();\r",
+                    "var hdnCreateTaxpayerLoginOffice = Ext.ComponentQuery.query('#hdnCreateTaxpayerLoginOffice')[0].getValue();\r",
+                    "var action = Ext.ComponentQuery.query('#hdnTaxpayerLoginAction')[0].getValue();\r",
+                    "\r",
+                    "if(txtTaxpayerLoginPan === \"\")\r",
+                    "{\r",
+                    "\r",
+                    "    count++;\r",
+                    "    errorMsg = errorMsg + '<br/>'+ count + \") कृपया स्था . ले . नं . भर्नुहोस्!!!\"; \r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "if(txtTaxpayerLoginUserName === \"\")\r",
+                    "{\r",
+                    "\r",
+                    "    count++;\r",
+                    "    errorMsg = errorMsg +'<br/>'+ count + \") कृपया प्रयोगकर्ताको नाम भर्नुहोस्!!!\";\r",
+                    "\r",
+                    "}\r",
+                    "/*\r",
+                    "if(txtTaxpayerLoginPassWord === \"\" )\r",
+                    "{\r",
+                    "\r",
+                    "count++;\r",
+                    "errorMsg = errorMsg +'<br/>'+ count + \") कृपया पासवर्ड भर्नुहोस्!!! \";\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "if(txtTaxpayerLoginReTypePassword === \"\" )\r",
+                    "{\r",
+                    "\r",
+                    "count++;\r",
+                    "errorMsg = errorMsg +'<br/>'+ count + \") कृपया पुन: पासवर्ड भर्नुहोस्!!! \";\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "if(txtTaxpayerLoginPassWord !== txtTaxpayerLoginReTypePassword)\r",
+                    "{\r",
+                    "\r",
+                    "count++;\r",
+                    "errorMsg = errorMsg +'<br/>'+ count + \") कृपया पासवर्ड र पुन: पासवर्ड मिलेन!!! \";\r",
+                    "\r",
+                    "}\r",
+                    "*/\r",
+                    "\r",
+                    "\r",
+                    "if(count >0)\r",
+                    "{\r",
+                    "    msg(\"WARNING\",errorMsg);\r",
+                    "    return false;\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if(action == \"E\")\r",
+                    "{\r",
+                    "    loadMsg = \"Updating ...\";\r",
+                    "} \r",
+                    "else\r",
+                    "{\r",
+                    "    loadMsg = \"Saving ...\";\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var DCTBTaxPayerLogin = \"\";\r",
+                    "\r",
+                    "DCTBTaxPayerLogin = { \r",
+                    "    Pan:txtTaxpayerLoginPan,\r",
+                    "    LoginName:txtTaxpayerLoginUserName,\r",
+                    "    LoginPass:txtTaxpayerLoginUserName,     \r",
+                    "    CreatedBy:'', \r",
+                    "    CreatedDate:'', \r",
+                    "    EmailID:txtTaxpayerLoginEmail,\r",
+                    "    PhoneNo:txtTaxpayerLoginPhoneNo,  \r",
+                    "    Status:'A', \r",
+                    "    TranDate:'', \r",
+                    "    OffCode:hdnCreateTaxpayerLoginOffice !== \"\"?hdnCreateTaxpayerLoginOffice:null,\r",
+                    "    Action:action !== \"\"?action:\"\"\r",
+                    "\r",
+                    "};\r",
+                    "\r",
+                    "var waitSave = watiMsg(loadMsg);\r",
+                    "\r",
+                    "//console.log();\r",
+                    "\r",
+                    "//------------------------------------------------------\r",
+                    "// NB: Posting Data to Server\r",
+                    "//------------------------------------------------------\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "    url:\"../Handlers/E-SystemServices/Taxpayer/DCTBTaxPayerLoginHandlers.ashx?method=SaveDCTBTaxPayerLogin\",\r",
+                    "    params:{dCTBTaxPayerLogins:JSON.stringify(DCTBTaxPayerLogin)},\r",
+                    "    success: function ( result, request ) {\r",
+                    "\r",
+                    "        waitSave.hide();\r",
+                    "\r",
+                    "        var obj = Ext.decode(result.responseText);\r",
+                    "        var dctbForeignTax=obj.root;\r",
+                    "\r",
+                    "        if(obj.success == \"false\" && obj.message === \"ErrorDuplicate data !\")\r",
+                    "        {\r",
+                    "            msg(\"WARNING\",\"User Name For this PAN already Exists !!!\");\r",
+                    "            return;\r",
+                    "        }\r",
+                    "\r",
+                    "        msg(obj.success === \"true\" ?\"SUCCESS\":\"FAILURE\",obj.message);\r",
+                    "\r",
+                    "\r",
+                    "        if(obj.success === \"false\") return;\r",
+                    "        me.ClaerControl();\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "    },\r",
+                    "    failure: function ( result, request ) {\r",
+                    "\r",
+                    "        waitSave.hide();\r",
+                    "\r",
+                    "        var errMsg = \"Error in \" + loadMsg;\r",
+                    "\r",
+                    "        msg(\"FAILURE\",errMsg);\r",
+                    "        return;\r",
+                    "    }\r",
+                    "\r",
+                    "});\r",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "SaveCreateTaxpayerLoginUser",
+            "designerId": "c453fd77-dc2f-4df6-90ff-1a63971f35e0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ClaerControl",
+                "implHandler": [
+                    "var txtTaxpayerLoginPan = Ext.ComponentQuery.query(\"#txtTaxpayerLoginPan\")[0];\r",
+                    "var txtTaxpayerLoginUserName  = Ext.ComponentQuery.query(\"#txtTaxpayerLoginUserName\")[0];\r",
+                    "//var txtTaxpayerLoginPassWord = Ext.ComponentQuery.query(\"#txtTaxpayerLoginPassWord\")[0];\r",
+                    "//var txtTaxpayerLoginReTypePassword = Ext.ComponentQuery.query(\"#txtTaxpayerLoginReTypePassword\")[0];\r",
+                    "var txtTaxpayerLoginEmail = Ext.ComponentQuery.query(\"#txtTaxpayerLoginEmail\")[0];\r",
+                    "var txtTaxpayerLoginPhoneNo = Ext.ComponentQuery.query(\"#txtTaxpayerLoginPhoneNo\")[0];\r",
+                    "\r",
+                    "txtTaxpayerLoginPan.setValue(\"\");\r",
+                    "txtTaxpayerLoginPan.clearInvalid();\r",
+                    "\r",
+                    "txtTaxpayerLoginUserName.setValue(\"\");\r",
+                    "txtTaxpayerLoginUserName.clearInvalid();\r",
+                    "\r",
+                    "//txtTaxpayerLoginPassWord.setValue(\"\");\r",
+                    "//txtTaxpayerLoginPassWord.clearInvalid();\r",
+                    "\r",
+                    "//txtTaxpayerLoginReTypePassword.setValue(\"\");\r",
+                    "//txtTaxpayerLoginReTypePassword.clearInvalid();\r",
+                    "\r",
+                    "txtTaxpayerLoginEmail.setValue(\"\");\r",
+                    "txtTaxpayerLoginEmail.clearInvalid();\r",
+                    "\r",
+                    "\r",
+                    "txtTaxpayerLoginPhoneNo.setValue(\"\");\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "ClaerControl",
+            "designerId": "caf5f753-f0f4-42aa-a879-936798b9c6c0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#frmCreateTaxpayerLoginUser",
+                "designer|targetType": "Ext.form.Panel",
+                "fn": "onFrmCreateTaxpayerLoginUserAfterRender",
+                "implHandler": [
+                    "var offCode = Ext.get('offCode').dom.innerHTML;\r",
+                    "Ext.ComponentQuery.query('#hdnCreateTaxpayerLoginOffice')[0].setValue(offCode);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onFrmCreateTaxpayerLoginUserAfterRender",
+            "designerId": "52164cb4-a2b9-47b1-a520-bd4447b2099c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#txtTaxpayerLoginPan",
+                "designer|targetType": "Ext.form.field.Text",
+                "fn": "onTxtTaxpayerLoginPanBlur",
+                "implHandler": [
+                    "\r",
+                    "var pan = Ext.ComponentQuery.query('#txtTaxpayerLoginPan')[0].getValue();\r",
+                    "var offCode = Ext.ComponentQuery.query('#hdnCreateTaxpayerLoginOffice')[0].getValue();\r",
+                    "\r",
+                    "LoadTaxpayerInfoWithValidPan(pan,'10',function(data){\r",
+                    "    var taxpayer=data.root.Taxpayer;\r",
+                    "    var address=taxpayer.BusinessAddress.Address;\r",
+                    "    var office=taxpayer.Office;\r",
+                    "    if(taxpayer.AcctStatus === \"D\")\r",
+                    "    {\r",
+                    "        msg(\"WARNING\",\"PAN is Deactivated !!!\");\r",
+                    "        return;\r",
+                    "    }\r",
+                    "    if(offCode != office.OfficeCode)\r",
+                    "    {\r",
+                    "        msg(\"WARNING\",\"PAN is not Registered in this office !!!\");\r",
+                    "\r",
+                    "        return;\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "blur",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onTxtTaxpayerLoginPanBlur",
+            "designerId": "5616bd8b-2642-4209-aef8-74b8f1305f05"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnTaxpayerLoginRegister",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnTaxpayerLoginRegisterClick",
+                "implHandler": [
+                    "this.SaveCreateTaxpayerLoginUser();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onBtnTaxpayerLoginRegisterClick",
+            "designerId": "2f3bae52-790a-4c9a-9ebb-b571f1bb8901"
+        }
+    ]
+}

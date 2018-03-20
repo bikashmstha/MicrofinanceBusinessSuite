@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoanDeductionTypesStore",
+        "model": "LoanDeductionTypes",
+        "storeId": "LoanDeductionTypesStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "74f054a4-17b0-406e-a0f2-aba13016d212",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy35",
+            "designerId": "c47259ec-1b7e-4b2a-b34d-3d74c6b5da63",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader35",
+                    "designerId": "078fc471-474c-4bc8-ad03-6c3328183e09"
+                }
+            ]
+        }
+    ]
+}

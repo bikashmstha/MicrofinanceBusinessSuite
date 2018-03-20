@@ -1,0 +1,76 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "TreePanelDataStore",
+        "model": "TreePanelModel",
+        "root": [
+            "{",
+            "       text:'Integrated Tax Menus',",
+            "       id: 'gp_id',",
+            "        expanded: true,",
+            "        link:'NULL'",
+            "    }"
+        ],
+        "storeId": "MyJsonTreeStore"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "root": "object",
+        "storeId": "string"
+    },
+    "designerId": "700eef7e-204c-4565-b6ba-d66687ce0675",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "data/treejson.js"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy1",
+            "designerId": "c0591d3b-c4a0-44e5-8748-9893b57a3351",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader1",
+                    "designerId": "18082604-4a4e-49df-9747-614b2e25378c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "breadcrumb"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField7",
+            "designerId": "ac444a8b-49b5-42b9-a7fd-ce904cd6aaac"
+        }
+    ]
+}

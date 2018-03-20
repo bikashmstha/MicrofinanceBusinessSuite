@@ -1,0 +1,65 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "    {  \r",
+            "        AnnexType:\"I\",\r",
+            "        AnnexID:\"1\",\r",
+            "        AnnexName:\"अनुसूची - १\",\r",
+            "        AnnexDesc:\"ब्यक्तिगत आयको विवरण राख्ने\",\r",
+            "        AnnexDescEn:\"Record Individual Income\",\r",
+            "        \r",
+            "    },\r",
+            "     {\r",
+            "         AnnexType:\"B\",\r",
+            "         AnnexID:\"2\",\r",
+            "         AnnexName:\"अनुसूची - २\",\r",
+            "         AnnexDesc:\"करको गणना (निकायको लागि)विवरण राख्ने\",\r",
+            "         AnnexDescEn:\"Record Business Income\",\r",
+            "\t\r",
+            "    }\r",
+            "\r",
+            "]"
+        ],
+        "designer|userClassName": "AnnexGroup0",
+        "model": "AnnexGroup",
+        "storeId": "MyArrayStore7"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "56bb28e8-6dff-4d60-abdc-3a47f8bbcea2",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy116",
+            "designerId": "6c41695e-c30d-4b84-8d28-e8aa8620932c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader19",
+                    "designerId": "e3b33e44-89b2-4d26-9b7b-cca72c2964fd"
+                }
+            ]
+        }
+    ]
+}

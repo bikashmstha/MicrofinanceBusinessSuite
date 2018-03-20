@@ -1,0 +1,64 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[ \r",
+            "{\r",
+            "status_id: \"Incoming\",\r",
+            "Status: \"Incoming\"\r",
+            "},\r",
+            "{\r",
+            "status_id: \"Pending\",\r",
+            "Status: \"Pending\"\r",
+            "},\r",
+            "{\r",
+            "status_id: \"Closed\",\r",
+            "Status: \"Closed\"\r",
+            "},\r",
+            "{\r",
+            "status_id: \"Cancelled\",\r",
+            "Status: \"Cancelled\"\r",
+            "}\r",
+            "    ]"
+        ],
+        "designer|userClassName": "SR_Status",
+        "model": "SR_Status",
+        "storeId": "SR_Status"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "designerId": "96d553fd-51d2-429a-826b-d8636a600c4d",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy57",
+            "designerId": "8ad67770-5b58-4d0d-86e1-f13d6c65e82c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader14",
+                    "designerId": "660e5d8d-8444-44e6-b150-b1af5265453b"
+                }
+            ]
+        }
+    ]
+}

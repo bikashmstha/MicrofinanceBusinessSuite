@@ -1,0 +1,1348 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|columns": null,
+        "designer|userClassName": "MFMERepaymentAdjust",
+        "frame": true,
+        "layout": "table",
+        "title": "Loan Interest Adjust"
+    },
+    "configAlternates": {
+        "container|columns": "number",
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel11",
+    "designerId": "ca1f66c2-e7f8-4ee6-81a3-03cb84cdacac",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|columns": 3,
+                "frame": true,
+                "itemId": "frmMFMERepaymentAdjust",
+                "layout": "table",
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|columns": "number",
+                "frame": "boolean",
+                "layout": "string",
+                "title": "string",
+                "itemId": "string"
+            },
+            "name": "MyForm4",
+            "designerId": "81a75a16-25b7-451e-a247-a905a045f596",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "From Date(B.S.)",
+                        "itemId": "txtFromDateBS",
+                        "labelWidth": 135,
+                        "layout|colspan": 2
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField155",
+                    "designerId": "63216dfd-d659-4c6f-8020-a919e15d63ed"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "To Date(B.S)",
+                        "itemId": "txtFromDateAD"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "margin": "auto",
+                        "width": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField156",
+                    "designerId": "c6e92100-0ce5-4564-a152-6bf0da78b59f"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Center Code",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtCenterCode",
+                        "labelWidth": 135
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "size": "number",
+                        "width": "auto",
+                        "fieldStyle": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField483",
+                    "designerId": "e65c4b8d-88f0-43a2-af57-29620a6f4b53"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "hideLabel": true,
+                        "itemId": "txtCenterName",
+                        "layout|colspan": 2,
+                        "size": 40
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hideLabel": "boolean",
+                        "margin": "auto",
+                        "width": "auto",
+                        "fieldStyle": "string",
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "size": "number"
+                    },
+                    "name": "MyTextField158",
+                    "designerId": "5cecacbc-7e84-4f94-be03-ede63e3983a3"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Loan Product",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtLoanProductCode",
+                        "labelWidth": 135
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "size": "number",
+                        "fieldStyle": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField159",
+                    "designerId": "99406490-3c4c-4165-84c1-468652de047b"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "hideLabel": true,
+                        "itemId": "txtLoanProductName",
+                        "layout|colspan": 2,
+                        "size": 40
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hideLabel": "boolean",
+                        "margin": "auto",
+                        "width": "auto",
+                        "fieldStyle": "string",
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "size": "number"
+                    },
+                    "name": "MyTextField160",
+                    "designerId": "d64dac5a-28c6-4d50-97b6-2a765c1bfb9c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Loan No",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "itemId": "txtLoanNo",
+                        "labelWidth": 135
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "fieldStyle": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField480",
+                    "designerId": "0db15fcb-cf62-4c77-94f2-4a2521e3d732",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtLoanNoAfterRender",
+                                "implHandler": [
+                                    "component.getEl().on('dblclick', function(){",
+                                    "     var winPopup = Ext.create('MyApp.view.SelectLoanNoPopup',{",
+                                    "",
+                                    "        });",
+                                    "",
+                                    "        winPopup.extraParam={param:null};",
+                                    "        winPopup.show();",
+                                    "  });",
+                                    ""
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtLoanNoAfterRender",
+                            "designerId": "5e90143a-8f21-4ead-a45c-5b3bba863d2f"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtLoanNoChange",
+                                "implHandler": [
+                                    "Ext.Ajax.request({",
+                                    "            url: '../Handlers/Finance/Transaction/EditTransaction/CalLoanBalanceStatusHandler.ashx',",
+                                    "            params: {",
+                                    "                method:'GetCalLoanBalanceStatus',",
+                                    "                OfficeCode:getOfficeCode(),",
+                                    "                LoanNo:Ext.ComponentQuery.query('#txtLoanNo')[0].getValue(),",
+                                    "                RepayDate:Ext.ComponentQuery.query('#txtRepaymentDate')[0].getValue()",
+                                    "            },",
+                                    "            success: function ( response, request ) {",
+                                    "",
+                                    "                            var out=Ext.decode(response.responseText);",
+                                    "                            ",
+                                    "\t\t\t\t\t\t\tvar rec=out.root[0];",
+                                    "                            if(out.success===\"true\")",
+                                    "                                {",
+                                    "                                    Ext.ComponentQuery.query('#txtCurrentPrinciple')[0].setValue(rec.CurrPr_Amount);",
+                                    "                                    Ext.ComponentQuery.query('#txtPastPrinciple')[0].setValue(rec.PastPr_Amount);",
+                                    "                                    Ext.ComponentQuery.query('#txtPenaltyBalance')[0].setValue(rec.PenaltyBalance);",
+                                    "                                    Ext.ComponentQuery.query('#txtPrincipleBalance')[0].setValue(rec.PrcipalBalance);",
+                                    "                                    Ext.ComponentQuery.query('#txtInterestBalance')[0].setValue(rec.TerestBalance);",
+                                    "                                    Ext.ComponentQuery.query('#txtTotalBalance')[0].setValue(rec.TotalBalance);",
+                                    "                                    Ext.ComponentQuery.query('#txtInstallmentAmount')[0].setValue(rec.TotalStallment_Amount);",
+                                    "                                    Ext.ComponentQuery.query('#txtCurrentInterest')[0].setValue(rec.CurrT_Amount);",
+                                    "                                    Ext.ComponentQuery.query('#txtPastInterest')[0].setValue(rec.PastT_Amount);",
+                                    "                                    Ext.ComponentQuery.query('#txtPenaltyOnInterest')[0].setValue(rec.PenaltyAmount);",
+                                    "",
+                                    "\t\t\t\t\t\t\t\t}",
+                                    "                            else",
+                                    "                            {",
+                                    "                                msg(\"FAILURE\",out.message);",
+                                    "                            }",
+                                    "",
+                                    "            },",
+                                    "                            failure: function ( result, request )",
+                                    "                            {",
+                                    "",
+                                    "                                var out=Ext.decode(response.responseText);",
+                                    "                                msg(\"FAILURE\",out.message);",
+                                    "                            }",
+                                    "",
+                                    "});"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtLoanNoChange",
+                            "designerId": "c3d8d8c5-ddae-48d6-bed2-a5cd81cc1c71"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtMemberName",
+                        "size": 40
+                    },
+                    "configAlternates": {
+                        "fieldStyle": "string",
+                        "itemId": "string",
+                        "size": "number"
+                    },
+                    "name": "MyTextField6",
+                    "designerId": "23af70b5-319f-4f73-812a-572cafd7d59f"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Adjust Past Repayment",
+                        "itemId": "chkAdjustPastRepayment",
+                        "labelWidth": 140,
+                        "margin": "0 0 0 10"
+                    },
+                    "configAlternates": {
+                        "boxLabel": "string",
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyCheckbox9",
+                    "designerId": "64a0137c-510e-42fd-8442-e230c2cf6885"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Individual Repayment",
+                        "fieldStyle": "background-color:#DAEBE1;background-image:none;",
+                        "itemId": "txtLoanRepayment",
+                        "labelWidth": 135
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "fieldStyle": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField481",
+                    "designerId": "487f5252-0d0d-4fb0-bbaf-b06278266210",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtLoanRepaymentAfterRender",
+                                "implHandler": [
+                                    "component.getEl().on('dblclick', function(){",
+                                    "     var winPopup = Ext.create('MyApp.view.SelectCollectionSheetNo',{",
+                                    "",
+                                    "        });",
+                                    "",
+                                    "        winPopup.extraParam={param:null};",
+                                    "        winPopup.show();",
+                                    "  });",
+                                    ""
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtLoanRepaymentAfterRender",
+                            "designerId": "2136ac59-d089-404f-bf4d-52cbd768d575"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtRepaymentDate",
+                        "size": 40
+                    },
+                    "configAlternates": {
+                        "fieldStyle": "string",
+                        "itemId": "string",
+                        "size": "number"
+                    },
+                    "name": "MyTextField7",
+                    "designerId": "e6969793-edee-4a7d-b542-f1198c92487e"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Collection Sheet No",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtCollectionSheetNo",
+                        "labelWidth": 140,
+                        "margin": "0 0 0 10"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "margin": "auto",
+                        "width": "auto",
+                        "fieldStyle": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField161",
+                    "designerId": "841c1ef1-7568-4eed-89e4-0c566f2547c7"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|columns": null,
+                        "layout": "table",
+                        "layout|colspan": 3
+                    },
+                    "configAlternates": {
+                        "container|columns": "number",
+                        "layout": "string",
+                        "layout|colspan": "number"
+                    },
+                    "name": "MyContainer29",
+                    "designerId": "6aa2e7e5-76c5-4d74-8f4e-92d698823794",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": 10,
+                                "container|columns": 2,
+                                "frame": true,
+                                "layout": "table",
+                                "layout|colspan": 2,
+                                "title": "Due Balance (Before)"
+                            },
+                            "configAlternates": {
+                                "bodyPadding": "auto",
+                                "container|columns": "number",
+                                "frame": "boolean",
+                                "layout": "string",
+                                "layout|colspan": "number",
+                                "title": "string"
+                            },
+                            "name": "MyForm5",
+                            "designerId": "aef8842c-d97e-412c-9e5f-f9cae0b48f26",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Past Principle",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtPastPrinciple",
+                                        "labelWidth": 120
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField162",
+                                    "designerId": "c2f316b0-6f68-4a5c-b54d-4526a49932db"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Current Principle",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtCurrentPrinciple",
+                                        "labelWidth": 120,
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField163",
+                                    "designerId": "620bacf6-5ec9-4dc8-88ce-e3f2491c7d99"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Past Interest",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtPastInterest",
+                                        "labelWidth": 120
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField164",
+                                    "designerId": "64779fa4-2e23-403a-8fa4-2e47e7247a03"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Current Interest",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtCurrentInterest",
+                                        "labelWidth": 120,
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField165",
+                                    "designerId": "4a9cd7c6-ea86-49fd-871a-5386b6c7634b"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Penalty On Interest",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtPenaltyOnInterest",
+                                        "labelWidth": 120
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField166",
+                                    "designerId": "edec0f45-fb48-4930-8098-84b9f75b2f13"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Installment Amount",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtInstallmentAmount",
+                                        "labelWidth": 120,
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField167",
+                                    "designerId": "b163c1ee-9a4d-4d10-acc3-8b9f03c1996a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": 10,
+                                "container|columns": 2,
+                                "frame": true,
+                                "layout": "table",
+                                "layout|colspan": 0,
+                                "margin": "-27 0 0 0",
+                                "title": "Paid Balance (After)",
+                                "width": 553
+                            },
+                            "configAlternates": {
+                                "bodyPadding": "auto",
+                                "container|columns": "number",
+                                "frame": "boolean",
+                                "layout": "string",
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "title": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyForm7",
+                            "designerId": "05ec070c-94ef-40d2-adf2-9d9bd5839364",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Principle Balance",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtPrincipleBalance"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField168",
+                                    "designerId": "8f0b692b-9be9-45b2-a7b4-2756bea27b70"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Interest Balance",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtInterestBalance",
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField169",
+                                    "designerId": "35778953-9df8-4861-8b36-70fb276283f1"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Penalty Balance",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtPenaltyBalance"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField170",
+                                    "designerId": "707a995b-3ac4-4c5d-89bd-b49a26c1a539"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Total Balance",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtTotalBalance",
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField171",
+                                    "designerId": "dc248ba7-32ac-439c-8300-473cc6af21ba"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|columns": 3,
+                        "layout": "table",
+                        "layout|colspan": 3
+                    },
+                    "configAlternates": {
+                        "container|columns": "number",
+                        "layout": "string",
+                        "layout|colspan": "number"
+                    },
+                    "name": "MyContainer30",
+                    "designerId": "8bd50af5-cbc0-44fc-9b19-35ccd30c8ba1",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": 10,
+                                "container|columns": 4,
+                                "frame": true,
+                                "layout": "table",
+                                "layout|colspan": 3,
+                                "title": "Recevied Balance"
+                            },
+                            "configAlternates": {
+                                "bodyPadding": "auto",
+                                "container|columns": "number",
+                                "frame": "boolean",
+                                "layout": "string",
+                                "layout|colspan": "number",
+                                "title": "string"
+                            },
+                            "name": "MyForm8",
+                            "designerId": "8b279933-9129-438e-8008-e7dec3636859",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Principle Received",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtPrincipleReceived",
+                                        "labelWidth": 120
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField172",
+                                    "designerId": "8f025186-84b4-4ecf-84d3-778e5983fd4d"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Interest Received",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtInterestReceived",
+                                        "labelWidth": 120,
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField173",
+                                    "designerId": "2cd54e84-c890-4465-a941-05ccd06f1e1e"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Transfer From Saving",
+                                        "itemId": "chkTransferFromSaving",
+                                        "labelWidth": 130,
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "margin": "auto",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyCheckbox10",
+                                    "designerId": "578a3431-fff6-4a19-9383-cc148bdf290a"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Saving Account",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtSavingAccount",
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField174",
+                                    "designerId": "538aa27f-d765-4df7-8588-d3735c500413"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Penalty Received",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtPenaltyReceived",
+                                        "labelWidth": 120
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField175",
+                                    "designerId": "837a5656-8aae-4d0d-ba39-7d6a8edb0e65"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Total Received",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtTotalReceived",
+                                        "labelWidth": 120,
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField176",
+                                    "designerId": "26a2e72d-bde1-4a9c-84ee-81c41dbfe532"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Current Saving Balance",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtCurrentSavingBalance",
+                                        "labelWidth": 130,
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField177",
+                                    "designerId": "687f65d5-0df8-4982-8e16-327fb039bfa0"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Cheque No",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtChequeNo",
+                                        "margin": "0 0 0 10"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField178",
+                                    "designerId": "f12f0d77-7d3b-402d-a419-9789a446f958"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|columns": 3,
+                        "layout": "table",
+                        "layout|colspan": 3
+                    },
+                    "configAlternates": {
+                        "container|columns": "number",
+                        "layout": "string",
+                        "layout|colspan": "number"
+                    },
+                    "name": "MyContainer31",
+                    "designerId": "bcc5b8af-a020-4817-813f-869d8b9711c2",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": 10,
+                                "container|columns": 3,
+                                "frame": true,
+                                "layout": "table",
+                                "layout|colspan": 3,
+                                "title": "Adjust Amount",
+                                "width": 1149
+                            },
+                            "configAlternates": {
+                                "bodyPadding": "auto",
+                                "container|columns": "number",
+                                "frame": "boolean",
+                                "layout": "string",
+                                "layout|colspan": "number",
+                                "title": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyForm11",
+                            "designerId": "77031e3c-96bc-4b9b-8edb-d6a0042ef907",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Approved(Y/N)",
+                                        "itemId": "chkApproved",
+                                        "labelWidth": 120,
+                                        "layout|colspan": 3
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "layout|colspan": "number",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyCheckbox11",
+                                    "designerId": "d2871934-6008-4a76-9a27-b4c8a5a6509f"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Interest Amount",
+                                        "itemId": "txtInterestAmount",
+                                        "labelWidth": 120
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField179",
+                                    "designerId": "b7486be1-5863-457a-a780-f6c6d96fe3b1"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Principle Amount",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtPrincipleAmount",
+                                        "margin": "0 0 0 50"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField180",
+                                    "designerId": "d3f36e14-7f8c-4e0a-9ec8-0a916e48f2da"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Penalty Amount",
+                                        "itemId": "txtPenaltyAmount",
+                                        "margin": "0 0 0 50"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "margin": "auto",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField181",
+                                    "designerId": "fdad548b-7fa5-4c16-9ebf-c03bb8dcb50c"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Total Amount",
+                                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                                        "itemId": "txtTotalAmount",
+                                        "layout|colspan": 2,
+                                        "margin": "0 0 0 300"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|colspan": "number",
+                                        "margin": "auto",
+                                        "fieldStyle": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyTextField182",
+                                    "designerId": "aa63a05e-97a7-413c-ae59-8a59e6447d65"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "center",
+                        "height": 31,
+                        "layout": "hbox",
+                        "layout|colspan": 3,
+                        "margin": "10 0 0 0"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "layout": "string",
+                        "layout|colspan": "number",
+                        "margin": "auto",
+                        "height": "auto"
+                    },
+                    "name": "MyContainer32",
+                    "designerId": "6fdbd543-a5f9-44fb-bed4-f452138923cc",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnAdjustInterestPrincipal",
+                                "text": "Adjust Interest/Principal"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton23",
+                            "designerId": "e340e241-393e-4ca7-87e1-3d1cfab95df1",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnAdjustInterestPrincipalClick",
+                                        "implHandler": [
+                                            "var myForm=Ext.ComponentQuery.query('#frmMFMERepaymentAdjust')[0];",
+                                            "     ",
+                                            "var saveObj={",
+                                            "\tLoanNo:Ext.ComponentQuery.query('#hdnLoanNo')[0].getValue(),",
+                                            "\tRepaymentY_N:Ext.ComponentQuery.query('#chkAdjustPastRepayment')[0].getValue()?'Y':'N',",
+                                            "\tRepaymentNo:Ext.ComponentQuery.query('#txtLoanRepayment')[0].getValue(),",
+                                            "\tPaymentDate:myForm.PaymentDateAD,",
+                                            "\tCollectionSheet_No:Ext.ComponentQuery.query('#txtCollectionSheetNo')[0].getValue(),",
+                                            "\tInterestAmt:Ext.ComponentQuery.query('#txtInterestBalance')[0].getValue(),",
+                                            "\tPrincipalAmt:Ext.ComponentQuery.query('#txtPrincipleBalance')[0].getValue(),",
+                                            "\tPenaltyAmt:Ext.ComponentQuery.query('#txtPenaltyBalance')[0].getValue(),",
+                                            "\tNewInt_Amt:Ext.ComponentQuery.query('#txtInterestAmount')[0].getValue(),",
+                                            "\tNewPri_Amt:Ext.ComponentQuery.query('#txtPrincipleAmount')[0].getValue(),",
+                                            "\tNewPen_Amt:Ext.ComponentQuery.query('#txtPenaltyAmount')[0].getValue(),",
+                                            "\tCreatedBy:getCurrentUser(),",
+                                            "};",
+                                            "",
+                                            "var waitSave = watiMsg(\"Adjusting Interest/Principal..Please wait ...\");",
+                                            "        Ext.Ajax.request({",
+                                            "            url: '../Handlers/Finance/Transaction/LoanTransaction/AdjustLoanIntPriPenNewHandler.ashx',",
+                                            "            params: {",
+                                            "                method:'Save',",
+                                            "                adjustLoanIntPriPenNew:JSON.stringify(saveObj)",
+                                            "            },",
+                                            "            success: function ( response, request ) {",
+                                            "                         waitSave.hide();",
+                                            "                            var out=Ext.decode(response.responseText);",
+                                            "                            console.log(out);",
+                                            "",
+                                            "                            if(out.success===\"true\")",
+                                            "                                {",
+                                            "                                   msg(\"SUCCESS\",out.message);",
+                                            "",
+                                            "\t\t\t\t\t\t\t\t}",
+                                            "                                else",
+                                            "                                    {",
+                                            "                                        msg(\"FAILURE\",out.message);",
+                                            "                                    }",
+                                            "                            },",
+                                            "                            failure: function ( result, request ) {",
+                                            "                                waitSave.hide();",
+                                            "                                var out=Ext.decode(response.responseText);",
+                                            "                                msg(\"FAILURE\",out.message);",
+                                            "                            }",
+                                            "",
+                                            "        });"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnAdjustInterestPrincipalClick",
+                                    "designerId": "5661f72a-bfc4-4d22-80b5-9a6c8676ae8e"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmMFMERepaymentAdjustAfterRender",
+                        "implHandler": [
+                            "Ext.ComponentQuery.query('#txtFromDateBS')[0].setValue(getMisDateBS());",
+                            "Ext.ComponentQuery.query('#txtFromDateAD')[0].setValue(getMisDateAD());"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmMFMERepaymentAdjustAfterRender",
+                    "designerId": "f71858df-2fa0-49b0-acf4-e11e9957ed10"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "hidden": true,
+                        "itemId": "hdnLoanNo"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hidden": "boolean",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField482",
+                    "designerId": "bc99c855-efcc-4abb-8369-63aa94e4b09a"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "hidden": true,
+                        "itemId": "hdnRepaymentNo"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "hidden": "boolean",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField5",
+                    "designerId": "277da39f-5afa-40c8-8db4-8caf2884c7e8"
+                }
+            ]
+        }
+    ]
+}

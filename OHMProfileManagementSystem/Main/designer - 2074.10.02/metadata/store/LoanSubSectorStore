@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoanSubSectorStore",
+        "model": "LoanSubSector",
+        "storeId": "LoanSubSectorStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "fc703117-2f52-41bf-bd5c-14d7fb139180",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy15",
+            "designerId": "b81b2b04-2a44-4e2a-b1b5-6652ac29e1c1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader15",
+                    "designerId": "82909f1f-ee72-404c-81a6-fa16f08224f8"
+                }
+            ]
+        }
+    ]
+}

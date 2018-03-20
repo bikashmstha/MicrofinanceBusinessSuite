@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SavingAccountWithdrawDetailStore",
+        "model": "SavingAccountWithdrawDetail",
+        "storeId": "SavingAccountWithdrawDetailStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "f0b165db-0463-4d56-b788-6cb7bf9b0341",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy35",
+            "designerId": "64c0e503-b818-45bb-b372-042c2bab26c0",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader35",
+                    "designerId": "ce133956-d76e-4344-8983-1636180d0e30"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,93 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Office",
+        "models": [
+            "Office"
+        ],
+        "stores": [
+            "Office"
+        ],
+        "views": [
+            "Office"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "models": "typedarray",
+        "stores": "typedarray",
+        "views": "typedarray"
+    },
+    "designerId": "2caf65b1-f752-4c4d-a699-20f08056ff77",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#grdOffice",
+                "designer|targetType": "Ext.grid.Panel",
+                "fn": "onGrdOfficeItemClick",
+                "implHandler": [
+                    "console.log(\"record\", record.data);\r",
+                    "\r",
+                    "Ext.ComponentQuery.query('#txtOfficeCode')[0].setValue(record.data.OfficeCode);\r",
+                    "//Ext.ComponentQuery.query('#txtOfficeNameNp')[0].setValue(record.data.OfficeNameNepali);\r",
+                    "\r",
+                    "Ext.ComponentQuery.query('#txtOfficeNameEn')[0].setValue(record.data.OfficeNameEnglish);\r",
+                    "\r",
+                    ""
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onGrdOfficeItemClick",
+            "designerId": "917a84cd-ff05-44e1-856b-887fe27bfec0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#Office",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onOfficeAfterRender",
+                "implHandler": [
+                    "strOffice = Ext.getStore(\"Office\");\r",
+                    "strOffice.load();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "designer|controlQuery": "string",
+                "designer|targetType": "view",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onOfficeAfterRender",
+            "designerId": "4abd4ea5-c93d-44bb-8ea0-f4f200ad31b0"
+        }
+    ]
+}

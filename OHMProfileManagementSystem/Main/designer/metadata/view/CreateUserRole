@@ -1,0 +1,1818 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CreateUserRole",
+        "frame": true,
+        "height": 1000,
+        "title": "Create/Drop User and Role"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "height": "auto"
+    },
+    "name": "MyPanel",
+    "designerId": "90d3134a-585c-48c7-8bb2-28f78a9540c2",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0
+            },
+            "configAlternates": {
+                "activeTab": "auto"
+            },
+            "name": "MyTabPanel",
+            "designerId": "a6647f9f-871e-4ba8-8edc-d5c087334b19",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Create Drop Role"
+                    },
+                    "configAlternates": {
+                        "title": "string"
+                    },
+                    "name": "MyPanel1",
+                    "designerId": "91c95b1c-4c12-4ddf-9541-e92ecc062e5d",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig",
+                            "designerId": "10b3b2ae-a36c-4cec-81ab-f2a8e2a9978c",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTabAfterRender",
+                                        "implHandler": [
+                                            "var store=Ext.getStore('RoleStore');",
+                                            "store.removeAll();",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/Security/RoleHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'Get'",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "",
+                                            "    var data=Ext.decode(response.responseText);",
+                                            "    store.removeAll();",
+                                            "    store.add(data.root);",
+                                            "",
+                                            "",
+                                            "}",
+                                            "});",
+                                            "",
+                                            "var ModuleStore=Ext.getStore('ModuleShortStore');",
+                                            "ModuleStore.removeAll();",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/GeneralMasterParameters/Menu/ModuleHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'GetModuleShort'",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "",
+                                            "    var data=Ext.decode(response.responseText);",
+                                            "    ModuleStore.removeAll();",
+                                            "    ModuleStore.add(data.root);",
+                                            "",
+                                            "",
+                                            "}",
+                                            "});"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onTabAfterRender",
+                                    "designerId": "a3315a9c-09ab-4532-bdb7-5ed981c7ce4e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "grdRoles",
+                                "store": "RoleStore",
+                                "title": "Role"
+                            },
+                            "configAlternates": {
+                                "title": "string",
+                                "itemId": "string",
+                                "store": "store"
+                            },
+                            "name": "MyGridPanel1",
+                            "designerId": "63cef89b-4d21-4b2d-845b-1a55a37ccdad",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView1",
+                                    "designerId": "a4c280ea-fb8c-434e-8278-9680a16a7658"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "RoleCode",
+                                        "text": "Role Code"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn92",
+                                    "designerId": "ecf3a2ba-eafd-4426-a0ae-d1629555a95f",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtT1RoleCode"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField91",
+                                            "designerId": "20356178-9ea2-46bf-99f0-c7355bd45ba8"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "RoleDesc",
+                                        "text": "Role Description",
+                                        "width": 199
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn95",
+                                    "designerId": "7b1325fc-df95-435a-962a-279d318cc7c1",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtT1RoleDesc"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField143",
+                                            "designerId": "56d3892f-1404-4d87-a027-ab1b91c07a16"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "DefaultModule",
+                                        "text": "Module",
+                                        "width": 222
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn96",
+                                    "designerId": "281a804f-5f6f-4f06-9837-015bfcad60a6",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "displayField": "ModuleDesc",
+                                                "forceSelection": true,
+                                                "itemId": "ddlModule",
+                                                "queryMode": "local",
+                                                "store": "ModuleShortStore",
+                                                "valueField": "ModuleId"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string",
+                                                "displayField": "datafield",
+                                                "forceSelection": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield"
+                                            },
+                                            "name": "MyComboBox21",
+                                            "designerId": "fcf301b4-6653-43d6-b7ca-6d715bfc58a9"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Action",
+                                        "text": "Action"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn97",
+                                    "designerId": "518777d0-6fbe-4f83-9de2-f2d2fed05894",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "txtAction"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string"
+                                            },
+                                            "name": "MyTextField145",
+                                            "designerId": "04109454-d82b-47cc-ba0e-1f68b8ee2fb4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Action",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/cancel.png",
+                                        "itemId": "delRole"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyActionColumn14",
+                                    "designerId": "e419ab0b-2899-477b-9df9-e8ad06cfcbaf",
+                                    "cn": [
+                                        {
+                                            "type": "actioncolumnitem",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "icon": "../ITS/resources/images/icons/cancel.png"
+                                            },
+                                            "configAlternates": {
+                                                "icon": "string"
+                                            },
+                                            "name": "MyActionColumnItem14",
+                                            "designerId": "79b0502e-71ee-4302-9afb-62c03669ba9a",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "view",
+                                                            "rowIndex",
+                                                            "colIndex",
+                                                            "item",
+                                                            "e",
+                                                            "record",
+                                                            "row"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var store = Ext.getStore('RoleStore');",
+                                                            "var grd =  Ext.ComponentQuery.query('#grdRoles')[0];",
+                                                            "var row = store.getAt(rowIndex).data;",
+                                                            "",
+                                                            "Ext.Msg.confirm('Confirm Action', 'Do you want to Remove the selected Role ?', function(btn) {",
+                                                            "    if(btn == 'yes'){",
+                                                            "",
+                                                            "        /*",
+                                                            "        nepaliDateConversion.FiscalYear, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_MONTH_CODE\", nepaliDateConversion.MonthCode, OracleDbType.Int16, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_ENGLISH_START_DATE\", nepaliDateConversion.EnglishStartDate, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_NEPALI_START_DATE\", nepaliDateConversion.NepaliStartDate, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_ENGLISH_END_DATE\", nepaliDateConversion.EnglishEndDate, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_NEPALI_END_DATE\", nepaliDateConversion.NepaliEndDate, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_NEPALI_YEAR\", nepaliDateConversion.NepaliYear, OracleDbType.Int16, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_NEPALI_PERIOD\", nepaliDateConversion.NepaliPeriod, OracleDbType.Int16, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_NO_OF_DAYS_IN_MONTH\", nepaliDateConversion.NoOfDays, OracleDbType.Int16, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_CREATED_MODIFIED_ON\", nepaliDateConversion.CreatedOn, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_CREATED_MODIFIED_BY\", nepaliDateConversion.CreatedBy, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_INSERT_UPDATE\", nepaliDateConversion.Action, OracleDbType.Varchar2, ParameterDirection.Input));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_OUT_RESULT_CODE\", null, OracleDbType.Varchar2, ParameterDirection.Output));",
+                                                            "            paramList.Add(SqlHelper.GetOraParam(\":P_OUT_RESULT_DESC\", null, OracleDbType.",
+                                                            "            */",
+                                                            "        var rec={RoleCode:row.RoleCode,",
+                                                            "         RoleDesc:row.RoleDescription,",
+                                                            "         //CategoryInitial:'',",
+                                                            "         DefaultModule:row.DefaultModule,",
+                                                            "         Action:row.Action};",
+                                                            "",
+                                                            "        var wMsg='Deleting....';",
+                                                            "",
+                                                            "        var waitSave = watiMsg(wMsg);",
+                                                            "",
+                                                            "        Ext.Ajax.request({",
+                                                            "                    url: '../Handlers/Security/RoleHandler.ashx',",
+                                                            "                    params: {",
+                                                            "                        method:'Save',",
+                                                            "                        accountCategory:JSON.stringify(rec)",
+                                                            "                    },",
+                                                            "                    success: function(response){",
+                                                            "                    waitSave.hide();",
+                                                            "                    var out=Ext.decode(response.responseText);",
+                                                            "                    console.log(out);",
+                                                            "",
+                                                            "                    if(out.success===\"true\")",
+                                                            "                        {",
+                                                            "                            var message=out.root;",
+                                                            "                            if(message.OutResultCode===\"SUCCESS\")",
+                                                            "                                {",
+                                                            "                                    msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                            "                                        grd.bindStore(store);",
+                                                            "                                        store.removeAt(rowIndex);",
+                                                            "                                    });",
+                                                            "",
+                                                            "",
+                                                            "",
+                                                            "                                }",
+                                                            "                            else",
+                                                            "                                {",
+                                                            "                                  msg(\"FAILURE\",message.OutResultMessage);",
+                                                            "                                }",
+                                                            "                        }",
+                                                            "                        else",
+                                                            "                            {",
+                                                            "                                msg(\"FAILURE\",out.message);",
+                                                            "                            }",
+                                                            "                    },",
+                                                            "                    failure: function ( result, request ) {",
+                                                            "                        waitSave.hide();",
+                                                            "                        var out=Ext.decode(response.responseText);",
+                                                            "                        msg(\"FAILURE\",out.message);",
+                                                            "                    }",
+                                                            "",
+                                                            "                });",
+                                                            "",
+                                                            "",
+                                                            "",
+                                                            "        return true;",
+                                                            "    }",
+                                                            "});"
+                                                        ]
+                                                    },
+                                                    "configAlternates": {
+                                                        "designer|params": "typedarray",
+                                                        "fn": "string",
+                                                        "implHandler": "code"
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "ee9a7bdf-7741-4372-bf9a-b31ca085c5cb"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.RowEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.RowEditing",
+                                    "name": "MyRowEditingPlugin14",
+                                    "designerId": "43a6ecaa-7e8c-434f-a1ed-bfbfecd2ad41",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onRowEditingValidateedit",
+                                                "implHandler": [
+                                                    "var errMsg='';",
+                                                    "var roleCode=Ext.ComponentQuery.query('#txtT1RoleCode')[0];",
+                                                    "var roleDescription=Ext.ComponentQuery.query('#txtT1RoleDesc')[0];",
+                                                    "var defaultModule=Ext.ComponentQuery.query('#ddlModule')[0];",
+                                                    "var action=Ext.ComponentQuery.query('#txtAction')[0];",
+                                                    "",
+                                                    "if(roleCode.getValue()===null ||roleCode.getValue()===\"\")",
+                                                    "    {",
+                                                    "        errMsg+=\"Please,Enter Role Code.\";",
+                                                    "    }",
+                                                    "if(roleDescription.getValue()===null ||roleDescription.getValue()===\"\")",
+                                                    "    {",
+                                                    "        errMsg+=\"Please,Enter Role Description.\";",
+                                                    "    }",
+                                                    "if(defaultModule.getValue()===null ||defaultModule.getValue()===\"\")",
+                                                    "    {",
+                                                    "        errMsg+=\"Please,Please, Select Module.\";",
+                                                    "    }",
+                                                    "",
+                                                    "if(errMsg!=='')",
+                                                    "    {",
+                                                    "        msg(\"WARNING\",errMsg);",
+                                                    "        return;",
+                                                    "    }",
+                                                    "/*",
+                                                    "p_category_no                               IN           NUMBER,",
+                                                    "                                 p_category_desc                             IN           VARCHAR2,",
+                                                    "                                 p_category_initial                          IN           VARCHAR2,",
+                                                    "                                 p_tran_office_code                          IN           VARCHAR2,       */",
+                                                    "",
+                                                    "var rec={RoleCode:roleCode.getValue(),",
+                                                    "         RoleDesc:roleDescription.getValue(),",
+                                                    "         //CategoryInitial:'',:'Y',",
+                                                    "         TransferExceedAmountYN:'Y',",
+                                                    "         DefaultModule:defaultModule.getValue(),",
+                                                    "         Action:action.getValue()};",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "var wMsg='';",
+                                                    "if(action.getValue()==='I')",
+                                                    "    {",
+                                                    "        wMsg='Inserting....';",
+                                                    "    }",
+                                                    "else",
+                                                    "    {",
+                                                    "        wMsg='Updting....';",
+                                                    "    }",
+                                                    "var waitSave = watiMsg(wMsg);",
+                                                    "",
+                                                    "Ext.Ajax.request({",
+                                                    "            url: '../Handlers/Security/RoleHandler.ashx',",
+                                                    "            params: {",
+                                                    "                method:'Save',",
+                                                    "                role:JSON.stringify(rec)",
+                                                    "            },",
+                                                    "            success: function(response){",
+                                                    "            waitSave.hide();",
+                                                    "            var out=Ext.decode(response.responseText);",
+                                                    "            console.log(out);",
+                                                    "",
+                                                    "            if(out.success===\"true\")",
+                                                    "                {",
+                                                    "                    var message=out.root;",
+                                                    "                    if(message.OutResultCode===\"SUCCESS\")",
+                                                    "                        {",
+                                                    "                            msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                                    "                                var grd = Ext.ComponentQuery.query('#grdRoles')[0];",
+                                                    "",
+                                                    "                                var record = grd.getSelectionModel().getSelection()[0];",
+                                                    "                                record.set('Action','U');",
+                                                    "",
+                                                    "                            });",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "                        }",
+                                                    "                    else",
+                                                    "                        {",
+                                                    "                          msg(\"FAILURE\",message.OutResultMessage);",
+                                                    "                        }",
+                                                    "                }",
+                                                    "                else",
+                                                    "                    {",
+                                                    "                        msg(\"FAILURE\",out.message);",
+                                                    "                    }",
+                                                    "            },",
+                                                    "            failure: function ( result, request ) {",
+                                                    "                waitSave.hide();",
+                                                    "                var out=Ext.decode(response.responseText);",
+                                                    "                msg(\"FAILURE\",out.message);",
+                                                    "            }",
+                                                    "",
+                                                    "        });",
+                                                    ""
+                                                ],
+                                                "name": "validateedit",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "onRowEditingValidateedit",
+                                            "designerId": "0213a226-25ed-4744-8356-03458fc76823"
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onRowEditingCanceledit",
+                                                "name": "canceledit",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onRowEditingCanceledit",
+                                            "designerId": "47e912e7-b405-48cb-bd8d-328f08132a0b"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top"
+                                    },
+                                    "configAlternates": {
+                                        "dock": "string"
+                                    },
+                                    "name": "MyToolbar14",
+                                    "designerId": "22009448-e8b3-4db4-aa4a-4bd38752d5a3",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "btnAddRole",
+                                                "layout|flex": null,
+                                                "text": "Add Role"
+                                            },
+                                            "configAlternates": {
+                                                "itemId": "string",
+                                                "layout|flex": "number",
+                                                "text": "string"
+                                            },
+                                            "name": "MyButton26",
+                                            "designerId": "0175ce60-e60b-4433-9783-d2e07819ef9f",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnAddRoleClick",
+                                                        "implHandler": [
+                                                            "",
+                                                            "var store =Ext.getStore('RoleStore');",
+                                                            "var rec={RoleCode:'',",
+                                                            "         RoleDesc:'',",
+                                                            "         CategoryInitial:'',",
+                                                            "         DefaultModule:'',",
+                                                            "         Action:'I'};",
+                                                            "store.add(rec);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnAddRoleClick",
+                                                    "designerId": "31c50ff1-ea56-4d4b-817b-2976804270b2"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGrdRolesBeforeRender",
+                                        "implHandler": [
+                                            "var grid = Ext.ComponentQuery.query('#grdRoles')[0];",
+                                            "",
+                                            "        grid.columns[2].renderer = function(value, metaData, record, rowIndex, colIndex, store, view) {",
+                                            "            var temp=\"\";   ",
+                                            "",
+                                            "",
+                                            "            var items=Ext.getStore('ModuleShortStore').data.items;",
+                                            "",
+                                            "console.log('value',value);",
+                                            "            for(var i=0;i<items.length;i++)",
+                                            "            {",
+                                            "",
+                                            "                if(items[i].data.ModuleId==value)",
+                                            "                {",
+                                            "                    temp=items[i].data.ModuleDesc;",
+                                            "                    break;",
+                                            "                }       ",
+                                            "            }",
+                                            "",
+                                            "",
+                                            "            return temp;",
+                                            "        };"
+                                        ],
+                                        "name": "beforerender",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onGrdRolesBeforeRender",
+                                    "designerId": "7b4e2980-e2d6-4a14-bbd2-700b4f420bfa"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayInfo": true,
+                                "dock": "bottom",
+                                "width": 360
+                            },
+                            "configAlternates": {
+                                "displayInfo": "boolean",
+                                "dock": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyPagingToolbar",
+                            "designerId": "3bb27046-92f7-4903-baf7-b666a9727c7b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|columns": 3,
+                        "frame": true,
+                        "layout": "table",
+                        "title": "Create Drop User"
+                    },
+                    "configAlternates": {
+                        "container|columns": "number",
+                        "frame": "boolean",
+                        "layout": "string",
+                        "title": "string"
+                    },
+                    "name": "MyPanel2",
+                    "designerId": "ad8a1576-a3c6-475c-87d1-a1da89dcbf44",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig1",
+                            "designerId": "376fcf29-168b-4405-ae6c-31c6d1257847",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTabClick",
+                                        "implHandler": [
+                                            "var store=Ext.getStore('OfficeShortStore');",
+                                            "store.removeAll();",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '../Handlers/GeneralMasterParameters/Office/OfficeHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'GetOfficeShort'",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "",
+                                            "    var data=Ext.decode(response.responseText);",
+                                            "    store.removeAll();",
+                                            "    store.add(data.root);",
+                                            "",
+                                            "",
+                                            "}",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "onTabClick",
+                                    "designerId": "cc7a04e5-108c-4adf-a2df-c84417e5cba1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "DD-MM-YYYY",
+                                "fieldLabel": "Create Date(B.S.):",
+                                "itemId": "txtCreatedDateBS",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number",
+                                "emptyText": "string"
+                            },
+                            "name": "MyTextField1",
+                            "designerId": "4e018fe3-3a90-4b11-abd1-d26284b01926"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "DD-MON-YYYY",
+                                "fieldLabel": "(A.D.):",
+                                "itemId": "txtCreatedDateAD",
+                                "labelAlign": "right",
+                                "labelWidth": 170,
+                                "layout|colspan": 3
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number",
+                                "emptyText": "string"
+                            },
+                            "name": "MyTextField2",
+                            "designerId": "55e2d9cc-681a-42ad-883a-029577e88795"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Emp Id:",
+                                "itemId": "txtEmpId",
+                                "labelAlign": "right",
+                                "labelWidth": 185
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField13",
+                            "designerId": "ce928d7e-7032-41e6-8f9e-000ba88bdfc6"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "",
+                                "itemId": "txtIEmpName"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField14",
+                            "designerId": "5b3a4979-eded-4c0f-a105-fe5b38e956eb"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "User Status:",
+                                "itemId": "ddlUserStatus",
+                                "labelAlign": "right",
+                                "labelWidth": 170
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyComboBox",
+                            "designerId": "1ef4386a-e0cc-4bf2-b83e-86d8e5fc486f"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "OfficeName",
+                                "emptyText": "- - - Select - - - ",
+                                "fieldLabel": "Office Code",
+                                "forceSelection": true,
+                                "itemId": "ddlOfficeCode",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 3,
+                                "maxWidth": 500,
+                                "queryMode": "local",
+                                "store": "OfficeShortStore",
+                                "valueField": "OfficeCode",
+                                "width": 492
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "displayField": "datafield",
+                                "emptyText": "string",
+                                "forceSelection": "boolean",
+                                "maxWidth": "number",
+                                "queryMode": "string",
+                                "store": "store",
+                                "valueField": "datafield",
+                                "width": "auto"
+                            },
+                            "name": "MyComboBox20",
+                            "designerId": "59ce548e-cc11-4131-b4c0-a67c303e9108"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Role Code:",
+                                "itemId": "txtRoleCode",
+                                "labelAlign": "right",
+                                "labelWidth": 185
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField17",
+                            "designerId": "e5635663-4023-4974-85f5-3d34aee41c0e"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "",
+                                "itemId": "txtRoleDesc",
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField18",
+                            "designerId": "7700ca9a-44eb-4fb0-9f70-73ba5c74463f"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "User Code:",
+                                "itemId": "txtUserCode",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField19",
+                            "designerId": "56bf1efd-8971-4298-a8e8-a81243d90a72"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "User Name:",
+                                "itemId": "txtUserName",
+                                "labelAlign": "right",
+                                "labelWidth": 170
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField20",
+                            "designerId": "87664a9b-7cf1-472d-8dcc-db561be43406"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Password:",
+                                "itemId": "txtPassword",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 3
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField21",
+                            "designerId": "740ab5e7-adfd-4271-b746-0fb035ae8226"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Force Password Change in days:",
+                                "hideTrigger": true,
+                                "itemId": "txtForcePasswordChangeInDays",
+                                "keyNavEnabled": false,
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 2,
+                                "mouseWheelEnabled": false
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number",
+                                "hideTrigger": "boolean",
+                                "keyNavEnabled": "boolean",
+                                "mouseWheelEnabled": "boolean"
+                            },
+                            "name": "MyNumberField11",
+                            "designerId": "21e8bafa-6647-4d1c-b7aa-a3c49b7dbee2"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Maximum Approval Amount:",
+                                "hideTrigger": true,
+                                "itemId": "txtMaximumApprovalAmount",
+                                "keyNavEnabled": false,
+                                "labelAlign": "right",
+                                "labelWidth": 170,
+                                "mouseWheelEnabled": false
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number",
+                                "hideTrigger": "boolean",
+                                "keyNavEnabled": "boolean",
+                                "mouseWheelEnabled": "boolean"
+                            },
+                            "name": "MyNumberField12",
+                            "designerId": "ee11a425-1a43-4179-af83-6e1c794dbac9"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "DD-MM-YYYY",
+                                "fieldLabel": "Password Remainder Date (B.S.):",
+                                "itemId": "txtPasswordRemainderDateBS",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number",
+                                "emptyText": "string"
+                            },
+                            "name": "MyTextField24",
+                            "designerId": "60dd3279-e9f2-4d57-b1a3-d75b1ffb7b10"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "DD-MON-YYYY",
+                                "fieldLabel": "(A.D.):",
+                                "itemId": "txtPasswordRemainderDateAD",
+                                "labelAlign": "right",
+                                "labelWidth": 170
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number",
+                                "emptyText": "string"
+                            },
+                            "name": "MyTextField25",
+                            "designerId": "ad6120e6-4ea4-4b7b-a8e0-538e6af66614"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "DD-MM-YYYY",
+                                "fieldLabel": "Last Login Date:",
+                                "itemId": "txtLastLoginDate",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number",
+                                "emptyText": "string"
+                            },
+                            "name": "MyTextField26",
+                            "designerId": "e4cd526a-60f9-4347-8231-2d59c61f71cd"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "DD-MON-YYYY",
+                                "fieldLabel": "Last Login Failed:",
+                                "itemId": "txtLastLoginFailed",
+                                "labelAlign": "right",
+                                "labelWidth": 170
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number",
+                                "emptyText": "string"
+                            },
+                            "name": "MyTextField27",
+                            "designerId": "e2762a57-69cd-4857-b30e-66a76d93d16d"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Maximum Inactive Days:",
+                                "hideTrigger": true,
+                                "itemId": "txtMaximumInactiveDays",
+                                "keyNavEnabled": false,
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 2,
+                                "mouseWheelEnabled": false
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number",
+                                "hideTrigger": "boolean",
+                                "keyNavEnabled": "boolean",
+                                "mouseWheelEnabled": "boolean"
+                            },
+                            "name": "MyNumberField13",
+                            "designerId": "798ec0dd-1968-4889-905e-7298124cc4d4"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Failed Login Attempt:",
+                                "hideTrigger": true,
+                                "itemId": "txtFailedLoginAttempt",
+                                "keyNavEnabled": false,
+                                "labelAlign": "right",
+                                "labelWidth": 170,
+                                "mouseWheelEnabled": false
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number",
+                                "hideTrigger": "boolean",
+                                "keyNavEnabled": "boolean",
+                                "mouseWheelEnabled": "boolean"
+                            },
+                            "name": "MyNumberField14",
+                            "designerId": "9db0b9eb-9c4a-4b07-b8d5-009cfe281ec2"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Manage Other Offices:",
+                                "itemId": "chkManageOtherOffice",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyCheckbox",
+                            "designerId": "d32306c7-5b4e-42f6-86c8-388b30cda2e0"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Activate Other Office User:",
+                                "itemId": "chkActivateOtherOfficeuser",
+                                "labelAlign": "right",
+                                "labelWidth": 170
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyCheckbox1",
+                            "designerId": "c9ad6905-1228-40e9-9474-5be6d1c99c02"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Manage Own Branch:",
+                                "itemId": "chkManageOwnBranch",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyCheckbox2",
+                            "designerId": "47c96977-54a8-4b4f-a6d5-8209d54c3061"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Activate Users:",
+                                "itemId": "chkActivateUser",
+                                "labelAlign": "right",
+                                "labelWidth": 170
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyCheckbox3",
+                            "designerId": "d52d13c3-ea7a-4fd5-99a7-f553be7955b3"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Is Validate:",
+                                "itemId": "chkIsValidate",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 3
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyCheckbox4",
+                            "designerId": "ad023995-8923-4145-b0c2-4dd823e4ab8e"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Login Start Time:",
+                                "itemId": "txtLoginStartTime",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField30",
+                            "designerId": "cb22a025-c50a-4d5f-b076-dd02bb8b5dfd"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Login End Time:",
+                                "itemId": "txtLoginEndTime",
+                                "labelAlign": "right",
+                                "labelWidth": 170
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField31",
+                            "designerId": "14c4b759-5eaa-4573-8312-fe4875bd648b"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "First Time Login:",
+                                "itemId": "chkFirstTimeLogin",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyCheckbox5",
+                            "designerId": "3b26dbb9-948f-437f-9f31-4b5ba0f1b26e"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Is On Leave:",
+                                "itemId": "chkIsOnLeave",
+                                "labelAlign": "right",
+                                "labelWidth": 170
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyCheckbox6",
+                            "designerId": "f64e78b0-ce74-48c5-88e5-091e63e59ca5"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Created From (Office):",
+                                "itemId": "txtCreatedFromOffice",
+                                "labelAlign": "right",
+                                "labelWidth": 185,
+                                "layout|colspan": 2
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|colspan": "number",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField32",
+                            "designerId": "36ea758c-065d-45d7-820b-0156b9313204"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Modified From (Office):",
+                                "itemId": "txtModifiedFromOffice",
+                                "labelAlign": "right",
+                                "labelWidth": 170
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField33",
+                            "designerId": "3c546e40-9e43-4894-9fa0-cd171f1de0bf"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Office Group:",
+                                "itemId": "txtOfficeGroupCode",
+                                "labelAlign": "right",
+                                "labelWidth": 185
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyTextField34",
+                            "designerId": "13b0608e-78a5-4b93-b249-3e5adb43e9dd"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "",
+                                "itemId": "txtOfficeGroupDesc"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField35",
+                            "designerId": "c343d9b0-29da-458e-b0a8-7b924ef0c23e"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Allow Multiple Login:",
+                                "itemId": "chkMultipleLogin",
+                                "labelAlign": "right",
+                                "labelWidth": 170
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "itemId": "string",
+                                "labelAlign": "string",
+                                "labelWidth": "number"
+                            },
+                            "name": "MyCheckbox7",
+                            "designerId": "f1a5dc43-ba53-42d6-a714-1595a6e72138"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "configAlternates": {
+                                "container|align": "string",
+                                "layout": "string"
+                            },
+                            "name": "MyContainer",
+                            "designerId": "d8248e55-1fee-455a-81c9-85d10e04e6c8",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "btnCreateUser",
+                                        "padding": 5,
+                                        "text": "Create User"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "text": "string",
+                                        "itemId": "string",
+                                        "padding": "auto"
+                                    },
+                                    "name": "MyButton",
+                                    "designerId": "6127ca0b-218c-4f6b-b1b2-047c6cc91115",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBtnCreateUserClick",
+                                                "implHandler": [
+                                                    "var userCode=Ext.ComponentQuery.query('#txtUserCode')[0];",
+                                                    "var userName=Ext.ComponentQuery.query('#txtUserName')[0];",
+                                                    "var password=Ext.ComponentQuery.query('#txtPassword')[0];",
+                                                    "var roleCode=Ext.ComponentQuery.query('#txtRoleCode')[0];",
+                                                    "var maxConnect=1;//Ext.ComponentQuery.query('#txtCreatedDateBS')[0];",
+                                                    "",
+                                                    "var connectFlag=1;//Ext.ComponentQuery.query('#txtCreatedDateBS')[0];",
+                                                    "var maxApprovalAmount=Ext.ComponentQuery.query('#txtMaximumApprovalAmount')[0];",
+                                                    "//var officeCreation=Ext.ComponentQuery.query('#txtCreatedDateBS')[0];",
+                                                    "var officeCode=Ext.ComponentQuery.query('#ddlOfficeCode')[0];",
+                                                    "//var gmtOffset=Ext.ComponentQuery.query('#txtCreatedDateBS')[0];",
+                                                    "",
+                                                    "//var loggedIn=Ext.ComponentQuery.query('#txtCreatedDateBS')[0];",
+                                                    "var forcePwdChangeInDays=Ext.ComponentQuery.query('#txtForcePasswordChangeInDays')[0];",
+                                                    "var pwdReminderDate=Ext.ComponentQuery.query('#txtPasswordRemainderDateAD')[0];",
+                                                    "var lastLoginDate=Ext.ComponentQuery.query('#txtLastLoginDate')[0];",
+                                                    "var maxInactiveDays=Ext.ComponentQuery.query('#txtMaximumInactiveDays')[0];",
+                                                    "",
+                                                    "//var lastPwdChangeDate=Ext.ComponentQuery.query('#txtCreatedDateBS')[0];",
+                                                    "//var isRemoteUser=Ext.ComponentQuery.query('#txtCreatedDateBS')[0];",
+                                                    "var failedLoginDate=Ext.ComponentQuery.query('#txtLastLoginFailed')[0];",
+                                                    "var noOfFailedLoginAttempts=Ext.ComponentQuery.query('#txtFailedLoginAttempt')[0];",
+                                                    "var manageOtherOfficeUsers=Ext.ComponentQuery.query('#chkManageOtherOffice')[0];",
+                                                    "",
+                                                    "var activateOtherOfficeUsers=Ext.ComponentQuery.query('#chkActivateOtherOfficeuser')[0];",
+                                                    "var manageOwnBranchUsers=Ext.ComponentQuery.query('#chkManageOwnBranch')[0];",
+                                                    "var activateUsers=Ext.ComponentQuery.query('#chkActivateUser')[0];",
+                                                    "var isValidated=Ext.ComponentQuery.query('#chkIsValidate')[0];",
+                                                    "var loginStartTime=Ext.ComponentQuery.query('#txtLoginStartTime')[0];",
+                                                    "",
+                                                    "var loginEndTime=Ext.ComponentQuery.query('#txtLoginEndTime')[0];",
+                                                    "var firstTimeLogin=Ext.ComponentQuery.query('#chkFirstTimeLogin')[0];",
+                                                    "var userStatus=Ext.ComponentQuery.query('#ddlUserStatus')[0];",
+                                                    "var empId=Ext.ComponentQuery.query('#txtEmpId')[0];",
+                                                    "var isOnLeave=Ext.ComponentQuery.query('#chkIsOnLeave')[0];",
+                                                    "",
+                                                    "var creTranOfficeCode=Ext.ComponentQuery.query('#txtCreatedFromOffice')[0];",
+                                                    "//var createdBy=Ext.ComponentQuery.query('#txtCreatedDateBS')[0];",
+                                                    "var modTranOfficeCode=Ext.ComponentQuery.query('#txtModifiedFromOffice')[0];",
+                                                    "//var modifiedBy=Ext.ComponentQuery.query('#txtCreatedDateBS')[0];",
+                                                    "//var createdOn=Ext.ComponentQuery.query('#txtCreatedDateBS')[0];",
+                                                    "",
+                                                    "//var modifiedOn=Ext.ComponentQuery.query('#txtCreatedDateBS')[0];",
+                                                    "var tranOfficeGrpCode=Ext.ComponentQuery.query('#txtOfficeGroupCode')[0];",
+                                                    "var allowMultipleLogin=Ext.ComponentQuery.query('#chkMultipleLogin')[0];",
+                                                    "",
+                                                    "",
+                                                    "var User ={",
+                                                    "                UserCode : userCode.getValue(),",
+                                                    "                UserName : userName.getValue(),",
+                                                    "                Password : password.getValue(),",
+                                                    "                RoleCode : roleCode.getValue(),",
+                                                    "                //MaxConnect : maxConnect.getValue(),",
+                                                    "",
+                                                    "                //ConnectFlag : connectFlag,",
+                                                    "                MaxApprovalAmount : maxApprovalAmount.getValue(),",
+                                                    "                //OfficeCreation : officeCreation,",
+                                                    "                OfficeCode : officeCode.getValue(),",
+                                                    "                //GmtOffset : gmtOffset,",
+                                                    "",
+                                                    "                //LoggedIn : loggedIn,",
+                                                    "                ForcePwdChangeInDays : forcePwdChangeInDays.getValue(),",
+                                                    "                PwdReminderDate : pwdReminderDate.getValue(),",
+                                                    "                LastLoginDate : lastLoginDate.getValue(),",
+                                                    "                MaxInactiveDays : maxInactiveDays.getValue(),",
+                                                    "",
+                                                    "                //LastPwdChangeDate : lastPwdChangeDate,",
+                                                    "                //IsRemoteUser : isRemoteUser,",
+                                                    "                FailedLoginDate : failedLoginDate.getValue(),",
+                                                    "                NoOfFailedLoginAttempts : noOfFailedLoginAttempts.getValue(),",
+                                                    "                ManageOtherOfficeUsers : manageOtherOfficeUsers.getValue(),",
+                                                    "",
+                                                    "                ActivateOtherOfficeUsers : activateOtherOfficeUsers.getValue(),",
+                                                    "                ManageOwnBranchUsers : manageOwnBranchUsers.getValue(),",
+                                                    "                ActivateUsers : activateUsers.getValue(),",
+                                                    "                IsValidated : isValidated.getValue(),",
+                                                    "                LoginStartTime : loginStartTime.getValue(),",
+                                                    "",
+                                                    "                LoginEndTime : loginEndTime.getValue(),",
+                                                    "                FirstTimeLogin : firstTimeLogin.getValue(),",
+                                                    "                UserStatus : userStatus.getValue(),",
+                                                    "                EmpId : empId.getValue(),",
+                                                    "                IsOnLeave : isOnLeave.getValue(),",
+                                                    "",
+                                                    "                CreTranOfficeCode : creTranOfficeCode.getValue(),",
+                                                    "                //CreatedBy : createdBy,",
+                                                    "                ModTranOfficeCode : modTranOfficeCode.getValue(),",
+                                                    "                //ModifiedBy : modifiedBy,",
+                                                    "                //CreatedOn : createdOn,",
+                                                    "",
+                                                    "                //ModifiedOn : modifiedOn,",
+                                                    "                TranOfficeGrpCode : tranOfficeGrpCode.getValue(),",
+                                                    "                AllowMultipleLogin : allowMultipleLogin.getValue()",
+                                                    "};",
+                                                    "",
+                                                    "var waitSave = watiMsg('Please wait ...');",
+                                                    "Ext.Ajax.request({",
+                                                    "     url:'../Handlers/Security/UserHandler.ashx',",
+                                                    "     params:{method:'Save',user:JSON.stringify(User)},",
+                                                    "     success: function ( result, request ) {",
+                                                    "     waitSave.hide();",
+                                                    "",
+                                                    "     var obj = Ext.decode(result.responseText);",
+                                                    "",
+                                                    "        if(out.success==='true'){",
+                                                    "            msg('SUCCESS',out.message,function(){",
+                                                    "                var grd = Ext.ComponentQuery.query('#grdUser')[0];",
+                                                    "                var record = grd.getSelectionModel().getSelection()[0];",
+                                                    "                record.set('Action','U');",
+                                                    "            });",
+                                                    "        }",
+                                                    "          else{",
+                                                    "              msg('FAILURE',out.message);",
+                                                    "          }",
+                                                    "     },",
+                                                    "     failure: function(form, action) {",
+                                                    "        waitSave.hide();",
+                                                    "         var out=Ext.decode(response.responseText);",
+                                                    "         msg('FAILURE',out.message);",
+                                                    "     }",
+                                                    "});"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onBtnCreateUserClick",
+                                            "designerId": "bd4ea116-edf2-4330-b8d2-e6250fd409ae"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

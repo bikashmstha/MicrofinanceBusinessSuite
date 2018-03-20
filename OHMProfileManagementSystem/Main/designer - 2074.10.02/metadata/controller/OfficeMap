@@ -1,0 +1,107 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OfficeMap",
+        "stores": [
+            "OfficeMapStore",
+            "OfficeMapGroupSearchStore",
+            "OfficeMapCodeSearchStore"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "stores": "typedarray"
+    },
+    "name": "MyController",
+    "designerId": "63e30de7-a278-406b-a44e-d6260523fddf",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnInsertOfficeGroup",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton8",
+                "fn": "onBtnInsertOfficeGroupClick",
+                "implHandler": [
+                    "var strMsgCode='';",
+                    "var strMsgDesc='';",
+                    "",
+                    "var officeCode=Ext.ComponentQuery.query('#ddlOffice')[0];",
+                    "var officeGrpCode=Ext.ComponentQuery.query('#ddlOfficeGroup')[0];",
+                    "var createdBy='demo';",
+                    "var createdOn='12/12/2017';",
+                    "var resultCode='';",
+                    "var resultMsg='';",
+                    "",
+                    "",
+                    "var officeMap={",
+                    "",
+                    "    OfficeCode :officeCode.getValue(),",
+                    "    OfficeGrpCode :officeGrpCode.getValue(),",
+                    "    CreatedBy :createdBy,",
+                    "    CreatedDate :createdOn,",
+                    "    Action :'I',",
+                    "",
+                    "};",
+                    "",
+                    "var waitSave = watiMsg(\"Saving Office .Please wait ...\");",
+                    "Ext.Ajax.request({",
+                    "     url: '../Handlers/GeneralMasterParameters/Office/OfficeMapHandler.ashx',",
+                    "     params:{method:'Save',officeMap:JSON.stringify(officeMap)},",
+                    "     success: function ( response, request ) {",
+                    "                 waitSave.hide();",
+                    "                    var out=Ext.decode(response.responseText);",
+                    "                    console.log(out);",
+                    "",
+                    "                    if(out.success===\"true\")",
+                    "                        {",
+                    "                           msg(\"SUCCESS\",out.message);",
+                    "                           var store=Ext.getStore('OfficeMapStore');",
+                    "                           ",
+                    "                      }",
+                    "                        else",
+                    "                            {",
+                    "                                msg(\"FAILURE\",out.message);",
+                    "                            }",
+                    "                    },",
+                    "                    failure: function ( result, request ) {",
+                    "                        waitSave.hide();",
+                    "                        var out=Ext.decode(response.responseText);",
+                    "                        msg(\"FAILURE\",out.message);",
+                    "                    }",
+                    "",
+                    "",
+                    "",
+                    "        });"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onBtnInsertOfficeGroupClick",
+            "designerId": "52adf883-33cb-420f-9556-c2733bb620f6"
+        }
+    ]
+}

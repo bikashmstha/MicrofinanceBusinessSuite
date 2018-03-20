@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "FiscalYearShortStore",
+        "model": "FiscalYearShort",
+        "storeId": "FiscalYearShortStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "1d4ff879-2a11-4f54-8ebb-7837e878b729",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy25",
+            "designerId": "2f4ceb3d-e7da-4104-a881-acb16a91778c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader25",
+                    "designerId": "3708f6af-e293-4a91-a5b4-eeba1b0fa29f"
+                }
+            ]
+        }
+    ]
+}

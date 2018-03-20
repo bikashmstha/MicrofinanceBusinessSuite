@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ModuleShortStore",
+        "model": "ModuleShort",
+        "storeId": "ModuleShortStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "a2df029e-0e47-4cc5-8b68-b45b024b5bf3",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy24",
+            "designerId": "6a77b4a7-2375-4fd7-97e5-b707f0fa55c3",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader24",
+                    "designerId": "1fe50bb2-0828-43a1-8ae1-9ef833d9ed02"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,259 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectMemberAccountForCheque",
+        "height": 500,
+        "itemId": "SelectMemberAccountForCheque",
+        "maximizable": true,
+        "minimizable": true,
+        "modal": true,
+        "resizable": [
+            "false"
+        ],
+        "title": "Member Account For Cheque",
+        "width": 700,
+        "y": 80
+    },
+    "configAlternates": {
+        "autoScroll": "boolean",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "maximizable": "boolean",
+        "minimizable": "boolean",
+        "modal": "boolean",
+        "resizable": "object",
+        "title": "string",
+        "width": "auto",
+        "y": "number",
+        "itemId": "string"
+    },
+    "name": "MyWindow",
+    "designerId": "89299ff3-c63f-4efd-9d3d-c890af17ba89",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyContainer69",
+            "designerId": "3ac8141a-be0a-4bfa-bd78-4cb4abdb3aa1",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnMemberAcForCheque",
+                        "padding": 5,
+                        "text": "Search"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "padding": "auto",
+                        "text": "string"
+                    },
+                    "name": "MyButton51",
+                    "designerId": "4d7d8a45-2552-4468-92da-efdbb8b74147",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnMemberAcForChequeClick",
+                                "implHandler": [
+                                    "var offCode=Ext.ComponentQuery.query('#ddlOffice')[0].getValue();",
+                                    "var clientNo=Ext.ComponentQuery.query('#txtMemberCode')[0].getValue();",
+                                    "",
+                                    "var store=Ext.getStore('SelectMemberAccountForChequeStore');",
+                                    "store.removeAll();",
+                                    "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                                    "Ext.Ajax.request({",
+                                    "    url: '../Handlers/Finance/Transaction/SavingTransaction/ClientSavingAccountHandler.ashx',",
+                                    "    params: {",
+                                    "        method:'GetMemberAccountForCheque',",
+                                    "        offCode:offCode,",
+                                    "        clientNo:clientNo",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "",
+                                    "        var data=Ext.decode(response.responseText);",
+                                    "        store.removeAll();",
+                                    "        store.add(data.root);",
+                                    "",
+                                    "        waitSave.hide();",
+                                    "",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnMemberAcForChequeClick",
+                            "designerId": "8c20d7bb-7f31-4120-9f4f-1024d019ae25"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyContainer70",
+            "designerId": "fe5bef74-7ca1-42d6-bf64-0af1ba55c8e7",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdMemberAccounts",
+                        "store": "SelectMemberAccountForChequeStore",
+                        "title": "Member Accounts"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "store": "store",
+                        "title": "string"
+                    },
+                    "name": "MyGridPanel17",
+                    "designerId": "76a47c34-adb9-4d32-a0d2-26d4d058c70e",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView17",
+                            "designerId": "6419244a-3c3d-401f-b12d-eba278ef624e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "AccountNo",
+                                "text": "Account No",
+                                "width": 177
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn127",
+                            "designerId": "916f2cdf-df23-4f6a-8cbe-67553e06f6dd"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SavingAccountNo",
+                                "text": "Saving Account No",
+                                "width": 190
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn129",
+                            "designerId": "d49de044-255c-4fd1-ab1f-68551bc79bb0"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel14",
+                            "designerId": "1e046ff2-1be2-49cd-adeb-42d2a4f8a913",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "    if(btn === 'yes'){",
+                                            "        console.log('record',record);",
+                                            "",
+                                            "        Ext.ComponentQuery.query('#txtAccountNo')[0].setValue(record.data.AccountNo);",
+                                            "        //Ext.ComponentQuery.query('#txtMemberName')[0].setValue(record.data.ClientName);",
+                                            "",
+                                            "",
+                                            "        // return true;",
+                                            "    }",
+                                            "    else",
+                                            "    {",
+                                            "",
+                                            "    }",
+                                            "    var v=Ext.ComponentQuery.query('#SelectMemberAccountForCheque')[0];",
+                                            "",
+                                            "    v.close();",
+                                            "});"
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "0ec409ba-c908-4cde-af90-3b7be3c366d7"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

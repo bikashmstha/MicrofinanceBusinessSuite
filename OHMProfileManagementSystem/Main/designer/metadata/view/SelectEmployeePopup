@@ -1,0 +1,491 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectEmployeePopup",
+        "height": 500,
+        "itemId": "SelectEmployeePopup",
+        "title": "Select Employee",
+        "width": 1000
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string",
+        "autoScroll": "boolean",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "SelectPublicSavingDepositAccountNumberPopup1",
+    "designerId": "785fb65f-86de-46b8-baf6-2e995895d1e9",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "frame": true,
+                "itemId": "frmSelectEmployeePopup"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "frame": "boolean",
+                "title": "string",
+                "itemId": "string",
+                "autoScroll": "boolean"
+            },
+            "name": "MyForm2",
+            "designerId": "7266555f-ef39-4858-8ad5-06eeef7a8af9",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "table"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "cdd7a465-2c77-4c80-9217-5182b45a1dba",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Employee Name",
+                                "itemId": "txtSearchEmployee"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField55",
+                            "designerId": "cfa790cc-62a7-4c15-9a84-45bdf4ccfd80"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnSearchEmployee",
+                                "layout|colspan": 2,
+                                "margin": "0 0 0 5",
+                                "text": "Search"
+                            },
+                            "configAlternates": {
+                                "layout|colspan": "number",
+                                "margin": "auto",
+                                "text": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "54cb273d-724c-446d-b61d-9fb3cc3f473e",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSearchEmployeeClick",
+                                        "implHandler": [
+                                            "var employeeName=Ext.ComponentQuery.query('#txtSearchEmployee')[0].getValue();",
+                                            "",
+                                            "var waitSave = watiMsg(\"Searching..Please wait ...\");",
+                                            "    Ext.Ajax.request({",
+                                            "    url: '../Handlers/Finance/Transaction/StaffLoanTransaction/EmployeeKycEmployeeHandler.ashx',",
+                                            "    params: {",
+                                            "        method:'GetEmpKycEmp',",
+                                            "        OfficeCode:getOfficeCode(),",
+                                            "        EmpName:employeeName",
+                                            "",
+                                            "",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "",
+                                            "",
+                                            "        var obj = Ext.decode(response.responseText);",
+                                            "",
+                                            "",
+                                            "",
+                                            "        if(obj.success === \"true\")",
+                                            "        {",
+                                            "            ",
+                                            "            var store=Ext.getStore('EmployeeSearchStore');",
+                                            "            store.removeAll();",
+                                            "            store.add(obj.root);",
+                                            "",
+                                            "",
+                                            "        }",
+                                            "        else",
+                                            "        {",
+                                            "            ",
+                                            "            msg(\"FAILURE\",obj.message);",
+                                            "        }",
+                                            "        waitSave.hide();",
+                                            "        ",
+                                            "    },",
+                                            "        failure: function(response){",
+                                            "                        waitSave.hide();",
+                                            "            ",
+                                            "",
+                                            "        }",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSearchEmployeeClick",
+                                    "designerId": "a78ca703-4c5a-4dc5-bc4a-d96b44642406"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdSearchEmployee",
+                        "store": "EmployeeSearchStore",
+                        "title": ""
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "width": "auto",
+                        "itemId": "string",
+                        "store": "store"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "508f4d67-36c7-477c-97b7-3ddea915a8e2",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "cf63a111-3720-4edb-a439-8e702147b275"
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "name": "MyRowSelectionModel4",
+                            "designerId": "4d31b3f9-d585-4fd7-aa04-66ea39f947eb",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowModelBeforeSelect",
+                                        "implHandler": [
+                                            "Ext.MessageBox.confirm('Select', 'Are you sure ?', function(btn){",
+                                            "",
+                                            "   if(btn === 'yes'){",
+                                            "       console.log('record',record);",
+                                            "",
+                                            "       Ext.ComponentQuery.query('#txtEmpID')[0].setValue(record.data.EmpId);",
+                                            "       Ext.ComponentQuery.query('#txtEmpName')[0].setValue(record.data.EmpName);",
+                                            "       Ext.ComponentQuery.query('#txtFirstName')[0].setValue(record.data.Fname);",
+                                            "       Ext.ComponentQuery.query('#txtLastName')[0].setValue(record.data.Lname);",
+                                            "       if(record.data.Married==='Y')",
+                                            "       {",
+                                            "           Ext.ComponentQuery.query('#ddlMartialStatus')[0].setValue('M');",
+                                            "       }",
+                                            "       else{",
+                                            "           Ext.ComponentQuery.query('#ddlMartialStatus')[0].setValue('U');",
+                                            "       }",
+                                            "",
+                                            "       Ext.ComponentQuery.query('#txtPostalAddress')[0].setValue(record.data.PermanentAddress);",
+                                            "       Ext.ComponentQuery.query('#txtSpouseName')[0].setValue(record.data.SpouseName);",
+                                            "       Ext.ComponentQuery.query('#txtFatherName')[0].setValue(record.data.FatherName);",
+                                            "       Ext.ComponentQuery.query('#txtAddress')[0].setValue(record.data.TemporaryAddress);",
+                                            "       Ext.ComponentQuery.query('#txtDOBAD')[0].setValue(record.data.Dob);",
+                                            "       Ext.ComponentQuery.query('#hdnGender')[0].setValue(record.data.Gender);",
+                                            "",
+                                            "",
+                                            "",
+                                            "      // return true;",
+                                            "   }",
+                                            "   else",
+                                            "   {",
+                                            "",
+                                            "   }",
+                                            "    var v=Ext.ComponentQuery.query('#SelectEmployeePopup')[0];",
+                                            "",
+                                            "    v.close();",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "beforeselect",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onRowModelBeforeSelect",
+                                    "designerId": "af01fecb-4bea-466f-8952-71f739042258"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "EmpId",
+                                "text": "Employee Id"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn188",
+                            "designerId": "e7ad8c2b-0a03-4c63-af66-a4045aceea82"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Fname",
+                                "text": "First Name"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn190",
+                            "designerId": "23202557-d125-4fa5-9484-81cf8979e29c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Lname",
+                                "text": "Last Name"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn192",
+                            "designerId": "26713238-d6dd-4cef-bfaf-11b8b7169958"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "PermanentAddress",
+                                "text": "Permanent Address",
+                                "width": 146
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn198",
+                            "designerId": "6512ba72-27b5-4bf7-bb4f-7c1f2a9aa706"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "TemporaryAddress",
+                                "text": "Temporary Address"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn203",
+                            "designerId": "470fb92a-daba-4b08-a6f4-d9e18c96a86e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "FatherName",
+                                "text": "Father's Name"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn201",
+                            "designerId": "a2c9c98b-1ca7-4b92-8e53-c1913bdc329d"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SpouseName",
+                                "text": "Spouse's Name"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn199",
+                            "designerId": "325c5535-9d7f-481c-b2f6-718e194d28c6"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Dob",
+                                "text": "DOB"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn204",
+                            "designerId": "b00f033a-e9f2-4c69-b76c-2043e9b9b01e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Married",
+                                "text": "Married"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn196",
+                            "designerId": "a441ff61-7234-425a-9a7e-4e5d0e7783cf"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Gender",
+                                "text": "Gender"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn205",
+                            "designerId": "12607d50-ec41-4c75-bb97-59a173ff03b8"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFrmSelectEmployeePopupAfterRender",
+                        "implHandler": [
+                            "var store=Ext.getStore('EmployeeSearchStore');",
+                            "store.removeAll();"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFrmSelectEmployeePopupAfterRender",
+                    "designerId": "57dc2e73-f572-4f81-8696-9d9fc3fed2e2"
+                }
+            ]
+        }
+    ]
+}

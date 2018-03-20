@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EmployeeDepartmentStore",
+        "model": "Department",
+        "storeId": "EmployeeDepartmentStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "DepartmentStore1",
+    "designerId": "6e222abc-f90b-4d2a-9c02-d67fd7493013",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy26",
+            "designerId": "6b549148-47d5-4f6b-8d29-1c3314425ba1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader26",
+                    "designerId": "aed5fa24-7c6a-49e5-997f-f3f2458f7ba0"
+                }
+            ]
+        }
+    ]
+}

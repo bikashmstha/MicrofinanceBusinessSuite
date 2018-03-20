@@ -1,0 +1,243 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|columns": 2,
+        "designer|userClassName": "FiscalYearRegenerate",
+        "frame": true,
+        "layout": "table",
+        "title": "Fiscal Year Re-Generate"
+    },
+    "configAlternates": {
+        "container|columns": "number",
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "5882da90-e19c-4d41-9731-84fa91215e76",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Current Fiscal Year",
+                "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                "itemId": "txtCurrentFiscalYear",
+                "labelWidth": 130,
+                "margin": "20 0 0 50"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "fieldStyle": "string",
+                "labelWidth": "number",
+                "margin": "auto",
+                "itemId": "string"
+            },
+            "name": "MyTextField18",
+            "designerId": "22c72534-e482-4819-b9d7-021012c5f7d5"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Previous Fiscal Year",
+                "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                "itemId": "txtPreviousFiscalYear",
+                "labelWidth": 130,
+                "margin": "20 0 0 50"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "fieldStyle": "string",
+                "labelWidth": "number",
+                "margin": "auto",
+                "itemId": "string"
+            },
+            "name": "MyTextField19",
+            "designerId": "28c4f7ad-83dc-4114-974b-ca5907e5fd4f"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "center",
+                "height": 28,
+                "layout": "hbox",
+                "layout|colspan": 2,
+                "margin": "30 0 0 0"
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "container|pack": "string",
+                "layout": "string",
+                "layout|colspan": "number",
+                "margin": "auto",
+                "height": "auto"
+            },
+            "name": "MyContainer11",
+            "designerId": "e059fee6-f1cb-4505-925b-c2e2a4fdd7c4",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnRegenerate",
+                        "padding": 5,
+                        "text": "Re-Generate"
+                    },
+                    "configAlternates": {
+                        "text": "string",
+                        "itemId": "string",
+                        "padding": "auto"
+                    },
+                    "name": "MyButton7",
+                    "designerId": "904a9272-6dfd-4518-9cf5-ec567e71fc73",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnRegenerateClick",
+                                "implHandler": [
+                                    "var currentFiscalYear=Ext.ComponentQuery.query('#txtCurrentFiscalYear')[0];",
+                                    "var previousFiscalYear=Ext.ComponentQuery.query('#txtCurrentFiscalYear')[0];",
+                                    "",
+                                    "var errMsg='';",
+                                    "if(currentFiscalYear.getValue()===null ||currentFiscalYear.getValue()===\"\")",
+                                    "    {",
+                                    "        errMsg+=\"Please,Enter Current Fiscal Year\";",
+                                    "    }",
+                                    "if(previousFiscalYear.getValue()===null ||previousFiscalYear.getValue()===\"\")",
+                                    "    {",
+                                    "        errMsg+=\"Please,Enter Previous Fiscal Year\";",
+                                    "    }",
+                                    "if(errMsg!=='')",
+                                    "    {",
+                                    "        msg(\"WARNING\",errMsg);",
+                                    "        return;",
+                                    "    }",
+                                    "",
+                                    "Ext.Msg.confirm('Confirm Action', 'Do you want to Re-generate Fiscal Year ?', function(btn) {",
+                                    "    if(btn == 'yes'){",
+                                    "",
+                                    "         var objRegenerateFiscalYearClosing={",
+                                    "         OfficeCode:getOfficeCode(),",
+                                    "         NewFiscalYear:currentFiscalYear.getValue(),",
+                                    "         OldFiscalYear:previousFiscalYear.getValue()};",
+                                    "",
+                                    "        var wMsg='Deleting....';",
+                                    "",
+                                    "        var waitSave = watiMsg(wMsg);",
+                                    "",
+                                    "        Ext.Ajax.request({",
+                                    "                    url: '../Handlers/Finance/AccountTransaction/RegenerateFiscalYearClosingHandler.ashx',",
+                                    "                    params: {",
+                                    "                        method:'SaveRegenerateFiscalYearClosing',",
+                                    "                        regenerateFiscalYearClosing:JSON.stringify(objRegenerateFiscalYearClosing)",
+                                    "                    },",
+                                    "                    success: function(response){",
+                                    "                    waitSave.hide();",
+                                    "                    var out=Ext.decode(response.responseText);",
+                                    "                    console.log(out);",
+                                    "",
+                                    "                    if(out.success===\"true\")",
+                                    "                        {",
+                                    "                            var message=out.root;",
+                                    "",
+                                    "                            msg(\"SUCCESS\",message.OutResultMessage,function(){",
+                                    "",
+                                    "                            });",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "                        }",
+                                    "                        else",
+                                    "                            {",
+                                    "                                msg(\"FAILURE\",out.message);",
+                                    "                            }",
+                                    "                    },",
+                                    "                    failure: function ( result, request ) {",
+                                    "                        waitSave.hide();",
+                                    "                        var out=Ext.decode(response.responseText);",
+                                    "                        msg(\"FAILURE\",out.message);",
+                                    "                    }",
+                                    "",
+                                    "                });",
+                                    "",
+                                    "",
+                                    "",
+                                    "        return true;",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnRegenerateClick",
+                            "designerId": "9289bb19-73f2-4ead-a296-5562846ec382"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#txtCurrentFiscalYear')[0].setValue(getFiscalYear());",
+                    "Ext.ComponentQuery.query('#txtPreviousFiscalYear')[0].setValue('');"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "75b09ad4-2cf9-4351-9ce7-ad04fec3842c"
+        }
+    ]
+}

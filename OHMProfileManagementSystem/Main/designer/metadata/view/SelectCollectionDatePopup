@@ -1,0 +1,151 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userClassName": "SelectCollectionDatePopup",
+        "height": 500,
+        "itemId": "SelectCollectionDatePopup",
+        "modal": true,
+        "title": "Select Collection Date",
+        "width": 300
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string",
+        "itemId": "string",
+        "autoScroll": "boolean",
+        "height": "auto",
+        "width": "auto",
+        "modal": "boolean"
+    },
+    "name": "SelectMemberPopup1",
+    "designerId": "db0f0973-8490-4940-80e6-c7712c768645",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "grdSelectCollectionDate",
+                "store": "CollectionDateStore",
+                "title": "",
+                "width": ""
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "title": "string",
+                "width": "auto",
+                "store": "store"
+            },
+            "name": "MyGridPanel",
+            "designerId": "96c58981-de77-4869-8a5f-95566e5d83a1",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView",
+                    "designerId": "df7cc0cc-4517-47e0-927f-4a1ab21f2a0d"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "CollectionDateBs",
+                        "text": "Collection Date BS",
+                        "width": 113
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn246",
+                    "designerId": "09999ea3-9029-45a2-ab01-80051430c048"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "CollectionDateAd",
+                        "text": "Collection Date AD",
+                        "width": 112
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn241",
+                    "designerId": "498f0fcb-c7a2-40b4-8969-0587e86dd5a7"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSelectCollectionDatePopupAfterRender",
+                "implHandler": [
+                    "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                    "Ext.Ajax.request({",
+                    "    url: '../Handlers/Finance/Processing/CollectionOfflineDateHandler.ashx',",
+                    "    params: {",
+                    "        method:'GetCollectionOfflineDate',OfficeCode:getOfficeCode()",
+                    "    },",
+                    "    success: function ( result, request ) {",
+                    "",
+                    "        var obj = Ext.decode(result.responseText);",
+                    "        if(obj.success === 'true'){",
+                    "            console.log(\"Resu\",obj.root);",
+                    "",
+                    "            var store =Ext.getStore('CollectionDateStore');",
+                    "            store.removeAll();",
+                    "            store.add(obj.root);",
+                    "            waitSave.hide();",
+                    "",
+                    "",
+                    "        }else{msg('FAILURE','Could Not Load Data');waitSave.hide();}",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "        msg(\"FAILURE\",\"Could Not Load Data\");  waitSave.hide();  }",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onSelectCollectionDatePopupAfterRender",
+            "designerId": "43962710-1b58-4596-abba-310ec90fc9f1"
+        }
+    ]
+}

@@ -1,0 +1,462 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TransferCenterGroupOfMember",
+        "stores": [
+            "SearchMemberStore",
+            "SearchGroupStore",
+            "SearchCenterStore",
+            "SearchCenterGroupStore"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "stores": "typedarray"
+    },
+    "name": "MyController",
+    "designerId": "44a5bf2f-9b69-44d6-8159-ccbbaf80c3db",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlGrpOldMemberNo",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox22",
+                "fn": "onDdlGrpOldMemberNoAfterRender",
+                "implHandler": [
+                    "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                    "Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Maintenance/MemberHandler.ashx',",
+                    "            params:{method:'GetMemberLovList',offCode:Ext.get('offCode').dom.innerHTML, centerCode:null, memberName:null",
+                    "},",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    var store =Ext.getStore('SearchMemberStore');",
+                    "                    store.removeAll();",
+                    "                    store.add(obj.root);",
+                    "",
+                    "",
+                    "                }else{msg('FAILURE','Could Not Load Data');}",
+                    "                waitSave.hide();",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Could Not Load Data\");  waitSave.hide();  }",
+                    "        });",
+                    "",
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlGrpOldMemberNoAfterRender",
+            "designerId": "0df8bb96-0ab5-4eeb-b3d8-514419ff910e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlGrpOldMemberNo",
+                "designer|params": [
+                    "combo",
+                    "records",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox22",
+                "fn": "onDdlGrpOldMemberNoSelect",
+                "implHandler": [
+                    "//console.log(\"combo\",combo);",
+                    "console.log(\"records\",records[0].data.GroupCode);",
+                    "//console.log(\"eOpts\",eOpts);",
+                    "",
+                    "Ext.ComponentQuery.query('#txtGrpOldGroupName')[0].setValue(records[0].data.GroupDesc);",
+                    "Ext.ComponentQuery.query('#txtGrpOldCenterName')[0].setValue(records[0].data.CenterName);",
+                    "Ext.ComponentQuery.query('#txtGrpNewCenterName')[0].setValue(records[0].data.CenterName);",
+                    "//Ext.ComponentQuery.query('#txtGrpOldGroupName')[0].setValue();",
+                    "Ext.ComponentQuery.query('#TCGMtab1')[0].ClientNo=records[0].data.ClientNo;",
+                    "Ext.ComponentQuery.query('#TCGMtab1')[0].GroupCode=records[0].data.GroupCode;",
+                    "",
+                    "//records[0].data.ClientNo;=;",
+                    "",
+                    "Ext.ComponentQuery.query('#ddlGrpNewGroupName')[0].enable();",
+                    "",
+                    "Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Maintenance/GroupHandler.ashx',",
+                    "            params:{method:'GetGroupTransfer',centerCode:records[0].data.CenterCode, groupCode:records[0].data.GroupCode",
+                    "},",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    var store =Ext.getStore('SearchGroupStore');",
+                    "                    store.removeAll();",
+                    "                    store.add(obj.root);",
+                    "",
+                    "",
+                    "                }else{msg('FAILURE','Could Not Load Data');}",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                    "        });",
+                    "",
+                    ""
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlGrpOldMemberNoSelect",
+            "designerId": "53d809da-dc13-436b-baa5-e804ea4da189"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnCenterTransfer",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton1",
+                "fn": "onBtnCenterTransferClick",
+                "implHandler": [
+                    "var obj={",
+                    "\t\tClientNo: Ext.ComponentQuery.query('#TCGMtab2')[0].ClientNo,",
+                    "\t\tOldGroupCode:Ext.ComponentQuery.query('#TCGMtab2')[0].GroupCode,",
+                    "\t\tNewGroupCode: Ext.ComponentQuery.query('#ddlCenNewGroupName')[0].getValue(),",
+                    "\t\tCenterCode: Ext.ComponentQuery.query('#ddlCenNewCenterName')[0].getValue(),",
+                    "\t\tUserName:getCurrentUser(),",
+                    "\t\tTranOfficeCode:getOfficeCode()",
+                    "",
+                    "",
+                    "",
+                    "};",
+                    "Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Transaction/MemberTransaction/TransferCenterToAnotherCenterHandler.ashx',",
+                    "            params:{method:'Save',TransferCenterToAnotherCenter:JSON.stringify(obj)",
+                    "},",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    msg(\"SUCCESS\",\"Client Transfer completed successfully.\");",
+                    "                    Ext.ComponentQuery.query('#txtCenNewMemberNo')[0].setValue(obj.root);",
+                    "",
+                    "",
+                    "",
+                    "                }else{msg('FAILURE','Client Transfer Failed');}",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Client Transfer Failed\");    }",
+                    "        });",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onBtnCenterTransferClick",
+            "designerId": "9e1f16c4-efd5-4b95-b4a9-a142f053c819"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlCenNewCenterName",
+                "designer|params": [
+                    "combo",
+                    "records",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox1",
+                "fn": "onDdlCenNewCenterNameSelect",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#ddlCenNewGroupName')[0].enable();",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Maintenance/GroupHandler.ashx',",
+                    "            params:{method:'GetGroupForCenterTransfer',centerCode:records[0].data.CenterCode, groupName:null",
+                    "},",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    var store =Ext.getStore('SearchCenterGroupStore');",
+                    "                    store.removeAll();",
+                    "                    store.add(obj.root);",
+                    "",
+                    "",
+                    "",
+                    "                }else{msg('FAILURE','Could Not Load Data');}",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                    "        });"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlCenNewCenterNameSelect",
+            "designerId": "67892950-58c0-4356-a60a-f8d49a11ab0c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlCenOldMemberNo",
+                "designer|params": [
+                    "combo",
+                    "records",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox",
+                "fn": "onDdlCenOldMemberNoSelect",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#txtCenOldGroupName')[0].setValue(records[0].data.GroupDesc);",
+                    "Ext.ComponentQuery.query('#txtCenOldCenterName')[0].setValue(records[0].data.CenterName);",
+                    "",
+                    "Ext.ComponentQuery.query('#ddlCenNewCenterName')[0].enable();",
+                    "",
+                    "Ext.ComponentQuery.query('#TCGMtab2')[0].ClientNo=records[0].data.ClientNo;",
+                    "Ext.ComponentQuery.query('#TCGMtab2')[0].GroupCode=records[0].data.GroupCode;",
+                    "",
+                    "",
+                    "",
+                    "var centerlovObj ={",
+                    "    InstituteCode:Ext.get('offCode').dom.innerHTML ,",
+                    "    CenterName: null,",
+                    "    CenterCode:records[0].data.CenterCode",
+                    "};",
+                    "",
+                    "Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Maintenance/CenterLovHandler.ashx',",
+                    "            params:{method:'GetTransferLovList',centerlov:JSON.stringify(centerlovObj)",
+                    "},",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    var store =Ext.getStore('SearchCenterStore');",
+                    "                    store.removeAll();",
+                    "                    store.add(obj.root);",
+                    "",
+                    "",
+                    "                }else{msg('FAILURE','Could Not Load Data');}",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Could Not Load Data\");    }",
+                    "        });",
+                    "",
+                    ""
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlCenOldMemberNoSelect",
+            "designerId": "129c5172-90b1-423c-8185-f97577ae5d96"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#ddlCenOldMemberNo",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox",
+                "fn": "onDdlCenOldMemberNoAfterRender",
+                "implHandler": [
+                    "var waitSave = watiMsg('Loading Data. Please wait ...');",
+                    "Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Maintenance/MemberHandler.ashx',",
+                    "            params:{method:'GetMemberLovList',offCode:Ext.get('offCode').dom.innerHTML, centerCode:null, memberName:null",
+                    "},",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    var store =Ext.getStore('SearchMemberStore');",
+                    "                    store.removeAll();",
+                    "                    store.add(obj.root);",
+                    "",
+                    "",
+                    "                }else{msg('FAILURE','Could Not Load Data');}",
+                    "                waitSave.hide();",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Could Not Load Data\");  waitSave.hide();  }",
+                    "        });",
+                    "",
+                    "",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onDdlCenOldMemberNoAfterRender",
+            "designerId": "3be44cf9-96ec-45fe-83ac-fdf3d4c1fb03"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnGroupTransfer",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton1",
+                "fn": "onBtnGroupTransferClick",
+                "implHandler": [
+                    "  var obj={",
+                    "\t\t\t\tClientNo:Ext.ComponentQuery.query('#TCGMtab1')[0].ClientNo,",
+                    "\t\t\t\tOldGroupCode:Ext.ComponentQuery.query('#TCGMtab1')[0].GroupCode,",
+                    "\t\t\t\tNewGroupCode:Ext.ComponentQuery.query('#ddlGrpNewGroupName')[0].getValue(),",
+                    "\t\t\t\tUserName:getCurrentUser(),",
+                    "\t\t\t\tTranOfficeCode:Ext.get('offCode').dom.innerHTML,",
+                    "\t\t\t\t//ClientCode:Ext.ComponentQuery.query('#ddlGrpOldMemberNo')[0].getValue()",
+                    "",
+                    "",
+                    "\t\t\t\t};",
+                    "",
+                    "Ext.Ajax.request({",
+                    "            url:'../Handlers/Finance/Transaction/MemberTransaction/TransferWithinCenterHandler.ashx',",
+                    "            params:{method:'Save',transferwithincenter:JSON.stringify(obj)",
+                    "},",
+                    "            success: function ( result, request ) {",
+                    "",
+                    "                var obj = Ext.decode(result.responseText);",
+                    "                if(obj.success === 'true'){",
+                    "                    console.log(\"Resu\",obj.root);",
+                    "                    msg(\"SUCCESS\",\"Client Transfer completed successfully.\");",
+                    "                    Ext.ComponentQuery.query('#txtGrpNewMemberNo')[0].setValue(obj.root);",
+                    "",
+                    "",
+                    "",
+                    "                }else{msg('FAILURE','Client Transfer Failed');}",
+                    "            },",
+                    "            failure: function(form, action) {",
+                    "                msg(\"FAILURE\",\"Client Transfer Failed\");    }",
+                    "        });",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view"
+            },
+            "name": "onBtnGroupTransferClick",
+            "designerId": "8f689fd7-b3b5-4368-99ec-94c127f2f0f6"
+        }
+    ]
+}

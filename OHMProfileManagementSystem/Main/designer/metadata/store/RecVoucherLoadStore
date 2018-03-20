@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RecVoucherLoadStore",
+        "model": "RecVoucherLoad",
+        "storeId": "RecVoucherLoadStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore2",
+    "designerId": "b4271c09-5199-45e6-af12-357ca01f1004",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy51",
+            "designerId": "72e01726-7c2a-4bad-a637-8d484caaf259",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader51",
+                    "designerId": "90945d46-9130-4e42-a54c-6aee79fb1b09"
+                }
+            ]
+        }
+    ]
+}

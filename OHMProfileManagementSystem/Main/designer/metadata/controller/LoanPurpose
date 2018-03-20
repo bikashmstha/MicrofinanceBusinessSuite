@@ -1,0 +1,248 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoanPurpose",
+        "stores": [
+            "LoanProductPurposeStore",
+            "LoanSectorStore",
+            "LoanSubSectorStore",
+            "LoanPurposeStore"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "stores": "typedarray"
+    },
+    "name": "MyController",
+    "designerId": "f3a4263e-200b-4a28-87b4-5b68fe1ee885",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#frmLoanPurpose",
+                "designer|params": [
+                    "component",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyTabPanel",
+                "fn": "onFrmLoanPurposeAfterRender",
+                "implHandler": [
+                    " var store=Ext.getStore('LoanSectorStore');",
+                    "store.removeAll();",
+                    "",
+                    "        Ext.Ajax.request({",
+                    "            url: '../Handlers/Finance/Maintenance/LoanSectorHandler.ashx',",
+                    "            params: {",
+                    "                method:'GetLoanSector'",
+                    "            },",
+                    "            success: function(response){",
+                    "",
+                    "            var data=Ext.decode(response.responseText);",
+                    "            store.removeAll();",
+                    "            store.add(data.root);",
+                    "",
+                    "",
+                    "        }",
+                    "        });"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onFrmLoanPurposeAfterRender",
+            "designerId": "95d2e0d1-e163-439e-ac9a-3a32e5b7437c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnAddSector",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton13",
+                "fn": "onBtnAddSectorClick",
+                "implHandler": [
+                    " var store =Ext.getStore('LoanSectorStore');",
+                    "                var rec={",
+                    "                    LoanSectorCode:'',",
+                    "                    LoanSectorDesc:'',",
+                    "                    Action:'I'",
+                    "                };",
+                    "                store.add(rec);",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onBtnAddSectorClick",
+            "designerId": "2101cadf-1329-4fe0-8eb3-20dabf896d53"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnLoanSubSector",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton14",
+                "fn": "onBtnLoanSubSectorClick",
+                "implHandler": [
+                    " var store =Ext.getStore('LoanSubSectorStore');",
+                    "                var rec={",
+                    "                    LoanSubSectorCode:'',",
+                    "                    LoanSubSectorDesc:'',",
+                    "                     LoanSectorCode:'',",
+                    "                    LoanSectorDesc:'',                   ",
+                    "                    Action:'I'",
+                    "                };",
+                    "                store.add(rec);",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onBtnLoanSubSectorClick",
+            "designerId": "878da38d-8710-4880-862a-b8cf23ec8757"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnLoanPurpose",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton14",
+                "fn": "onBtnLoanPurposeClick",
+                "implHandler": [
+                    " var store =Ext.getStore('LoanPurposeStore');",
+                    "                var rec={",
+                    "                    LoanPurposeCode:'',",
+                    "                    LoanPurposeDesc:'',",
+                    "                    SubSectorCode:'',",
+                    "                    SubSectorDesc:'',",
+                    "                    Action:'I'",
+                    "                };",
+                    "                store.add(rec);",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onBtnLoanPurposeClick",
+            "designerId": "14bbbaee-d8ec-4f6a-b640-e61c572c74d1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnProductPurpose",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyButton14",
+                "fn": "onBtnProductPurposeClick",
+                "implHandler": [
+                    " var store =Ext.getStore('LoanProductPurposeStore');",
+                    "                        var rec={",
+                    "                            LoanPurposeCode:'',",
+                    "                            LoanPurposeDesc:'',",
+                    "                            LoanProductCode:'',",
+                    "                            InterestRate:'',",
+                    "                            MinLoanAmount:'',                            ",
+                    "                            MaxLoanAmount:'',",
+                    "                            MinLoanTermsMonths:'',",
+                    "                            MaxLoanTermsMonths:'',",
+                    "                            Action:'I'",
+                    "                        };",
+                    "                        store.add(rec);",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "designer|controlQuery": "string",
+                "designer|params": "typedarray",
+                "designer|targetType": "view",
+                "implHandler": "code"
+            },
+            "name": "onBtnProductPurposeClick",
+            "designerId": "295e88bf-5385-4602-88c5-3d42a2cf7fdf"
+        }
+    ]
+}

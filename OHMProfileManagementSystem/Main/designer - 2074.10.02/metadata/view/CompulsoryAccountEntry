@@ -1,0 +1,608 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CompulsoryAccountEntry",
+        "frame": true,
+        "title": "Compulsary Account Entry"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "title": "string"
+    },
+    "name": "MyPanel8",
+    "designerId": "b6b6f9b7-36fe-4605-bdc8-e46643f6b1ed",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|columns": 2,
+                "frame": true,
+                "id": "frmCompulsaryAccountEntry",
+                "itemId": "frmCompulsaryAccountEntry",
+                "layout": "table"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|columns": "number",
+                "frame": "boolean",
+                "itemId": "string",
+                "layout": "string",
+                "id": "string"
+            },
+            "name": "MyForm2",
+            "designerId": "d1abdcdd-402a-4bf5-a3cb-406302434235",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Symbol No",
+                        "fieldStyle": "background-color:#D2D2D2;background-image:none;",
+                        "itemId": "txtSymbolNo",
+                        "labelWidth": 150,
+                        "readOnly": true,
+                        "size": 40
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "size": "number",
+                        "fieldStyle": "string",
+                        "itemId": "string",
+                        "readOnly": "boolean"
+                    },
+                    "name": "MyTextField83",
+                    "designerId": "9c485cff-9b79-4e17-8a1e-eda4b3d2e240"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "RefDtlName",
+                        "emptyText": "---SELECT---",
+                        "fieldLabel": "Product Type",
+                        "forceSelection": true,
+                        "itemId": "ddlProductType",
+                        "queryMode": "local",
+                        "size": 30,
+                        "store": "ReferenceShortStore",
+                        "style": [
+                            "{marginLeft:'40px'}"
+                        ],
+                        "valueField": "RefDtlCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "size": "number",
+                        "style": "object",
+                        "displayField": "datafield",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "emptyText": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string"
+                    },
+                    "name": "MyComboBox16",
+                    "designerId": "060c657a-7ff0-49f2-b43a-639d72795f9c"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Compulsary Account Desc",
+                        "itemId": "txtCompulsoryAccDesc",
+                        "labelWidth": 150,
+                        "size": 40
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "size": "number",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField84",
+                    "designerId": "d909df6c-77e2-449f-b2e5-a28d1631019a"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Active",
+                        "itemId": "chkActive",
+                        "style": [
+                            "{marginLeft:'40px'}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "boxLabel": "string",
+                        "fieldLabel": "string",
+                        "style": "object",
+                        "itemId": "string"
+                    },
+                    "name": "MyCheckbox1",
+                    "designerId": "49db619c-25be-4a14-a643-a6355027d37f"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "ProductName",
+                        "emptyText": "---SELECT---",
+                        "fieldLabel": "Saving Product Code",
+                        "forceSelection": true,
+                        "itemId": "ddlSavingProductCode",
+                        "labelWidth": 150,
+                        "layout|colspan": 2,
+                        "queryMode": "local",
+                        "size": 40,
+                        "store": "ProductTypeStore",
+                        "valueField": "ProductCode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "forceSelection": "boolean",
+                        "itemId": "string",
+                        "labelWidth": "number",
+                        "layout|colspan": "number",
+                        "queryMode": "string",
+                        "size": "number",
+                        "displayField": "datafield",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "emptyText": "string"
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "e6144aa4-61ee-4aef-aa3e-62bddef0d22c"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 40,
+                        "layout": "table",
+                        "layout|colspan": 2,
+                        "suspendLayout": true
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "layout": "string",
+                        "layout|colspan": "number",
+                        "suspendLayout": "boolean",
+                        "height": "auto"
+                    },
+                    "name": "MyContainer17",
+                    "designerId": "86f645e1-7432-4258-bfba-51c9e83e674a",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "btnCreateCompulsaryAcc",
+                                "margin": 10,
+                                "text": " Create Compulsary Account"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "margin": "auto",
+                                "text": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton8",
+                            "designerId": "43b78a7a-f17a-4d4a-bfcf-7b65706c97c6"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "itemId": "btnUpdateCompulsoryAcc",
+                                "text": "Update Compulsory Account"
+                            },
+                            "configAlternates": {
+                                "hidden": "boolean",
+                                "itemId": "string",
+                                "text": "string"
+                            },
+                            "name": "MyButton50",
+                            "designerId": "3171e7ab-5766-4a40-98b9-aceb31874e56"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "itemId": "btnDeleteCompulsoryAcc",
+                                "margin": "0 0 0 5",
+                                "text": "Delete Compulsory Account"
+                            },
+                            "configAlternates": {
+                                "hidden": "boolean",
+                                "itemId": "string",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton51",
+                            "designerId": "5a7bd2ce-782d-4bdc-b90d-4fde5f1d46c1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "grdCompulsaryAccDetails",
+                        "layout|colspan": 2,
+                        "store": "CompulsaryAccountDetailsStore",
+                        "title": "Compulsary Account Details :",
+                        "width": 859
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "itemId": "string",
+                        "layout|colspan": "number",
+                        "store": "store",
+                        "width": "auto"
+                    },
+                    "name": "MyGridPanel2",
+                    "designerId": "7c03ba02-6177-4840-85fd-d5ad4d310304",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView2",
+                            "designerId": "d7f0a365-e250-425d-ba2d-c844a823b3e8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CompulsoryAccountCode",
+                                "text": "Symbol No"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn",
+                            "designerId": "8a51ddba-d953-4f80-813f-567a0b556804"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CompulsoryAccountDesc",
+                                "text": "Account Description",
+                                "width": 169
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn1",
+                            "designerId": "34601aa4-d48a-4a41-8d14-6546e6c8a8ff"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ProductName",
+                                "text": "Product Name",
+                                "width": 227
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn3",
+                            "designerId": "5e4d9457-b148-4e3a-bfe3-88576ade9f70"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ProductType",
+                                "text": "Saving Product Type",
+                                "width": 172
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn4",
+                            "designerId": "5941ca9d-1aff-433d-99f1-b03064c20b57"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ActiveFlag",
+                                "text": "Is Active"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn5",
+                            "designerId": "538b12cf-7664-460e-872a-830fff22e8b8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Action",
+                                "text": "Action"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn116",
+                            "designerId": "bace642f-3c05-44d3-a0bf-16d40852d36a"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": ""
+                            },
+                            "configAlternates": {
+                                "icon": "string"
+                            },
+                            "name": "MyActionColumn20",
+                            "designerId": "2430c11f-4d3b-4158-9bde-925aba2eea12",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../ITS/resources/images/icons/Modify.png"
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string"
+                                    },
+                                    "name": "MyActionColumnItem19",
+                                    "designerId": "393f096d-c830-4d3b-8226-6d365899c13e",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "Ext.ComponentQuery.query('#grdCompulsaryAccDetails')[0].index = rowIndex;",
+                                                    "Ext.ComponentQuery.query('#grdCompulsaryAccDetails')[0].getSelectionModel().select(rowIndex);",
+                                                    "//get reference of store",
+                                                    "var store = Ext.getStore('CompulsaryAccountDetailsStore');",
+                                                    "",
+                                                    "//get selected row using rowindex",
+                                                    "var row = store.getAt(rowIndex).data;",
+                                                    "",
+                                                    "",
+                                                    "// set values",
+                                                    "",
+                                                    "console.log('row',row);",
+                                                    "",
+                                                    "Ext.ComponentQuery.query('#txtSymbolNo')[0].setValue(row.CompulsoryAccountCode);",
+                                                    "Ext.ComponentQuery.query('#ddlProductType')[0].setValue(row.ProductType);",
+                                                    "Ext.ComponentQuery.query('#txtCompulsoryAccDesc')[0].setValue(row.CompulsoryAccountDesc);",
+                                                    "Ext.ComponentQuery.query('#chkActive')[0].setValue(row.ActiveFlag=='Y'?true:false);",
+                                                    "Ext.ComponentQuery.query('#ddlSavingProductCode')[0].setValue(row.ProductCode);",
+                                                    "",
+                                                    "",
+                                                    "Ext.ComponentQuery.query('#btnUpdateCompulsoryAcc')[0].setVisible(true);",
+                                                    "Ext.ComponentQuery.query('#btnDeleteCompulsoryAcc')[0].setVisible(true);",
+                                                    "Ext.ComponentQuery.query('#btnCreateCompulsaryAcc')[0].setVisible(false);",
+                                                    ""
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "46aaca7c-ccfa-498c-8307-2e455293bf37"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "clear",
+                        "implHandler": [
+                            "",
+                            "",
+                            "",
+                            "    ",
+                            "Ext.ComponentQuery.query(\"#frmCompulsaryAccountEntry\")[0].getForm().reset();",
+                            "    ",
+                            "",
+                            ""
+                        ]
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "clear",
+                    "designerId": "6545bbfa-e01c-4c99-9fb4-c2b353f556e6"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": "popupTool"
+            },
+            "configAlternates": {
+                "cls": "string"
+            },
+            "name": "MyTool3",
+            "designerId": "ecdc5316-99ff-453f-996e-b4258124669d",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "event",
+                            "toolEl",
+                            "owner",
+                            "tool"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "Ext.MessageBox.confirm('Reset Form', 'Are you sure ?', function(btn){",
+                            "",
+                            "",
+                            "    if(btn === 'yes'){",
+                            "                 var frm= Ext.ComponentQuery.query('#frmCompulsaryAccountEntry')[0].getForm();",
+                            "                frm.clear();",
+                            "   }",
+                            "   else",
+                            "   {",
+                            "",
+                            "   }",
+                            "",
+                            "});",
+                            "",
+                            ""
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "182c2b86-7518-4e97-91c7-2cf8e1a6761e"
+                }
+            ]
+        }
+    ]
+}
